@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title>Recent Content on My Blog </title>
+      <generator uri="https://hugo.spf13.com">Hugo</generator>
+    <link>http://varun06.github.io/index.xml/</link>
+    
+    
+    
+    <updated>Sat, 15 Nov 2014 19:58:28 CST</updated>
+    
+    <item>
+      <title>array and slices in go</title>
+      <link>http://varun06.github.io/posts/array-and-slices-in-go/</link>
+      <pubDate>Sat, 15 Nov 2014 19:58:28 CST</pubDate>
+      
+      <guid>http://varun06.github.io/posts/array-and-slices-in-go/</guid>
+      <description>&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;var x [5]int&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;where x is an array which is composed of 5 ints.&lt;/p&gt;
+
+&lt;p&gt;Same as other c family languages, arrays are indexed starting from zero.&lt;/p&gt;
+
+&lt;p&gt;arrays length is fixed and go provides another type &lt;strong&gt;slices&lt;/strong&gt; to work with this situation.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;var x []int&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;x is a slice and has a length of 0.&lt;/p&gt;
+
+&lt;p&gt;We can also create a slice using builtin &lt;strong&gt;make&lt;/strong&gt; function.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;x := make([]float64, 5, 10)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where 5 is the length and 10 is the capacity of the underlying array.&lt;/p&gt;
+
+&lt;p&gt;If you have programmed in python than there is a way to create slices that look entirely familiar.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;arr := []int{1, 2, 3, 4, 5}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;x := arr[0:5]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;x&lt;/strong&gt; is a slice of &lt;strong&gt;arr&lt;/strong&gt; and holds all the values. You can change the values by changing the index in x.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;x := arr[1:2]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;We can also omit the &lt;strong&gt;low:high&lt;/strong&gt; from slice.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;x[0:len(arr)]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;x[0:]&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;x[:4]&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>learning go</title>
+      <link>http://varun06.github.io/posts/learning-go/</link>
+      <pubDate>Sat, 23 Aug 2014 19:59:32 -0600</pubDate>
+      
+      <guid>http://varun06.github.io/posts/learning-go/</guid>
+      <description>&lt;p&gt;Go language has this definition on &lt;a href=&#34;http://http://golang.org/&#34;&gt;golang&lt;/a&gt;:
+&amp;gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
+
+&lt;p&gt;If you have worked with C family languages (such as C, C++, Java, Python etc.) Go will look familiar to you. I have been working with python from some time and wanted to learn a static typed language. Go is easy to learn and you can start writing code very soon.&lt;/p&gt;
+
+&lt;p&gt;I started with &lt;a href=&#34;http://tour.golang.org/#1&#34;&gt;go language tour&lt;/a&gt; and learned the sytax and semantics of the language. After that I started looking at &lt;a href=&#34;http://golang.org/doc/&#34;&gt;go language documentation&lt;/a&gt;.
+One of the best way to learn about a programming language is to look at the code written by other people in that language. So I choose &lt;a href=&#34;https://github.com/docker/docker&#34;&gt;Docker&lt;/a&gt; to read the code.&lt;/p&gt;
+
+&lt;p&gt;This is just the start and I will be writing more about my learnings on go programming.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>First Post</title>
+      <link>http://varun06.github.io/posts/first_post/</link>
+      <pubDate>Thu, 27 Mar 2014 00:00:00 UTC</pubDate>
+      
+      <guid>http://varun06.github.io/posts/first_post/</guid>
+      <description>
+
+&lt;h2 id=&#34;toc_0&#34;&gt;First Post on new blog&lt;/h2&gt;
+
+&lt;p&gt;This is my first post on this new blogging platform. I am using HUGO static site generator. HUGO is built using GO lang and I am learning GO from some time.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
