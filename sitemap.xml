@@ -2,23 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://varun06.github.io/</loc>
-    <lastmod>2014-11-15T19:58:28-06:00</lastmod>
+    <loc>http://varunksaini.com/</loc>
+    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://varun06.github.io/posts/array-and-slices-in-go/</loc>
+    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
+    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/reading/goProgrammingBook/</loc>
+    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/reading/pragmaticProgrammer/</loc>
+    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/posts/array-and-slices-in-go/</loc>
     <lastmod>2014-11-15T19:58:28-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://varun06.github.io/posts/learning-go/</loc>
+    <loc>http://varunksaini.com/posts/learning-go/</loc>
     <lastmod>2014-08-23T19:59:32-06:00</lastmod>
   </url>
   
   <url>
-    <loc>http://varun06.github.io/posts/first_post/</loc>
+    <loc>http://varunksaini.com/posts/first_post/</loc>
     <lastmod>2014-03-27T00:00:00+00:00</lastmod>
   </url>
   
