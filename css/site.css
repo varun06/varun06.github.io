@@ -1,0 +1,105 @@
+.img-shadow {
+    margin: 15px 0;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#resume {
+    font-size:.8em;
+}
+#resume table {
+    width:100%;
+}
+#resume table td {
+   width:33%;
+}
+#resume h3 {
+   margin-bottom:.5em;
+}
+#resume h4 {
+   font-size:1.2em;
+}
+#appearance table td {
+   width:25%;
+}
+#directing table td:first-child {
+   width:66%;
+}
+#training table th:first-child {
+   width:33%;
+}
+#training table td:last-child {
+   width:67%;
+}
+
+#imagebar img {
+    width:100%;
+}
+
+.post-summary h1 {
+   font-size:1em;
+}
+
+/* typography */
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+body {
+    word-spacing: 0.1em;
+}
+
+h1, h2, h3, caption, thead th, .h3 {
+    font-family: "Lato", Georgia, sans-serif;
+    font-weight: normal;
+    font-variant: small-caps;
+    text-shadow: 0 0 1px #667;
+    letter-spacing:0.2em;
+}
+h1 small, h2 small, h3 small, caption small, thead th small {
+}
+h1, .h1 {
+   font-size:1.75em;
+}
+h3, .h3 {
+    text-shadow: 0 0 1px #667;
+}
+
+h1 {
+    margin: 1em 0 .5em;
+}
+h2 {
+    line-height: 1.3125;
+    margin: 1em 0;
+    clear: both;
+}
+h3 {
+   line-height: 1.167;
+   display:block;
+   margin: .5em 0;
+}
+section:first-child h3 {
+   margin-top:0;
+}
+
+h4 {
+    font-style:italic;
+}
+
+p {
+}
+
+#sidebar {
+   font-size:80%;
+   text-align:right;
+}
+
+#site-footer {
+   font-size:60%;
+}
+#sub-footer {
+}
+
+.lines {
+   white-space:pre-wrap;
+   margin-left:2em;
+   display:block;
+}

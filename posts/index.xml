@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on My Blog </title>
+      <title>Posts on varunksaini </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://varun06.github.io/posts/index.xml/</link>
+    <link>http://varunksaini.com/posts/index.xml/</link>
     
     
     
@@ -11,10 +11,10 @@
     
     <item>
       <title>array and slices in go</title>
-      <link>http://varun06.github.io/posts/array-and-slices-in-go/</link>
+      <link>http://varunksaini.com/posts/array-and-slices-in-go/</link>
       <pubDate>Sat, 15 Nov 2014 19:58:28 CST</pubDate>
       
-      <guid>http://varun06.github.io/posts/array-and-slices-in-go/</guid>
+      <guid>http://varunksaini.com/posts/array-and-slices-in-go/</guid>
       <description>&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;var x [5]int&lt;/code&gt;&lt;/p&gt;
@@ -57,10 +57,10 @@
     
     <item>
       <title>learning go</title>
-      <link>http://varun06.github.io/posts/learning-go/</link>
+      <link>http://varunksaini.com/posts/learning-go/</link>
       <pubDate>Sat, 23 Aug 2014 19:59:32 -0600</pubDate>
       
-      <guid>http://varun06.github.io/posts/learning-go/</guid>
+      <guid>http://varunksaini.com/posts/learning-go/</guid>
       <description>&lt;p&gt;Go language has this definition on &lt;a href=&#34;http://http://golang.org/&#34;&gt;golang&lt;/a&gt;:
 &amp;gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
 
@@ -75,10 +75,10 @@ One of the best way to learn about a programming language is to look at the code
     
     <item>
       <title>First Post</title>
-      <link>http://varun06.github.io/posts/first_post/</link>
+      <link>http://varunksaini.com/posts/first_post/</link>
       <pubDate>Thu, 27 Mar 2014 00:00:00 UTC</pubDate>
       
-      <guid>http://varun06.github.io/posts/first_post/</guid>
+      <guid>http://varunksaini.com/posts/first_post/</guid>
       <description>
 
 &lt;h2 id=&#34;toc_0&#34;&gt;First Post on new blog&lt;/h2&gt;
