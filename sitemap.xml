@@ -3,8 +3,28 @@
   
   <url>
     <loc>http://varunksaini.com/</loc>
-    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
+    <lastmod>2014-11-26T06:24:00-06:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/posts/find-minimum-value-array-go/</loc>
+    <lastmod>2014-11-26T06:24:00-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/reading/patrticles-of-universe/</loc>
+    <lastmod>2014-11-26T07:01:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/reading/golang-book/</loc>
+    <lastmod>2014-11-26T07:01:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/posts/working-with-smart-people/</loc>
+    <lastmod>2014-11-25T17:52:32-06:00</lastmod>
   </url>
   
   <url>
@@ -30,11 +50,6 @@
   <url>
     <loc>http://varunksaini.com/posts/learning-go/</loc>
     <lastmod>2014-08-23T19:59:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://varunksaini.com/posts/first_post/</loc>
-    <lastmod>2014-03-27T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

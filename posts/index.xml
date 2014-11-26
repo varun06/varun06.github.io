@@ -7,7 +7,62 @@
     
     
     
-    <updated>Sat, 15 Nov 2014 19:58:28 CST</updated>
+    <updated>Wed, 26 Nov 2014 06:24:00 CST</updated>
+    
+    <item>
+      <title>Find Mimimum Value in an array in go</title>
+      <link>http://varunksaini.com/posts/find-minimum-value-array-go/</link>
+      <pubDate>Wed, 26 Nov 2014 06:24:00 CST</pubDate>
+      
+      <guid>http://varunksaini.com/posts/find-minimum-value-array-go/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;How to find a min array value in go lang:&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+)
+
+func main() {
+	x := []int{
+		48, 96, 86, 68,
+		57, 82, 63, 70,
+		37, 34, 83, 27,
+		19, 97,  9, 17,
+	}
+
+	min:= x[0]
+
+	for _, value := range x {
+		if value &amp;lt; min {
+			min = value
+		}
+	}
+	fmt.Println(min)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Working with smart people</title>
+      <link>http://varunksaini.com/posts/working-with-smart-people/</link>
+      <pubDate>Tue, 25 Nov 2014 17:52:32 CST</pubDate>
+      
+      <guid>http://varunksaini.com/posts/working-with-smart-people/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Working with samrt people&lt;/h1&gt;
+
+&lt;p&gt;People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&amp;rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&amp;rsquo;t even recognize them.&lt;/p&gt;
+
+&lt;p&gt;Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.&lt;/p&gt;
+
+&lt;p&gt;I am fortunate to work with many smart people in my current job and every day I learn new things just by discussing things with them.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>array and slices in go</title>
@@ -15,7 +70,11 @@
       <pubDate>Sat, 15 Nov 2014 19:58:28 CST</pubDate>
       
       <guid>http://varunksaini.com/posts/array-and-slices-in-go/</guid>
-      <description>&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Array and slices in go lang&lt;/h1&gt;
+
+&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;var x [5]int&lt;/code&gt;&lt;/p&gt;
 
@@ -70,20 +129,6 @@
 One of the best way to learn about a programming language is to look at the code written by other people in that language. So I choose &lt;a href=&#34;https://github.com/docker/docker&#34;&gt;Docker&lt;/a&gt; to read the code.&lt;/p&gt;
 
 &lt;p&gt;This is just the start and I will be writing more about my learnings on go programming.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>http://varunksaini.com/posts/first_post/</link>
-      <pubDate>Thu, 27 Mar 2014 00:00:00 UTC</pubDate>
-      
-      <guid>http://varunksaini.com/posts/first_post/</guid>
-      <description>
-
-&lt;h2 id=&#34;toc_0&#34;&gt;First Post on new blog&lt;/h2&gt;
-
-&lt;p&gt;This is my first post on this new blogging platform. I am using HUGO static site generator. HUGO is built using GO lang and I am learning GO from some time.&lt;/p&gt;
 </description>
     </item>
     

@@ -7,17 +7,17 @@
 <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
     
     <meta charset="utf-8">
-    <title>varunksaini | First Post</title>
+    <title>varunksaini | Find Mimimum Value in an array in go</title>
     <meta name="description" content="Varun Saini is an engineer.">
     <meta name="author" content="Varun Saini">
-    <link rel="author" href="http://localhost:1313/humans.txt" />
+    <link rel="author" href="http://varunksaini.com/humans.txt" />
 
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
-    <link href="http://localhost:1313/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="http://localhost:1313/css/site.css">
+    <link href="http://varunksaini.com/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="http://varunksaini.com/css/site.css">
 
     
 
@@ -37,9 +37,32 @@
             <div class="col-md-8 col-md-offset-2">
                 
 
-<h2 id="toc_0">First Post on new blog</h2>
+<h1 id="toc_0">How to find a min array value in go lang:</h1>
 
-<p>This is my first post on this new blogging platform. I am using HUGO static site generator. HUGO is built using GO lang and I am learning GO from some time.</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+)
+
+func main() {
+	x := []int{
+		48, 96, 86, 68,
+		57, 82, 63, 70,
+		37, 34, 83, 27,
+		19, 97,  9, 17,
+	}
+
+	min:= x[0]
+
+	for _, value := range x {
+		if value &lt; min {
+			min = value
+		}
+	}
+	fmt.Println(min)
+}
+</code></pre>
 
              </div>
           </div>
@@ -47,26 +70,23 @@
             <hr>
    <div class="container">
          <footer id="site-footer">
-            <p class="pull-right"><a href="http://localhost:1313/">Home</a>.
+            <p class="pull-right"><a href="http://varunksaini.com/">Home</a>.
 
               <br>
-                <span class="pull-right" id="specs">Built with <a href="http://hugo.spf13.com">Hugo</a> | <a href="http://localhost:1313/humans.txt">humans.txt</a>
-                <br>&copy; <a href="http://localhost:1313">Varun Saini</a>
+                <span class="pull-right" id="specs">Built with <a href="http://hugo.spf13.com">Hugo</a> | <a href="http://varunksaini.com/humans.txt">humans.txt</a>
+                <br>&copy; <a href="http://varunksaini.com">Varun Saini</a>
               </span>
             </p>
          </footer>
    </div>
     
-    <script src="http://localhost:1313/js/jquery.js"></script>
-    <script src="http://localhost:1313/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://varunksaini.com/js/jquery.js"></script>
+    <script src="http://varunksaini.com/bootstrap/js/bootstrap.min.js"></script>
     <script>
      $(function () {
        $('#retropaytabs a:first').tab('show')
      })
    </script>
-<script>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+</body>
 </html>
 
