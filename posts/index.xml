@@ -10,14 +10,14 @@
     <updated>Sat, 13 Dec 2014 06:40:15 CST</updated>
     
     <item>
-      <title>Working with files with go lang</title>
+      <title>Working with files in go lang</title>
       <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
       <pubDate>Sat, 13 Dec 2014 06:40:15 CST</pubDate>
       
       <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
       <description>
 
-&lt;h1 id=&#34;toc_0&#34;&gt;Working with files with go lang&lt;/h1&gt;
+&lt;h1 id=&#34;toc_0&#34;&gt;Working with files in go lang&lt;/h1&gt;
 
 &lt;p&gt;Go makes working with file very easy and file reading is an operation that is used very frequently.&lt;/p&gt;
 
