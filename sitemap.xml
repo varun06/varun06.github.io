@@ -3,8 +3,23 @@
   
   <url>
     <loc>http://varunksaini.com/</loc>
-    <lastmod>2014-12-06T19:07:32-06:00</lastmod>
+    <lastmod>2014-12-13T06:40:15-06:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/posts/working-with-files-in-go/</loc>
+    <lastmod>2014-12-13T06:40:15-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/reading/Particales_of_the_universe/</loc>
+    <lastmod>2014-12-13T06:32:30-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</loc>
+    <lastmod>2014-12-13T06:29:30-04:00</lastmod>
   </url>
   
   <url>
@@ -13,7 +28,7 @@
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/lethal-code/</loc>
+    <loc>http://varunksaini.com/backup/lethal-code/</loc>
     <lastmod>2014-12-01T07:01:18-04:00</lastmod>
   </url>
   
@@ -33,12 +48,12 @@
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/goProgrammingBook/</loc>
+    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
+    <loc>http://varunksaini.com/backup/goProgrammingBook/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   

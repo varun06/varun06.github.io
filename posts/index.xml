@@ -7,7 +7,83 @@
     
     
     
-    <updated>Sat, 06 Dec 2014 19:07:32 CST</updated>
+    <updated>Sat, 13 Dec 2014 06:40:15 CST</updated>
+    
+    <item>
+      <title>Working with files with go lang</title>
+      <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
+      <pubDate>Sat, 13 Dec 2014 06:40:15 CST</pubDate>
+      
+      <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Working with files with go lang&lt;/h1&gt;
+
+&lt;p&gt;Go makes working with file very easy and file reading is an operation that is used very frequently.&lt;/p&gt;
+
+&lt;p&gt;To open a file in Go, we can use &amp;ldquo;Open&amp;rdquo; function from the &amp;ldquo;os&amp;rdquo; package.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;os&amp;quot;
+)
+
+func main() {
+	file, err := os.Open(&amp;quot;test.txt&amp;quot;)
+	if err != nil {
+		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
+		return
+	}
+	defer file.Close()
+
+	size, err := file.Stat()
+	if err != nil {
+		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
+		return
+	}
+
+	fs := make([]byte, size.Size())
+	_, err = file.Read(fs)
+	if err != nil {
+		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
+		return
+	}
+
+	str := string(fs)
+	fmt.Println(str)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I really like how you can simply defer the file close operation just after creating a file object. In Go you use &amp;ldquo;defer&amp;rdquo; to do that. any function that use defer will excute in the end. This way we don&amp;rsquo;t have to worry about forgeting closing the file.&lt;/p&gt;
+
+&lt;p&gt;There is a shorter way to read files too.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;io/ioutil&amp;quot;
+)
+
+func main() {
+	fs, err := ioutil.ReadFile(&amp;quot;test.txt&amp;quot;)
+	if err != nil {
+		fmt.Println(&amp;quot;Error is: &amp;quot;, err)
+	}
+
+	str := string(fs)
+	fmt.Println(str)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If we want to create a file instead of reading it, just use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;file, err := os.Create(&amp;quot;test.txt&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Go lang boiler plate sublime text snippet</title>
