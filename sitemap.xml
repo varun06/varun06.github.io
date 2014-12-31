@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://varunksaini.com/</loc>
-    <lastmod>2014-12-13T06:40:15-06:00</lastmod>
+    <lastmod>2014-12-30T08:11:15-06:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/posts/new-human-age/</loc>
+    <lastmod>2014-12-30T08:11:15-06:00</lastmod>
   </url>
   
   <url>
@@ -38,7 +43,7 @@
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/golang-book/</loc>
+    <loc>http://varunksaini.com/backup/golang-book/</loc>
     <lastmod>2014-11-26T07:01:18-04:00</lastmod>
   </url>
   
@@ -48,12 +53,12 @@
   </url>
   
   <url>
-    <loc>http://varunksaini.com/backup/goProgrammingBook/</loc>
+    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
+    <loc>http://varunksaini.com/backup/goProgrammingBook/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
