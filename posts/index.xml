@@ -7,7 +7,83 @@
     
     
     
-    <updated>Tue, 30 Dec 2014 08:11:15 CST</updated>
+    <updated>Sat, 03 Jan 2015 06:13:00 UTC</updated>
+    
+    <item>
+      <title>Get operating system name in Go</title>
+      <link>http://varunksaini.com/posts/get-os-name-in-go/</link>
+      <pubDate>Sat, 03 Jan 2015 06:13:00 UTC</pubDate>
+      
+      <guid>http://varunksaini.com/posts/get-os-name-in-go/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Get operating system name in Go&lt;/h1&gt;
+
+&lt;p&gt;To get the operating system name where we running a Go program, we can use &lt;strong&gt;runtime&lt;/strong&gt; package. &lt;strong&gt;runtime.GOOS&lt;/strong&gt; return the operating system name. Some people try to use &lt;strong&gt;os.Getenv(&amp;ldquo;GOOS&amp;rdquo;)&lt;/strong&gt; but it is not very reliable. I always use &lt;a href=&#34;http://golang.org/pkg/runtime/&#34;&gt;runtime package&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;runtime&amp;quot;
+)
+
+func main() {
+	var goos string = runtime.GOOS
+	fmt.Printf(&amp;quot;The operating system is: %s\n&amp;quot;, goos)
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Books I read in 2014</title>
+      <link>http://varunksaini.com/posts/books-in-2014/</link>
+      <pubDate>Thu, 01 Jan 2015 07:00:00 UTC</pubDate>
+      
+      <guid>http://varunksaini.com/posts/books-in-2014/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Books I read in 2014&lt;/h1&gt;
+
+&lt;p&gt;I read 7 books (and ton of artilcles in &lt;a href=&#34;http://getpocket.com/&#34;&gt;pockets&lt;/a&gt; app) this year.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;img src=&#34;/img/pocket.png&#34; alt=&#34;Pocket app stats&#34; title=&#34;Pocket app&#34; style=&#34;width:500px; height: 300px;&#34;&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Most of the books that I read were technical ranging on different topics. I read couple of physics books such as &lt;a href=&#34;http://www.amazon.com/gp/product/B00DFL353K/&#34;&gt;Hidden In Plain Sight 2: The Equation of the Universe&lt;/a&gt; and &lt;a href=&#34;http://www.amazon.com/The-Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW&#34;&gt;The particles of universe&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I read one fiction book &lt;a href=&#34;http://www.amazon.com/Lethal-Code-Lana-Elkins-Thriller-ebook/dp/B00J9P2EMO/&#34;&gt;Lethal Code&lt;/a&gt;, which I didn&amp;rsquo;t like much. It had a great promise but writing could have been better.&lt;/p&gt;
+
+&lt;p&gt;For 2015, I am planning to read at least 15 books and will try to add some variety this time. I want to read some good fiction, non-fiction, science, technology books. I also have a backlog of 4-5 books that I need to finish this year.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BACKLOG&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking Fast And Slow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Hooked-How-Build-Habit-Forming-Products-ebook/dp/B00LMGLXTS/&#34;&gt;Hooked: How to Build Habit-Forming Products&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/&#34;&gt;Pragmatic Programmer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Last-Passenger-Manel-Loureiro-ebook/dp/B00KWM7HYI/&#34;&gt;The Last Passenger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Fallow-Season-Hugo-Hunter-ebook/dp/B00JQS1TMK/&#34;&gt;The Fallow Season Of Hugo Hunter&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Some of these books I got from Amazon Prime (Kindle First) and haven&amp;rsquo;t got a chance to read yet.&lt;/p&gt;
+
+&lt;p&gt;I am currently reading 2 books-&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Ultimate-Bar-Book-Comprehensive-Cocktails-ebook/
+dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.amazon.com/Way-Go-Thorough-Introduction-Programming-ebook/dp/B0083RVAJW/&#34;&gt;The Way to Go: A Thorough Introduction to the Go Programming Language&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And also tons of articles again in 2015.&lt;/p&gt;
+
+&lt;p&gt;Happy Reading All.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>human&#43;&#43;</title>

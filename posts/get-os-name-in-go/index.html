@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en"> 
+<head>
+    
+    <meta charset="utf-8">
+    <title>varunksaini | Get operating system name in Go</title>
+    <meta name="description" content="Varun Saini is an engineer.">
+    <meta name="author" content="Varun Saini">
+    <link rel="author" href="http://varunksaini.com/humans.txt" />
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    
+    <link rel="stylesheet" href="http://varunksaini.com/css/site.css">
+
+    
+
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+</head>
+<body>
+
+     
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                
+
+<h1 id="toc_0">Get operating system name in Go</h1>
+
+<p>To get the operating system name where we running a Go program, we can use <strong>runtime</strong> package. <strong>runtime.GOOS</strong> return the operating system name. Some people try to use <strong>os.Getenv(&ldquo;GOOS&rdquo;)</strong> but it is not very reliable. I always use <a href="http://golang.org/pkg/runtime/">runtime package</a>.</p>
+
+<pre><code class="language-language=go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;runtime&quot;
+)
+
+func main() {
+	var goos string = runtime.GOOS
+	fmt.Printf(&quot;The operating system is: %s\n&quot;, goos)
+}
+
+</code></pre>
+
+             </div>
+          </div>
+       </div>
+<hr>
+   <div class="container">
+         <footer id="site-footer">
+            <p class="pull-right"><a href="http://varunksaini.com/">Home</a>.
+
+              <br>
+                <span class="pull-right" id="specs">Built with <a href="http://hugo.spf13.com">Hugo</a> | <a href="http://varunksaini.com/humans.txt">humans.txt</a>
+                <br>&copy; <a href="http://varunksaini.com">Varun Saini</a>
+              </span>
+            </p>
+         </footer>
+   </div>
+    
+    <script src="http://varunksaini.com/js/jquery.js"></script>
+    <link rel="stylesheet" href="http://varunksaini.com/css/site.css">
+
+</body>
+</html>
+
