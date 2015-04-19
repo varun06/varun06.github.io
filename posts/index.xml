@@ -7,7 +7,38 @@
     
     
     
-    <updated>Sat, 03 Jan 2015 06:13:00 UTC</updated>
+    <updated>Sat, 18 Apr 2015 10:42:00 -0600</updated>
+    
+    <item>
+      <title>using io.LimitReader to read a binary file</title>
+      <link>http://varunksaini.com/posts/uisng_io_limitreader/</link>
+      <pubDate>Sat, 18 Apr 2015 10:42:00 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/uisng_io_limitreader/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Using io.LimitReader in Go&lt;/h1&gt;
+
+&lt;p&gt;I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through &lt;a href=&#34;http://golang.org/pkg/io/#LimitedReader&#34;&gt;io.LimitReader&lt;/a&gt;. According to official documentation, &amp;ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&amp;rdquo; and this is what I wanted.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;
+f, _ := os.Open(&amp;quot;largefile.bin&amp;quot;)
+f.Seek(123, 0)
+
+b := make([]byte, 150-123) // remaining length after seek
+
+f.Read(&amp;amp;b)
+f.Close()
+
+buf := bytes.NewBuffer(b) // create buffer with the needed bytes
+
+var a float32
+binary.Read(buf, binary.LittleEndian, &amp;amp;a)
+
+binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Get operating system name in Go</title>

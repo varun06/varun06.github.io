@@ -7,7 +7,48 @@
     
     
     
-    <updated>Sat, 03 Jan 2015 06:13:00 UTC</updated>
+    <updated>Sat, 18 Apr 2015 10:42:00 -0600</updated>
+    
+    <item>
+      <title>using io.LimitReader to read a binary file</title>
+      <link>http://varunksaini.com/posts/uisng_io_limitreader/</link>
+      <pubDate>Sat, 18 Apr 2015 10:42:00 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/uisng_io_limitreader/</guid>
+      <description>
+
+&lt;h1 id=&#34;toc_0&#34;&gt;Using io.LimitReader in Go&lt;/h1&gt;
+
+&lt;p&gt;I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through &lt;a href=&#34;http://golang.org/pkg/io/#LimitedReader&#34;&gt;io.LimitReader&lt;/a&gt;. According to official documentation, &amp;ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&amp;rdquo; and this is what I wanted.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;
+f, _ := os.Open(&amp;quot;largefile.bin&amp;quot;)
+f.Seek(123, 0)
+
+b := make([]byte, 150-123) // remaining length after seek
+
+f.Read(&amp;amp;b)
+f.Close()
+
+buf := bytes.NewBuffer(b) // create buffer with the needed bytes
+
+var a float32
+binary.Read(buf, binary.LittleEndian, &amp;amp;a)
+
+binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Thinking, Fast and Slow</title>
+      <link>http://varunksaini.com/reading/thinking_fast_and_slow/</link>
+      <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
+      
+      <guid>http://varunksaini.com/reading/thinking_fast_and_slow/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Get operating system name in Go</title>
@@ -201,10 +242,10 @@ func main() {
     
     <item>
       <title>Particles of the universe</title>
-      <link>http://varunksaini.com/reading/Particales_of_the_universe/</link>
+      <link>http://varunksaini.com/reading/Particles_of_the_universe/</link>
       <pubDate>Sat, 13 Dec 2014 06:32:30 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/Particales_of_the_universe/</guid>
+      <guid>http://varunksaini.com/reading/Particles_of_the_universe/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/&#34;&gt;Particles of the universe&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -333,16 +374,6 @@ func main() {
     </item>
     
     <item>
-      <title>GO Programming Book by Jeremy Saenz</title>
-      <link>http://varunksaini.com/backup/goProgrammingBook/</link>
-      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/backup/goProgrammingBook/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://twitter.com/codegangsta&#34;&gt;&amp;ldquo;GO Programming Book&amp;rdquo; written by Jeremy Saenz&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Gustavo Duarte - All about computers</title>
       <link>http://varunksaini.com/reading/GustavoDuarte/</link>
       <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
@@ -359,56 +390,6 @@ func main() {
       
       <guid>http://varunksaini.com/reading/pragmaticProgrammer/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&#34;&gt;Pragmatic Programmmer - A must read for every programmer&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>array and slices in go</title>
-      <link>http://varunksaini.com/posts/array-and-slices-in-go/</link>
-      <pubDate>Sat, 15 Nov 2014 19:58:28 CST</pubDate>
-      
-      <guid>http://varunksaini.com/posts/array-and-slices-in-go/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Array and slices in go lang&lt;/h1&gt;
-
-&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;var x [5]int&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;where x is an array which is composed of 5 ints.&lt;/p&gt;
-
-&lt;p&gt;Same as other c family languages, arrays are indexed starting from zero.&lt;/p&gt;
-
-&lt;p&gt;arrays length is fixed and go provides another type &lt;strong&gt;slices&lt;/strong&gt; to work with this situation.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;var x []int&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;x is a slice and has a length of 0.&lt;/p&gt;
-
-&lt;p&gt;We can also create a slice using builtin &lt;strong&gt;make&lt;/strong&gt; function.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x := make([]float64, 5, 10)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where 5 is the length and 10 is the capacity of the underlying array.&lt;/p&gt;
-
-&lt;p&gt;If you have programmed in python than there is a way to create slices that look entirely familiar.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;arr := []int{1, 2, 3, 4, 5}&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x := arr[0:5]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;x&lt;/strong&gt; is a slice of &lt;strong&gt;arr&lt;/strong&gt; and holds all the values. You can change the values by changing the index in x.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x := arr[1:2]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;We can also omit the &lt;strong&gt;low:high&lt;/strong&gt; from slice.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x[0:len(arr)]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x[0:]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x[:4]&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
