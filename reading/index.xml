@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Readings on my new hugo site </title>
+      <title>Readings on Varun K Saini </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://localhost:1313/reading/index.xml/</link>
     <language>en-us</language>
@@ -40,22 +40,22 @@
     </item>
     
     <item>
-      <title>Gustavo Duarte - All about computers</title>
-      <link>http://localhost:1313/reading/GustavoDuarte/</link>
-      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
-      <guid>http://localhost:1313/reading/GustavoDuarte/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://duartes.org/gustavo/blog/&#34;&gt;Gustavo&amp;rsquo;s blog entries - Computer Internals&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Pragmatic Programmer</title>
       <link>http://localhost:1313/reading/pragmaticProgrammer/</link>
       <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
       
       <guid>http://localhost:1313/reading/pragmaticProgrammer/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&#34;&gt;Pragmatic Programmmer - A must read for every programmer&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gustavo Duarte - All about computers</title>
+      <link>http://localhost:1313/reading/GustavoDuarte/</link>
+      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
+      
+      <guid>http://localhost:1313/reading/GustavoDuarte/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://duartes.org/gustavo/blog/&#34;&gt;Gustavo&amp;rsquo;s blog entries - Computer Internals&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

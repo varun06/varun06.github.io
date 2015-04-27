@@ -1,13 +1,81 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on my new hugo site </title>
+      <title>Recent Content on Varun K Saini </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://localhost:1313/index.xml/</link>
     <language>en-us</language>
     
     
-    <updated>Sat, 18 Apr 2015 10:42:00 -0600</updated>
+    <updated>Sun, 26 Apr 2015 07:40:00 -0600</updated>
+    
+    <item>
+      <title>Pointer type in Go</title>
+      <link>http://localhost:1313/posts/pointer_in_go/</link>
+      <pubDate>Sun, 26 Apr 2015 07:40:00 -0600</pubDate>
+      
+      <guid>http://localhost:1313/posts/pointer_in_go/</guid>
+      <description>&lt;p&gt;Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called &lt;a href=&#34;https://golang.org/pkg/unsafe/#Pointer&#34;&gt;unsafe&lt;/a&gt; and unsafe package provides a Pointer type.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;unsafe&amp;quot;
+)
+
+func main() {
+	type test struct{}
+	var myTest = new(test)
+	myPtr := unsafe.Pointer(myTest)
+	fmt.Printf(&amp;quot;%T&amp;quot;, myPtr)
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;myPtr&lt;/code&gt; is &amp;ldquo;unsafe.Pointer&amp;rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to &lt;code&gt;uintptr&lt;/code&gt; first.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;unsafe&amp;quot;
+)
+
+func main() {
+	type test struct{}
+	var myTest = new(test)
+	myPtr := unsafe.Pointer(myTest)
+
+	newMyPtr := uint32(myPtr)
+	fmt.Printf(&amp;quot;%T&amp;quot;, newMyPtr)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will generate an error &amp;ldquo;cannot convert myPtr (type unsafe.Pointer) to type uint32&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;unsafe&amp;quot;
+)
+
+func main() {
+	type test struct{}
+	var myTest = new(test)
+	myPtr := unsafe.Pointer(myTest)
+
+	newMyPtr := uint32(uintptr(myPtr))
+	fmt.Printf(&amp;quot;%T&amp;quot;, newMyPtr)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This works fine.&lt;/p&gt;
+
+&lt;p&gt;Just be carefull when using unsafe package. If not used properly you might end up looking at memory leaks.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>using io.LimitReader to read a binary file</title>
@@ -370,16 +438,6 @@ func main() {
 &lt;p&gt;Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.&lt;/p&gt;
 
 &lt;p&gt;I am fortunate to work with many smart people in my current job and every day I learn new things just by discussing things with them.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Gustavo Duarte - All about computers</title>
-      <link>http://localhost:1313/reading/GustavoDuarte/</link>
-      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
-      <guid>http://localhost:1313/reading/GustavoDuarte/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://duartes.org/gustavo/blog/&#34;&gt;Gustavo&amp;rsquo;s blog entries - Computer Internals&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

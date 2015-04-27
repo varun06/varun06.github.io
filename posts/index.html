@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
   <title>
-    Posts // my new hugo site
+    Posts // Varun K Saini
   </title>
 
   <link href="http://gmpg.org/xfn/11" rel="profile">
@@ -41,7 +41,7 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="http://localhost:1313/posts/index.xml/" rel="alternate" type="application/rss+xml" title="my new hugo site" />
+  <link href="http://localhost:1313/posts/index.xml/" rel="alternate" type="application/rss+xml" title="Varun K Saini" />
 
     
   
@@ -85,6 +85,35 @@
       
 
       <div class="posts">
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/pointer_in_go/">Pointer type in Go</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>26</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Apr</span> <span class="post-date-year">2015</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type. package main import ( &quot;fmt&quot; &quot;unsafe&quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.Pointer(myTest) fmt.Printf(&quot;%T&quot;, myPtr) } myPtr is &ldquo;unsafe.Pointer&rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to uintptr first.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/pointer_in_go/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
         
           <section  class="post">
             <header class="post-header">
