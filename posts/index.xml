@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on varunksaini </title>
+      <title>Posts on my new hugo site </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://varunksaini.com/posts/index.xml/</link>
-    
+    <link>http://localhost:1313/posts/index.xml/</link>
+    <language>en-us</language>
     
     
     <updated>Sat, 18 Apr 2015 10:42:00 -0600</updated>
     
     <item>
       <title>using io.LimitReader to read a binary file</title>
-      <link>http://varunksaini.com/posts/uisng_io_limitreader/</link>
+      <link>http://localhost:1313/posts/uisng_io_limitreader/</link>
       <pubDate>Sat, 18 Apr 2015 10:42:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/uisng_io_limitreader/</guid>
+      <guid>http://localhost:1313/posts/uisng_io_limitreader/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Using io.LimitReader in Go&lt;/h1&gt;
@@ -42,10 +42,10 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
     
     <item>
       <title>Get operating system name in Go</title>
-      <link>http://varunksaini.com/posts/get-os-name-in-go/</link>
+      <link>http://localhost:1313/posts/get-os-name-in-go/</link>
       <pubDate>Sat, 03 Jan 2015 06:13:00 UTC</pubDate>
       
-      <guid>http://varunksaini.com/posts/get-os-name-in-go/</guid>
+      <guid>http://localhost:1313/posts/get-os-name-in-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Get operating system name in Go&lt;/h1&gt;
@@ -70,10 +70,10 @@ func main() {
     
     <item>
       <title>Books I read in 2014</title>
-      <link>http://varunksaini.com/posts/books-in-2014/</link>
+      <link>http://localhost:1313/posts/books-in-2014/</link>
       <pubDate>Thu, 01 Jan 2015 07:00:00 UTC</pubDate>
       
-      <guid>http://varunksaini.com/posts/books-in-2014/</guid>
+      <guid>http://localhost:1313/posts/books-in-2014/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Books I read in 2014&lt;/h1&gt;
@@ -118,10 +118,10 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
     
     <item>
       <title>human&#43;&#43;</title>
-      <link>http://varunksaini.com/posts/new-human-age/</link>
+      <link>http://localhost:1313/posts/new-human-age/</link>
       <pubDate>Tue, 30 Dec 2014 08:11:15 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/new-human-age/</guid>
+      <guid>http://localhost:1313/posts/new-human-age/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;HUMAN++&lt;/h1&gt;
@@ -156,10 +156,10 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
     
     <item>
       <title>Working with files in go lang</title>
-      <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
+      <link>http://localhost:1313/posts/working-with-files-in-go/</link>
       <pubDate>Sat, 13 Dec 2014 06:40:15 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
+      <guid>http://localhost:1313/posts/working-with-files-in-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Working with files in go lang&lt;/h1&gt;
@@ -232,10 +232,10 @@ func main() {
     
     <item>
       <title>Go lang boiler plate sublime text snippet</title>
-      <link>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</link>
+      <link>http://localhost:1313/posts/go-boiler-plate-snippet-sublime-text/</link>
       <pubDate>Sat, 06 Dec 2014 19:07:32 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</guid>
+      <guid>http://localhost:1313/posts/go-boiler-plate-snippet-sublime-text/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;A sublime Text snippet to auto fill go lang boiler plate&lt;/h1&gt;
@@ -270,10 +270,10 @@ in sublime text, paste the above code and make require changes.&lt;/p&gt;
     
     <item>
       <title>Find Mimimum Value in an array in go</title>
-      <link>http://varunksaini.com/posts/find-minimum-value-array-go/</link>
+      <link>http://localhost:1313/posts/find-minimum-value-array-go/</link>
       <pubDate>Wed, 26 Nov 2014 06:24:00 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/find-minimum-value-array-go/</guid>
+      <guid>http://localhost:1313/posts/find-minimum-value-array-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;How to find a min array value in go lang:&lt;/h1&gt;
@@ -307,10 +307,10 @@ func main() {
     
     <item>
       <title>Working with smart people</title>
-      <link>http://varunksaini.com/posts/working-with-smart-people/</link>
+      <link>http://localhost:1313/posts/working-with-smart-people/</link>
       <pubDate>Tue, 25 Nov 2014 17:52:32 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/working-with-smart-people/</guid>
+      <guid>http://localhost:1313/posts/working-with-smart-people/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Working with samrt people&lt;/h1&gt;
@@ -325,10 +325,10 @@ func main() {
     
     <item>
       <title>array and slices in go</title>
-      <link>http://varunksaini.com/posts/array-and-slices-in-go/</link>
+      <link>http://localhost:1313/posts/array-and-slices-in-go/</link>
       <pubDate>Sat, 15 Nov 2014 19:58:28 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/array-and-slices-in-go/</guid>
+      <guid>http://localhost:1313/posts/array-and-slices-in-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Array and slices in go lang&lt;/h1&gt;
@@ -375,10 +375,10 @@ func main() {
     
     <item>
       <title>learning go</title>
-      <link>http://varunksaini.com/posts/learning-go/</link>
+      <link>http://localhost:1313/posts/learning-go/</link>
       <pubDate>Sat, 23 Aug 2014 19:59:32 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/learning-go/</guid>
+      <guid>http://localhost:1313/posts/learning-go/</guid>
       <description>&lt;p&gt;Go language has this definition on &lt;a href=&#34;http://http://golang.org/&#34;&gt;golang&lt;/a&gt;:
 &amp;gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
 

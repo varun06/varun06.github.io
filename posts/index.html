@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <title>
+    Posts // my new hugo site
+  </title>
+
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+
+  <meta property="og:title" content="Posts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="http://localhost:1313/posts/" />
+
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/base-min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css">
+  
+  
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/grids-responsive-min.css">
+  
+  
+
+  <link rel="stylesheet" href="http://localhost:1313/css/redlounge.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="http://localhost:1313/posts/index.xml/" rel="alternate" type="application/rss+xml" title="my new hugo site" />
+
+    
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/tomorrow-night-bright.min.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+
+  
+
+  
+</head>
+
+<body>
+	<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+  <div class="header">
+    
+
+    
+    
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://localhost:1313">Home</a></li>
+        
+      </ul>
+    </nav>
+
+    
+
+  </div>
+</div>
+
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+      <a name="top"></a>
+      
+
+      <div class="posts">
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/uisng_io_limitreader/">using io.LimitReader to read a binary file</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>18</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Apr</span> <span class="post-date-year">2015</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Using io.LimitReader in Go I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;)
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/uisng_io_limitreader/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/get-os-name-in-go/">Get operating system name in Go</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>3</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Jan</span> <span class="post-date-year">2015</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Get operating system name in Go To get the operating system name where we running a Go program, we can use runtime package. runtime.GOOS return the operating system name. Some people try to use os.Getenv(&ldquo;GOOS&rdquo;) but it is not very reliable. I always use runtime package. package main import ( &quot;fmt&quot; &quot;runtime&quot; ) func main() { var goos string = runtime.GOOS fmt.Printf(&quot;The operating system is: %s\n&quot;, goos) }
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/get-os-name-in-go/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/books-in-2014/">Books I read in 2014</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>1</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Jan</span> <span class="post-date-year">2015</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Books I read in 2014 I read 7 books (and ton of artilcles in pockets app) this year. Most of the books that I read were technical ranging on different topics. I read couple of physics books such as Hidden In Plain Sight 2: The Equation of the Universe and The particles of universe. I read one fiction book Lethal Code, which I didn&rsquo;t like much. It had a great promise but writing could have been better.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/books-in-2014/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/new-human-age/">human&#43;&#43;</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>30</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Dec</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>2 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	HUMAN++ We all talk about an omnipotent AI that will come some time in future and might kill (hypothetically) its masters (humans in this case). I will love to have intelligent robots but I don&rsquo;t see it happening soon. What I believe will happen before AI take over the world, human++, more intelligent humans. If we look carefully we will see subtle changes and technical breakthroughs that are happening around us and pointing towards a brave new world.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/new-human-age/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/working-with-files-in-go/">Working with files in go lang</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>13</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Dec</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Working with files in go lang Go makes working with file very easy and file reading is an operation that is used very frequently. To open a file in Go, we can use &ldquo;Open&rdquo; function from the &ldquo;os&rdquo; package. package main import ( &quot;fmt&quot; &quot;os&quot; ) func main() { file, err := os.Open(&quot;test.txt&quot;) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } defer file.Close() size, err := file.Stat() if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } fs := make([]byte, size.Size()) _, err = file.Read(fs) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } str := string(fs) fmt.Println(str) } I really like how you can simply defer the file close operation just after creating a file object.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/working-with-files-in-go/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/go-boiler-plate-snippet-sublime-text/">Go lang boiler plate sublime text snippet</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>6</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Dec</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	A sublime Text snippet to auto fill go lang boiler plate If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/go-boiler-plate-snippet-sublime-text/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/find-minimum-value-array-go/">Find Mimimum Value in an array in go</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>26</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Nov</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	How to find a min array value in go lang: package main import ( &quot;fmt&quot; ) func main() { x := []int{ 48, 96, 86, 68, 57, 82, 63, 70, 37, 34, 83, 27, 19, 97, 9, 17, } min:= x[0] for _, value := range x { if value &lt; min { min = value } } fmt.Println(min) }
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/find-minimum-value-array-go/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/working-with-smart-people/">Working with smart people</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>25</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Nov</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Working with samrt people People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&rsquo;t even recognize them. Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/working-with-smart-people/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/array-and-slices-in-go/">array and slices in go</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>15</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Nov</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Array and slices in go lang In go lang, an array looks like this - var x [5]int where x is an array which is composed of 5 ints. Same as other c family languages, arrays are indexed starting from zero. arrays length is fixed and go provides another type slices to work with this situation. var x []int x is a slice and has a length of 0. We can also create a slice using builtin make function.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/array-and-slices-in-go/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+          <section  class="post">
+            <header class="post-header">
+            
+            <h1 class="post-title">
+              <a href="/posts/learning-go/">learning go</a>
+            </h1>
+            </header>
+            <p class="post-meta">
+            	
+		          <span class="post-date">
+		            <span class="post-date-day"><sup>23</sup></span><span class="post-date-separator">/</span><span class="post-date-month">Aug</span> <span class="post-date-year">2014</span>
+		          </span>
+      				
+      				
+      					
+      				
+              
+                <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>1 min. read</em></span>
+              
+      				
+            </p>
+            <article class="post-summary">
+            	Go language has this definition on golang: &gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software. If you have worked with C family languages (such as C, C++, Java, Python etc.) Go will look familiar to you. I have been working with python from some time and wanted to learn a static typed language. Go is easy to learn and you can start writing code very soon.
+            </article>
+			<div class="read-more-link">
+				<a href="/posts/learning-go/"><span class="read-more-slashes">//</span>Read More...</a>
+			</div>
+          </section>
+        
+      </div>
+
+      <div class="footer">
+	<hr class="thin" />
+	<div class="pure-menu pure-menu-horizontal pure-menu-open">
+		<ul class="footer-menu">
+		
+		</ul>
+	</div>
+
+	<p>&copy; 2015. All rights reserved. </p>
+</div>
+    </div>
+  </div>
+  
+</body>
+</html>

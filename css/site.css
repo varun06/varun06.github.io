@@ -1,20 +1,17 @@
 /* typography */
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 
 body {
-    word-spacing: 0.1em;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: normal;
     font-variant: small-caps;
-    letter-spacing:0.2em;
 }
 
-h1 small, h2 small, h3 small, caption small, thead th small {
-}
 h1, .h1 {
    font-size:1.75em;
 }
+
 h3, .h3 {
     text-shadow: 0 0 1px #667;
 }
@@ -22,26 +19,25 @@ h3, .h3 {
 h1 {
     margin: 1em 0 .5em;
 }
+
 h2 {
     line-height: 1.3125;
     margin: 1em 0;
     clear: both;
 }
+
 h3 {
    line-height: 1.167;
    display:block;
    margin: .5em 0;
 }
+
 section:first-child h3 {
    margin-top:0;
 }
 
-h4 {
-    font-style:italic;
-}
-
 p {
-  margin: 0 0 5px;
+  margin: 0 0 8px;
 }
 
 #sidebar {
@@ -51,8 +47,6 @@ p {
 
 #site-footer {
    font-size:60%;
-}
-#sub-footer {
 }
 
 .lines {

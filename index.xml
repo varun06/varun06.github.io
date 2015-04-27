@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Recent Content on varunksaini </title>
+      <title>Recent Content on my new hugo site </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://varunksaini.com/index.xml/</link>
-    
+    <link>http://localhost:1313/index.xml/</link>
+    <language>en-us</language>
     
     
     <updated>Sat, 18 Apr 2015 10:42:00 -0600</updated>
     
     <item>
       <title>using io.LimitReader to read a binary file</title>
-      <link>http://varunksaini.com/posts/uisng_io_limitreader/</link>
+      <link>http://localhost:1313/posts/uisng_io_limitreader/</link>
       <pubDate>Sat, 18 Apr 2015 10:42:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/uisng_io_limitreader/</guid>
+      <guid>http://localhost:1313/posts/uisng_io_limitreader/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Using io.LimitReader in Go&lt;/h1&gt;
@@ -42,20 +42,20 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
     
     <item>
       <title>Thinking, Fast and Slow</title>
-      <link>http://varunksaini.com/reading/thinking_fast_and_slow/</link>
+      <link>http://localhost:1313/reading/thinking_fast_and_slow/</link>
       <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/thinking_fast_and_slow/</guid>
+      <guid>http://localhost:1313/reading/thinking_fast_and_slow/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Get operating system name in Go</title>
-      <link>http://varunksaini.com/posts/get-os-name-in-go/</link>
+      <link>http://localhost:1313/posts/get-os-name-in-go/</link>
       <pubDate>Sat, 03 Jan 2015 06:13:00 UTC</pubDate>
       
-      <guid>http://varunksaini.com/posts/get-os-name-in-go/</guid>
+      <guid>http://localhost:1313/posts/get-os-name-in-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Get operating system name in Go&lt;/h1&gt;
@@ -80,10 +80,10 @@ func main() {
     
     <item>
       <title>Books I read in 2014</title>
-      <link>http://varunksaini.com/posts/books-in-2014/</link>
+      <link>http://localhost:1313/posts/books-in-2014/</link>
       <pubDate>Thu, 01 Jan 2015 07:00:00 UTC</pubDate>
       
-      <guid>http://varunksaini.com/posts/books-in-2014/</guid>
+      <guid>http://localhost:1313/posts/books-in-2014/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Books I read in 2014&lt;/h1&gt;
@@ -128,10 +128,10 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
     
     <item>
       <title>human&#43;&#43;</title>
-      <link>http://varunksaini.com/posts/new-human-age/</link>
+      <link>http://localhost:1313/posts/new-human-age/</link>
       <pubDate>Tue, 30 Dec 2014 08:11:15 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/new-human-age/</guid>
+      <guid>http://localhost:1313/posts/new-human-age/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;HUMAN++&lt;/h1&gt;
@@ -166,10 +166,10 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
     
     <item>
       <title>Working with files in go lang</title>
-      <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
+      <link>http://localhost:1313/posts/working-with-files-in-go/</link>
       <pubDate>Sat, 13 Dec 2014 06:40:15 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
+      <guid>http://localhost:1313/posts/working-with-files-in-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Working with files in go lang&lt;/h1&gt;
@@ -242,30 +242,30 @@ func main() {
     
     <item>
       <title>Particles of the universe</title>
-      <link>http://varunksaini.com/reading/Particles_of_the_universe/</link>
+      <link>http://localhost:1313/reading/Particles_of_the_universe/</link>
       <pubDate>Sat, 13 Dec 2014 06:32:30 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/Particles_of_the_universe/</guid>
+      <guid>http://localhost:1313/reading/Particles_of_the_universe/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/&#34;&gt;Particles of the universe&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>The Ultimate Bar Book</title>
-      <link>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</link>
+      <link>http://localhost:1313/reading/the_Ultimate_Bar_Book/</link>
       <pubDate>Sat, 13 Dec 2014 06:29:30 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</guid>
+      <guid>http://localhost:1313/reading/the_Ultimate_Bar_Book/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Ultimate-Bar-Book-Comprehensive-Cocktails-ebook/dp/B003IV8GUY&#34;&gt;The Ultimate Bar Book: The Comprehensive Guide to Over 1,000 Cocktails&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Go lang boiler plate sublime text snippet</title>
-      <link>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</link>
+      <link>http://localhost:1313/posts/go-boiler-plate-snippet-sublime-text/</link>
       <pubDate>Sat, 06 Dec 2014 19:07:32 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</guid>
+      <guid>http://localhost:1313/posts/go-boiler-plate-snippet-sublime-text/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;A sublime Text snippet to auto fill go lang boiler plate&lt;/h1&gt;
@@ -300,20 +300,20 @@ in sublime text, paste the above code and make require changes.&lt;/p&gt;
     
     <item>
       <title>lethal code</title>
-      <link>http://varunksaini.com/backup/lethal-code/</link>
+      <link>http://localhost:1313/backup/lethal-code/</link>
       <pubDate>Mon, 01 Dec 2014 07:01:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/backup/lethal-code/</guid>
+      <guid>http://localhost:1313/backup/lethal-code/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Lethal-Code-Lana-Elkins-Thriller/dp/1477825053/&#34;&gt;lethal code : Fiction about cyber attacks on power grid etc.&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Find Mimimum Value in an array in go</title>
-      <link>http://varunksaini.com/posts/find-minimum-value-array-go/</link>
+      <link>http://localhost:1313/posts/find-minimum-value-array-go/</link>
       <pubDate>Wed, 26 Nov 2014 06:24:00 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/find-minimum-value-array-go/</guid>
+      <guid>http://localhost:1313/posts/find-minimum-value-array-go/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;How to find a min array value in go lang:&lt;/h1&gt;
@@ -347,20 +347,20 @@ func main() {
     
     <item>
       <title>GO lang book</title>
-      <link>http://varunksaini.com/backup/golang-book/</link>
+      <link>http://localhost:1313/backup/golang-book/</link>
       <pubDate>Wed, 26 Nov 2014 07:01:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/backup/golang-book/</guid>
+      <guid>http://localhost:1313/backup/golang-book/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.golang-book.com/&#34;&gt;golang book - good for go lang beginners&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Working with smart people</title>
-      <link>http://varunksaini.com/posts/working-with-smart-people/</link>
+      <link>http://localhost:1313/posts/working-with-smart-people/</link>
       <pubDate>Tue, 25 Nov 2014 17:52:32 CST</pubDate>
       
-      <guid>http://varunksaini.com/posts/working-with-smart-people/</guid>
+      <guid>http://localhost:1313/posts/working-with-smart-people/</guid>
       <description>
 
 &lt;h1 id=&#34;toc_0&#34;&gt;Working with samrt people&lt;/h1&gt;
@@ -375,21 +375,21 @@ func main() {
     
     <item>
       <title>Gustavo Duarte - All about computers</title>
-      <link>http://varunksaini.com/reading/GustavoDuarte/</link>
+      <link>http://localhost:1313/reading/GustavoDuarte/</link>
       <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/GustavoDuarte/</guid>
+      <guid>http://localhost:1313/reading/GustavoDuarte/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://duartes.org/gustavo/blog/&#34;&gt;Gustavo&amp;rsquo;s blog entries - Computer Internals&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Pragmatic Programmer</title>
-      <link>http://varunksaini.com/reading/pragmaticProgrammer/</link>
+      <title>GO Programming Book by Jeremy Saenz</title>
+      <link>http://localhost:1313/backup/goProgrammingBook/</link>
       <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/pragmaticProgrammer/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&#34;&gt;Pragmatic Programmmer - A must read for every programmer&lt;/a&gt;&lt;/p&gt;
+      <guid>http://localhost:1313/backup/goProgrammingBook/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://twitter.com/codegangsta&#34;&gt;&amp;ldquo;GO Programming Book&amp;rdquo; written by Jeremy Saenz&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

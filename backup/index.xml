@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Backups on varunksaini </title>
+      <title>Backups on my new hugo site </title>
       <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://varunksaini.com/backup/index.xml/</link>
-    
+    <link>http://localhost:1313/backup/index.xml/</link>
+    <language>en-us</language>
     
     
     <updated>Mon, 01 Dec 2014 07:01:18 -0400</updated>
     
     <item>
       <title>lethal code</title>
-      <link>http://varunksaini.com/backup/lethal-code/</link>
+      <link>http://localhost:1313/backup/lethal-code/</link>
       <pubDate>Mon, 01 Dec 2014 07:01:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/backup/lethal-code/</guid>
+      <guid>http://localhost:1313/backup/lethal-code/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Lethal-Code-Lana-Elkins-Thriller/dp/1477825053/&#34;&gt;lethal code : Fiction about cyber attacks on power grid etc.&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>GO lang book</title>
-      <link>http://varunksaini.com/backup/golang-book/</link>
+      <link>http://localhost:1313/backup/golang-book/</link>
       <pubDate>Wed, 26 Nov 2014 07:01:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/backup/golang-book/</guid>
+      <guid>http://localhost:1313/backup/golang-book/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.golang-book.com/&#34;&gt;golang book - good for go lang beginners&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>GO Programming Book by Jeremy Saenz</title>
-      <link>http://varunksaini.com/backup/goProgrammingBook/</link>
+      <link>http://localhost:1313/backup/goProgrammingBook/</link>
       <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
       
-      <guid>http://varunksaini.com/backup/goProgrammingBook/</guid>
+      <guid>http://localhost:1313/backup/goProgrammingBook/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://twitter.com/codegangsta&#34;&gt;&amp;ldquo;GO Programming Book&amp;rdquo; written by Jeremy Saenz&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
