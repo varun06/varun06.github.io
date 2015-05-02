@@ -5,7 +5,7 @@
       <generator uri="https://hugo.spf13.com">Hugo</generator>
     <link>http://varunksaini.com/reading/index.xml/</link>
     <language>en-us</language>
-    
+    <author>Varun Saini</author>
     
     <updated>Sat, 18 Apr 2015 10:36:30 -0400</updated>
     
@@ -13,7 +13,7 @@
       <title>Thinking, Fast and Slow</title>
       <link>http://varunksaini.com/reading/thinking_fast_and_slow/</link>
       <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
-      
+      <author>Varun Saini</author>
       <guid>http://varunksaini.com/reading/thinking_fast_and_slow/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -23,7 +23,7 @@
       <title>Particles of the universe</title>
       <link>http://varunksaini.com/reading/Particles_of_the_universe/</link>
       <pubDate>Sat, 13 Dec 2014 06:32:30 -0400</pubDate>
-      
+      <author>Varun Saini</author>
       <guid>http://varunksaini.com/reading/Particles_of_the_universe/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/&#34;&gt;Particles of the universe&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -33,19 +33,9 @@
       <title>The Ultimate Bar Book</title>
       <link>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</link>
       <pubDate>Sat, 13 Dec 2014 06:29:30 -0400</pubDate>
-      
+      <author>Varun Saini</author>
       <guid>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Ultimate-Bar-Book-Comprehensive-Cocktails-ebook/dp/B003IV8GUY&#34;&gt;The Ultimate Bar Book: The Comprehensive Guide to Over 1,000 Cocktails&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pragmatic Programmer</title>
-      <link>http://varunksaini.com/reading/pragmaticProgrammer/</link>
-      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/pragmaticProgrammer/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&#34;&gt;Pragmatic Programmmer - A must read for every programmer&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -53,9 +43,19 @@
       <title>Gustavo Duarte - All about computers</title>
       <link>http://varunksaini.com/reading/GustavoDuarte/</link>
       <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
+      <author>Varun Saini</author>
       <guid>http://varunksaini.com/reading/GustavoDuarte/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://duartes.org/gustavo/blog/&#34;&gt;Gustavo&amp;rsquo;s blog entries - Computer Internals&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Pragmatic Programmer</title>
+      <link>http://varunksaini.com/reading/pragmaticProgrammer/</link>
+      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
+      <author>Varun Saini</author>
+      <guid>http://varunksaini.com/reading/pragmaticProgrammer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&#34;&gt;Pragmatic Programmmer - A must read for every programmer&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
