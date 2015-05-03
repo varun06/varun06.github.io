@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-      <title>Posts on Varun K Saini </title>
-      <generator uri="https://hugo.spf13.com">Hugo</generator>
-    <link>http://varunksaini.com/posts/index.xml/</link>
+    <title>Posts on Varun K Saini</title>
+    <link>http://varunksaini.com/posts/</link>
+    <description>Recent content in Posts on Varun K Saini</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Varun Saini</author>
-    
-    <updated>Sun, 26 Apr 2015 07:40:00 -0600</updated>
+    <copyright>All rights reserved - 2015</copyright>
+    <lastBuildDate>Sun, 26 Apr 2015 07:40:00 -0600</lastBuildDate>
+    <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Pointer type in Go</title>
       <link>http://varunksaini.com/posts/pointer_in_go/</link>
       <pubDate>Sun, 26 Apr 2015 07:40:00 -0600</pubDate>
-      <author>Varun Saini</author>
+      
       <guid>http://varunksaini.com/posts/pointer_in_go/</guid>
       <description>&lt;p&gt;Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called &lt;a href=&#34;https://golang.org/pkg/unsafe/#Pointer&#34;&gt;unsafe&lt;/a&gt; and unsafe package provides a Pointer type.&lt;/p&gt;
 
@@ -79,15 +80,11 @@ func main() {
     
     <item>
       <title>using io.LimitReader to read a binary file</title>
-      <link>http://varunksaini.com/posts/uisng_io_limitreader/</link>
+      <link>http://varunksaini.com/posts/using_io_limitreader/</link>
       <pubDate>Sat, 18 Apr 2015 10:42:00 -0600</pubDate>
-      <author>Varun Saini</author>
-      <guid>http://varunksaini.com/posts/uisng_io_limitreader/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Using io.LimitReader in Go&lt;/h1&gt;
-
-&lt;p&gt;I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through &lt;a href=&#34;http://golang.org/pkg/io/#LimitedReader&#34;&gt;io.LimitReader&lt;/a&gt;. According to official documentation, &amp;ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&amp;rdquo; and this is what I wanted.&lt;/p&gt;
+      
+      <guid>http://varunksaini.com/posts/using_io_limitreader/</guid>
+      <description>&lt;p&gt;I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through &lt;a href=&#34;http://golang.org/pkg/io/#LimitedReader&#34;&gt;io.LimitReader&lt;/a&gt;. According to official documentation, &amp;ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&amp;rdquo; and this is what I wanted.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;
 f, _ := os.Open(&amp;quot;largefile.bin&amp;quot;)
@@ -111,14 +108,10 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
     <item>
       <title>Get operating system name in Go</title>
       <link>http://varunksaini.com/posts/get-os-name-in-go/</link>
-      <pubDate>Sat, 03 Jan 2015 06:13:00 UTC</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Sat, 03 Jan 2015 06:13:00 +0000</pubDate>
+      
       <guid>http://varunksaini.com/posts/get-os-name-in-go/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Get operating system name in Go&lt;/h1&gt;
-
-&lt;p&gt;To get the operating system name where we running a Go program, we can use &lt;strong&gt;runtime&lt;/strong&gt; package. &lt;strong&gt;runtime.GOOS&lt;/strong&gt; return the operating system name. Some people try to use &lt;strong&gt;os.Getenv(&amp;ldquo;GOOS&amp;rdquo;)&lt;/strong&gt; but it is not very reliable. I always use &lt;a href=&#34;http://golang.org/pkg/runtime/&#34;&gt;runtime package&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;To get the operating system name where we running a Go program, we can use &lt;strong&gt;runtime&lt;/strong&gt; package. &lt;strong&gt;runtime.GOOS&lt;/strong&gt; return the operating system name. Some people try to use &lt;strong&gt;os.Getenv(&amp;ldquo;GOOS&amp;rdquo;)&lt;/strong&gt; but it is not very reliable. I always use &lt;a href=&#34;http://golang.org/pkg/runtime/&#34;&gt;runtime package&lt;/a&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;package main
 
@@ -139,17 +132,13 @@ func main() {
     <item>
       <title>Books I read in 2014</title>
       <link>http://varunksaini.com/posts/books-in-2014/</link>
-      <pubDate>Thu, 01 Jan 2015 07:00:00 UTC</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Thu, 01 Jan 2015 07:00:00 +0000</pubDate>
+      
       <guid>http://varunksaini.com/posts/books-in-2014/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Books I read in 2014&lt;/h1&gt;
-
-&lt;p&gt;I read 7 books (and ton of artilcles in &lt;a href=&#34;http://getpocket.com/&#34;&gt;pockets&lt;/a&gt; app) this year.&lt;/p&gt;
+      <description>&lt;p&gt;I read 7 books (and ton of artilcles in &lt;a href=&#34;http://getpocket.com/&#34;&gt;pockets&lt;/a&gt; app) this year.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
-&lt;img src=&#34;/img/pocket.png&#34; alt=&#34;Pocket app stats&#34; title=&#34;Pocket app&#34; style=&#34;width:500px; height: 300px;&#34;&gt;
+&lt;img src=&#34;http://varunksaini.com/img/pocket.png&#34; alt=&#34;Pocket app stats&#34; title=&#34;Pocket app&#34; style=&#34;width:500px; height: 300px;&#34;&gt;
 &lt;br&gt;&lt;/p&gt;
 
 &lt;p&gt;Most of the books that I read were technical ranging on different topics. I read couple of physics books such as &lt;a href=&#34;http://www.amazon.com/gp/product/B00DFL353K/&#34;&gt;Hidden In Plain Sight 2: The Equation of the Universe&lt;/a&gt; and &lt;a href=&#34;http://www.amazon.com/The-Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW&#34;&gt;The particles of universe&lt;/a&gt;.&lt;/p&gt;
@@ -187,14 +176,10 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
     <item>
       <title>human&#43;&#43;</title>
       <link>http://varunksaini.com/posts/new-human-age/</link>
-      <pubDate>Tue, 30 Dec 2014 08:11:15 CST</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Tue, 30 Dec 2014 08:11:15 -0600</pubDate>
+      
       <guid>http://varunksaini.com/posts/new-human-age/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;HUMAN++&lt;/h1&gt;
-
-&lt;p&gt;We all talk about an omnipotent AI that will come some time in future and might kill (hypothetically) its masters (humans in this case). I will love to have intelligent robots but I don&amp;rsquo;t see it happening soon. What I believe will happen before AI take over the world, human++, more intelligent humans. If we look carefully we will see subtle changes and technical breakthroughs that are happening around us and pointing towards a brave new world. Some people call this phenomena &amp;ldquo;Singularity&amp;rdquo; but I call it human++.&lt;/p&gt;
+      <description>&lt;p&gt;We all talk about an omnipotent AI that will come some time in future and might kill (hypothetically) its masters (humans in this case). I will love to have intelligent robots but I don&amp;rsquo;t see it happening soon. What I believe will happen before AI take over the world, human++, more intelligent humans. If we look carefully we will see subtle changes and technical breakthroughs that are happening around us and pointing towards a brave new world. Some people call this phenomena &amp;ldquo;Singularity&amp;rdquo; but I call it human++.&lt;/p&gt;
 
 &lt;p&gt;There are many cutting edge research and experiments happening to make this a reality. Some of these are mentioned below and well worth you time to check out.&lt;/p&gt;
 
@@ -225,14 +210,10 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
     <item>
       <title>Working with files in go lang</title>
       <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
-      <pubDate>Sat, 13 Dec 2014 06:40:15 CST</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Sat, 13 Dec 2014 06:40:15 -0600</pubDate>
+      
       <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Working with files in go lang&lt;/h1&gt;
-
-&lt;p&gt;Go makes working with file very easy and file reading is an operation that is used very frequently.&lt;/p&gt;
+      <description>&lt;p&gt;Go makes working with file very easy and file reading is an operation that is used very frequently.&lt;/p&gt;
 
 &lt;p&gt;To open a file in Go, we can use &amp;ldquo;Open&amp;rdquo; function from the &amp;ldquo;os&amp;rdquo; package.&lt;/p&gt;
 
@@ -301,14 +282,10 @@ func main() {
     <item>
       <title>Go lang boiler plate sublime text snippet</title>
       <link>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</link>
-      <pubDate>Sat, 06 Dec 2014 19:07:32 CST</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Sat, 06 Dec 2014 19:07:32 -0600</pubDate>
+      
       <guid>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;A sublime Text snippet to auto fill go lang boiler plate&lt;/h1&gt;
-
-&lt;p&gt;If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate.&lt;/p&gt;
+      <description>&lt;p&gt;If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;&amp;lt;snippet&amp;gt;
 	&amp;lt;content&amp;gt;&amp;lt;![CDATA[
@@ -339,14 +316,10 @@ in sublime text, paste the above code and make require changes.&lt;/p&gt;
     <item>
       <title>Find Mimimum Value in an array in go</title>
       <link>http://varunksaini.com/posts/find-minimum-value-array-go/</link>
-      <pubDate>Wed, 26 Nov 2014 06:24:00 CST</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Wed, 26 Nov 2014 06:24:00 -0600</pubDate>
+      
       <guid>http://varunksaini.com/posts/find-minimum-value-array-go/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;How to find a min array value in go lang:&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+      <description>&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
 
 import (
 	&amp;quot;fmt&amp;quot;
@@ -376,14 +349,10 @@ func main() {
     <item>
       <title>Working with smart people</title>
       <link>http://varunksaini.com/posts/working-with-smart-people/</link>
-      <pubDate>Tue, 25 Nov 2014 17:52:32 CST</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Tue, 25 Nov 2014 17:52:32 -0600</pubDate>
+      
       <guid>http://varunksaini.com/posts/working-with-smart-people/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Working with samrt people&lt;/h1&gt;
-
-&lt;p&gt;People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&amp;rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&amp;rsquo;t even recognize them.&lt;/p&gt;
+      <description>&lt;p&gt;People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&amp;rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&amp;rsquo;t even recognize them.&lt;/p&gt;
 
 &lt;p&gt;Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.&lt;/p&gt;
 
@@ -394,14 +363,10 @@ func main() {
     <item>
       <title>array and slices in go</title>
       <link>http://varunksaini.com/posts/array-and-slices-in-go/</link>
-      <pubDate>Sat, 15 Nov 2014 19:58:28 CST</pubDate>
-      <author>Varun Saini</author>
+      <pubDate>Sat, 15 Nov 2014 19:58:28 -0600</pubDate>
+      
       <guid>http://varunksaini.com/posts/array-and-slices-in-go/</guid>
-      <description>
-
-&lt;h1 id=&#34;toc_0&#34;&gt;Array and slices in go lang&lt;/h1&gt;
-
-&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
+      <description>&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;var x [5]int&lt;/code&gt;&lt;/p&gt;
 
@@ -445,7 +410,7 @@ func main() {
       <title>learning go</title>
       <link>http://varunksaini.com/posts/learning-go/</link>
       <pubDate>Sat, 23 Aug 2014 19:59:32 -0600</pubDate>
-      <author>Varun Saini</author>
+      
       <guid>http://varunksaini.com/posts/learning-go/</guid>
       <description>&lt;p&gt;Go language has this definition on &lt;a href=&#34;http://http://golang.org/&#34;&gt;golang&lt;/a&gt;:
 &amp;gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;

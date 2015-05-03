@@ -31,7 +31,7 @@
   
   
 
-  <link rel="stylesheet" href="http://varunksaini.com/css/redlounge.css">
+  <link rel="stylesheet" href="http://varunksaini.com//css/redlounge.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -41,7 +41,7 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="http://varunksaini.com/index.xml/" rel="alternate" type="application/rss+xml" title="Varun K Saini" />
+  <link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Varun K Saini" />
 
     
   
@@ -64,27 +64,16 @@
   <div class="header">
     
 
-    <h1 class="brand-title">Varun Saini</h1>
-    <h2 class="brand-tagline">AI Prophet</h2>
+    
+    
 
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://varunksaini.com">Home</a></li>
-        
-          <li class="nav-item"><span class="nav-item-separator">//</span><a href="/posts">Blog</a></li>
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://varunksaini.com/">Home</a></li>
         
       </ul>
     </nav>
 
-    
-    <div class="social-buttons">
-      
-        
-        <a href="http://www.twitter.com/AIProphet" target="_blank"><i class='fa fa-twitter'></i></a>
-        
-      
-      
-    </div>
     
 
   </div>
@@ -131,7 +120,7 @@
                 <header class="post-header">
                     
                     <h1 class="post-title">
-                      <a href="/posts/uisng_io_limitreader/">using io.LimitReader to read a binary file</a>
+                      <a href="/posts/using_io_limitreader/">using io.LimitReader to read a binary file</a>
                   </h1>
               </header>
               <p class="post-meta">
@@ -149,10 +138,10 @@
                 
             </p>
             <article class="post-summary">
-                  Using io.LimitReader in Go I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;)
+                  I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;) f.Seek(123, 0) b :=
               </article>
               <div class="read-more-link">
-                  <a href="/posts/uisng_io_limitreader/"><span class="read-more-slashes">//</span>Read More...</a>
+                  <a href="/posts/using_io_limitreader/"><span class="read-more-slashes">//</span>Read More...</a>
               </div>
           </section>
           
@@ -207,7 +196,7 @@
                 
             </p>
             <article class="post-summary">
-                  Get operating system name in Go To get the operating system name where we running a Go program, we can use runtime package. runtime.GOOS return the operating system name. Some people try to use os.Getenv(&ldquo;GOOS&rdquo;) but it is not very reliable. I always use runtime package. package main import ( &quot;fmt&quot; &quot;runtime&quot; ) func main() { var goos string = runtime.GOOS fmt.Printf(&quot;The operating system is: %s\n&quot;, goos) }
+                  To get the operating system name where we running a Go program, we can use runtime package. runtime.GOOS return the operating system name. Some people try to use os.Getenv(&ldquo;GOOS&rdquo;) but it is not very reliable. I always use runtime package. package main import ( &quot;fmt&quot; &quot;runtime&quot; ) func main() { var goos string = runtime.GOOS fmt.Printf(&quot;The operating system is: %s\n&quot;, goos) }
               </article>
               <div class="read-more-link">
                   <a href="/posts/get-os-name-in-go/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -236,7 +225,7 @@
                 
             </p>
             <article class="post-summary">
-                  Books I read in 2014 I read 7 books (and ton of artilcles in pockets app) this year. Most of the books that I read were technical ranging on different topics. I read couple of physics books such as Hidden In Plain Sight 2: The Equation of the Universe and The particles of universe. I read one fiction book Lethal Code, which I didn&rsquo;t like much. It had a great promise but writing could have been better.
+                  I read 7 books (and ton of artilcles in pockets app) this year. Most of the books that I read were technical ranging on different topics. I read couple of physics books such as Hidden In Plain Sight 2: The Equation of the Universe and The particles of universe. I read one fiction book Lethal Code, which I didn&rsquo;t like much. It had a great promise but writing could have been better.
               </article>
               <div class="read-more-link">
                   <a href="/posts/books-in-2014/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -265,7 +254,7 @@
                 
             </p>
             <article class="post-summary">
-                  HUMAN++ We all talk about an omnipotent AI that will come some time in future and might kill (hypothetically) its masters (humans in this case). I will love to have intelligent robots but I don&rsquo;t see it happening soon. What I believe will happen before AI take over the world, human++, more intelligent humans. If we look carefully we will see subtle changes and technical breakthroughs that are happening around us and pointing towards a brave new world.
+                  We all talk about an omnipotent AI that will come some time in future and might kill (hypothetically) its masters (humans in this case). I will love to have intelligent robots but I don&rsquo;t see it happening soon. What I believe will happen before AI take over the world, human++, more intelligent humans. If we look carefully we will see subtle changes and technical breakthroughs that are happening around us and pointing towards a brave new world.
               </article>
               <div class="read-more-link">
                   <a href="/posts/new-human-age/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -294,7 +283,7 @@
                 
             </p>
             <article class="post-summary">
-                  Working with files in go lang Go makes working with file very easy and file reading is an operation that is used very frequently. To open a file in Go, we can use &ldquo;Open&rdquo; function from the &ldquo;os&rdquo; package. package main import ( &quot;fmt&quot; &quot;os&quot; ) func main() { file, err := os.Open(&quot;test.txt&quot;) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } defer file.Close() size, err := file.Stat() if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } fs := make([]byte, size.Size()) _, err = file.Read(fs) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } str := string(fs) fmt.Println(str) } I really like how you can simply defer the file close operation just after creating a file object.
+                  Go makes working with file very easy and file reading is an operation that is used very frequently. To open a file in Go, we can use &ldquo;Open&rdquo; function from the &ldquo;os&rdquo; package. package main import ( &quot;fmt&quot; &quot;os&quot; ) func main() { file, err := os.Open(&quot;test.txt&quot;) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } defer file.Close() size, err := file.Stat() if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } fs := make([]byte, size.Size()) _, err = file.Read(fs) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } str := string(fs) fmt.Println(str) } I really like how you can simply defer the file close operation just after creating a file object.
               </article>
               <div class="read-more-link">
                   <a href="/posts/working-with-files-in-go/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -381,7 +370,7 @@
                 
             </p>
             <article class="post-summary">
-                  A sublime Text snippet to auto fill go lang boiler plate If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate.
+                  If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate. &lt;snippet&gt; &lt;content&gt;&lt;![CDATA[ package main import &quot;fmt&quot; func main() { fmt.Println(&quot;${1:// content...}&quot;) } ]]&gt;&lt;/content&gt; &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt; &lt;tabTrigger&gt;fun&lt;/tabTrigger&gt; &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt; &lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt; &lt;/snippet&gt; To add a snippet in Sublime text, Select Tools-&gt; New Snippet from Menu.
               </article>
               <div class="read-more-link">
                   <a href="/posts/go-boiler-plate-snippet-sublime-text/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -439,7 +428,7 @@
                 
             </p>
             <article class="post-summary">
-                  How to find a min array value in go lang: package main import ( &quot;fmt&quot; ) func main() { x := []int{ 48, 96, 86, 68, 57, 82, 63, 70, 37, 34, 83, 27, 19, 97, 9, 17, } min:= x[0] for _, value := range x { if value &lt; min { min = value } } fmt.Println(min) }
+                  package main import ( &quot;fmt&quot; ) func main() { x := []int{ 48, 96, 86, 68, 57, 82, 63, 70, 37, 34, 83, 27, 19, 97, 9, 17, } min:= x[0] for _, value := range x { if value &lt; min { min = value } } fmt.Println(min) }
               </article>
               <div class="read-more-link">
                   <a href="/posts/find-minimum-value-array-go/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -497,7 +486,7 @@
                 
             </p>
             <article class="post-summary">
-                  Working with samrt people People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&rsquo;t even recognize them. Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.
+                  People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&rsquo;t even recognize them. Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.
               </article>
               <div class="read-more-link">
                   <a href="/posts/working-with-smart-people/"><span class="read-more-slashes">//</span>Read More...</a>
@@ -613,7 +602,7 @@
                 
             </p>
             <article class="post-summary">
-                  Array and slices in go lang In go lang, an array looks like this - var x [5]int where x is an array which is composed of 5 ints. Same as other c family languages, arrays are indexed starting from zero. arrays length is fixed and go provides another type slices to work with this situation. var x []int x is a slice and has a length of 0. We can also create a slice using builtin make function.
+                  In go lang, an array looks like this - var x [5]int where x is an array which is composed of 5 ints. Same as other c family languages, arrays are indexed starting from zero. arrays length is fixed and go provides another type slices to work with this situation. var x []int x is a slice and has a length of 0. We can also create a slice using builtin make function.
               </article>
               <div class="read-more-link">
                   <a href="/posts/array-and-slices-in-go/"><span class="read-more-slashes">//</span>Read More...</a>
