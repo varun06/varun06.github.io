@@ -7,8 +7,83 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Sat, 09 May 2015 06:41:00 -0600</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2015 20:41:00 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>goto Chicago Conference 2015</title>
+      <link>http://varunksaini.com/posts/goto-chicago-2015/</link>
+      <pubDate>Wed, 13 May 2015 20:41:00 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/goto-chicago-2015/</guid>
+      <description>
+
+&lt;p&gt;This week I went to GOTO Chicago conference. It was held in Westin hotel on Clark street. The conference was on 11th and 12th May 2015. GOTO is an yearly conference and has been going on from some time. My employer sponsored the conference also.&lt;/p&gt;
+
+&lt;p&gt;It was a great conference and had a mix of talks on Programming Languages, Distributed Computing, Testing, General (Agile) etc. I attended bunch of talks delivered by some wonderful speakers.&lt;/p&gt;
+
+&lt;h2 id=&#34;monday:e6b5a84ca155978c9ccb3cf2263b1856&#34;&gt;Monday&lt;/h2&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;img src=&#34;http://varunksaini.com/img/gotopic.png&#34; alt=&#34;GOTO conf Chicago 2015&#34; title=&#34;GOTO Conf&#34; style=&#34;width:700px; height: 500px;&#34;&gt;
+&lt;quote &gt; By Anita Sengupta(Shared on Twitter)&lt;/quote&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Curiosity’s Entry Descent and Landing on Mars by Anita Sengupta(&lt;a href=&#34;https://twitter.com/Doctor_Astro&#34;&gt;@Doctor_Astro&lt;/a&gt;)&lt;/strong&gt; - Who doesn&amp;rsquo;t love space and space exploration. This was ending keynote and Anita made it one to remember for the ages. She talked about how Nasa JPL team managed to land a robot on Mars surface with state of the art technology and lots of hard work. Anita worked on &lt;strong&gt;Curiosity&lt;/strong&gt; mars rover and built the supersonic parachute used by the rover. She is currently working as a project manager for &amp;ldquo;Cold Atom Laboratory&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jepsen IV: Hope Springs Eternal by Kyle Kingsbury(&lt;a href=&#34;https://twitter.com/aphyr&#34;&gt;@aphyr&lt;/a&gt;) &lt;/strong&gt; -  Kyle is famous for his distributed database testing tool called Jespen. Kyle is a very good speaker and his slides were top class. If you are in distributed computing or databases, check out Kyle&amp;rsquo;s work.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/KyleKingsbury_JepsenIVHopeSpringsEternal.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Applying Reactive Programming with RxJava by Ben Christensen from Netflix(&lt;a href=&#34;https://twitter.com/benjchristensen&#34;&gt;@benjchristensen&lt;/a&gt;)&lt;/strong&gt; - The talk was about Java and Rx by Netflix. Good talk about writing async code in Java and How Netflix does it. It was good to see how another programming language apart from Go doing async and concurrency.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/BenChristensen_ApplyingReactiveProgrammingWithRx.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Deploy like a Boss by Oliver Nicholas(&lt;a href=&#34;https://twitter.com/wonlove&#34;&gt;@wonlove&lt;/a&gt;)&lt;/strong&gt; - In this talk Oliver talked about how Uber deploys to production. They started with shell scripts but now they use Mesos + Marathon for deployment.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Patterns for Docker Success by Simon Eskildsen(&lt;a href=&#34;https://twitter.com/sirupsen&#34;&gt;@sirupsen&lt;/a&gt;)&lt;/strong&gt; - Simon was a great presenter and he talked about how Shopify is using Docker. He talked about what other companies trying to use Docker can use from Shopify experience.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/SimonEskildsen_PatternsForDockerSuccess.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How I finally stopped worrying and learnt to love Conway’s Law by James Lewis(&lt;a href=&#34;https://twitter.com/boicy&#34;&gt;@boicy&lt;/a&gt;)&lt;/strong&gt;
+**Evolutionary Architecture &amp;amp; Micro-Services - A Match Enabled by Continuous Delivery by Rebecca Parsons(&lt;a href=&#34;https://twitter.com/rebeccaparsons&#34;&gt;@rebeccaparsons&lt;/a&gt;)** - Both of these talks were about Micro-services architecture and how organizations can benefit with Micro-services. Rebecca even talked about when to use micro-services. She suggested that if you are building a new system you should start with a monolith architecture but with good design and then move to micro-services. If you start with micro services, you might define the boundaries of your system wrong.
+&lt;br&gt;
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/JamesLewis_HowIFinallyStoppedWorryingAndLearntToLoveConwaysLaw.pdf&#34;&gt;Slides from James Lewis talk&lt;/a&gt;
+&lt;br&gt;
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/RebeccaParsons_EvolutionaryArchitectureMicroServicesAMatchEnabledByContinuousDelivery.pdf&#34;&gt;Slides from Rebecca Parsons talk&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;End-to-end Encryption in Cloud Services by Patrick Linskey&lt;/strong&gt; - This is the talk that I could not understand much. Speaker tried his best but either crypto is hard or end to end encryption is very hard. &lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/PatrickLinskey_EndToEndEncryptionInCloudServices.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;tuesday:e6b5a84ca155978c9ccb3cf2263b1856&#34;&gt;Tuesday&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;How did we end up Here by Martin Thompson(&lt;a href=&#34;https://twitter.com/mjpt777&#34;&gt;@mjpt777&lt;/a&gt;) and Todd Montgomery(&lt;a href=&#34;https://twitter.com/toddlmontgomery&#34;&gt;@toddlmontgomery&lt;/a&gt;)&lt;/strong&gt; - Martin and Todd talked about current trends and issues with software development. They talked about increasing complexity and how to solve the problem. They also talked about diversity issues in Software engineering field.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/MartinThompson_and_ToddMontgomery_HowDidWeEndUpHere.pdf&#34;&gt;Slide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Level Up Your Automated Tests by Trisha Gee(&lt;a href=&#34;https://twitter.com/trisha_gee&#34;&gt;@trisha_gee&lt;/a&gt;)&lt;/strong&gt; - This was one of the talk from testing track. Trisha talked about how to have the culture of writing tests. She said that tests can be used as a documentation also and that resonated very well with everybody in the room. She also gave some examples from her work with Spock and JUnit.
+She forgot to charge her laptop and ended up using hand written slides and that was cool. :)
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/TrishaGee_LevelUpYourAutomatedTests.pdf&#34;&gt;Slide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Unselfish Testing by Jay Fields(&lt;a href=&#34;https://twitter.com/thejayfields&#34;&gt;@thejayfields&lt;/a&gt;)&lt;/strong&gt; - Jay has written a book on JUnit testing. Jay also emphasized the point of writing better tests. He gave examples about how to make tests better and follow the DRY principle.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/JayFields_UnselfishTesting.pdf&#34;&gt;Slide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Faster Java Objects by Gil Tene(&lt;a href=&#34;https://twitter.com/giltene&#34;&gt;@giltene&lt;/a&gt;)&lt;/strong&gt; -Gil is CTO of Azul systems and talked about faster java objects. Basically they want to have flat memory layout for objects in Java so that they can make them easily streamable. It was a fascinating talk and I learned few things coz I am also working on a problem of reading binary from c structs.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/GilTene_FasterJavaObjects.pdf&#34;&gt;Slide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;How Go is making us faster by Wilfried Schobeiri(&lt;a href=&#34;https://twitter.com/nphase&#34;&gt;@nphase&lt;/a&gt;)&lt;/strong&gt; - Wil gave a talk on how MediaMath is using Go lang. I was not present for this talk but I have already seen this couple of time. It is real good talk and brings out some of the great things about Go lang, such as easy to learn, fast, and good concurrency.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/WilfriedSchobeiri_HowGoIsMakingUsFaster.pdf&#34;&gt;Slide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Don&amp;rsquo;t give up on serializability just yet! by Neha Narula(&lt;a href=&#34;https://twitter.com/neha&#34;&gt;@neha&lt;/a&gt;)&lt;/strong&gt; - Neha talked about distributed computing and how serializability plays its part. She talked about Spanner and other distributed systems.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/NehaNarula_DontGiveUpOnSerializabilityJustYet.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Applying the Saga Pattern by Caitie McCaffrey(&lt;a href=&#34;https://twitter.com/caitie&#34;&gt;@caitie&lt;/a&gt;)&lt;/strong&gt; - In this talk Caitie talked about her work with Halo 4 (game) and how she used Saga pattern to solve a distributed computing problem. She also talked about how transactions happen with Saga pattern and how other people can also leverage Saga pattern.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/CaitieMcCaffrey_ApplyingTheSagaPattern.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Coordination-Free Computations by Christopher Meiklejohn(&lt;a href=&#34;https://twitter.com/cmeik&#34;&gt;@cmeik&lt;/a&gt;)&lt;/strong&gt; - This was a very advanced talk on distributed computing where Christopher talked about coordination free computation. He works on Riak team and he showed how he used Riak and CRDT&amp;rsquo;s. He is working on a distributed programming language called LASP.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/ChristopherMeiklejohn_CoordinationFreeComputations.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;From Homogeneous Monolith to Radically Heterogeneous Microservices: The Wunderlist 3 Story by Chad Fowler(&lt;a href=&#34;https://twitter.com/chadfowler&#34;&gt;@chadfowler&lt;/a&gt;)&lt;/strong&gt; - A fun ending keynote from Chad. He talked about how he changed Wunderlist from a monolith to micro services. He talked about clean architecture and how it is important to keep complexity in check in a system. He also talked about how we should take inspiration from our own system(body) and build a system that heal itself.
+&lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/ChadFowler_FromHomogeneousMonolithToRadicallyHeterogeneousMicroservicesTheWunderlist3Story.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This was a great conference but &lt;strong&gt;diversity&lt;/strong&gt; is still an issue for software industry. There were very few women in audience/speakers. This is a big issue and some speakers even pointed out on stage too. So we all need to work towards making software engineering a more diverse place.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>testing in go lang</title>
@@ -437,20 +512,6 @@ func main() {
       
       <guid>http://varunksaini.com/backup/golang-book/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.golang-book.com/&#34;&gt;golang book - good for go lang beginners&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Working with smart people</title>
-      <link>http://varunksaini.com/posts/working-with-smart-people/</link>
-      <pubDate>Tue, 25 Nov 2014 17:52:32 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/working-with-smart-people/</guid>
-      <description>&lt;p&gt;People write a lot about different ways to learn; Books, videos, teachers, and classes etc. But they don&amp;rsquo;t give required recognition to one aspect of learning, that is working with smart and like minded people. It becomes more critical in a corporate environment. If you work with smart people, you learn so many things indirectly that you don&amp;rsquo;t even recognize them.&lt;/p&gt;
-
-&lt;p&gt;Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.&lt;/p&gt;
-
-&lt;p&gt;I am fortunate to work with many smart people in my current job and every day I learn new things just by discussing things with them.&lt;/p&gt;
 </description>
     </item>
     
