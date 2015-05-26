@@ -110,6 +110,32 @@
 	   
 <article class="post posts">
     <header class="post-header">
+        <h2 class="post-title"><a href="/posts/get-os-name-in-go/">Get operating system name in Go</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>To get the operating system name where we running a Go program, we can use runtime package. runtime.GOOS return the operating system name. Some people try to use os.Getenv(&ldquo;GOOS&rdquo;) but it is not very reliable. I always use runtime package. package main import ( &quot;fmt&quot; &quot;runtime&quot; ) func main() { var goos string = runtime.GOOS fmt.Printf(&quot;The operating system is: %s\n&quot;, goos) } <a class="read-more" href="/posts/get-os-name-in-go/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
+        
+        
+            Varun Saini
+        
+        
+        <time class="post-date" datetime="2015-01-03T06:13:00Z">
+            3 Jan 2015
+        </time>
+    </footer>
+</article>
+
+
+
+
+	
+	   
+<article class="post posts">
+    <header class="post-header">
         <h2 class="post-title"><a href="/posts/books-in-2014/">Books I read in 2014</a></h2>
     </header>
     <section class="post-excerpt">
@@ -203,32 +229,6 @@
         
         <time class="post-date" datetime="2014-12-06T19:07:32-06:00">
             6 Dec 2014
-        </time>
-    </footer>
-</article>
-
-
-
-
-	
-	   
-<article class="post posts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/posts/find-minimum-value-array-go/">Find Mimimum Value in an array in go</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>package main import ( &quot;fmt&quot; ) func main() { x := []int{ 48, 96, 86, 68, 57, 82, 63, 70, 37, 34, 83, 27, 19, 97, 9, 17, } min:= x[0] for _, value := range x { if value &lt; min { min = value } } fmt.Println(min) } <a class="read-more" href="/posts/find-minimum-value-array-go/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
-        
-        
-            Varun Saini
-        
-        
-        <time class="post-date" datetime="2014-11-26T06:24:00-06:00">
-            26 Nov 2014
         </time>
     </footer>
 </article>
