@@ -108,6 +108,32 @@
 	   
 <article class="post posts">
     <header class="post-header">
+        <h2 class="post-title"><a href="/posts/using-sectionReader/">using io.SectionReader in Go</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>For my last task I was moving to an offset value in huge byte stream using reader.Seek(int64(offset), whence) and reading the bytes there. But it was not good for the performance because I was moving in a big file(~1gigs). Then I came to know about io.SectionReader and it made my life easier and helped me delete a lot of code(isn&rsquo;t that best). I create the section reader using this function: func GetByteSection(pageBlock []byte, offset int64, sectionLength int64) *io.SectionReader { reader := bytes.NewReader(pageBlock) section := io.NewSectionReader(reader, offset, sectionLength) return section } Then I read it like: tupleSection := GetByteSection(block, int64(headerOffset), int64(headerLength)) err = binary.Read(tupleSection, binary.LittleEndian, &data) if err != nil { return nil, fmt.Errorf("failed to read t_bits: %v\n", err) } life has been easier with more sectionReader and less Seeks. <a class="read-more" href="/posts/using-sectionReader/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
+        
+        
+            Varun Saini
+        
+        
+        <time class="post-date" datetime="2015-05-31T06:30:00-06:00">
+            31 May 2015
+        </time>
+    </footer>
+</article>
+
+
+
+
+	
+	   
+<article class="post posts">
+    <header class="post-header">
         <h2 class="post-title"><a href="/posts/notes-from-Go-In-Action-book/">Go Lang notes</a></h2>
     </header>
     <section class="post-excerpt">
@@ -201,32 +227,6 @@
         
         <time class="post-date" datetime="2015-04-26T07:40:00-06:00">
             26 Apr 2015
-        </time>
-    </footer>
-</article>
-
-
-
-
-	
-	   
-<article class="post posts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/posts/using_io_limitreader/">using io.LimitReader to read a binary file</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;) f.Seek(123, 0) b := <a class="read-more" href="/posts/using_io_limitreader/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
-        
-        
-            Varun Saini
-        
-        
-        <time class="post-date" datetime="2015-04-18T10:42:00-06:00">
-            18 Apr 2015
         </time>
     </footer>
 </article>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" using io.SectionReader in Go &middot;  Varun K Saini" />
+  	<meta property="og:site_name" content="Varun K Saini" />
+  	<meta property="og:url" content="http://varunksaini.com/posts/using-sectionReader/" />
+    
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2015-05-31T06:30:00-06:00" />
+
+    
+    
+
+  <title>
+     using io.SectionReader in Go &middot;  Varun K Saini
+  </title>
+
+    <meta name="description" content="Engineer" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://varunksaini.com/images/apple-touch-icon.png" />
+    
+    <link rel="stylesheet" type="text/css" href="http://varunksaini.com/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+
+    
+    <link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Varun K Saini" />
+    
+    
+    
+    <meta name="generator" content="Hugo 0.13" />
+
+    <link rel="canonical" href="http://varunksaini.com/posts/using-sectionReader/" />
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42065254-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+    </ul>
+    <a class="subscribe-button icon-feed" href="http://varunksaini.com/index.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="http://varunksaini.com/"><img src="http://varunksaini.com/img/favicon.ico" alt="Home" /></a>
+  
+  
+      <a class="menu-button icon-feed" href="http://varunksaini.com/index.xml">&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  
+  <article class="post">
+
+    <header class="post-header">
+        <h1 class="post-title">using io.SectionReader in Go</h1>
+        <section class="post-meta">
+          <time class="post-date" datetime="2015-05-31T06:30:00-06:00">
+            May 31, 2015
+          </time>
+
+         
+        </section>
+    </header>
+  
+    <section class="post-content">
+      <p>For my last task I was moving to an offset value in huge byte stream using <code>reader.Seek(int64(offset), whence)</code> and reading the bytes there. But it was not good for the performance because I was moving in a big file(~1gigs). Then I came to know about <code>io.SectionReader</code> and it made my life easier and helped me delete a lot of code(isn&rsquo;t that best).</p>
+
+<p>I create the section reader using this function:</p>
+
+<pre>
+func GetByteSection(pageBlock []byte, offset int64, sectionLength int64) *io.SectionReader {
+    reader := bytes.NewReader(pageBlock)
+    section := io.NewSectionReader(reader, offset, sectionLength)
+    return section
+}
+</pre>
+
+<p>Then I read it like:</p>
+
+<pre>
+tupleSection := GetByteSection(block, int64(headerOffset), int64(headerLength))
+err = binary.Read(tupleSection, binary.LittleEndian, &data)
+if err != nil {
+    return nil, fmt.Errorf("failed to read t_bits: %v\n", err)
+}
+</pre>
+
+<p>life has been easier with more <a href="http://golang.org/pkg/io/#SectionReader">sectionReader</a> and less Seeks.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+    <figure class="author-image">
+        <a class="img" href="http://varunksaini.com/" style="background-image: url(http://varunksaini.com/img/favicon.ico)"><span class="hidden">Varun Saini's Picture</span></a>
+    </figure>
+    
+
+
+    <section class="author">
+        <h4><a href="http://varunksaini.com/">Varun Saini</a></h4>
+        
+            <p>Why are we here??</p>
+        
+        <div class="author-meta">
+            <span class="author-location icon-location">Chicago, USA</span>
+            <span class="author-link icon-link"><a href="http://varunksaini.com">http://varunksaini.com</a></span>
+        </div>
+    </section>
+
+
+    
+    <section class="share">
+      <h4>Share this post</h4>
+      <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=using%20io.SectionReader%20in%20Go&amp;url=http%3a%2f%2fvarunksaini.com%2fposts%2fusing-sectionReader%2f"
+          onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+          <span class="hidden">Twitter</span>
+      </a>
+      <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fvarunksaini.com%2fposts%2fusing-sectionReader%2f"
+          onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+          <span class="hidden">Facebook</span>
+      </a>
+      <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2fvarunksaini.com%2fposts%2fusing-sectionReader%2f"
+         onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+          <span class="hidden">Google+</span>
+      </a>
+    </section>
+
+    
+    
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = 'varunksaini';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Varun K Saini</a> All rights reserved - 2015</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://varunksaini.com/js/jquery.js"></script>
+    <script type="text/javascript" src="http://varunksaini.com/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://varunksaini.com/js/index.js"></script>
+
+</body>
+</html>
+

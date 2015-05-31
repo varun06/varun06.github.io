@@ -118,6 +118,32 @@
 
     
         
+<article class="post posts">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/posts/using_io_limitreader/">using io.LimitReader to read a binary file</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;) f.Seek(123, 0) b := <a class="read-more" href="/posts/using_io_limitreader/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
+        
+        
+            Varun Saini
+        
+        
+        <time class="post-date" datetime="2015-04-18T10:42:00-06:00">
+            18 Apr 2015
+        </time>
+    </footer>
+</article>
+
+
+
+
+    
+        
 <article class="post reading">
     <header class="post-header">
         <h2 class="post-title"><a href="/reading/thinking_fast_and_slow/">Thinking, Fast and Slow</a></h2>
@@ -213,32 +239,6 @@
         
         <time class="post-date" datetime="2014-12-30T08:11:15-06:00">
             30 Dec 2014
-        </time>
-    </footer>
-</article>
-
-
-
-
-    
-        
-<article class="post posts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/posts/working-with-files-in-go/">Working with files in go lang</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Go makes working with file very easy and file reading is an operation that is used very frequently. To open a file in Go, we can use &ldquo;Open&rdquo; function from the &ldquo;os&rdquo; package. package main import ( &quot;fmt&quot; &quot;os&quot; ) func main() { file, err := os.Open(&quot;test.txt&quot;) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } defer file.Close() size, err := file.Stat() if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } fs := make([]byte, size.Size()) _, err = file.Read(fs) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } str := string(fs) fmt.Println(str) } I really like how you can simply defer the file close operation just after creating a file object. <a class="read-more" href="/posts/working-with-files-in-go/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
-        
-        
-            Varun Saini
-        
-        
-        <time class="post-date" datetime="2014-12-13T06:40:15-06:00">
-            13 Dec 2014
         </time>
     </footer>
 </article>

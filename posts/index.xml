@@ -7,8 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Mon, 25 May 2015 19:58:00 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2015 06:30:00 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>using io.SectionReader in Go</title>
+      <link>http://varunksaini.com/posts/using-sectionReader/</link>
+      <pubDate>Sun, 31 May 2015 06:30:00 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/using-sectionReader/</guid>
+      <description>&lt;p&gt;For my last task I was moving to an offset value in huge byte stream using &lt;code&gt;reader.Seek(int64(offset), whence)&lt;/code&gt; and reading the bytes there. But it was not good for the performance because I was moving in a big file(~1gigs). Then I came to know about &lt;code&gt;io.SectionReader&lt;/code&gt; and it made my life easier and helped me delete a lot of code(isn&amp;rsquo;t that best).&lt;/p&gt;
+
+&lt;p&gt;I create the section reader using this function:&lt;/p&gt;
+
+&lt;pre&gt;
+func GetByteSection(pageBlock []byte, offset int64, sectionLength int64) *io.SectionReader {
+    reader := bytes.NewReader(pageBlock)
+    section := io.NewSectionReader(reader, offset, sectionLength)
+    return section
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Then I read it like:&lt;/p&gt;
+
+&lt;pre&gt;
+tupleSection := GetByteSection(block, int64(headerOffset), int64(headerLength))
+err = binary.Read(tupleSection, binary.LittleEndian, &amp;data)
+if err != nil {
+    return nil, fmt.Errorf(&#34;failed to read t_bits: %v\n&#34;, err)
+}
+&lt;/pre&gt;
+
+&lt;p&gt;life has been easier with more &lt;a href=&#34;http://golang.org/pkg/io/#SectionReader&#34;&gt;sectionReader&lt;/a&gt; and less Seeks.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Go Lang notes</title>

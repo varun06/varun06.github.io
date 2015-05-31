@@ -7,8 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Mon, 25 May 2015 19:58:00 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2015 06:30:00 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>using io.SectionReader in Go</title>
+      <link>http://varunksaini.com/posts/using-sectionReader/</link>
+      <pubDate>Sun, 31 May 2015 06:30:00 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/using-sectionReader/</guid>
+      <description>&lt;p&gt;For my last task I was moving to an offset value in huge byte stream using &lt;code&gt;reader.Seek(int64(offset), whence)&lt;/code&gt; and reading the bytes there. But it was not good for the performance because I was moving in a big file(~1gigs). Then I came to know about &lt;code&gt;io.SectionReader&lt;/code&gt; and it made my life easier and helped me delete a lot of code(isn&amp;rsquo;t that best).&lt;/p&gt;
+
+&lt;p&gt;I create the section reader using this function:&lt;/p&gt;
+
+&lt;pre&gt;
+func GetByteSection(pageBlock []byte, offset int64, sectionLength int64) *io.SectionReader {
+    reader := bytes.NewReader(pageBlock)
+    section := io.NewSectionReader(reader, offset, sectionLength)
+    return section
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Then I read it like:&lt;/p&gt;
+
+&lt;pre&gt;
+tupleSection := GetByteSection(block, int64(headerOffset), int64(headerLength))
+err = binary.Read(tupleSection, binary.LittleEndian, &amp;data)
+if err != nil {
+    return nil, fmt.Errorf(&#34;failed to read t_bits: %v\n&#34;, err)
+}
+&lt;/pre&gt;
+
+&lt;p&gt;life has been easier with more &lt;a href=&#34;http://golang.org/pkg/io/#SectionReader&#34;&gt;sectionReader&lt;/a&gt; and less Seeks.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Go Lang notes</title>
@@ -552,39 +584,6 @@ in sublime text, paste the above code and make require changes.&lt;/p&gt;
       
       <guid>http://varunksaini.com/backup/lethal-code/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Lethal-Code-Lana-Elkins-Thriller/dp/1477825053/&#34;&gt;lethal code : Fiction about cyber attacks on power grid etc.&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Find Mimimum Value in an array in go</title>
-      <link>http://varunksaini.com/posts/find-minimum-value-array-go/</link>
-      <pubDate>Wed, 26 Nov 2014 06:24:00 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/find-minimum-value-array-go/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-)
-
-func main() {
-	x := []int{
-		48, 96, 86, 68,
-		57, 82, 63, 70,
-		37, 34, 83, 27,
-		19, 97,  9, 17,
-	}
-
-	min:= x[0]
-
-	for _, value := range x {
-		if value &amp;lt; min {
-			min = value
-		}
-	}
-	fmt.Println(min)
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
