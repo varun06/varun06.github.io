@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://varunksaini.com/</loc>
-    <lastmod>2015-05-31T06:30:00-06:00</lastmod>
+    <lastmod>2015-06-13T11:11:00-09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://varunksaini.com/posts/go_dev_workflow/</loc>
+    <lastmod>2015-06-13T11:11:00-09:00</lastmod>
   </url>
   
   <url>
@@ -103,12 +108,12 @@
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/pragmaticProgrammer/</loc>
+    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
   <url>
-    <loc>http://varunksaini.com/reading/GustavoDuarte/</loc>
+    <loc>http://varunksaini.com/reading/pragmaticProgrammer/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   

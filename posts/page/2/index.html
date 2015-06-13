@@ -98,13 +98,39 @@
 	
 	    <a class="newer-posts" href="/posts/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 2 of 3</span>
+	<span class="page-number">Page 2 of 4</span>
 	
 	    <a class="older-posts" href="/posts/page/3/">Older Posts &rarr;</a>
 	
 </nav>
 
 	</div>
+
+	
+	   
+<article class="post posts">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/posts/pointer_in_go/">Pointer type in Go</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type. package main import ( &quot;fmt&quot; &quot;unsafe&quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.Pointer(myTest) fmt.Printf(&quot;%T&quot;, myPtr) } myPtr is &ldquo;unsafe.Pointer&rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to uintptr first. <a class="read-more" href="/posts/pointer_in_go/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
+        
+        
+            Varun Saini
+        
+        
+        <time class="post-date" datetime="2015-04-26T07:40:00-06:00">
+            26 Apr 2015
+        </time>
+    </footer>
+</article>
+
+
+
 
 	
 	   
@@ -211,38 +237,12 @@
 
 
 	
-	   
-<article class="post posts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/posts/working-with-files-in-go/">Working with files in go lang</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Go makes working with file very easy and file reading is an operation that is used very frequently. To open a file in Go, we can use &ldquo;Open&rdquo; function from the &ldquo;os&rdquo; package. package main import ( &quot;fmt&quot; &quot;os&quot; ) func main() { file, err := os.Open(&quot;test.txt&quot;) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } defer file.Close() size, err := file.Stat() if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } fs := make([]byte, size.Size()) _, err = file.Read(fs) if err != nil { fmt.Println(&quot;erros is: &quot;, err) return } str := string(fs) fmt.Println(str) } I really like how you can simply defer the file close operation just after creating a file object. <a class="read-more" href="/posts/working-with-files-in-go/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
-        
-        
-            Varun Saini
-        
-        
-        <time class="post-date" datetime="2014-12-13T06:40:15-06:00">
-            13 Dec 2014
-        </time>
-    </footer>
-</article>
-
-
-
-
-	
 
 	<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/posts/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 2 of 3</span>
+	<span class="page-number">Page 2 of 4</span>
 	
 	    <a class="older-posts" href="/posts/page/3/">Older Posts &rarr;</a>
 	

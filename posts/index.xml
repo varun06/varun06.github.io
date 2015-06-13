@@ -7,8 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Sun, 31 May 2015 06:30:00 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2015 11:11:00 -0900</lastBuildDate>
     <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>My Go Lang Development Workflow</title>
+      <link>http://varunksaini.com/posts/go_dev_workflow/</link>
+      <pubDate>Sat, 13 Jun 2015 11:11:00 -0900</pubDate>
+      
+      <guid>http://varunksaini.com/posts/go_dev_workflow/</guid>
+      <description>&lt;p&gt;I have been doing programming in Go from last 6 months. When you start a new project or start learning a new programming language, chossing your tools(text editor, plugins etc.) is as important as any other process.&lt;/p&gt;
+
+&lt;p&gt;I use Sublime Text 3 with &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;go-sublime&lt;/a&gt; plugin as my text editor. go-sublime adds many features to Sublime Text for go development and make the whole development process a little easier. I particularly like &amp;lsquo;go linting&amp;rsquo; and &amp;lsquo;go to definition&amp;rsquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;img src=&#34;http://varunksaini.com/img/sublime.png&#34; alt=&#34;Sublime Text&#34; title=&#34;Sublime Text&#34; style=&#34;width:700px; height: 500px;&#34;&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Once I have written the code and tests, I run &lt;code&gt;go test&lt;/code&gt; in terminal (I use iterm2 instead of default terminal app) to test my code. To check code coverage, I run &lt;code&gt;go test -cover&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;because sometime you need more than one terminal window, I use &lt;a href=&#34;http://tmux.github.io/&#34;&gt;tmux&lt;/a&gt; for that. tmux manages terminal windows and sessions. I started using tmux some time back and it is great.&lt;/p&gt;
+
+&lt;p&gt;OSX window management is a pain in itself, I use &lt;a href=&#34;http://mizage.com/divvy/&#34;&gt;DIVVY&lt;/a&gt; to manage the windows. I am looking forward to &lt;a href=&#34;http://www.apple.com/osx/elcapitan-preview/&#34;&gt;OSX el capitan&lt;/a&gt;, which has window management build in the OSX (finally).&lt;/p&gt;
+
+&lt;p&gt;Once I have tested my code thoroughly on my local machine, I send it to github for code review. I generally use git in terminal to run all the common git commands (such as &lt;code&gt;git status&lt;/code&gt;, &lt;code&gt;git commit&lt;/code&gt;, and &lt;code&gt;git push&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;We use &lt;a href=&#34;http://github.com/MediaMath/grim&#34;&gt;GRIM&lt;/a&gt;, which is open sourced by the way, as our build server. So when I create a pull request for code review, grim takes the pull request and run the build to make sure that everything works as expected with new code, grim also updates the hipchat channel, so that team is aware about new pull request.&lt;/p&gt;
+
+&lt;p&gt;This continous build system gives code reviewers a test run even before reviewing the code. Once the code review is done and thumpsup are given, code is ready to be merged in master.&lt;/p&gt;
+
+&lt;p&gt;Once merged, time for next task and more Go code/learnings..&lt;/p&gt;
+
+&lt;p&gt;Note: If you are a vim user, then &lt;a href=&#34;https://github.com/fatih/vim-go&#34;&gt;vim-go&lt;/a&gt; is an awesome go plugin for vim.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>using io.SectionReader in Go</title>
@@ -637,24 +669,6 @@ func main() {
 &lt;p&gt;&lt;code&gt;x[0:]&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;x[:4]&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>learning go</title>
-      <link>http://varunksaini.com/posts/learning-go/</link>
-      <pubDate>Sat, 23 Aug 2014 19:59:32 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/learning-go/</guid>
-      <description>&lt;p&gt;Go language has this definition on &lt;a href=&#34;http://http://golang.org/&#34;&gt;golang&lt;/a&gt;:
-&amp;gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.&lt;/p&gt;
-
-&lt;p&gt;If you have worked with C family languages (such as C, C++, Java, Python etc.) Go will look familiar to you. I have been working with python from some time and wanted to learn a static typed language. Go is easy to learn and you can start writing code very soon.&lt;/p&gt;
-
-&lt;p&gt;I started with &lt;a href=&#34;http://tour.golang.org/#1&#34;&gt;go language tour&lt;/a&gt; and learned the sytax and semantics of the language. After that I started looking at &lt;a href=&#34;http://golang.org/doc/&#34;&gt;go language documentation&lt;/a&gt;.
-One of the best way to learn about a programming language is to look at the code written by other people in that language. So I choose &lt;a href=&#34;https://github.com/docker/docker&#34;&gt;Docker&lt;/a&gt; to read the code.&lt;/p&gt;
-
-&lt;p&gt;This is just the start and I will be writing more about my learnings on go programming.&lt;/p&gt;
 </description>
     </item>
     

@@ -118,6 +118,32 @@
         
 <article class="post posts">
     <header class="post-header">
+        <h2 class="post-title"><a href="/posts/go_dev_workflow/">My Go Lang Development Workflow</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>I have been doing programming in Go from last 6 months. When you start a new project or start learning a new programming language, chossing your tools(text editor, plugins etc.) is as important as any other process. I use Sublime Text 3 with go-sublime plugin as my text editor. go-sublime adds many features to Sublime Text for go development and make the whole development process a little easier. I particularly like &lsquo;go linting&rsquo; and &lsquo;go to definition&rsquo;. <a class="read-more" href="/posts/go_dev_workflow/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
+        
+        
+            Varun Saini
+        
+        
+        <time class="post-date" datetime="2015-06-13T11:11:00-09:00">
+            13 Jun 2015
+        </time>
+    </footer>
+</article>
+
+
+
+
+    
+        
+<article class="post posts">
+    <header class="post-header">
         <h2 class="post-title"><a href="/posts/using-sectionReader/">using io.SectionReader in Go</a></h2>
     </header>
     <section class="post-excerpt">
@@ -211,32 +237,6 @@
         
         <time class="post-date" datetime="2015-05-09T06:41:00-06:00">
             9 May 2015
-        </time>
-    </footer>
-</article>
-
-
-
-
-    
-        
-<article class="post posts">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/posts/pointer_in_go/">Pointer type in Go</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type. package main import ( &quot;fmt&quot; &quot;unsafe&quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.Pointer(myTest) fmt.Printf(&quot;%T&quot;, myPtr) } myPtr is &ldquo;unsafe.Pointer&rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to uintptr first. <a class="read-more" href="/posts/pointer_in_go/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-            <img class="author-thumb" src="http://varunksaini.com/img/favicon.ico" alt="Author image" nopin="nopin" />
-        
-        
-            Varun Saini
-        
-        
-        <time class="post-date" datetime="2015-04-26T07:40:00-06:00">
-            26 Apr 2015
         </time>
     </footer>
 </article>
