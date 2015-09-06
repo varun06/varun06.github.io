@@ -69,7 +69,7 @@
       <p>
        
       </p>
-      <p></p>
+      <p>Sometimes we need to run external commands programatically to use the output of the command to drive the execution. Go provides a nice interface to run the external commands through exec package. Running an external command is very easy and an example is given below. package main import ( &quot;fmt&quot; &quot;log&quot; &quot;os/exec&quot; ) func main() { out, err := exec.Command(&quot;date&quot;).Output() if err != nil { log.Fatal(err) } fmt.Printf(&quot;The time is %s\n&quot;, out) } exec package provides some other useful methods to work with external commands.</p>
       <p>
       12 Jul 2015
        

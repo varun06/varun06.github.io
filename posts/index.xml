@@ -16,7 +16,27 @@
       <pubDate>Sun, 12 Jul 2015 19:58:28 -0600</pubDate>
       
       <guid>http://varunksaini.com/posts/running_commands_with_go/</guid>
-      <description></description>
+      <description>&lt;p&gt;Sometimes we need to run external commands programatically to use the output of the command to drive the execution. Go provides a nice interface to run the external commands through &lt;a href=&#34;https://golang.org/pkg/os/exec/&#34;&gt;exec&lt;/a&gt; package. Running an external command is very easy and an example is given below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;log&amp;quot;
+	&amp;quot;os/exec&amp;quot;
+)
+
+func main() {
+	out, err := exec.Command(&amp;quot;date&amp;quot;).Output()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf(&amp;quot;The time is %s\n&amp;quot;, out)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;exec&lt;/code&gt; package provides some other useful methods to work with external commands. Use this powerful package to build awesome things.&lt;/p&gt;
+</description>
     </item>
     
     <item>
