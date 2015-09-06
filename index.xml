@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Varun K Saini</title>
+    <title>I am an Engineer</title>
     <link>http://varunksaini.com/</link>
-    <description>Recent content on Varun K Saini</description>
+    <description>Recent content on I am an Engineer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Sat, 13 Jun 2015 11:11:00 -0900</lastBuildDate>
+    <copyright>© 2015 Copyright Text</copyright>
+    <lastBuildDate>Sun, 12 Jul 2015 19:58:28 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>running commands with go</title>
+      <link>http://varunksaini.com/posts/running_commands_with_go/</link>
+      <pubDate>Sun, 12 Jul 2015 19:58:28 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/running_commands_with_go/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>My Go Lang Development Workflow</title>
@@ -190,7 +199,7 @@ In Go, identifiers are either exported or unexported from a package. An exported
 &lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/SimonEskildsen_PatternsForDockerSuccess.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;How I finally stopped worrying and learnt to love Conway’s Law by James Lewis(&lt;a href=&#34;https://twitter.com/boicy&#34;&gt;@boicy&lt;/a&gt;)&lt;/strong&gt;
-**Evolutionary Architecture &amp;amp; Micro-Services - A Match Enabled by Continuous Delivery by Rebecca Parsons(&lt;a href=&#34;https://twitter.com/rebeccaparsons&#34;&gt;@rebeccaparsons&lt;/a&gt;)** - Both of these talks were about Micro-services architecture and how organizations can benefit with Micro-services. Rebecca even talked about when to use micro-services. She suggested that if you are building a new system you should start with a monolith architecture but with good design and then move to micro-services. If you start with micro services, you might define the boundaries of your system wrong.
+&lt;strong&gt;Evolutionary Architecture &amp;amp; Micro-Services - A Match Enabled by Continuous Delivery by Rebecca Parsons(&lt;a href=&#34;https://twitter.com/rebeccaparsons&#34;&gt;@rebeccaparsons&lt;/a&gt;)&lt;/strong&gt; - Both of these talks were about Micro-services architecture and how organizations can benefit with Micro-services. Rebecca even talked about when to use micro-services. She suggested that if you are building a new system you should start with a monolith architecture but with good design and then move to micro-services. If you start with micro services, you might define the boundaries of your system wrong.
 &lt;br&gt;
 &lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/JamesLewis_HowIFinallyStoppedWorryingAndLearntToLoveConwaysLaw.pdf&#34;&gt;Slides from James Lewis talk&lt;/a&gt;
 &lt;br&gt;
@@ -392,13 +401,13 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
 &lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;package main
 
 import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;runtime&amp;quot;
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;runtime&amp;quot;
 )
 
 func main() {
-	var goos string = runtime.GOOS
-	fmt.Printf(&amp;quot;The operating system is: %s\n&amp;quot;, goos)
+    var goos string = runtime.GOOS
+    fmt.Printf(&amp;quot;The operating system is: %s\n&amp;quot;, goos)
 }
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -572,40 +581,6 @@ func main() {
       
       <guid>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Ultimate-Bar-Book-Comprehensive-Cocktails-ebook/dp/B003IV8GUY&#34;&gt;The Ultimate Bar Book: The Comprehensive Guide to Over 1,000 Cocktails&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Go lang boiler plate sublime text snippet</title>
-      <link>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</link>
-      <pubDate>Sat, 06 Dec 2014 19:07:32 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</guid>
-      <description>&lt;p&gt;If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;&amp;lt;snippet&amp;gt;
-	&amp;lt;content&amp;gt;&amp;lt;![CDATA[
-package main
-
-import &amp;quot;fmt&amp;quot;
-
-func main() {
-	fmt.Println(&amp;quot;${1:// content...}&amp;quot;)
-}
-]]&amp;gt;&amp;lt;/content&amp;gt;
-	&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
-	&amp;lt;tabTrigger&amp;gt;fun&amp;lt;/tabTrigger&amp;gt;
-	&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
-	&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
-&amp;lt;/snippet&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To add a snippet in Sublime text, Select Tools-&amp;gt; New Snippet from Menu. It will open a new file
-in sublime text, paste the above code and make require changes.&lt;/p&gt;
-
-&lt;p&gt;Save the snippet and you are all set. Next time when you create a new go file just write &amp;ldquo;fun&amp;rdquo; and hit tab, you will have some go lang boiler plate to start with.&lt;/p&gt;
-
-&lt;p&gt;This is just a simple snippet, but you can create other complex snippets such as functions, interfaces etc.&lt;/p&gt;
 </description>
     </item>
     

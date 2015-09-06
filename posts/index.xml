@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Varun K Saini</title>
+    <title>Posts on I am an Engineer</title>
     <link>http://varunksaini.com/posts/</link>
-    <description>Recent content in Posts on Varun K Saini</description>
+    <description>Recent content in Posts on I am an Engineer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>All rights reserved - 2015</copyright>
-    <lastBuildDate>Sat, 13 Jun 2015 11:11:00 -0900</lastBuildDate>
+    <copyright>© 2015 Copyright Text</copyright>
+    <lastBuildDate>Sun, 12 Jul 2015 19:58:28 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>running commands with go</title>
+      <link>http://varunksaini.com/posts/running_commands_with_go/</link>
+      <pubDate>Sun, 12 Jul 2015 19:58:28 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/running_commands_with_go/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>My Go Lang Development Workflow</title>
@@ -190,7 +199,7 @@ In Go, identifiers are either exported or unexported from a package. An exported
 &lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/SimonEskildsen_PatternsForDockerSuccess.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;How I finally stopped worrying and learnt to love Conway’s Law by James Lewis(&lt;a href=&#34;https://twitter.com/boicy&#34;&gt;@boicy&lt;/a&gt;)&lt;/strong&gt;
-**Evolutionary Architecture &amp;amp; Micro-Services - A Match Enabled by Continuous Delivery by Rebecca Parsons(&lt;a href=&#34;https://twitter.com/rebeccaparsons&#34;&gt;@rebeccaparsons&lt;/a&gt;)** - Both of these talks were about Micro-services architecture and how organizations can benefit with Micro-services. Rebecca even talked about when to use micro-services. She suggested that if you are building a new system you should start with a monolith architecture but with good design and then move to micro-services. If you start with micro services, you might define the boundaries of your system wrong.
+&lt;strong&gt;Evolutionary Architecture &amp;amp; Micro-Services - A Match Enabled by Continuous Delivery by Rebecca Parsons(&lt;a href=&#34;https://twitter.com/rebeccaparsons&#34;&gt;@rebeccaparsons&lt;/a&gt;)&lt;/strong&gt; - Both of these talks were about Micro-services architecture and how organizations can benefit with Micro-services. Rebecca even talked about when to use micro-services. She suggested that if you are building a new system you should start with a monolith architecture but with good design and then move to micro-services. If you start with micro services, you might define the boundaries of your system wrong.
 &lt;br&gt;
 &lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/JamesLewis_HowIFinallyStoppedWorryingAndLearntToLoveConwaysLaw.pdf&#34;&gt;Slides from James Lewis talk&lt;/a&gt;
 &lt;br&gt;
@@ -382,13 +391,13 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
 &lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;package main
 
 import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;runtime&amp;quot;
+    &amp;quot;fmt&amp;quot;
+    &amp;quot;runtime&amp;quot;
 )
 
 func main() {
-	var goos string = runtime.GOOS
-	fmt.Printf(&amp;quot;The operating system is: %s\n&amp;quot;, goos)
+    var goos string = runtime.GOOS
+    fmt.Printf(&amp;quot;The operating system is: %s\n&amp;quot;, goos)
 }
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -588,25 +597,25 @@ in sublime text, paste the above code and make require changes.&lt;/p&gt;
       <description>&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
 
 import (
-	&amp;quot;fmt&amp;quot;
+    &amp;quot;fmt&amp;quot;
 )
 
 func main() {
-	x := []int{
-		48, 96, 86, 68,
-		57, 82, 63, 70,
-		37, 34, 83, 27,
-		19, 97,  9, 17,
-	}
+    x := []int{
+        48, 96, 86, 68,
+        57, 82, 63, 70,
+        37, 34, 83, 27,
+        19, 97,  9, 17,
+    }
 
-	min:= x[0]
+    min:= x[0]
 
-	for _, value := range x {
-		if value &amp;lt; min {
-			min = value
-		}
-	}
-	fmt.Println(min)
+    for _, value := range x {
+        if value &amp;lt; min {
+            min = value
+        }
+    }
+    fmt.Println(min)
 }
 &lt;/code&gt;&lt;/pre&gt;
 </description>
@@ -623,52 +632,6 @@ func main() {
 &lt;p&gt;Working with smart people help you on many levels, it helps you with your craft and it also helps you taking up new challenges and excel in them.&lt;/p&gt;
 
 &lt;p&gt;I am fortunate to work with many smart people in my current job and every day I learn new things just by discussing things with them.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>array and slices in go</title>
-      <link>http://varunksaini.com/posts/array-and-slices-in-go/</link>
-      <pubDate>Sat, 15 Nov 2014 19:58:28 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/array-and-slices-in-go/</guid>
-      <description>&lt;p&gt;In &lt;strong&gt;go&lt;/strong&gt; lang, an array looks like this -&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;var x [5]int&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;where x is an array which is composed of 5 ints.&lt;/p&gt;
-
-&lt;p&gt;Same as other c family languages, arrays are indexed starting from zero.&lt;/p&gt;
-
-&lt;p&gt;arrays length is fixed and go provides another type &lt;strong&gt;slices&lt;/strong&gt; to work with this situation.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;var x []int&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;x is a slice and has a length of 0.&lt;/p&gt;
-
-&lt;p&gt;We can also create a slice using builtin &lt;strong&gt;make&lt;/strong&gt; function.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x := make([]float64, 5, 10)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Where 5 is the length and 10 is the capacity of the underlying array.&lt;/p&gt;
-
-&lt;p&gt;If you have programmed in python than there is a way to create slices that look entirely familiar.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;arr := []int{1, 2, 3, 4, 5}&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x := arr[0:5]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;x&lt;/strong&gt; is a slice of &lt;strong&gt;arr&lt;/strong&gt; and holds all the values. You can change the values by changing the index in x.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x := arr[1:2]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;We can also omit the &lt;strong&gt;low:high&lt;/strong&gt; from slice.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x[0:len(arr)]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x[0:]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;x[:4]&lt;/code&gt;&lt;/p&gt;
 </description>
     </item>
     
