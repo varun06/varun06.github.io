@@ -7,8 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sun, 12 Jul 2015 19:58:28 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 19 Sep 2015 19:58:28 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Podcasts I listen</title>
+      <link>http://varunksaini.com/posts/fav-podcasts/</link>
+      <pubDate>Sat, 19 Sep 2015 19:58:28 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/fav-podcasts/</guid>
+      <description>&lt;p&gt;I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&amp;rsquo;s enough time to listen to most of these podcasts.&lt;/p&gt;
+
+&lt;p&gt;These are the podcasts that I listen to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.motherjones.com/category/secondary-tags/inquiring-minds&#34;&gt;Inquiring minds&lt;/a&gt; - This is my favorite science podcast. The topics are diverse and hosts are really good.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.npr.org/sections/money/&#34;&gt;Planet Money&lt;/a&gt; - Who would not like Planet Money. It is informative and interesting at the same time.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://99percentinvisible.org/&#34;&gt;99% Invisible&lt;/a&gt; - A podcast about design, architecture and other interesting things related to them.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://freakonomics.com/category/freakonomics-radio/podcasts/&#34;&gt;Freakonomics Radio&lt;/a&gt; - This is my favorite too. If you are interested in economics/phycology and their impacts on world, Do not miss this podcast.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://hanselminutes.com/&#34;&gt;Hanselminutes&lt;/a&gt; - My only dev podcast. Scott Hanselman  talks to people about different technologies and ideas.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.thisamericanlife.org/&#34;&gt;This American Life&lt;/a&gt; - This is also a popular podcast. Topics are diverse and interesting.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nerdist.com/podcasts/nerdist-podcast-channel/&#34;&gt;The Nerdist&lt;/a&gt; - If you like stand up comedy and want to listen to some interesting people talk in very open environment, this is the podcast for you.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I also listen to some other podcasts if I find some interesting topic, otherwise these are the podcast that I listen to.&lt;/p&gt;
+
+&lt;p&gt;What are the podcasts that you guys like, Please share.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>running commands with go</title>
@@ -591,16 +617,6 @@ func main() {
       
       <guid>http://varunksaini.com/reading/Particles_of_the_universe/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/&#34;&gt;Particles of the universe&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Ultimate Bar Book</title>
-      <link>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</link>
-      <pubDate>Sat, 13 Dec 2014 06:29:30 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Ultimate-Bar-Book-Comprehensive-Cocktails-ebook/dp/B003IV8GUY&#34;&gt;The Ultimate Bar Book: The Comprehensive Guide to Over 1,000 Cocktails&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
