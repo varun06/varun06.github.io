@@ -6,6 +6,7 @@
   <title>Posts</title>
   <link href="http://varunksaini.com/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://varunksaini.com/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://varunksaini.com/css/syntax.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
   <style type="text/css">
   
@@ -65,6 +66,21 @@
   
   <div class="col m4 s12">
     <div class="card-panel">
+      <h4><a href="http://varunksaini.com/posts/using_io_limitreader/">using io.LimitReader to read a binary file</a></h4>
+      <p>
+       
+      </p>
+      <p>I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;) f.Seek(123, 0) b :=</p>
+      <p>
+      18 Apr 2015
+       
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="col m4 s12">
+    <div class="card-panel">
       <h4><a href="http://varunksaini.com/posts/get-os-name-in-go/">Get operating system name in Go</a></h4>
       <p>
        
@@ -93,6 +109,9 @@
   </div>
 
   
+</div>
+<div class="row">
+  
   <div class="col m4 s12">
     <div class="card-panel">
       <h4><a href="http://varunksaini.com/posts/new-human-age/">human&#43;&#43;</a></h4>
@@ -107,9 +126,6 @@
     </div>
   </div>
 
-  
-</div>
-<div class="row">
   
   <div class="col m4 s12">
     <div class="card-panel">
@@ -141,6 +157,9 @@
   </div>
 
   
+</div>
+<div class="row">
+  
   <div class="col m4 s12">
     <div class="card-panel">
       <h4><a href="http://varunksaini.com/posts/find-minimum-value-array-go/">Find Mimimum Value in an array in go</a></h4>
@@ -155,9 +174,6 @@
     </div>
   </div>
 
-  
-</div>
-<div class="row">
   
   <div class="col m4 s12">
     <div class="card-panel">
@@ -188,21 +204,6 @@
     </div>
   </div>
 
-  
-  <div class="col m4 s12">
-    <div class="card-panel">
-      <h4><a href="http://varunksaini.com/posts/learning-go/">learning go</a></h4>
-      <p>
-       
-      </p>
-      <p>Go language has this definition on golang: &gt; Go is an open source programming language that makes it easy to build simple, reliable, and efficient software. If you have worked with C family languages (such as C, C++, Java, Python etc.) Go will look familiar to you. I have been working with python from some time and wanted to learn a static typed language. Go is easy to learn and you can start writing code very soon.</p>
-      <p>
-      23 Aug 2014
-       
-      </p>
-    </div>
-  </div>
-
 </div>
 
 
@@ -215,7 +216,7 @@
   <div class="col s6 m10 center">&nbsp</div>
   <div class="col s3 m1">
   
-    <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-forward"></i></a>
+    <a class="btn-floating btn-large waves-effect waves-light" href="/posts/page/3/"><i class="mdi-navigation-arrow-forward"></i></a>
   
   </div>
 </div>

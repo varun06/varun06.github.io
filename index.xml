@@ -7,8 +7,55 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sat, 19 Sep 2015 19:58:28 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2015 06:30:28 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>killing process with child and grandchild processes  in Go</title>
+      <link>http://varunksaini.com/posts/kiling-processes-in-go/</link>
+      <pubDate>Sun, 04 Oct 2015 06:30:28 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/kiling-processes-in-go/</guid>
+      <description>&lt;p&gt;Go provides &lt;a href=&#34;https://golang.org/pkg/os/exec/&#34;&gt;exec&lt;/a&gt; package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.&lt;/p&gt;
+
+&lt;p&gt;We can start a process&amp;hellip;
+&lt;pre&gt;
+    cmd := exec.Command(execPath, args&amp;hellip;)
+&lt;/pre&gt;
+and then process can be killed after certain given time&amp;hellip;.
+&lt;pre&gt;
+    case &amp;lt;-time.After(2 * time.Second):
+        if err := cmd.Process.Kill(); err != nil {
+            return 0, fmt.Errorf(&amp;ldquo;Failed to kill process: %v&amp;rdquo;, err)
+        }
+&lt;/pre&gt;&lt;/p&gt;
+
+&lt;p&gt;But there is a problem with this code, what if the process start other &lt;a href=&#34;https://en.wikipedia.org/wiki/Child_process&#34;&gt;child processes&lt;/a&gt; and then those processes start new processes(grandchild processes). Once you kill the parent process those child processes become orphan and get a &lt;code&gt;PPID=1&lt;/code&gt;. In my particular scenario I had 4-5 orphaned processes from killed parent process and then these orphaned processes were creating an issue with subsequent run of the program.&lt;/p&gt;
+
+&lt;p&gt;I started looking around and found this well written article on this topic &lt;a href=&#34;https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773&#34;&gt;killing a child process and all of its children in Go&lt;/a&gt;.This article helped me understand how to setup a process group and kill the process.&lt;/p&gt;
+
+&lt;p&gt;But The solution suggested in that article was not working in my case. Then I asked this question on &lt;a href=&#34;https://forum.golangbridge.org/t/killing-child-process-on-timeout-in-go-code/995&#34;&gt;Go forum&lt;/a&gt; and gophers helped me to find the solution.&lt;/p&gt;
+
+&lt;p&gt;Now I create a process group when I create the command, then I kill the whole group on timeout and it kills the process as well as the children of the process.&lt;/p&gt;
+
+&lt;pre&gt;
+    cmd := exec.Command(execPath, args...)
+    //create a new process group
+    cmd.SysProcAttr = &amp;syscall.SysProcAttr{Setpgid: true}
+&lt;/pre&gt;
+
+&lt;p&gt;&lt;pre&gt;
+    case &amp;lt;-time.After(timeout):
+        pgid, err := syscall.Getpgid(cmd.Process.Pid)
+        if err == nil {
+            if err := syscall.Kill(-pgid, syscall.SIGKILL); err != nil {
+                &amp;hellip;
+            }
+        }
+&lt;/pre&gt;
+We get the process group id &lt;code&gt;syscall.Getpgid&lt;/code&gt; and then kill the process by passing -pgid to &lt;code&gt;syscall.Kill&lt;/code&gt;. We use -pgid because we want to target the group id and not the particular process id.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Podcasts I listen</title>
@@ -607,16 +654,6 @@ func main() {
 
 &lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;file, err := os.Create(&amp;quot;test.txt&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Particles of the universe</title>
-      <link>http://varunksaini.com/reading/Particles_of_the_universe/</link>
-      <pubDate>Sat, 13 Dec 2014 06:32:30 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/Particles_of_the_universe/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/&#34;&gt;Particles of the universe&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

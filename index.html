@@ -6,6 +6,7 @@
   <title>I am an Engineer</title>
   <link href="http://varunksaini.com/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://varunksaini.com/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="http://varunksaini.com/css/syntax.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">
   <style type="text/css">
   
@@ -65,6 +66,21 @@
   
   <div class="col m4 s12">
     <div class="card-panel">
+      <h4><a href="http://varunksaini.com/posts/kiling-processes-in-go/">killing process with child and grandchild processes  in Go</a></h4>
+      <p>
+       
+      </p>
+      <p>Go provides exec package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period. We can start a process&hellip; cmd := exec.Command(execPath, args&hellip;) and then process can be killed after certain given time&hellip;. case &lt;-time.After(2 * time.Second): if err := cmd.Process.Kill(); err != nil { return 0, fmt.Errorf(&ldquo;Failed to kill process: %v&rdquo;, err) } But there is a problem with this code, what if the process start other child processes and then those processes start new processes(grandchild processes).</p>
+      <p>
+      4 Oct 2015
+       
+      </p>
+    </div>
+  </div>
+
+  
+  <div class="col m4 s12">
+    <div class="card-panel">
       <h4><a href="http://varunksaini.com/posts/fav-podcasts/">Podcasts I listen</a></h4>
       <p>
        
@@ -93,6 +109,9 @@
   </div>
 
   
+</div>
+<div class="row">
+  
   <div class="col m4 s12">
     <div class="card-panel">
       <h4><a href="http://varunksaini.com/posts/go_dev_workflow/">My Go Lang Development Workflow</a></h4>
@@ -107,9 +126,6 @@
     </div>
   </div>
 
-  
-</div>
-<div class="row">
   
   <div class="col m4 s12">
     <div class="card-panel">
@@ -141,6 +157,9 @@
   </div>
 
   
+</div>
+<div class="row">
+  
   <div class="col m4 s12">
     <div class="card-panel">
       <h4><a href="http://varunksaini.com/posts/goto-chicago-2015/">goto Chicago Conference 2015</a></h4>
@@ -155,9 +174,6 @@
     </div>
   </div>
 
-  
-</div>
-<div class="row">
   
   <div class="col m4 s12">
     <div class="card-panel">
@@ -183,21 +199,6 @@
       <p>Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type. package main import ( &quot;fmt&quot; &quot;unsafe&quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.Pointer(myTest) fmt.Printf(&quot;%T&quot;, myPtr) } myPtr is &ldquo;unsafe.Pointer&rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to uintptr first.</p>
       <p>
       26 Apr 2015
-       
-      </p>
-    </div>
-  </div>
-
-  
-  <div class="col m4 s12">
-    <div class="card-panel">
-      <h4><a href="http://varunksaini.com/posts/using_io_limitreader/">using io.LimitReader to read a binary file</a></h4>
-      <p>
-       
-      </p>
-      <p>I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through io.LimitReader. According to official documentation, &ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&rdquo; and this is what I wanted. f, _ := os.Open(&quot;largefile.bin&quot;) f.Seek(123, 0) b :=</p>
-      <p>
-      18 Apr 2015
        
       </p>
     </div>

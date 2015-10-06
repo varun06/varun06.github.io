@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Podcasts I listen</title>
+  <title>killing process with child and grandchild processes  in Go</title>
   <link href="http://varunksaini.com/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://varunksaini.com/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="http://varunksaini.com/css/syntax.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -64,29 +64,50 @@
     <div class="row">
       <div class="col s12">
         <div class="card-panel">
-          <h4>Podcasts I listen</h4>
+          <h4>killing process with child and grandchild processes  in Go</h4>
           <p>
            
           </p>
-          <p><p>I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&rsquo;s enough time to listen to most of these podcasts.</p>
+          <p><p>Go provides <a href="https://golang.org/pkg/os/exec/">exec</a> package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.</p>
 
-<p>These are the podcasts that I listen to:</p>
+<p>We can start a process&hellip;
+<pre>
+    cmd := exec.Command(execPath, args&hellip;)
+</pre>
+and then process can be killed after certain given time&hellip;.
+<pre>
+    case &lt;-time.After(2 * time.Second):
+        if err := cmd.Process.Kill(); err != nil {
+            return 0, fmt.Errorf(&ldquo;Failed to kill process: %v&rdquo;, err)
+        }
+</pre></p>
 
-<ul>
-<li><a href="http://www.motherjones.com/category/secondary-tags/inquiring-minds">Inquiring minds</a> - This is my favorite science podcast. The topics are diverse and hosts are really good.</li>
-<li><a href="http://www.npr.org/sections/money/">Planet Money</a> - Who would not like Planet Money. It is informative and interesting at the same time.</li>
-<li><a href="http://99percentinvisible.org/">99% Invisible</a> - A podcast about design, architecture and other interesting things related to them.</li>
-<li><a href="http://freakonomics.com/category/freakonomics-radio/podcasts/">Freakonomics Radio</a> - This is my favorite too. If you are interested in economics/phycology and their impacts on world, Do not miss this podcast.</li>
-<li><a href="http://hanselminutes.com/">Hanselminutes</a> - My only dev podcast. Scott Hanselman  talks to people about different technologies and ideas.</li>
-<li><a href="http://www.thisamericanlife.org/">This American Life</a> - This is also a popular podcast. Topics are diverse and interesting.</li>
-<li><a href="http://nerdist.com/podcasts/nerdist-podcast-channel/">The Nerdist</a> - If you like stand up comedy and want to listen to some interesting people talk in very open environment, this is the podcast for you.</li>
-</ul>
+<p>But there is a problem with this code, what if the process start other <a href="https://en.wikipedia.org/wiki/Child_process">child processes</a> and then those processes start new processes(grandchild processes). Once you kill the parent process those child processes become orphan and get a <code>PPID=1</code>. In my particular scenario I had 4-5 orphaned processes from killed parent process and then these orphaned processes were creating an issue with subsequent run of the program.</p>
 
-<p>I also listen to some other podcasts if I find some interesting topic, otherwise these are the podcast that I listen to.</p>
+<p>I started looking around and found this well written article on this topic <a href="https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773">killing a child process and all of its children in Go</a>.This article helped me understand how to setup a process group and kill the process.</p>
 
-<p>What are the podcasts that you guys like, Please share.</p>
+<p>But The solution suggested in that article was not working in my case. Then I asked this question on <a href="https://forum.golangbridge.org/t/killing-child-process-on-timeout-in-go-code/995">Go forum</a> and gophers helped me to find the solution.</p>
+
+<p>Now I create a process group when I create the command, then I kill the whole group on timeout and it kills the process as well as the children of the process.</p>
+
+<pre>
+    cmd := exec.Command(execPath, args...)
+    //create a new process group
+    cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+</pre>
+
+<p><pre>
+    case &lt;-time.After(timeout):
+        pgid, err := syscall.Getpgid(cmd.Process.Pid)
+        if err == nil {
+            if err := syscall.Kill(-pgid, syscall.SIGKILL); err != nil {
+                &hellip;
+            }
+        }
+</pre>
+We get the process group id <code>syscall.Getpgid</code> and then kill the process by passing -pgid to <code>syscall.Kill</code>. We use -pgid because we want to target the group id and not the particular process id.</p>
 </p>
-          <p>19 Sep 2015
+          <p>4 Oct 2015
             
           </p>
           
@@ -112,13 +133,13 @@
     <div class="row">
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large waves-effect waves-light" href="http://varunksaini.com/posts/kiling-processes-in-go/"><i class="mdi-navigation-arrow-back"></i></a>
+        <a class="btn-floating btn-large disabled"><i class="mdi-navigation-arrow-back"></i></a>
       
       </div>
       <div class="col s6 m10 center">&nbsp</div>
       <div class="col s3 m1">
       
-        <a class="btn-floating btn-large waves-effect waves-light" href="http://varunksaini.com/posts/running_commands_with_go/"><i class="mdi-navigation-arrow-forward"></i></a>
+        <a class="btn-floating btn-large waves-effect waves-light" href="http://varunksaini.com/posts/fav-podcasts/"><i class="mdi-navigation-arrow-forward"></i></a>
       
       </div>
     </div>
