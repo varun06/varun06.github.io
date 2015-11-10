@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
+<<<<<<< HEAD
     <lastBuildDate>Mon, 19 Oct 2015 19:58:28 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -44,6 +45,12 @@ type MyStruct struct {
     </item>
     
     <item>
+=======
+    <lastBuildDate>Sun, 04 Oct 2015 06:30:28 -0600</lastBuildDate>
+    <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+>>>>>>> origin/master
       <title>killing process with child and grandchild processes  in Go</title>
       <link>http://varunksaini.com/posts/kiling-processes-in-go/</link>
       <pubDate>Sun, 04 Oct 2015 06:30:28 -0600</pubDate>
@@ -680,5 +687,42 @@ func main() {
 </description>
     </item>
     
+<<<<<<< HEAD
+=======
+    <item>
+      <title>Go lang boiler plate sublime text snippet</title>
+      <link>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</link>
+      <pubDate>Sat, 06 Dec 2014 19:07:32 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/go-boiler-plate-snippet-sublime-text/</guid>
+      <description>&lt;p&gt;If you work with go lang, you know that every time you write a new go program you have to add some lines of go code that is same most of the time. if you are learning and keep creating small scripts then it gets annoying some time. Sublime text provides an option to create snippets and you can use snippets to auto fill some go lang boiler plate.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;&amp;lt;snippet&amp;gt;
+	&amp;lt;content&amp;gt;&amp;lt;![CDATA[
+package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+	fmt.Println(&amp;quot;${1:// content...}&amp;quot;)
+}
+]]&amp;gt;&amp;lt;/content&amp;gt;
+	&amp;lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&amp;gt;
+	&amp;lt;tabTrigger&amp;gt;fun&amp;lt;/tabTrigger&amp;gt;
+	&amp;lt;!-- Optional: Set a scope to limit where the snippet will trigger --&amp;gt;
+	&amp;lt;!-- &amp;lt;scope&amp;gt;source.python&amp;lt;/scope&amp;gt; --&amp;gt;
+&amp;lt;/snippet&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To add a snippet in Sublime text, Select Tools-&amp;gt; New Snippet from Menu. It will open a new file
+in sublime text, paste the above code and make require changes.&lt;/p&gt;
+
+&lt;p&gt;Save the snippet and you are all set. Next time when you create a new go file just write &amp;ldquo;fun&amp;rdquo; and hit tab, you will have some go lang boiler plate to start with.&lt;/p&gt;
+
+&lt;p&gt;This is just a simple snippet, but you can create other complex snippets such as functions, interfaces etc.&lt;/p&gt;
+</description>
+    </item>
+    
+>>>>>>> origin/master
   </channel>
 </rss>

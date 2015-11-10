@@ -1,0 +1,14 @@
+/* TEAM */
+
+   Designer: Varun Saini (Based on Andrew Codispoti Blog)
+   Site: http://varunksaini.com
+   From: U.S.A.
+
+/* SITE */
+
+   Change Log: https://github.com/varun06/varun06.github.io
+   Language: English
+   Doctype: HTML5
+   Standards: HTML5 / CSS3 / HUMANS.TXT
+   Frontend Framework: [Bootstrap](http://getbootstrap.com)
+   Static Site Generator: [Hugo](http://hugo.spf13.com/)
