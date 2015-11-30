@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on keep living, keep learning..</title>
-    <link>http://varunksaini.com/posts/</link>
-    <description>Recent content in Posts on keep living, keep learning..</description>
+    <title>keep living, keep learning..</title>
+    <link>http://varunksaini.com/</link>
+    <description>Recent content on keep living, keep learning..</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
     <lastBuildDate>Mon, 19 Oct 2015 19:58:28 -0600</lastBuildDate>
-    <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Issue with white space in json struct tags</title>
@@ -507,6 +507,16 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
     </item>
     
     <item>
+      <title>Thinking, Fast and Slow</title>
+      <link>http://varunksaini.com/reading/thinking_fast_and_slow/</link>
+      <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
+      
+      <guid>http://varunksaini.com/reading/thinking_fast_and_slow/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Get operating system name in Go</title>
       <link>http://varunksaini.com/posts/get-os-name-in-go/</link>
       <pubDate>Sat, 03 Jan 2015 06:13:00 +0000</pubDate>
@@ -605,78 +615,6 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;I am no scientist or philosopher, I am just a mere human who sees the things changing around him and trying to connect the dots. It is not easy to understand what is going on but I am an optimist and believe all these changes will make humans better and might one day make us an inter galactic species.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;We all know that AI is good, but you know what is best, more intelligent humans.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Working with files in go lang</title>
-      <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
-      <pubDate>Sat, 13 Dec 2014 06:40:15 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
-      <description>&lt;p&gt;Go makes working with file very easy and file reading is an operation that is used very frequently.&lt;/p&gt;
-
-&lt;p&gt;To open a file in Go, we can use &amp;ldquo;Open&amp;rdquo; function from the &amp;ldquo;os&amp;rdquo; package.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;os&amp;quot;
-)
-
-func main() {
-	file, err := os.Open(&amp;quot;test.txt&amp;quot;)
-	if err != nil {
-		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
-		return
-	}
-	defer file.Close()
-
-	size, err := file.Stat()
-	if err != nil {
-		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
-		return
-	}
-
-	fs := make([]byte, size.Size())
-	_, err = file.Read(fs)
-	if err != nil {
-		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
-		return
-	}
-
-	str := string(fs)
-	fmt.Println(str)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I really like how you can simply defer the file close operation just after creating a file object. In Go you use &amp;ldquo;defer&amp;rdquo; to do that. any function that use defer will excute in the end. This way we don&amp;rsquo;t have to worry about forgeting closing the file.&lt;/p&gt;
-
-&lt;p&gt;There is a shorter way to read files too.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;io/ioutil&amp;quot;
-)
-
-func main() {
-	fs, err := ioutil.ReadFile(&amp;quot;test.txt&amp;quot;)
-	if err != nil {
-		fmt.Println(&amp;quot;Error is: &amp;quot;, err)
-	}
-
-	str := string(fs)
-	fmt.Println(str)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If we want to create a file instead of reading it, just use&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;file, err := os.Create(&amp;quot;test.txt&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
