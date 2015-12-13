@@ -7,8 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Mon, 19 Oct 2015 19:58:28 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2015 19:59:32 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Review: The Go Programming language</title>
+      <link>http://varunksaini.com/posts/the-Go-Programming-language-book-review/</link>
+      <pubDate>Sat, 12 Dec 2015 19:59:32 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/the-Go-Programming-language-book-review/</guid>
+      <description>&lt;p&gt;I have been programming in Go from almost one year. I read &lt;a href=&#34;https://golang.org/ref/spec&#34;&gt;The Go Programming Language Specification&lt;/a&gt;, went through &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&gt;A Tour of Go&lt;/a&gt; and looked at &lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;Effective Go&lt;/a&gt; many times. But when it was announced that Alan Donovan and Brian Kernighan are writing a book &lt;a href=&#34;http://www.gopl.io/&#34;&gt;The Go Programming Language&lt;/a&gt; on Go, I didn&amp;rsquo;t think much and pre-ordered the book on &lt;a href=&#34;http://www.amazon.com/dp/0134190440&#34;&gt;Amazon&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I received the book on October 20, 2015 and started reading it immediately. I finished the book recently and writing a concise review of the book below.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who is the book for:&lt;/strong&gt; Authors assume that reader has some programming experience in one or more dynamic or compiled languages, such as C, C++, Java, python, ruby etc. as far as Go language knowledge goes, they assume that you are new to Go. But that does not mean experienced programmers can not get any thing from this book. I have been programming in Go from almost one year and I also found many trick and areas to improve(that shows how experienced in Go I am..).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Organization of the book:&lt;/strong&gt; Book has 13 chapters about basic data types, functions, methods, interface and concurrency in Go. Last chapter of book is about doing low level programming in Go using unsafe package.Every chapter has theory, code examples and code exercises about the corresponding topic. First chapter is &lt;strong&gt;Tutorial&lt;/strong&gt; and basically is a tour of basic components of Go programming language, such as command line applications,  http server, working with images etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Code samples and exercises:&lt;/strong&gt; This book certainly has some really well thought out code samples and code exercises. Code samples has a normal progression through out the book. Code exercises are also sometime related to sample code (adding new features, enhancing existing code) and sometime writing something new to fully grasp the concept. All the code examples are provided at book source code repository for download. Code exercises need to be done by reader as part of learning process.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Final thoughts:&lt;/strong&gt; A must have book for Go programmers. Specially who are just starting. Experienced programmers can use the book for reference and bragging rights.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Issue with white space in json struct tags</title>
@@ -581,40 +601,6 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;And also tons of articles again in 2015.&lt;/p&gt;
 
 &lt;p&gt;Happy Reading All.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>human&#43;&#43;</title>
-      <link>http://varunksaini.com/posts/new-human-age/</link>
-      <pubDate>Tue, 30 Dec 2014 08:11:15 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/new-human-age/</guid>
-      <description>&lt;p&gt;We all talk about an omnipotent AI that will come some time in future and might kill (hypothetically) its masters (humans in this case). I will love to have intelligent robots but I don&amp;rsquo;t see it happening soon. What I believe will happen before AI take over the world, human++, more intelligent humans. If we look carefully we will see subtle changes and technical breakthroughs that are happening around us and pointing towards a brave new world. Some people call this phenomena &amp;ldquo;Singularity&amp;rdquo; but I call it human++.&lt;/p&gt;
-
-&lt;p&gt;There are many cutting edge research and experiments happening to make this a reality. Some of these are mentioned below and well worth you time to check out.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1. Nano-bots and biological uses&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=6UVet-OCFdI&amp;amp;utm&#34;&gt;Ray Kurzweil and Robert Freitas discuss the future of nanotechnology&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Human Mind interface&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://research.microsoft.com/en-us/um/people/desney/publications/BCIHCI-Chapter1.pdf&#34;&gt;Microsoft research on brain computer interaction&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. Exoskeletons&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://biomech.media.mit.edu/portfolio_page/load-bearing-exoskeleton-for-augmentation-of-human-running/&#34;&gt;MIT media lab on exoskeleton and their usage in augmenting humans&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Fight against aging :&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Calico_%28company%29&#34;&gt;Google calico&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;All the things and others will make humans more intelligent, more resilient to disease and other medical issues, more powerful and may be someday Immortal.&lt;/p&gt;
-
-&lt;p&gt;I am no scientist or philosopher, I am just a mere human who sees the things changing around him and trying to connect the dots. It is not easy to understand what is going on but I am an optimist and believe all these changes will make humans better and might one day make us an inter galactic species.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;We all know that AI is good, but you know what is best, more intelligent humans.&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     

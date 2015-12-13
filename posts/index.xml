@@ -7,8 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Mon, 19 Oct 2015 19:58:28 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 12 Dec 2015 19:59:32 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Review: The Go Programming language</title>
+      <link>http://varunksaini.com/posts/the-Go-Programming-language-book-review/</link>
+      <pubDate>Sat, 12 Dec 2015 19:59:32 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/posts/the-Go-Programming-language-book-review/</guid>
+      <description>&lt;p&gt;I have been programming in Go from almost one year. I read &lt;a href=&#34;https://golang.org/ref/spec&#34;&gt;The Go Programming Language Specification&lt;/a&gt;, went through &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&gt;A Tour of Go&lt;/a&gt; and looked at &lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;Effective Go&lt;/a&gt; many times. But when it was announced that Alan Donovan and Brian Kernighan are writing a book &lt;a href=&#34;http://www.gopl.io/&#34;&gt;The Go Programming Language&lt;/a&gt; on Go, I didn&amp;rsquo;t think much and pre-ordered the book on &lt;a href=&#34;http://www.amazon.com/dp/0134190440&#34;&gt;Amazon&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I received the book on October 20, 2015 and started reading it immediately. I finished the book recently and writing a concise review of the book below.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Who is the book for:&lt;/strong&gt; Authors assume that reader has some programming experience in one or more dynamic or compiled languages, such as C, C++, Java, python, ruby etc. as far as Go language knowledge goes, they assume that you are new to Go. But that does not mean experienced programmers can not get any thing from this book. I have been programming in Go from almost one year and I also found many trick and areas to improve(that shows how experienced in Go I am..).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Organization of the book:&lt;/strong&gt; Book has 13 chapters about basic data types, functions, methods, interface and concurrency in Go. Last chapter of book is about doing low level programming in Go using unsafe package.Every chapter has theory, code examples and code exercises about the corresponding topic. First chapter is &lt;strong&gt;Tutorial&lt;/strong&gt; and basically is a tour of basic components of Go programming language, such as command line applications,  http server, working with images etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Code samples and exercises:&lt;/strong&gt; This book certainly has some really well thought out code samples and code exercises. Code samples has a normal progression through out the book. Code exercises are also sometime related to sample code (adding new features, enhancing existing code) and sometime writing something new to fully grasp the concept. All the code examples are provided at book source code repository for download. Code exercises need to be done by reader as part of learning process.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Final thoughts:&lt;/strong&gt; A must have book for Go programmers. Specially who are just starting. Experienced programmers can use the book for reference and bragging rights.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Issue with white space in json struct tags</title>
@@ -605,78 +625,6 @@ dp/B003IV8GUY/&#34;&gt;The ultimate bar book&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;I am no scientist or philosopher, I am just a mere human who sees the things changing around him and trying to connect the dots. It is not easy to understand what is going on but I am an optimist and believe all these changes will make humans better and might one day make us an inter galactic species.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;We all know that AI is good, but you know what is best, more intelligent humans.&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Working with files in go lang</title>
-      <link>http://varunksaini.com/posts/working-with-files-in-go/</link>
-      <pubDate>Sat, 13 Dec 2014 06:40:15 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/posts/working-with-files-in-go/</guid>
-      <description>&lt;p&gt;Go makes working with file very easy and file reading is an operation that is used very frequently.&lt;/p&gt;
-
-&lt;p&gt;To open a file in Go, we can use &amp;ldquo;Open&amp;rdquo; function from the &amp;ldquo;os&amp;rdquo; package.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;os&amp;quot;
-)
-
-func main() {
-	file, err := os.Open(&amp;quot;test.txt&amp;quot;)
-	if err != nil {
-		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
-		return
-	}
-	defer file.Close()
-
-	size, err := file.Stat()
-	if err != nil {
-		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
-		return
-	}
-
-	fs := make([]byte, size.Size())
-	_, err = file.Read(fs)
-	if err != nil {
-		fmt.Println(&amp;quot;erros is: &amp;quot;, err)
-		return
-	}
-
-	str := string(fs)
-	fmt.Println(str)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I really like how you can simply defer the file close operation just after creating a file object. In Go you use &amp;ldquo;defer&amp;rdquo; to do that. any function that use defer will excute in the end. This way we don&amp;rsquo;t have to worry about forgeting closing the file.&lt;/p&gt;
-
-&lt;p&gt;There is a shorter way to read files too.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-	&amp;quot;io/ioutil&amp;quot;
-)
-
-func main() {
-	fs, err := ioutil.ReadFile(&amp;quot;test.txt&amp;quot;)
-	if err != nil {
-		fmt.Println(&amp;quot;Error is: &amp;quot;, err)
-	}
-
-	str := string(fs)
-	fmt.Println(str)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If we want to create a file instead of reading it, just use&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=Go&#34;&gt;file, err := os.Create(&amp;quot;test.txt&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
