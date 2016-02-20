@@ -7,15 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Mon, 25 Jan 2016 19:58:28 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 20 Feb 2016 06:57:49 -0600</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>do we need so many data scientists</title>
+      <link>http://varunksaini.com/do-we-need-so-many-data-scientists/</link>
+      <pubDate>Sat, 20 Feb 2016 06:57:49 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/do-we-need-so-many-data-scientists/</guid>
+      <description>&lt;p&gt;Hiring is a difficult problem to solve(&lt;a href=&#34;http://www.theatlantic.com/business/archive/2013/06/why-is-it-so-hard-to-hire-great-people/277122/&#34;&gt;http://www.theatlantic.com/business/archive/2013/06/why-is-it-so-hard-to-hire-great-people/277122/&lt;/a&gt;). Career fairs are a good way to meet college graduates who are looking for internship or full time opportunities. I have been to many career fairs and we found some really good engineers(some of them are my colleagues) there. But some time back I noticed that there are lots of students looking for data science or data analysts roles(both internship or full time). Even this year, I have been to two career fairs and I am amazed how many students wants to be data scientists or data analysts. I asked many current students why they want to be a data scientist or some time even &amp;ldquo;What is data science&amp;rdquo; but most of the time they don&amp;rsquo;t know.&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know what is the reason and that&amp;rsquo;s why I thought of asking smart people&amp;hellip;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>https server in go</title>
-      <link>http://varunksaini.com/posts/https-server-in-go/</link>
+      <link>http://varunksaini.com/https-server-in-go/</link>
       <pubDate>Mon, 25 Jan 2016 19:58:28 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/https-server-in-go/</guid>
+      <guid>http://varunksaini.com/https-server-in-go/</guid>
       <description>&lt;p&gt;We organized &lt;a href=&#34;http://www.meetup.com/Chicago-Hardcore-Golang/events/226752090/&#34;&gt;Golang meetup&lt;/a&gt; in &lt;a href=&#34;http://mediamath.com&#34;&gt;MediaMath&lt;/a&gt; Chicago on 25th january. It was my first meetup talk and I gave a talk on writing secure servers in Go.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://go-talks.appspot.com/github.com/varun06/gomeetup/httpsandgo.slide#1&#34;&gt;https server in go&lt;/a&gt;&lt;/p&gt;
@@ -24,10 +36,10 @@
     
     <item>
       <title>Review: The Go Programming language</title>
-      <link>http://varunksaini.com/posts/the-Go-Programming-language-book-review/</link>
+      <link>http://varunksaini.com/the-Go-Programming-language-book-review/</link>
       <pubDate>Sat, 12 Dec 2015 19:59:32 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/the-Go-Programming-language-book-review/</guid>
+      <guid>http://varunksaini.com/the-Go-Programming-language-book-review/</guid>
       <description>&lt;p&gt;I have been programming in Go from almost one year. I read &lt;a href=&#34;https://golang.org/ref/spec&#34;&gt;The Go Programming Language Specification&lt;/a&gt;, went through &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&gt;A Tour of Go&lt;/a&gt; and looked at &lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;Effective Go&lt;/a&gt; many times. But when it was announced that Alan Donovan and Brian Kernighan are writing a book &lt;a href=&#34;http://www.gopl.io/&#34;&gt;The Go Programming Language&lt;/a&gt; on Go, I didn&amp;rsquo;t think much and pre-ordered the book on &lt;a href=&#34;http://www.amazon.com/dp/0134190440&#34;&gt;Amazon&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I received the book on October 20, 2015 and started reading it immediately. I finished the book recently and writing a concise review of the book below.&lt;/p&gt;
@@ -44,10 +56,10 @@
     
     <item>
       <title>Issue with white space in json struct tags</title>
-      <link>http://varunksaini.com/posts/json-tag-in-struct-gotcha/</link>
+      <link>http://varunksaini.com/json-tag-in-struct-gotcha/</link>
       <pubDate>Mon, 19 Oct 2015 19:58:28 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/json-tag-in-struct-gotcha/</guid>
+      <guid>http://varunksaini.com/json-tag-in-struct-gotcha/</guid>
       <description>&lt;p&gt;Go requires all exported fields to start with a capitalized letter. But It is not common for JSON where lower case letter keys are preferred. We can solve this problem by using the struct tags for json.&lt;/p&gt;
 
 &lt;p&gt;for an example:&lt;/p&gt;
@@ -77,10 +89,10 @@ type MyStruct struct {
     
     <item>
       <title>killing process with child and grandchild processes  in Go</title>
-      <link>http://varunksaini.com/posts/kiling-processes-in-go/</link>
+      <link>http://varunksaini.com/kiling-processes-in-go/</link>
       <pubDate>Sun, 04 Oct 2015 06:30:28 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/kiling-processes-in-go/</guid>
+      <guid>http://varunksaini.com/kiling-processes-in-go/</guid>
       <description>&lt;p&gt;Go provides &lt;a href=&#34;https://golang.org/pkg/os/exec/&#34;&gt;exec&lt;/a&gt; package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.&lt;/p&gt;
 
 &lt;p&gt;We can start a process&amp;hellip;
@@ -124,10 +136,10 @@ We get the process group id &lt;code&gt;syscall.Getpgid&lt;/code&gt; and then ki
     
     <item>
       <title>Podcasts I listen</title>
-      <link>http://varunksaini.com/posts/fav-podcasts/</link>
+      <link>http://varunksaini.com/fav-podcasts/</link>
       <pubDate>Sat, 19 Sep 2015 19:58:28 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/fav-podcasts/</guid>
+      <guid>http://varunksaini.com/fav-podcasts/</guid>
       <description>&lt;p&gt;I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&amp;rsquo;s enough time to listen to most of these podcasts.&lt;/p&gt;
 
 &lt;p&gt;These are the podcasts that I listen to:&lt;/p&gt;
@@ -150,10 +162,10 @@ We get the process group id &lt;code&gt;syscall.Getpgid&lt;/code&gt; and then ki
     
     <item>
       <title>running commands with go</title>
-      <link>http://varunksaini.com/posts/running_commands_with_go/</link>
+      <link>http://varunksaini.com/running_commands_with_go/</link>
       <pubDate>Sun, 12 Jul 2015 19:58:28 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/running_commands_with_go/</guid>
+      <guid>http://varunksaini.com/running_commands_with_go/</guid>
       <description>&lt;p&gt;Sometimes we need to run external commands programatically to use the output of the command to drive the execution. Go provides a nice interface to run the external commands through &lt;a href=&#34;https://golang.org/pkg/os/exec/&#34;&gt;exec&lt;/a&gt; package. Running an external command is very easy and an example is given below.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
@@ -179,10 +191,10 @@ func main() {
     
     <item>
       <title>My Go Lang Development Workflow</title>
-      <link>http://varunksaini.com/posts/go_dev_workflow/</link>
+      <link>http://varunksaini.com/go_dev_workflow/</link>
       <pubDate>Sat, 13 Jun 2015 11:11:00 -0900</pubDate>
       
-      <guid>http://varunksaini.com/posts/go_dev_workflow/</guid>
+      <guid>http://varunksaini.com/go_dev_workflow/</guid>
       <description>&lt;p&gt;I have been doing programming in Go from last 6 months. When you start a new project or start learning a new programming language, chossing your tools(text editor, plugins etc.) is as important as any other process.&lt;/p&gt;
 
 &lt;p&gt;I use Sublime Text 3 with &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;go-sublime&lt;/a&gt; plugin as my text editor. go-sublime adds many features to Sublime Text for go development and make the whole development process a little easier. I particularly like &amp;lsquo;go linting&amp;rsquo; and &amp;lsquo;go to definition&amp;rsquo;.&lt;/p&gt;
@@ -211,10 +223,10 @@ func main() {
     
     <item>
       <title>using io.SectionReader in Go</title>
-      <link>http://varunksaini.com/posts/using-sectionReader/</link>
+      <link>http://varunksaini.com/using-sectionReader/</link>
       <pubDate>Sun, 31 May 2015 06:30:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/using-sectionReader/</guid>
+      <guid>http://varunksaini.com/using-sectionReader/</guid>
       <description>&lt;p&gt;For my last task I was moving to an offset value in huge byte stream using &lt;code&gt;reader.Seek(int64(offset), whence)&lt;/code&gt; and reading the bytes there. But it was not good for the performance because I was moving in a big file(~1gigs). Then I came to know about &lt;code&gt;io.SectionReader&lt;/code&gt; and it made my life easier and helped me delete a lot of code(isn&amp;rsquo;t that best).&lt;/p&gt;
 
 &lt;p&gt;I create the section reader using this function:&lt;/p&gt;
@@ -243,10 +255,10 @@ if err != nil {
     
     <item>
       <title>Go Lang notes</title>
-      <link>http://varunksaini.com/posts/notes-from-Go-In-Action-book/</link>
+      <link>http://varunksaini.com/notes-from-Go-In-Action-book/</link>
       <pubDate>Mon, 25 May 2015 19:58:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/notes-from-Go-In-Action-book/</guid>
+      <guid>http://varunksaini.com/notes-from-Go-In-Action-book/</guid>
       <description>&lt;p&gt;I got &lt;a href=&#34;http://www.manning.com/ketelsen/&#34;&gt;Go In Action&lt;/a&gt; book from &lt;a href=&#34;https://twitter.com/goinggodotnet&#34;&gt;William Kennedy&lt;/a&gt;. I was reading the book last week and I have a habit of taking some noted while reading. The book takes a very pragmatic approach to teach &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; and has very good code  examples. I am sharing some of the notes I took while reading the book. If anybody find the notes interesting, he/she can check the book also.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -326,10 +338,10 @@ In Go, identifiers are either exported or unexported from a package. An exported
     
     <item>
       <title>goto Chicago Conference 2015</title>
-      <link>http://varunksaini.com/posts/goto-chicago-2015/</link>
+      <link>http://varunksaini.com/goto-chicago-2015/</link>
       <pubDate>Wed, 13 May 2015 20:41:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/goto-chicago-2015/</guid>
+      <guid>http://varunksaini.com/goto-chicago-2015/</guid>
       <description>
 
 &lt;p&gt;This week I went to GOTO Chicago conference. It was held in Westin hotel on Clark street. The conference was on 11th and 12th May 2015. GOTO is an yearly conference and has been going on from some time. My employer sponsored the conference also.&lt;/p&gt;
@@ -401,10 +413,10 @@ She forgot to charge her laptop and ended up using hand written slides and that 
     
     <item>
       <title>testing in go lang</title>
-      <link>http://varunksaini.com/posts/testing-in-go/</link>
+      <link>http://varunksaini.com/testing-in-go/</link>
       <pubDate>Sat, 09 May 2015 06:41:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/testing-in-go/</guid>
+      <guid>http://varunksaini.com/testing-in-go/</guid>
       <description>
 
 &lt;p&gt;Testing is an integral part of software development and as a squad (if you are wondering what is a squad in software company setting, check &lt;a href=&#34;https://vimeo.com/85490944&#34;&gt;Spotify Culture&lt;/a&gt;) in &lt;a href=&#34;https://www.mediamath.com&#34;&gt;MediaMath&lt;/a&gt;, our mantra is that &lt;strong&gt;&amp;ldquo;Regrassion Resistence is a software requirement&amp;rdquo;&lt;/strong&gt; and should be taken care from the start of the project. We give a lot of emphasis on testing the software and having a good test coverage. We have written some tools around &lt;code&gt;go coverage&lt;/code&gt; and &lt;code&gt;go get&lt;/code&gt; &lt;a href=&#34;https://github.com/MediaMath/cove&#34;&gt;cove&lt;/a&gt; to help us with our testing process.&lt;/p&gt;
@@ -445,10 +457,10 @@ func TestAdd(t *testing.T) {
     
     <item>
       <title>Pointer type in Go</title>
-      <link>http://varunksaini.com/posts/pointer_in_go/</link>
+      <link>http://varunksaini.com/pointer_in_go/</link>
       <pubDate>Sun, 26 Apr 2015 07:40:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/pointer_in_go/</guid>
+      <guid>http://varunksaini.com/pointer_in_go/</guid>
       <description>&lt;p&gt;Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called &lt;a href=&#34;https://golang.org/pkg/unsafe/#Pointer&#34;&gt;unsafe&lt;/a&gt; and unsafe package provides a Pointer type.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
@@ -513,10 +525,10 @@ func main() {
     
     <item>
       <title>using io.LimitReader to read a binary file</title>
-      <link>http://varunksaini.com/posts/using_io_limitreader/</link>
+      <link>http://varunksaini.com/using_io_limitreader/</link>
       <pubDate>Sat, 18 Apr 2015 10:42:00 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/using_io_limitreader/</guid>
+      <guid>http://varunksaini.com/using_io_limitreader/</guid>
       <description>&lt;p&gt;I was working on a problem and wanted to read a very specific chunck of file. I read Go documentation and came through &lt;a href=&#34;http://golang.org/pkg/io/#LimitedReader&#34;&gt;io.LimitReader&lt;/a&gt;. According to official documentation, &amp;ldquo;A LimitedReader reads from R but limits the amount of data returned to just N bytes. Each call to Read updates N to reflect the new amount remaining.&amp;rdquo; and this is what I wanted.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;
@@ -540,35 +552,11 @@ binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
     
     <item>
       <title>Thinking, Fast and Slow</title>
-      <link>http://varunksaini.com/reading/thinking_fast_and_slow/</link>
+      <link>http://varunksaini.com/thinking_fast_and_slow/</link>
       <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
       
-      <guid>http://varunksaini.com/reading/thinking_fast_and_slow/</guid>
+      <guid>http://varunksaini.com/thinking_fast_and_slow/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Get operating system name in Go</title>
-      <link>http://varunksaini.com/posts/get-os-name-in-go/</link>
-      <pubDate>Sat, 03 Jan 2015 06:13:00 +0000</pubDate>
-      
-      <guid>http://varunksaini.com/posts/get-os-name-in-go/</guid>
-      <description>&lt;p&gt;To get the operating system name where we running a Go program, we can use &lt;strong&gt;runtime&lt;/strong&gt; package. &lt;strong&gt;runtime.GOOS&lt;/strong&gt; return the operating system name. Some people try to use &lt;strong&gt;os.Getenv(&amp;ldquo;GOOS&amp;rdquo;)&lt;/strong&gt; but it is not very reliable. I always use &lt;a href=&#34;http://golang.org/pkg/runtime/&#34;&gt;runtime package&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-language=go&#34;&gt;package main
-
-import (
-    &amp;quot;fmt&amp;quot;
-    &amp;quot;runtime&amp;quot;
-)
-
-func main() {
-    var goos string = runtime.GOOS
-    fmt.Printf(&amp;quot;The operating system is: %s\n&amp;quot;, goos)
-}
-
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
