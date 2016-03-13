@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on keep living, keep learning..</title>
+    <link>http://varunksaini.com/tags/blog/</link>
+    <description>Recent content in Blog on keep living, keep learning..</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© 2015 Copyright Text</copyright>
+    <lastBuildDate>Sun, 13 Mar 2016 07:57:24 -0500</lastBuildDate>
+    <atom:link href="http://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>unmarshal to map</title>
+      <link>http://varunksaini.com/unmarshal-to-map/</link>
+      <pubDate>Sun, 13 Mar 2016 07:57:24 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/unmarshal-to-map/</guid>
+      <description>&lt;p&gt;When you unmarhsal json to a map, always pass the reference to map object. This is very subtle and I fixed two bugs last week related to same thing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var m map[string]string
+err := json.Unmarshal(data, m)
+if err != nil {
+	return err
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The code snippet above will not fail/err. But when you look at m, you will get nothing. To fix this, we need to pass the reference to m in &lt;code&gt;json.Unmarshal&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var m map[string]string
+err := json.Unmarshal(data, &amp;amp;m)
+if err != nil {
+	return err
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

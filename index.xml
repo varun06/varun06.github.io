@@ -7,8 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sat, 20 Feb 2016 06:57:49 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 13 Mar 2016 07:57:24 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>unmarshal to map</title>
+      <link>http://varunksaini.com/unmarshal-to-map/</link>
+      <pubDate>Sun, 13 Mar 2016 07:57:24 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/unmarshal-to-map/</guid>
+      <description>&lt;p&gt;When you unmarhsal json to a map, always pass the reference to map object. This is very subtle and I fixed two bugs last week related to same thing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var m map[string]string
+err := json.Unmarshal(data, m)
+if err != nil {
+	return err
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The code snippet above will not fail/err. But when you look at m, you will get nothing. To fix this, we need to pass the reference to m in &lt;code&gt;json.Unmarshal&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var m map[string]string
+err := json.Unmarshal(data, &amp;amp;m)
+if err != nil {
+	return err
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>do we need so many data scientists</title>
@@ -547,16 +573,6 @@ binary.Read(buf, binary.LittleEndian, &amp;amp;a)
 
 binary.Read(io.LimitReader(r, 150-123), binary.LittleEndian, &amp;amp;a)
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Thinking, Fast and Slow</title>
-      <link>http://varunksaini.com/thinking_fast_and_slow/</link>
-      <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/thinking_fast_and_slow/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
