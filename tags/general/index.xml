@@ -7,8 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sun, 13 Mar 2016 07:57:24 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 15 May 2016 08:01:57 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading</title>
+      <link>http://varunksaini.com/weekly-reading-15May/</link>
+      <pubDate>Sun, 15 May 2016 08:01:57 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-15May/</guid>
+      <description>&lt;p&gt;I love reading and read a lot. I have a process to filter what I want to read. Mostly my reading is on topics related to programming, science, and social science. When I find an article worth reading I use (pocket)[&lt;a href=&#34;https://getpocket.com&#34;&gt;https://getpocket.com&lt;/a&gt;] to store the article. Once I have 4-5 articles to read, I read them and then share them to twitter or facebook. Most of the reading happen on weekends and I also read some books too. Today morning I thought to start this section on my blog so that if someone find these articles enticing, they can also get the link to read them.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://davidad.github.io/blog/2014/03/12/the-operating-system-is-out-of-date/&#34;&gt;http://davidad.github.io/blog/2014/03/12/the-operating-system-is-out-of-date/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://priceonomics.com/online-dating-and-the-death-of-the-mixed/&#34;&gt;http://priceonomics.com/online-dating-and-the-death-of-the-mixed/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aeon.co/opinions/how-game-theory-can-help-you-do-a-better-job-of-parenting&#34;&gt;https://aeon.co/opinions/how-game-theory-can-help-you-do-a-better-job-of-parenting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.economist.com/news/leaders/21698652-europe-and-america-made-mistakes-misery-arab-world-caused-mainly-its-own&#34;&gt;http://www.economist.com/news/leaders/21698652-europe-and-america-made-mistakes-misery-arab-world-caused-mainly-its-own&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.thington.com/the-shape-of-things-66c1a8e9d606#.bt0gjz1vg&#34;&gt;https://blog.thington.com/the-shape-of-things-66c1a8e9d606#.bt0gjz1vg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://aeon.co/essays/true-ai-is-both-logically-possible-and-utterly-implausible&#34;&gt;https://aeon.co/essays/true-ai-is-both-logically-possible-and-utterly-implausible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nautil.us/issue/36/aging/physics-makes-aging-inevitable-not-biology&#34;&gt;http://nautil.us/issue/36/aging/physics-makes-aging-inevitable-not-biology&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.hanselman.com/blog/10YearsAndOver520EpisodesOfPodcastingTechIsAMarathonNotASprint.aspx&#34;&gt;http://www.hanselman.com/blog/10YearsAndOver520EpisodesOfPodcastingTechIsAMarathonNotASprint.aspx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://nymag.com/scienceofus/2016/05/half-of-your-friends-probably-dont-think-of-you-as-a-friend.html&#34;&gt;http://nymag.com/scienceofus/2016/05/half-of-your-friends-probably-dont-think-of-you-as-a-friend.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.economist.com/news/leaders/21698240-it-question-when-not-if-real-trouble-will-hit-china-coming-debt-bust&#34;&gt;http://www.economist.com/news/leaders/21698240-it-question-when-not-if-real-trouble-will-hit-china-coming-debt-bust&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>unmarshal to map</title>
