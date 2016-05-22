@@ -7,8 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sun, 22 May 2016 06:20:37 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2016 06:52:53 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>pretty print JSON in golang</title>
+      <link>http://varunksaini.com/pretty-print-json-golang/</link>
+      <pubDate>Sun, 22 May 2016 06:52:53 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/pretty-print-json-golang/</guid>
+      <description>&lt;p&gt;JSON is a very common standard to transmit data objects. &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; provides great support for JSON. &lt;a href=&#34;https://golang.org/pkg/encoding/JSON/&#34;&gt;JSON package&lt;/a&gt; in standard library provides the methods to work with JSON in a go program. Generally we use JSON to tranmit the data but sometime we need to print the JSON data too. If a human eye is going to look at that data, it is a good idea to pretty print that JSON. Here is small function that will do that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func prettyPrintJSON(b []byte) ([]byte, error) {
+	var out bytes.Buffer
+	err := JSON.Indent(&amp;amp;out, b, &amp;quot;&amp;quot;, &amp;quot;    &amp;quot;)
+	return out.Bytes(), err
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This function takes a byte array and indent the JSON. Each element in JSON object begins on a new line.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>weekly reading 22 May</title>
@@ -500,50 +519,6 @@ She forgot to charge her laptop and ended up using hand written slides and that 
 &lt;a href=&#34;http://gotocon.com/dl/goto-chicago-2015/slides/ChadFowler_FromHomogeneousMonolithToRadicallyHeterogeneousMicroservicesTheWunderlist3Story.pdf&#34;&gt;Slides&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This was a great conference but &lt;strong&gt;diversity&lt;/strong&gt; is still an issue for software industry. There were very few women in audience/speakers. This is a big issue and some speakers even pointed out on stage too. So we all need to work towards making software engineering a more diverse place.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>testing in go lang</title>
-      <link>http://varunksaini.com/testing-in-go/</link>
-      <pubDate>Sat, 09 May 2015 06:41:00 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/testing-in-go/</guid>
-      <description>
-
-&lt;p&gt;Testing is an integral part of software development and as a squad (if you are wondering what is a squad in software company setting, check &lt;a href=&#34;https://vimeo.com/85490944&#34;&gt;Spotify Culture&lt;/a&gt;) in &lt;a href=&#34;https://www.mediamath.com&#34;&gt;MediaMath&lt;/a&gt;, our mantra is that &lt;strong&gt;&amp;ldquo;Regrassion Resistence is a software requirement&amp;rdquo;&lt;/strong&gt; and should be taken care from the start of the project. We give a lot of emphasis on testing the software and having a good test coverage. We have written some tools around &lt;code&gt;go coverage&lt;/code&gt; and &lt;code&gt;go get&lt;/code&gt; &lt;a href=&#34;https://github.com/MediaMath/cove&#34;&gt;cove&lt;/a&gt; to help us with our testing process.&lt;/p&gt;
-
-&lt;p&gt;Go is a batteries included programming language. Go provides testing as part of standard library and that means testing is a first class citizen in Go world. Writing a test in Go is as easy as writing a function. The test function start with &lt;strong&gt;TestXXXXX&lt;/strong&gt; and you can write as many tests as you want. If you have a file such as &lt;strong&gt;&amp;ldquo;github_api.go&amp;rdquo;&lt;/strong&gt;, you can group the tests(create a test suite) for that file in a test file with a name as &lt;strong&gt;&amp;ldquo;github_api_test.go&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Go tests are run with &lt;strong&gt;&lt;code&gt;go test&lt;/code&gt;&lt;/strong&gt; command.&lt;/p&gt;
-
-&lt;h5 id=&#34;a-sample-function:41a817ce30820111ed95bff4b0e3bf7b&#34;&gt;A Sample function:&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;package abc
-
-func Add(a, b int) int {
-	return a + b
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;test-function:41a817ce30820111ed95bff4b0e3bf7b&#34;&gt;Test function:&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;package abc
-
-import &amp;quot;testing&amp;quot;
-
-func TestAdd(t *testing.T) {
-	var a, b int = 2, 3
-	v := Add(a, b)
-	if v != 5 {
-		t.Error(&amp;quot;Expected 5, got &amp;quot;, v)
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can learn more about Go lang testing package at &lt;a href=&#34;http://golang.org/pkg/testing/&#34;&gt;testing&lt;/a&gt;, if you want to look at the source code &lt;a href=&#34;http://golang.org/src/testing/testing.go&#34;&gt;testing source code&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;P.S. In Go documentation, if you want to check package documentation just use &amp;ldquo;&lt;a href=&#34;http://golang.org/pkg/(packagename)&amp;quot;&#34;&gt;http://golang.org/pkg/(packagename)&amp;quot;&lt;/a&gt; and if you want source code &amp;ldquo;&lt;a href=&#34;http://golang.org/src/(packagename)&amp;quot;&#34;&gt;http://golang.org/src/(packagename)&amp;quot;&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

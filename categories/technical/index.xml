@@ -7,8 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sun, 15 May 2016 08:43:02 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 22 May 2016 06:52:53 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>pretty print JSON in golang</title>
+      <link>http://varunksaini.com/pretty-print-json-golang/</link>
+      <pubDate>Sun, 22 May 2016 06:52:53 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/pretty-print-json-golang/</guid>
+      <description>&lt;p&gt;JSON is a very common standard to transmit data objects. &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; provides great support for JSON. &lt;a href=&#34;https://golang.org/pkg/encoding/JSON/&#34;&gt;JSON package&lt;/a&gt; in standard library provides the methods to work with JSON in a go program. Generally we use JSON to tranmit the data but sometime we need to print the JSON data too. If a human eye is going to look at that data, it is a good idea to pretty print that JSON. Here is small function that will do that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func prettyPrintJSON(b []byte) ([]byte, error) {
+	var out bytes.Buffer
+	err := JSON.Indent(&amp;amp;out, b, &amp;quot;&amp;quot;, &amp;quot;    &amp;quot;)
+	return out.Bytes(), err
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This function takes a byte array and indent the JSON. Each element in JSON object begins on a new line.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>weekly reading 15May</title>
