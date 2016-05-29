@@ -7,8 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sun, 22 May 2016 06:52:53 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2016 08:38:58 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 29May</title>
+      <link>http://varunksaini.com/weekly-reading-29May/</link>
+      <pubDate>Sun, 29 May 2016 08:38:58 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-29May/</guid>
+      <description>&lt;p&gt;This week I read more technical articles then general articles. Also I spent more time reading my kindle books. I am reading two books &lt;a href=&#34;https://www.amazon.com/gp/product/B00PWX7RPG&#34;&gt;Rise of the Robots: Technology and the Threat of a Jobless Future&lt;/a&gt; and &lt;a href=&#34;https://www.amazon.com/evolution-Phoenix-Horizon-Book-ebook/dp/B00OM9OKEC&#34;&gt;Revolution&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Technical&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/04/23/java-garbage-collection-can-be-really-slow/&#34;&gt;http://jvns.ca/blog/2016/04/23/java-garbage-collection-can-be-really-slow/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/04/25/how-regular-expressions-go-fast/&#34;&gt;http://jvns.ca/blog/2016/04/25/how-regular-expressions-go-fast/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/04/30/cdns-arent-just-for-caching/&#34;&gt;http://jvns.ca/blog/2016/04/30/cdns-arent-just-for-caching/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/presentations/event-streams-kafka&#34;&gt;https://www.infoq.com/presentations/event-streams-kafka&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://engineering.linkedin.com/blog/2016/05/introducing-and-open-sourcing-ambry---linkedins-new-distributed-&#34;&gt;https://engineering.linkedin.com/blog/2016/05/introducing-and-open-sourcing-ambry---linkedins-new-distributed-&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://antirez.com/news/107&#34;&gt;http://antirez.com/news/107&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.twitter.com/2016/open-sourcing-twitter-heron&#34;&gt;https://blog.twitter.com/2016/open-sourcing-twitter-heron&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.nullspace.io/building-search-engines.html&#34;&gt;http://blog.nullspace.io/building-search-engines.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://devblog.mediamath.com/cassandra-war-stories-part-1&#34;&gt;http://devblog.mediamath.com/cassandra-war-stories-part-1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://circleci.com/blog/its-the-future/&#34;&gt;https://circleci.com/blog/its-the-future/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr&#34;&gt;https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;General&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.troyhunt.com/going-dark-online-privacy-and-anonymity-for-normal-people/&#34;&gt;https://www.troyhunt.com/going-dark-online-privacy-and-anonymity-for-normal-people/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/05/22/how-do-you-write-blog-posts/&#34;&gt;http://jvns.ca/blog/2016/05/22/how-do-you-write-blog-posts/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>pretty print JSON in golang</title>
