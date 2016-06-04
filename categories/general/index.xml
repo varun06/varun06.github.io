@@ -7,8 +7,40 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sun, 29 May 2016 08:38:58 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jun 2016 16:45:52 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 4June</title>
+      <link>http://varunksaini.com/weekly-reading-4June/</link>
+      <pubDate>Sat, 04 Jun 2016 16:45:52 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-4June/</guid>
+      <description>&lt;p&gt;Tracking my online article reading has been helpful so far. I am more aware about what to read and what not to read. I am no saving articles mindlessly to my &lt;strong&gt;Pocket&lt;/strong&gt; app. This week I read an article about &lt;strong&gt;reading and comprehending&lt;/strong&gt; &lt;a href=&#34;https://blog.todoist.com/2016/04/25/read-less-learn-more/&#34;&gt;read less learn more&lt;/a&gt;, TL;DR when we read mindlessly we don&amp;rsquo;t comprehend much, and we don&amp;rsquo;t learn much. So idea is to learn more and read less. Also I read books from my kindle queue this week. I am done reading 50% of &lt;a href=&#34;https://www.amazon.com/gp/product/B00OM9OKEC/ref=kinw_myk_ro_title&#34;&gt;&amp;reg;evolution (Phoenix Horizon Book 1)&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Technical&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. http://rbcs-us.com/documents/Why-Most-Unit-Testing-is-Waste.pdf
+2. https://www.oreilly.com/ideas/swarm-v-fleet-v-kubernetes-v-mesos
+3. http://googletesting.blogspot.com/2016/05/flaky-tests-at-google-and-how-we.html?m=1
+4. https://coreos.com/blog/torus-distributed-storage-by-coreos.html
+5. https://medium.com/@francesc/go-tooling-in-action-eca6882ff3bc#.46jdwvs4h
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;General&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1. http://lifehacker.com/everything-you-need-to-stock-your-first-home-bar-1779335148
+2. http://www.newyorker.com/business/currency/the-tech-booms-second-cities
+3. https://medium.com/@billjordan1/the-quiet-crisis-unfolding-in-software-development-cffbdafbf450#.mcoq5tcc4
+4. http://jacquesmattheij.com/ycs-basic-income-experiment
+5. http://www.hanselman.com/blog/IsTechnologyKillingCuriosity.aspx
+6. http://jvns.ca/blog/2016/05/29/three-ways-to-solve-hard-programming-problems/
+7. https://blog.devmastery.com/how-to-win-the-coding-interview-71ae7102d685#.td3h8rhs5
+8. https://blog.todoist.com/2016/04/25/read-less-learn-more/
+9. http://yosefk.com/blog/evil-tip-avoid-easy-things.html
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>weekly reading 29May</title>
