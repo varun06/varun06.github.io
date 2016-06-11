@@ -7,8 +7,220 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sat, 04 Jun 2016 16:45:52 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jun 2016 06:23:57 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>consul service discovery using golang</title>
+      <link>http://varunksaini.com/consul-service-discovery-golang/</link>
+      <pubDate>Sat, 11 Jun 2016 06:23:57 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/consul-service-discovery-golang/</guid>
+      <description>
+
+&lt;h2 id=&#34;what-is-service-discovery&#34;&gt;What is Service discovery:&lt;/h2&gt;
+
+&lt;p&gt;Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;How do clients determine the IP and port for a service that exist on multiple hosts?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.&lt;/p&gt;
+
+&lt;p&gt;Dynamic service registration and discovery becomes very important in these scenarios in order to avoid service interruption.&lt;/p&gt;
+
+&lt;p&gt;There are two sides to the problem of locating services.
+    • Service Registration
+    • and Service Discovery.&lt;/p&gt;
+
+&lt;h4 id=&#34;service-registration&#34;&gt;Service Registration:&lt;/h4&gt;
+
+&lt;p&gt;The process of a service registering its location in a central registry. It usually register its host and port and sometimes authentication credentials, protocols, versions numbers, and/or environment details.&lt;/p&gt;
+
+&lt;h4 id=&#34;service-discovery&#34;&gt;Service Discovery:&lt;/h4&gt;
+
+&lt;p&gt;The process of a client application querying the central registry to learn of the location of services.&lt;/p&gt;
+
+&lt;p&gt;Example of popular service discovery systems are Consul, Zookeeper, etcd etc. Out of these, Consul is the only one that really tries to provide a comprehensive solution for service discovery.&lt;/p&gt;
+
+&lt;h4 id=&#34;consul&#34;&gt;Consul:&lt;/h4&gt;
+
+&lt;p&gt;consul is a service discovery tool from &lt;a href=&#34;https://www.hashicorp.com/&#34;&gt;hashicorp&lt;/a&gt;. Consul provides a consistent view of services and configuration. Consul monitors and changes service information based on the health of nodes. Consul provides a REST interface and web UI to see services and service configurations. Consul organizes services in service catalog and provides a DNS/REST/HTTP interface to it.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Service Discovery&lt;/strong&gt;: Clients of Consul can provide a service, such as API or postgresql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Health Checking&lt;/strong&gt;: Consul clients can provide any number of health checks, either associated with a given service (&amp;ldquo;is the webserver returning 200 OK&amp;rdquo;), or with the local node (&amp;ldquo;is memory utilization below 90%&amp;rdquo;). This information can be used by an operator to monitor cluster health, and it is used by the service discovery components to route traffic away from unhealthy hosts.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Key/Value Store&lt;/strong&gt;: Applications can make use of Consul&amp;rsquo;s hierarchical key/value store for any number of purposes, including dynamic configuration, feature flagging, coordination, leader election, and more. The simple HTTP API makes it easy to use.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Multi Datacenter&lt;/strong&gt;: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To use Consul you start up an agent process. The Consul agent process is a long running daemon on every member of Consul cluster. The agent process can be run in server mode or client mode. Consul agent clients would run on every physical server or OS virtual machine (if that makes more sense). Client runs on server hosting services. The clients use gossip and RPC calls to stay in sync with Consul.&lt;/p&gt;
+
+&lt;p&gt;Consul is built on top of serf, &lt;a href=&#34;https://www.serfdom.io/&#34;&gt; a full gossip protocol&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;setting-up-a-local-consul-cluster&#34;&gt;setting up a local consul cluster&lt;/h2&gt;
+
+&lt;p&gt;consul can be downloaded from &lt;a href=&#34;https://www.consul.io/downloads.html&#34;&gt;consul&lt;/a&gt; website . On OSX, if you are using homebrew as a package manager, consul can be installed from homebrew.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew cask install consul
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Verify the installation by running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ consul
+usage: consul [--version] [--help] &amp;lt;command&amp;gt; [&amp;lt;args&amp;gt;]
+
+Available commands are:
+	agent          Runs a Consul agent
+	configtest     Validate config file
+	event          Fire a new event
+	exec           Executes a command on Consul nodes
+	force-leave    Forces a member of the cluster to enter the &amp;quot;left&amp;quot; state
+	info           Provides debugging information for operators
+	join           Tell Consul agent to join cluster
+	keygen         Generates a new encryption key
+	keyring        Manages gossip layer encryption keys
+	leave          Gracefully leaves the Consul cluster and shuts down
+	lock           Execute a command holding a lock
+	maint          Controls node or service maintenance mode
+	members        Lists the members of a Consul cluster
+	monitor        Stream logs from a Consul agent
+	reload         Triggers the agent to reload configuration files
+	rtt            Estimates network round trip time between nodes
+	version        Prints the Consul version
+	watch          Watch for changes in Consul
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you get an error, set your PATH correctly.&lt;/p&gt;
+
+&lt;p&gt;After Consul is installed, the agent must be run. The agent can run either in server or client mode. Each datacenter must have at least one server, a cluster of 3 or 5 servers is recommended.&lt;/p&gt;
+
+&lt;p&gt;All other agents run in client mode. A client is a very lightweight process that registers services, runs health checks, and forwards queries to servers. The agent must be run on every node that is part of the cluster so that we can get information from every node.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;-dev&lt;/em&gt; will run consul in  dev mode.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;consul agent -dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can use CTRL+C to stop the consul server.&lt;/p&gt;
+
+&lt;p&gt;We have a server running, now let&amp;rsquo;s add a service to our consul server.&lt;/p&gt;
+
+&lt;h4 id=&#34;consul-service&#34;&gt;Consul Service:&lt;/h4&gt;
+
+&lt;p&gt;A service can be defined by providing a consul &lt;a href=&#34;https://www.consul.io/docs/agent/services.html&#34;&gt;service definition&lt;/a&gt; or by making &lt;a href=&#34;https://www.consul.io/docs/agent/http/agent.html#agent_service_register&#34;&gt;HTTP calls&lt;/a&gt; to consul server.&lt;/p&gt;
+
+&lt;h4 id=&#34;example-service-definition&#34;&gt;Example service definition:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;service&amp;quot;: {
+    &amp;quot;name&amp;quot;: &amp;quot;myservice&amp;quot;,
+    &amp;quot;tags&amp;quot;: [&amp;quot;prod&amp;quot;],
+    &amp;quot;address&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
+    &amp;quot;port&amp;quot;: 8000,
+    &amp;quot;enableTagOverride&amp;quot;: false,
+    &amp;quot;checks&amp;quot;: [
+      {
+        &amp;quot;script&amp;quot;:&amp;quot;check&amp;quot;,
+        &amp;quot;interval&amp;quot;: &amp;quot;10s&amp;quot;
+      }
+    ]
+  }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;querying-consul-service&#34;&gt;Querying Consul service&lt;/h4&gt;
+
+&lt;p&gt;We can query consul service using DNS or HTTP API.&lt;/p&gt;
+
+&lt;h4 id=&#34;dns-api&#34;&gt;DNS API:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;dig @127.0.0.1 -p 8600 myservice.service.consul
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;http-api&#34;&gt;HTTP API:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;curl http://localhost:8500/v1/catalog/service/myservice
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once we have our server and client up and running. We can use consul to find our services&lt;/p&gt;
+
+&lt;h4 id=&#34;service-discovery-from-golang&#34;&gt;Service Discovery from Golang:&lt;/h4&gt;
+
+&lt;p&gt;We can use both DNS and HTTP &lt;a href=&#34;https://godoc.org/github.com/hashicorp/consul/api&#34;&gt;API&lt;/a&gt; to discover service information from consul. I have only used HTTP API and that&amp;rsquo;s what we are going to use today. We create an interface that give us methods to register, deregister, and get services from consul.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Package consul
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+
+	consul &amp;quot;github.com/hashicorp/consul/api&amp;quot;
+)
+
+//Client provides an interface for getting data out of Consul
+type Client interface {
+// Get a Service from consul
+	Service(string, string) ([]string, error)
+// Register a service with local agent
+	Register(string, int) error
+// Deregister a service with local agent
+	DeRegister(string) error
+}
+
+type client struct {
+	consul *consul.Client
+}
+
+//NewConsul returns a Client interface for given consul address
+Func NewConsulClient(addr string) (Client, error) {
+	config := consul.DefaultConfig()
+	config.Address = addr
+	c, err := consul.NewClient(config)
+	if err != nil {
+		return nil, err
+	}
+	return &amp;amp;client{consul: c}, nil
+}
+
+// Register a service with consul local agent
+func (c *client) Register(name string, port int) error {
+	reg := &amp;amp;consul.AgentServiceRegistration{
+		ID:   name,
+		Name: name,
+		Port: port,
+	}
+	return c.consul.Agent().ServiceRegister(reg)
+}
+
+// DeRegister a service with consul local agent
+func (c *client) DeRegister(id string) error {
+	return c.consul.Agent().ServiceDeregister(id)
+}
+
+// Service return a service 
+func (c *client) Service(service, tag string) ([]*ServiceEntry, *QueryMeta, error) {
+	passingOnly := true 
+	addrs, meta, err := c.consul.Health().Service(service, tag, passingOnly, nil)
+	if len(addrs) == 0 &amp;amp;&amp;amp; err == nil {
+		return nil, fmt.Errorf(&amp;quot;service ( %s ) was not found&amp;quot;, service)
+	}
+	if err != nil {
+		return nil, err
+	}
+	return addrs, meta, nil
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now when we have consul running and we know how to interact with consul with golang. It is time to build .&lt;/p&gt;
+
+&lt;p&gt;Also, if you have any question, feel free to ping me &lt;a href=&#34;https://twitter.com/varunksaini&#34;&gt;@varunksaini&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>weekly reading 4June</title>
@@ -63,7 +275,8 @@
 &lt;li&gt;&lt;a href=&#34;http://blog.nullspace.io/building-search-engines.html&#34;&gt;http://blog.nullspace.io/building-search-engines.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://devblog.mediamath.com/cassandra-war-stories-part-1&#34;&gt;http://devblog.mediamath.com/cassandra-war-stories-part-1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://circleci.com/blog/its-the-future/&#34;&gt;https://circleci.com/blog/its-the-future/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr&#34;&gt;https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr&#34;&gt;https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;strong&gt;General&lt;/strong&gt;&lt;/p&gt;
