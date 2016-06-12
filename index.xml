@@ -7,8 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sat, 11 Jun 2016 06:23:57 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jun 2016 06:33:33 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 12 June</title>
+      <link>http://varunksaini.com/weekly-reading-12June/</link>
+      <pubDate>Sun, 12 Jun 2016 06:33:33 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-12June/</guid>
+      <description>
+
+&lt;p&gt;My tracking of reading is paying off. I am more aware of what I am reading and as you can see it is more technical article then general now. I am reading more books too. I am implementing more tweaks to my workflow and I hope that will save me some more time for important things.&lt;/p&gt;
+
+&lt;h4 id=&#34;technical&#34;&gt;Technical:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;1. http://neverworkintheory.org/2016/04/26/java-exception-handling.html
+2. https://distributedalgorithm.wordpress.com/2015/06/20/architecture-of-zab-zookeeper-atomic-broadcast-protocol/
+3. http://howivim.com/2016/daniel-schauenberg/
+4. https://talks.golang.org/2016/applicative.slide
+5. http://www.doc.ic.ac.uk/~cn06/pub/2016/dingo/main.pdf
+6. https://www.petekeen.net/dns-the-good-parts
+7. https://techblog.airtime.com/microservice-continuous-integration-made-easy-with-aws-ecs-10d470e31af0#.asyuz4os3
+8. http://dave.cheney.net/2016/06/12/stack-traces-and-the-errors-package
+9. https://www.prod.facebook.com/notes/kent-beck/mastering-programming/1184427814923414
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;general&#34;&gt;General:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;1. http://www.livemint.com/Companies/hLEBBx17cFY5rPjTjmIP9O/The-Patanjali-story.html
+2. http://www.theatlantic.com/science/archive/2016/06/how-consciousness-evolved/485558/
+3. https://www.prod.facebook.com/notes/kent-beck/mastering-programming/1184427814923414
+4. http://progrium.com/blog/2016/04/25/generativity/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>consul service discovery using golang</title>
@@ -575,38 +608,6 @@ func main() {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;exec&lt;/code&gt; package provides some other useful methods to work with external commands. Use this powerful package to build awesome things.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>My Go Lang Development Workflow</title>
-      <link>http://varunksaini.com/go_dev_workflow/</link>
-      <pubDate>Sat, 13 Jun 2015 11:11:00 -0900</pubDate>
-      
-      <guid>http://varunksaini.com/go_dev_workflow/</guid>
-      <description>&lt;p&gt;I have been doing programming in Go from last 6 months. When you start a new project or start learning a new programming language, chossing your tools(text editor, plugins etc.) is as important as any other process.&lt;/p&gt;
-
-&lt;p&gt;I use Sublime Text 3 with &lt;a href=&#34;https://github.com/DisposaBoy/GoSublime&#34;&gt;go-sublime&lt;/a&gt; plugin as my text editor. go-sublime adds many features to Sublime Text for go development and make the whole development process a little easier. I particularly like &amp;lsquo;go linting&amp;rsquo; and &amp;lsquo;go to definition&amp;rsquo;.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;img src=&#34;http://varunksaini.com/img/sublime.png&#34; alt=&#34;Sublime Text&#34; title=&#34;Sublime Text&#34; style=&#34;width:700px; height: 500px;&#34;&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Once I have written the code and tests, I run &lt;code&gt;go test&lt;/code&gt; in terminal (I use iterm2 instead of default terminal app) to test my code. To check code coverage, I run &lt;code&gt;go test -cover&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;because sometime you need more than one terminal window, I use &lt;a href=&#34;http://tmux.github.io/&#34;&gt;tmux&lt;/a&gt; for that. tmux manages terminal windows and sessions. I started using tmux some time back and it is great.&lt;/p&gt;
-
-&lt;p&gt;OSX window management is a pain in itself, I use &lt;a href=&#34;http://mizage.com/divvy/&#34;&gt;DIVVY&lt;/a&gt; to manage the windows. I am looking forward to &lt;a href=&#34;http://www.apple.com/osx/elcapitan-preview/&#34;&gt;OSX el capitan&lt;/a&gt;, which has window management build in the OSX (finally).&lt;/p&gt;
-
-&lt;p&gt;Once I have tested my code thoroughly on my local machine, I send it to github for code review. I generally use git in terminal to run all the common git commands (such as &lt;code&gt;git status&lt;/code&gt;, &lt;code&gt;git commit&lt;/code&gt;, and &lt;code&gt;git push&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;We use &lt;a href=&#34;http://github.com/MediaMath/grim&#34;&gt;GRIM&lt;/a&gt;, which is open sourced by the way, as our build server. So when I create a pull request for code review, grim takes the pull request and run the build to make sure that everything works as expected with new code, grim also updates the hipchat channel, so that team is aware about new pull request.&lt;/p&gt;
-
-&lt;p&gt;This continous build system gives code reviewers a test run even before reviewing the code. Once the code review is done and thumpsup are given, code is ready to be merged in master.&lt;/p&gt;
-
-&lt;p&gt;Once merged, time for next task and more Go code/learnings..&lt;/p&gt;
-
-&lt;p&gt;Note: If you are a vim user, then &lt;a href=&#34;https://github.com/fatih/vim-go&#34;&gt;vim-go&lt;/a&gt; is an awesome go plugin for vim.&lt;/p&gt;
 </description>
     </item>
     
