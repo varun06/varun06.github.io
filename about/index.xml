@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Never stop learning...</title>
+    <link>http://varunksaini.com/about/</link>
+    <description>Recent content in Abouts on Never stop learning...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jun 2015 14:02:37 +0200</lastBuildDate>
+    <atom:link href="http://varunksaini.com/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>http://varunksaini.com/about/</link>
+      <pubDate>Sat, 20 Jun 2015 14:02:37 +0200</pubDate>
+      
+      <guid>http://varunksaini.com/about/</guid>
+      <description>&lt;p&gt;I am a software developer working with &lt;a href=&#34;http://www.mediamath.com&#34;&gt;MediaMath&lt;/a&gt; currently. I am using &lt;a href=&#34;http://golang.org&#34;&gt;golang&lt;/a&gt; now a days. I generally write distributed systems using golang, kafka etc.&lt;/p&gt;
+
+&lt;p&gt;This page is in progress&amp;hellip;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
