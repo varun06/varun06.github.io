@@ -56,6 +56,59 @@
     </item>
     
     <item>
+      <title>using consul acl with golang</title>
+      <link>http://varunksaini.com/consul-acl-golang/</link>
+      <pubDate>Fri, 17 Jun 2016 16:56:36 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/consul-acl-golang/</guid>
+      <description>&lt;p&gt;It is always a good idea to think about security. It is no exception when we are using &lt;a href=&#34;https://www.consul.io&#34;&gt;Consul&lt;/a&gt; for service discovery. Consul provides an optional Access Control List &lt;a href=&#34;https://en.wikipedia.org/wiki/Access_control_list&#34;&gt;ACL&lt;/a&gt; system which can be used to control access to data and APIs. An access control list (ACL) is a list of permissions attached to an object.&lt;/p&gt;
+
+&lt;p&gt;Consul ACL is &lt;a href=&#34;https://en.wikipedia.org/wiki/Capability-based_security&#34;&gt;Capability-based&lt;/a&gt;. If you are familiar with AWS IAM, it will look similar to AWS IAM.&lt;/p&gt;
+
+&lt;p&gt;To enable consul with ACL, add this to server configuration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;acl_datacenter&amp;quot;: &amp;quot;&amp;lt;datacenter name&amp;gt;&amp;quot;,
+  &amp;quot;acl_master_token&amp;quot;: &amp;quot;&amp;lt;token&amp;gt;&amp;quot;,
+  &amp;quot;acl_default_policy&amp;quot;: &amp;quot;deny&amp;quot;,
+  &amp;quot;acl_down_policy&amp;quot;: &amp;quot;deny&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Consul with this configuration will &amp;lsquo;deny&amp;rsquo; by default and we can allow read/write accesses per client.&lt;/p&gt;
+
+&lt;p&gt;We can list the ACL&amp;rsquo;s with this curl command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl &amp;quot;http://localhost:8500/v1/acl/list?token=token&amp;amp;pretty=true&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Consul is running on port 8500 at localhost.&lt;/p&gt;
+
+&lt;p&gt;If we want to get a value from key/value store. We can use a curl like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl &amp;quot;http://localhost:8500/v1/kv/timeout?token=token&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code&gt;timeout&lt;/code&gt; is a key in Consul &lt;a href=&#34;https://www.consul.io/docs/agent/http/kv.html&#34;&gt;key/value&lt;/a&gt; store.&lt;/p&gt;
+
+&lt;p&gt;If you are using &lt;a href=&#34;https://golang.org/&#34;&gt;golang&lt;/a&gt;, Consul provides an &lt;a href=&#34;https://github.com/hashicorp/consul/tree/master/api&#34;&gt;api&lt;/a&gt;.
+With official Consul api, accessing a service or key/value store while ACL enabled is just adding token to &lt;a href=&#34;https://godoc.org/github.com/hashicorp/consul/api#QueryOptions&#34;&gt;QueryOption&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;options := &amp;amp;consulapi.QueryOption{
+	Token: token,
+}
+
+pairs, meta, err := consulapi.Get(&amp;quot;timeout&amp;quot;, coptions)
+if err != nil {
+	return nil, nil, err
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;More information about Consul &lt;a href=&#34;https://www.consul.io/docs/internals/acl.html&#34;&gt;ACL&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>weekly reading 12 June</title>
       <link>http://varunksaini.com/weekly-reading-12June/</link>
       <pubDate>Sun, 12 Jun 2016 06:33:33 -0500</pubDate>
