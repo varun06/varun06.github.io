@@ -6,8 +6,84 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2016 21:56:31 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jun 2016 06:36:44 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 26June</title>
+      <link>http://varunksaini.com/weekly-reading-26June/</link>
+      <pubDate>Sun, 26 Jun 2016 06:36:44 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-26June/</guid>
+      <description>
+
+&lt;p&gt;This weeks reading mostly included some highly popular articles from around the web. I read more documentation compared to technical articles from web.&lt;/p&gt;
+
+&lt;h4 id=&#34;general&#34;&gt;General:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nytimes.com/2016/06/19/opinion/sunday/think-less-think-better.html&#34;&gt;http://www.nytimes.com/2016/06/19/opinion/sunday/think-less-think-better.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR: When you think too much you miss the moment and miss what is happening around you. It rings true to me. Specially in my case, it should be &amp;ldquo;Read less, Read Better&amp;rdquo;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://digitalculturist.com/drowning-in-a-sea-of-information-563a3160efbb#.z3p094i92&#34;&gt;https://digitalculturist.com/drowning-in-a-sea-of-information-563a3160efbb#.z3p094i92&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This felt very personal. I have been asking same question(my situation is not as bad as author, but still). I am also trying to manage my information consumption and hence these writings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://a16z.com/2016/06/10/ai-deep-learning-machines/&#34;&gt;http://a16z.com/2016/06/10/ai-deep-learning-machines/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - Robots are coming&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.economist.com/news/leaders/21701265-how-minimise-damage-britains-senseless-self-inflicted-blow-tragic-split&#34;&gt;http://www.economist.com/news/leaders/21701265-how-minimise-damage-britains-senseless-self-inflicted-blow-tragic-split&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - Not good for UK, not for EU&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aeon.co/essays/the-body-as-amusement-park-a-history-of-masturbation&#34;&gt;https://aeon.co/essays/the-body-as-amusement-park-a-history-of-masturbation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - It&amp;rsquo;s complicated.&lt;/p&gt;
+
+&lt;h4 id=&#34;technical&#34;&gt;Technical:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://queue.acm.org/detail.cfm?id=2953944&#34;&gt;http://queue.acm.org/detail.cfm?id=2953944&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL:DR - speed of light sucks.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.confluent.io/blog/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/&#34;&gt;http://www.confluent.io/blog/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL:DR - choose your partitions carefully&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/linode-cube/configuration-management-4-tools-reviewed-7233eb44e278#.jpj5mr2op&#34;&gt;https://medium.com/linode-cube/configuration-management-4-tools-reviewed-7233eb44e278#.jpj5mr2op&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL:DR - There are many configuration management tools. Choose the one that work for you.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dave.cheney.net/2016/06/24/gophers-please-tag-your-releases&#34;&gt;http://dave.cheney.net/2016/06/24/gophers-please-tag-your-releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - tag your release, it is good for everybody.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cyberciti.biz/howto/shell-primer-configuring-your-linux-unix-osx-environment/&#34;&gt;http://www.cyberciti.biz/howto/shell-primer-configuring-your-linux-unix-osx-environment/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - Know your tools.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>gophercon 2016 here i come</title>
@@ -580,39 +656,6 @@ if err != nil {
 &lt;p&gt;&lt;strong&gt;Code samples and exercises:&lt;/strong&gt; This book certainly has some really well thought out code samples and code exercises. Code samples has a normal progression through out the book. Code exercises are also sometime related to sample code (adding new features, enhancing existing code) and sometime writing something new to fully grasp the concept. All the code examples are provided at book source code repository for download. Code exercises need to be done by reader as part of learning process.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Final thoughts:&lt;/strong&gt; A must have book for Go programmers. Specially who are just starting. Experienced programmers can use the book for reference and bragging rights.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Issue with white space in json struct tags</title>
-      <link>http://varunksaini.com/json-tag-in-struct-gotcha/</link>
-      <pubDate>Mon, 19 Oct 2015 19:58:28 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/json-tag-in-struct-gotcha/</guid>
-      <description>&lt;p&gt;Go requires all exported fields to start with a capitalized letter. But It is not common for JSON where lower case letter keys are preferred. We can solve this problem by using the struct tags for json.&lt;/p&gt;
-
-&lt;p&gt;for an example:&lt;/p&gt;
-
-&lt;pre&gt;
-type MyStruct struct {
-    SomeField string `json:&#34;some_field&#34;`
-}
-&lt;/pre&gt;
-
-&lt;p&gt;According to &lt;a href=&#34;https://golang.org/ref/spec#Struct_types&#34;&gt;Golang spec&lt;/a&gt;
-&lt;blockquote&gt;
-A field declaration may be followed by an optional string literal tag, which becomes an attribute for all the fields in the corresponding field declaration. The tags are made visible through a reflection interface and take part in type identity for structs but are otherwise ignored.
-&lt;/blockquote&gt;&lt;/p&gt;
-
-&lt;p&gt;But be careful when you create json tags. If there is any white space in json tag, struct will not be unMarshaled properly. If you have a struct such as:&lt;/p&gt;
-
-&lt;pre&gt;
-type MyStruct struct {
-    Foo string `json: &#34;foo&#34;`
-}
-&lt;/pre&gt;
-
-&lt;p&gt;When you unmarshal a json string to &lt;code&gt;MyStruct&lt;/code&gt; type, it will give you zero value (empty string for a string). This is also very difficult to catch.&lt;/p&gt;
 </description>
     </item>
     

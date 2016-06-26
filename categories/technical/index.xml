@@ -6,8 +6,84 @@
     <description>Recent content in Technical on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jun 2016 21:56:31 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jun 2016 06:36:44 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 26June</title>
+      <link>http://varunksaini.com/weekly-reading-26June/</link>
+      <pubDate>Sun, 26 Jun 2016 06:36:44 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-26June/</guid>
+      <description>
+
+&lt;p&gt;This weeks reading mostly included some highly popular articles from around the web. I read more documentation compared to technical articles from web.&lt;/p&gt;
+
+&lt;h4 id=&#34;general&#34;&gt;General:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.nytimes.com/2016/06/19/opinion/sunday/think-less-think-better.html&#34;&gt;http://www.nytimes.com/2016/06/19/opinion/sunday/think-less-think-better.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR: When you think too much you miss the moment and miss what is happening around you. It rings true to me. Specially in my case, it should be &amp;ldquo;Read less, Read Better&amp;rdquo;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://digitalculturist.com/drowning-in-a-sea-of-information-563a3160efbb#.z3p094i92&#34;&gt;https://digitalculturist.com/drowning-in-a-sea-of-information-563a3160efbb#.z3p094i92&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This felt very personal. I have been asking same question(my situation is not as bad as author, but still). I am also trying to manage my information consumption and hence these writings.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://a16z.com/2016/06/10/ai-deep-learning-machines/&#34;&gt;http://a16z.com/2016/06/10/ai-deep-learning-machines/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - Robots are coming&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.economist.com/news/leaders/21701265-how-minimise-damage-britains-senseless-self-inflicted-blow-tragic-split&#34;&gt;http://www.economist.com/news/leaders/21701265-how-minimise-damage-britains-senseless-self-inflicted-blow-tragic-split&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - Not good for UK, not for EU&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://aeon.co/essays/the-body-as-amusement-park-a-history-of-masturbation&#34;&gt;https://aeon.co/essays/the-body-as-amusement-park-a-history-of-masturbation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - It&amp;rsquo;s complicated.&lt;/p&gt;
+
+&lt;h4 id=&#34;technical&#34;&gt;Technical:&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://queue.acm.org/detail.cfm?id=2953944&#34;&gt;http://queue.acm.org/detail.cfm?id=2953944&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL:DR - speed of light sucks.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.confluent.io/blog/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/&#34;&gt;http://www.confluent.io/blog/how-to-choose-the-number-of-topicspartitions-in-a-kafka-cluster/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL:DR - choose your partitions carefully&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://medium.com/linode-cube/configuration-management-4-tools-reviewed-7233eb44e278#.jpj5mr2op&#34;&gt;https://medium.com/linode-cube/configuration-management-4-tools-reviewed-7233eb44e278#.jpj5mr2op&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL:DR - There are many configuration management tools. Choose the one that work for you.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dave.cheney.net/2016/06/24/gophers-please-tag-your-releases&#34;&gt;http://dave.cheney.net/2016/06/24/gophers-please-tag-your-releases&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - tag your release, it is good for everybody.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cyberciti.biz/howto/shell-primer-configuring-your-linux-unix-osx-environment/&#34;&gt;http://www.cyberciti.biz/howto/shell-primer-configuring-your-linux-unix-osx-environment/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;TL;DR - Know your tools.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>gophercon 2016 here i come</title>
