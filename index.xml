@@ -6,8 +6,38 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2016 06:36:44 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 02 Jul 2016 20:13:23 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 2July</title>
+      <link>http://varunksaini.com/weekly-reading-2July/</link>
+      <pubDate>Sat, 02 Jul 2016 20:13:23 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-2July/</guid>
+      <description>
+
+&lt;h4 id=&#34;general&#34;&gt;General&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.newyorker.com/science/maria-konnikova/casual-sex-everyone-is-doing-it&#34;&gt;http://www.newyorker.com/science/maria-konnikova/casual-sex-everyone-is-doing-it&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://fivethirtyeight.com/features/the-weird-world-of-expensive-wine/&#34;&gt;http://fivethirtyeight.com/features/the-weird-world-of-expensive-wine/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.vox.com/technology/2016/6/23/12007694/elon-musk-simulation-cartoon&#34;&gt;http://www.vox.com/technology/2016/6/23/12007694/elon-musk-simulation-cartoon&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&#34;technical&#34;&gt;Technical&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://dave.cheney.net/2016/06/26/automatically-fetch-your-projects-dependencies-with-gb&#34;&gt;http://dave.cheney.net/2016/06/26/automatically-fetch-your-projects-dependencies-with-gb&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-i&#34;&gt;http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-i&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-ii&#34;&gt;http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-ii&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://dave.cheney.net/2016/06/30/transistor-logic-fundamentals&#34;&gt;http://dave.cheney.net/2016/06/30/transistor-logic-fundamentals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.oreilly.com/learning/why-is-service-discovery-important-and-what-is-consul&#34;&gt;https://www.oreilly.com/learning/why-is-service-discovery-important-and-what-is-consul&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/&#34;&gt;http://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://matt.might.net/articles/what-cs-majors-should-know/&#34;&gt;http://matt.might.net/articles/what-cs-majors-should-know/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>weekly reading 26June</title>
@@ -636,26 +666,6 @@ if err != nil {
       <description>&lt;p&gt;We organized &lt;a href=&#34;http://www.meetup.com/Chicago-Hardcore-Golang/events/226752090/&#34;&gt;Golang meetup&lt;/a&gt; in &lt;a href=&#34;http://mediamath.com&#34;&gt;MediaMath&lt;/a&gt; Chicago on 25th january. It was my first meetup talk and I gave a talk on writing secure servers in Go.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://go-talks.appspot.com/github.com/varun06/gomeetup/httpsandgo.slide#1&#34;&gt;https server in go&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Review: The Go Programming language</title>
-      <link>http://varunksaini.com/the-Go-Programming-language-book-review/</link>
-      <pubDate>Sat, 12 Dec 2015 19:59:32 -0600</pubDate>
-      
-      <guid>http://varunksaini.com/the-Go-Programming-language-book-review/</guid>
-      <description>&lt;p&gt;I have been programming in Go from almost one year. I read &lt;a href=&#34;https://golang.org/ref/spec&#34;&gt;The Go Programming Language Specification&lt;/a&gt;, went through &lt;a href=&#34;https://tour.golang.org/welcome/1&#34;&gt;A Tour of Go&lt;/a&gt; and looked at &lt;a href=&#34;https://golang.org/doc/effective_go.html&#34;&gt;Effective Go&lt;/a&gt; many times. But when it was announced that Alan Donovan and Brian Kernighan are writing a book &lt;a href=&#34;http://www.gopl.io/&#34;&gt;The Go Programming Language&lt;/a&gt; on Go, I didn&amp;rsquo;t think much and pre-ordered the book on &lt;a href=&#34;http://www.amazon.com/dp/0134190440&#34;&gt;Amazon&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I received the book on October 20, 2015 and started reading it immediately. I finished the book recently and writing a concise review of the book below.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Who is the book for:&lt;/strong&gt; Authors assume that reader has some programming experience in one or more dynamic or compiled languages, such as C, C++, Java, python, ruby etc. as far as Go language knowledge goes, they assume that you are new to Go. But that does not mean experienced programmers can not get any thing from this book. I have been programming in Go from almost one year and I also found many trick and areas to improve(that shows how experienced in Go I am..).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Organization of the book:&lt;/strong&gt; Book has 13 chapters about basic data types, functions, methods, interface and concurrency in Go. Last chapter of book is about doing low level programming in Go using unsafe package.Every chapter has theory, code examples and code exercises about the corresponding topic. First chapter is &lt;strong&gt;Tutorial&lt;/strong&gt; and basically is a tour of basic components of Go programming language, such as command line applications,  http server, working with images etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Code samples and exercises:&lt;/strong&gt; This book certainly has some really well thought out code samples and code exercises. Code samples has a normal progression through out the book. Code exercises are also sometime related to sample code (adding new features, enhancing existing code) and sometime writing something new to fully grasp the concept. All the code examples are provided at book source code repository for download. Code exercises need to be done by reader as part of learning process.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Final thoughts:&lt;/strong&gt; A must have book for Go programmers. Specially who are just starting. Experienced programmers can use the book for reference and bragging rights.&lt;/p&gt;
 </description>
     </item>
     
