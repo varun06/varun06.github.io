@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>Particles of the universe &middot; Never stop learning...</title>
+		<title>bash fifos and golang channel &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
@@ -41,15 +41,32 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Particles of the universe</h1>
+                    <h1>bash fifos and golang channel</h1>
                     <h2 class="headline">
-                    December 13, 2014 
+                    July 4, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://varunksaini.com/tags/general">general</a>
+                        
+                            <a href="http://varunksaini.com/tags/blog">blog</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p><a href="http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/">Particles of the universe</a></p>
+                    <p>I have been reading about <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> this weekend and came to know about <a href="http://www.linuxjournal.com/content/using-named-pipes-fifos-bash">FIFOs</a>. After first glance I found similarities between <code>named pipes</code> and <code>golang channel</code>.</p>
+
+<p><code>FIFOs</code> are created using the <code>mkfifo</code> command.</p>
+
+<pre><code>$ mkfifo test
+</code></pre>
+
+<p><code>FIFOs</code> provide a <code>named pipe</code> to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it. If you are familiar with golang and golang channels, that&rsquo;s an <a href="https://golang.org/doc/effective_go.html#channels">Unbuffered/synchronous channel</a>. Unbuffered channel blocks until there is a receiver receiving from a channel.</p>
+
+<p><code>named pipes</code> are very interesting and can be used in some interesting ways.</p>
 
                 </section>
             </article>
@@ -62,7 +79,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fParticles_of_the_universe%2f - Particles%20of%20the%20universe by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fbash-fifos-and-golang-channel%2f - bash%20fifos%20and%20golang%20channel by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -78,9 +95,9 @@
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/Particles_of_the_universe\/';
-    var disqus_title = 'Particles of the universe';
-    var disqus_url = 'http:\/\/varunksaini.com\/Particles_of_the_universe\/';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/bash-fifos-and-golang-channel\/';
+    var disqus_title = 'bash fifos and golang channel';
+    var disqus_url = 'http:\/\/varunksaini.com\/bash-fifos-and-golang-channel\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

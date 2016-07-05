@@ -6,8 +6,27 @@
     <description>Recent content in Technical on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jul 2016 13:47:05 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jul 2016 22:05:36 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>bash fifos and golang channel</title>
+      <link>http://varunksaini.com/bash-fifos-and-golang-channel/</link>
+      <pubDate>Mon, 04 Jul 2016 22:05:36 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/bash-fifos-and-golang-channel/</guid>
+      <description>&lt;p&gt;I have been reading about &lt;a href=&#34;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&#34;&gt;bash&lt;/a&gt; this weekend and came to know about &lt;a href=&#34;http://www.linuxjournal.com/content/using-named-pipes-fifos-bash&#34;&gt;FIFOs&lt;/a&gt;. After first glance I found similarities between &lt;code&gt;named pipes&lt;/code&gt; and &lt;code&gt;golang channel&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; are created using the &lt;code&gt;mkfifo&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkfifo test
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; provide a &lt;code&gt;named pipe&lt;/code&gt; to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it. If you are familiar with golang and golang channels, that&amp;rsquo;s an &lt;a href=&#34;https://golang.org/doc/effective_go.html#channels&#34;&gt;Unbuffered/synchronous channel&lt;/a&gt;. Unbuffered channel blocks until there is a receiver receiving from a channel.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;named pipes&lt;/code&gt; are very interesting and can be used in some interesting ways.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>a quick introduction to standard streams, file descriptors, and redirection</title>
