@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>using consul acl with golang &middot; Never stop learning...</title>
+		<title>weekly reading 9July &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
@@ -41,9 +41,9 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>using consul acl with golang</h1>
+                    <h1>weekly reading 9July</h1>
                     <h2 class="headline">
-                    June 17, 2016 
+                    July 9, 2016 
                     <br>
                     
                     
@@ -57,50 +57,34 @@
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>It is always a good idea to think about security. It is no exception when we are using <a href="https://www.consul.io">Consul</a> for service discovery. Consul provides an optional Access Control List <a href="https://en.wikipedia.org/wiki/Access_control_list">ACL</a> system which can be used to control access to data and APIs. An access control list (ACL) is a list of permissions attached to an object.</p>
+                    <p>This week I didn&rsquo;t read too many online articles. But still found some good technical articles that I read.</p>
 
-<p>Consul ACL is <a href="https://en.wikipedia.org/wiki/Capability-based_security">Capability-based</a>. If you are familiar with AWS IAM, it will look similar to AWS IAM.</p>
+<p><a href="http://videlalvaro.github.io/2015/02/programming-myths.html">http://videlalvaro.github.io/2015/02/programming-myths.html</a></p>
 
-<p>To enable consul with ACL, add this to server configuration.</p>
+<pre><code>The real problem is forming our opinion very quicky without thinking a bit and looking at the context. Are &quot;Goto&quot; really harmful in computer programming or it is just a myth. This Statement by Donanld Knuth summerise this whole article -
+&quot;We shouldn’t merely remove go to statements because it’s the fashionable thing to do; the presence or absence of go to statements is not really the issue.&quot;
 
-<pre><code>{
-  &quot;acl_datacenter&quot;: &quot;&lt;datacenter name&gt;&quot;,
-  &quot;acl_master_token&quot;: &quot;&lt;token&gt;&quot;,
-  &quot;acl_default_policy&quot;: &quot;deny&quot;,
-  &quot;acl_down_policy&quot;: &quot;deny&quot;
-}
+Some great quotes from article:
+
+&quot;we should strive most of all for a program that is easy to understand and almost sure to work&quot;
+
+&quot;the universal experience of programmers who have been using measurement tools has been that their intuitive guesses fail.&quot;
+
+&quot;premature optimization is the root of all evil&quot;
+
+&quot;Experience indicates that nearly everybody has the wrong idea about the real bottlenecks in his programs&quot;
 </code></pre>
 
-<p>Consul with this configuration will &lsquo;deny&rsquo; by default and we can allow read/write accesses per client.</p>
+<p><a href="http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/">http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/</a></p>
 
-<p>We can list the ACL&rsquo;s with this curl command:</p>
-
-<pre><code>curl &quot;http://localhost:8500/v1/acl/list?token=token&amp;pretty=true&quot;
+<pre><code>tmux rocks and I use it everyday with vim :)
 </code></pre>
 
-<p><strong>Note</strong>: Consul is running on port 8500 at localhost.</p>
+<p><a href="https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g">https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g</a></p>
 
-<p>If we want to get a value from key/value store. We can use a curl like:</p>
+<p><a href="https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu">https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu</a></p>
 
-<pre><code>curl &quot;http://localhost:8500/v1/kv/timeout?token=token&quot;
-</code></pre>
-
-<p><strong>Note</strong>: <code>timeout</code> is a key in Consul <a href="https://www.consul.io/docs/agent/http/kv.html">key/value</a> store.</p>
-
-<p>If you are using <a href="https://golang.org/">golang</a>, Consul provides an <a href="https://github.com/hashicorp/consul/tree/master/api">api</a>.
-With official Consul api, accessing a service or key/value store while ACL enabled is just adding token to <a href="https://godoc.org/github.com/hashicorp/consul/api#QueryOptions">QueryOption</a></p>
-
-<pre><code>options := &amp;consulapi.QueryOption{
-	Token: token,
-}
-
-pairs, meta, err := consulapi.Get(&quot;timeout&quot;, coptions)
-if err != nil {
-	return nil, nil, err
-}
-</code></pre>
-
-<p>More information about Consul <a href="https://www.consul.io/docs/internals/acl.html">ACL</a>.</p>
+<p><a href="https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/">https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/</a></p>
 
                 </section>
             </article>
@@ -113,7 +97,7 @@ if err != nil {
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fconsul-acl-golang%2f - using%20consul%20acl%20with%20golang by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fweekly-reading-9July%2f - weekly%20reading%209July by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -129,9 +113,9 @@ if err != nil {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/consul-acl-golang\/';
-    var disqus_title = 'using consul acl with golang';
-    var disqus_url = 'http:\/\/varunksaini.com\/consul-acl-golang\/';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/weekly-reading-9July\/';
+    var disqus_title = 'weekly reading 9July';
+    var disqus_url = 'http:\/\/varunksaini.com\/weekly-reading-9July\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

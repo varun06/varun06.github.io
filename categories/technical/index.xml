@@ -6,8 +6,45 @@
     <description>Recent content in Technical on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jul 2016 22:05:36 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jul 2016 05:46:45 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>weekly reading 9July</title>
+      <link>http://varunksaini.com/weekly-reading-9July/</link>
+      <pubDate>Sat, 09 Jul 2016 05:46:45 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-9July/</guid>
+      <description>&lt;p&gt;This week I didn&amp;rsquo;t read too many online articles. But still found some good technical articles that I read.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://videlalvaro.github.io/2015/02/programming-myths.html&#34;&gt;http://videlalvaro.github.io/2015/02/programming-myths.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;The real problem is forming our opinion very quicky without thinking a bit and looking at the context. Are &amp;quot;Goto&amp;quot; really harmful in computer programming or it is just a myth. This Statement by Donanld Knuth summerise this whole article -
+&amp;quot;We shouldn’t merely remove go to statements because it’s the fashionable thing to do; the presence or absence of go to statements is not really the issue.&amp;quot;
+
+Some great quotes from article:
+
+&amp;quot;we should strive most of all for a program that is easy to understand and almost sure to work&amp;quot;
+
+&amp;quot;the universal experience of programmers who have been using measurement tools has been that their intuitive guesses fail.&amp;quot;
+
+&amp;quot;premature optimization is the root of all evil&amp;quot;
+
+&amp;quot;Experience indicates that nearly everybody has the wrong idea about the real bottlenecks in his programs&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/&#34;&gt;http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux rocks and I use it everyday with vim :)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g&#34;&gt;https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&#34;&gt;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&#34;&gt;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>bash fifos and golang channel</title>
@@ -777,32 +814,6 @@ func (c *client) Service(service, tag string) ([]*ServiceEntry, *QueryMeta, erro
 &lt;li&gt;&lt;a href=&#34;http://nymag.com/scienceofus/2016/05/half-of-your-friends-probably-dont-think-of-you-as-a-friend.html&#34;&gt;http://nymag.com/scienceofus/2016/05/half-of-your-friends-probably-dont-think-of-you-as-a-friend.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.economist.com/news/leaders/21698240-it-question-when-not-if-real-trouble-will-hit-china-coming-debt-bust&#34;&gt;http://www.economist.com/news/leaders/21698240-it-question-when-not-if-real-trouble-will-hit-china-coming-debt-bust&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>unmarshal to map</title>
-      <link>http://varunksaini.com/unmarshal-to-map/</link>
-      <pubDate>Sun, 13 Mar 2016 07:57:24 -0500</pubDate>
-      
-      <guid>http://varunksaini.com/unmarshal-to-map/</guid>
-      <description>&lt;p&gt;When you unmarhsal json to a map, always pass the reference to map object. This is very subtle and I fixed two bugs last week related to same thing.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var m map[string]string
-err := json.Unmarshal(data, m)
-if err != nil {
-	return err
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The code snippet above will not fail/err. But when you look at m, you will get nothing. To fix this, we need to pass the reference to m in &lt;code&gt;json.Unmarshal&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var m map[string]string
-err := json.Unmarshal(data, &amp;amp;m)
-if err != nil {
-	return err
-}
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
