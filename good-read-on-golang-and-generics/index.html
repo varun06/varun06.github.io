@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>testing in go lang &middot; Never stop learning...</title>
+		<title>good read on golang and generics &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
@@ -41,49 +41,25 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>testing in go lang</h1>
+                    <h1>good read on golang and generics</h1>
                     <h2 class="headline">
-                    May 9, 2015 
+                    July 17, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://varunksaini.com/tags/general">general</a>
+                        
+                            <a href="http://varunksaini.com/tags/blog">blog</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    
+                    <p>Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as <a href="http://blog.jonathanoliver.com/golang-has-generics/">this</a>, <a href="http://bouk.co/blog/idiomatic-generics-in-go/">this</a> and <a href="http://blog.ralch.com/tutorial/golang-code-generation-and-generics/">this</a>. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).</p>
 
-<p>Testing is an integral part of software development and as a squad (if you are wondering what is a squad in software company setting, check <a href="https://vimeo.com/85490944">Spotify Culture</a>) in <a href="https://www.mediamath.com">MediaMath</a>, our mantra is that <strong>&ldquo;Regrassion Resistence is a software requirement&rdquo;</strong> and should be taken care from the start of the project. We give a lot of emphasis on testing the software and having a good test coverage. We have written some tools around <code>go coverage</code> and <code>go get</code> <a href="https://github.com/MediaMath/cove">cove</a> to help us with our testing process.</p>
-
-<p>Go is a batteries included programming language. Go provides testing as part of standard library and that means testing is a first class citizen in Go world. Writing a test in Go is as easy as writing a function. The test function start with <strong>TestXXXXX</strong> and you can write as many tests as you want. If you have a file such as <strong>&ldquo;github_api.go&rdquo;</strong>, you can group the tests(create a test suite) for that file in a test file with a name as <strong>&ldquo;github_api_test.go&rdquo;</strong>.</p>
-
-<p>Go tests are run with <strong><code>go test</code></strong> command.</p>
-
-<h5 id="a-sample-function">A Sample function:</h5>
-
-<pre><code>package abc
-
-func Add(a, b int) int {
-	return a + b
-}
-</code></pre>
-
-<h5 id="test-function">Test function:</h5>
-
-<pre><code>package abc
-
-import &quot;testing&quot;
-
-func TestAdd(t *testing.T) {
-	var a, b int = 2, 3
-	v := Add(a, b)
-	if v != 5 {
-		t.Error(&quot;Expected 5, got &quot;, v)
-	}
-}
-</code></pre>
-
-<p>You can learn more about Go lang testing package at <a href="http://golang.org/pkg/testing/">testing</a>, if you want to look at the source code <a href="http://golang.org/src/testing/testing.go">testing source code</a>.</p>
-
-<p>P.S. In Go documentation, if you want to check package documentation just use &ldquo;<a href="http://golang.org/pkg/(packagename)&quot;">http://golang.org/pkg/(packagename)&quot;</a> and if you want source code &ldquo;<a href="http://golang.org/src/(packagename)&quot;">http://golang.org/src/(packagename)&quot;</a>.</p>
+<p>I found <a href="https://appliedgo.net/generics/">this</a> article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.</p>
 
                 </section>
             </article>
@@ -96,7 +72,7 @@ func TestAdd(t *testing.T) {
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2ftesting-in-go%2f - testing%20in%20go%20lang by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fgood-read-on-golang-and-generics%2f - good%20read%20on%20golang%20and%20generics by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -112,9 +88,9 @@ func TestAdd(t *testing.T) {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/testing-in-go\/';
-    var disqus_title = 'testing in go lang';
-    var disqus_url = 'http:\/\/varunksaini.com\/testing-in-go\/';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/good-read-on-golang-and-generics\/';
+    var disqus_title = 'good read on golang and generics';
+    var disqus_url = 'http:\/\/varunksaini.com\/good-read-on-golang-and-generics\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
