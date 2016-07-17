@@ -6,18 +6,46 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Jul 2016 07:51:04 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 17 Jul 2016 06:57:00 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>good read on golang and generics</title>
       <link>http://varunksaini.com/good-read-on-golang-and-generics/</link>
-      <pubDate>Sun, 17 Jul 2016 07:51:04 -0500</pubDate>
+      <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
       
       <guid>http://varunksaini.com/good-read-on-golang-and-generics/</guid>
       <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>weekly reading 19July</title>
+      <link>http://varunksaini.com/weekly-reading-19July/</link>
+      <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/weekly-reading-19July/</guid>
+      <description>&lt;p&gt;This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&#34;&gt;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&#34;&gt;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://docs.confluent.io/1.0/index.html&#34;&gt;http://docs.confluent.io/1.0/index.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://peter.bourgon.org/blog/2016/07/11/context.html&#34;&gt;http://peter.bourgon.org/blog/2016/07/11/context.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jamesclear.com/power-of-environment&#34;&gt;http://jamesclear.com/power-of-environment&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&#34;&gt;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://spinroot.com/gerard/pdf/P10.pdf&#34;&gt;http://spinroot.com/gerard/pdf/P10.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/golang/go/wiki/CodeReviewComments&#34;&gt;https://github.com/golang/go/wiki/CodeReviewComments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -784,25 +812,6 @@ func (c *client) Service(service, tag string) ([]*ServiceEntry, *QueryMeta, erro
 &lt;li&gt;&lt;a href=&#34;https://www.troyhunt.com/going-dark-online-privacy-and-anonymity-for-normal-people/&#34;&gt;https://www.troyhunt.com/going-dark-online-privacy-and-anonymity-for-normal-people/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/05/22/how-do-you-write-blog-posts/&#34;&gt;http://jvns.ca/blog/2016/05/22/how-do-you-write-blog-posts/&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>pretty print JSON in golang</title>
-      <link>http://varunksaini.com/pretty-print-json-golang/</link>
-      <pubDate>Sun, 22 May 2016 06:52:53 -0500</pubDate>
-      
-      <guid>http://varunksaini.com/pretty-print-json-golang/</guid>
-      <description>&lt;p&gt;JSON is a very common standard to transmit data objects. &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; provides great support for JSON. &lt;a href=&#34;https://golang.org/pkg/encoding/JSON/&#34;&gt;JSON package&lt;/a&gt; in standard library provides the methods to work with JSON in a go program. Generally we use JSON to tranmit the data but sometime we need to print the JSON data too. If a human eye is going to look at that data, it is a good idea to pretty print that JSON. Here is small function that will do that:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;func prettyPrintJSON(b []byte) ([]byte, error) {
-	var out bytes.Buffer
-	err := JSON.Indent(&amp;amp;out, b, &amp;quot;&amp;quot;, &amp;quot;    &amp;quot;)
-	return out.Bytes(), err
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This function takes a byte array and indent the JSON. Each element in JSON object begins on a new line.&lt;/p&gt;
 </description>
     </item>
     
