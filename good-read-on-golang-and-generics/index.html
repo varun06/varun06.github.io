@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.16" />
-		<title>running commands with go &middot; Never stop learning...</title>
+		<title>good read on golang and generics &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
@@ -41,34 +41,25 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>running commands with go</h1>
+                    <h1>good read on golang and generics</h1>
                     <h2 class="headline">
-                    July 12, 2015 
+                    July 17, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://varunksaini.com/tags/general">general</a>
+                        
+                            <a href="http://varunksaini.com/tags/blog">blog</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>Sometimes we need to run external commands programatically to use the output of the command to drive the execution. Go provides a nice interface to run the external commands through <a href="https://golang.org/pkg/os/exec/">exec</a> package. Running an external command is very easy and an example is given below.</p>
+                    <p>Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as <a href="http://blog.jonathanoliver.com/golang-has-generics/">this</a>, <a href="http://bouk.co/blog/idiomatic-generics-in-go/">this</a> and <a href="http://blog.ralch.com/tutorial/golang-code-generation-and-generics/">this</a>. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).</p>
 
-<pre><code>package main
-
-import (
-	&quot;fmt&quot;
-	&quot;log&quot;
-	&quot;os/exec&quot;
-)
-
-func main() {
-	out, err := exec.Command(&quot;date&quot;).Output()
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf(&quot;The time is %s\n&quot;, out)
-}
-</code></pre>
-
-<p><code>exec</code> package provides some other useful methods to work with external commands. Use this powerful package to build awesome things.</p>
+<p>I found <a href="https://appliedgo.net/generics/">this</a> article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.</p>
 
                 </section>
             </article>
@@ -81,7 +72,7 @@ func main() {
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2frunning_commands_with_go%2f - running%20commands%20with%20go by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fgood-read-on-golang-and-generics%2f - good%20read%20on%20golang%20and%20generics by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -97,9 +88,9 @@ func main() {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/running_commands_with_go\/';
-    var disqus_title = 'running commands with go';
-    var disqus_url = 'http:\/\/varunksaini.com\/running_commands_with_go\/';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/good-read-on-golang-and-generics\/';
+    var disqus_title = 'good read on golang and generics';
+    var disqus_url = 'http:\/\/varunksaini.com\/good-read-on-golang-and-generics\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
