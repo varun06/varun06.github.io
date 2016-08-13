@@ -6,8 +6,18 @@
     <description>Recent content in General on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Jul 2016 05:46:45 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 13 Aug 2016 10:26:10 -0500</lastBuildDate>
     <atom:link href="http://varunksaini.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>laptop repair</title>
+      <link>http://varunksaini.com/laptop-repair/</link>
+      <pubDate>Sat, 13 Aug 2016 10:26:10 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/laptop-repair/</guid>
+      <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>weekly reading 9July</title>
@@ -791,49 +801,6 @@ func (c *client) Service(service, tag string) ([]*ServiceEntry, *QueryMeta, erro
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This function takes a byte array and indent the JSON. Each element in JSON object begins on a new line.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 22 May</title>
-      <link>http://varunksaini.com/weekly-reading-22May/</link>
-      <pubDate>Sun, 22 May 2016 06:20:37 -0500</pubDate>
-      
-      <guid>http://varunksaini.com/weekly-reading-22May/</guid>
-      <description>&lt;p&gt;This week again I read more that 20 articles. I have a good mix of long form reading and quick reading articles. I read way more general(Science, Society etc.) compare to technical articles. Again Pocket app was handy to keep the articles saved for me.This logging has helped me in finding that I am reading a lot of stuff. I also have some books to read, so I might not read these many articles going forward and finish my books first.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;General Reading&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://aeon.co/essays/how-going-to-mars-can-pave-the-way-to-saving-the-earth&#34;&gt;https://aeon.co/essays/how-going-to-mars-can-pave-the-way-to-saving-the-earth&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theguardian.com/technology/2016/may/12/facebook-free-basics-india-zuckerberg&#34;&gt;https://www.theguardian.com/technology/2016/may/12/facebook-free-basics-india-zuckerberg&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.bbc.co.uk/news/magazine-27186709&#34;&gt;http://www.bbc.co.uk/news/magazine-27186709&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.1843magazine.com/culture/the-daily/how-taxi-driver-ruined-acting&#34;&gt;https://www.1843magazine.com/culture/the-daily/how-taxi-driver-ruined-acting&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://usesthis.com/interviews/kirby.ferguson/&#34;&gt;https://usesthis.com/interviews/kirby.ferguson/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.economist.com/news/leaders/21698240-it-question-when-not-if-real-trouble-will-hit-china-coming-debt-bust&#34;&gt;http://www.economist.com/news/leaders/21698240-it-question-when-not-if-real-trouble-will-hit-china-coming-debt-bust&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.gatesnotes.com/Books/Seveneves&#34;&gt;https://www.gatesnotes.com/Books/Seveneves&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://qz.com/685852/hookup-culture/&#34;&gt;http://qz.com/685852/hookup-culture/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aeon.co/opinions/why-decriminalising-sex-work-is-better-for-everyone&#34;&gt;https://aeon.co/opinions/why-decriminalising-sex-work-is-better-for-everyone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aeon.co/opinions/why-watching-people-take-selfies-feels-so-awkward&#34;&gt;https://aeon.co/opinions/why-watching-people-take-selfies-feels-so-awkward&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.codinghorror.com/the-golden-age-of-x86-gaming/&#34;&gt;https://blog.codinghorror.com/the-golden-age-of-x86-gaming/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://m.signalvnoise.com/eat-sleep-code-repeat-is-such-bullshit-c2a4d9beaaf5#.iw36jfax2&#34;&gt;https://m.signalvnoise.com/eat-sleep-code-repeat-is-such-bullshit-c2a4d9beaaf5#.iw36jfax2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://medium.com/@tristanharris/how-technology-hijacks-peoples-minds-from-a-magician-and-google-s-design-ethicist-56d62ef5edf3#.v1vinnk58&#34;&gt;https://medium.com/@tristanharris/how-technology-hijacks-peoples-minds-from-a-magician-and-google-s-design-ethicist-56d62ef5edf3#.v1vinnk58&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/05/19/a-few-reasons-to-be-skeptical-of-machine-learning-results/&#34;&gt;http://jvns.ca/blog/2016/05/19/a-few-reasons-to-be-skeptical-of-machine-learning-results/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.wired.com/2016/05/maksym-igor-popov-fbi/&#34;&gt;https://www.wired.com/2016/05/maksym-igor-popov-fbi/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.theatlantic.com/entertainment/archive/2016/05/the-future-is-almost-now/482718/&#34;&gt;http://www.theatlantic.com/entertainment/archive/2016/05/the-future-is-almost-now/482718/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://aeon.co/essays/your-brain-does-not-process-information-and-it-is-not-a-computer&#34;&gt;https://aeon.co/essays/your-brain-does-not-process-information-and-it-is-not-a-computer&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;Technical Reading&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.infoq.com/articles/podcast-matt-ranney&#34;&gt;https://www.infoq.com/articles/podcast-matt-ranney&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://karla.io/2016/04/30/ssh-for-fun-and-profit.html&#34;&gt;https://karla.io/2016/04/30/ssh-for-fun-and-profit.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://danielmiessler.com/study/tcpdump/&#34;&gt;https://danielmiessler.com/study/tcpdump/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ifeanyi.co/posts/understanding-consensus/&#34;&gt;http://ifeanyi.co/posts/understanding-consensus/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://go-talks.appspot.com/github.com/mkevac/golangmoscow2016/gomeetup.slide&#34;&gt;http://go-talks.appspot.com/github.com/mkevac/golangmoscow2016/gomeetup.slide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=N3PWzBeLX2M&amp;amp;feature=youtu.be&#34;&gt;https://www.youtube.com/watch?v=N3PWzBeLX2M&amp;amp;feature=youtu.be&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     
