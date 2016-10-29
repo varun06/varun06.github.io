@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Never stop learning...</title>
+    <link>http://varunksaini.com/tags/golang/index.xml</link>
+    <description>Recent content on Never stop learning...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://varunksaini.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>how not to handle errors in golang</title>
+      <link>http://varunksaini.com/how-not-to-handle-errors-in-golang/</link>
+      <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/how-not-to-handle-errors-in-golang/</guid>
+      <description>&lt;p&gt;People have a love and hate relationship with golang error handling. Golang&amp;rsquo;s use to return values for error handling seems to have as many detractors as admirers. In golang, errors are of immediate interest, so you handle them then and there, so it very common to see code like this -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var user User
+err := json.Marshal(data, &amp;amp;user)
+if err != nil {
+	return err
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In a large code base, you see &lt;code&gt;if err != nil&lt;/code&gt; a lot. So people find ways to minimize that, one such approach is creating a common &lt;code&gt;util&lt;/code&gt; package and then create common convenience error functions such as -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;func FailIfNil(t *testing.T, i interface{}) {
+	if IsNil(i) {
+		//handle error here
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These common functions seems helpful, but again, in a large code base, they get out of hand quickly. Debugging becomes difficult.&lt;/p&gt;
+
+&lt;p&gt;My suggestion would be handle errors when and where you see them. keep things simple and readable. Also if you want to do something with your errors, use a good library such as &lt;a href=&#34;https://github.com/davecheney/errors&#34;&gt;this&lt;/a&gt; one from &lt;a href=&#34;http://dave.cheney.net/&#34;&gt;Dave Cheney&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
