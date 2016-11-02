@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.17" />
-		<title>My Go Lang Development Workflow &middot; Never stop learning...</title>
+		<title>Using if condition in a defer statement &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
@@ -41,37 +41,70 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>My Go Lang Development Workflow</h1>
+                    <h1>Using if condition in a defer statement</h1>
                     <h2 class="headline">
-                    June 13, 2015 
+                    November 1, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://varunksaini.com/tags/golang">golang</a>
+                        
+                            <a href="http://varunksaini.com/tags/blog">blog</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>I have been doing programming in Go from last 6 months. When you start a new project or start learning a new programming language, chossing your tools(text editor, plugins etc.) is as important as any other process.</p>
+                    <p><code>defer</code> statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.</p>
 
-<p>I use Sublime Text 3 with <a href="https://github.com/DisposaBoy/GoSublime">go-sublime</a> plugin as my text editor. go-sublime adds many features to Sublime Text for go development and make the whole development process a little easier. I particularly like &lsquo;go linting&rsquo; and &lsquo;go to definition&rsquo;.</p>
+<pre><code>f, err := os.Open(fileName)
+    if err != nil {
+        return
+    }
+defer src.Close()
+</code></pre>
 
-<p><br>
-<img src="/img/sublime.png" alt="Sublime Text" title="Sublime Text" style="width:700px; height: 500px;">
-<br></p>
+<p>We open a file and then use <code>defer</code> to close the file handle. Using <code>defer</code> makes sure that file handle is closed and we don&rsquo;t have any bug in our code.But what if we want to make a decision(conditional) in <code>defer</code>, is that possible?</p>
 
-<p>Once I have written the code and tests, I run <code>go test</code> in terminal (I use iterm2 instead of default terminal app) to test my code. To check code coverage, I run <code>go test -cover</code>.</p>
+<p><code>defer</code> and <code>named returns</code> to rescue. Here we are using a form of defer that lets us do something if there is an error and something else if there is not an error.</p>
 
-<p>because sometime you need more than one terminal window, I use <a href="http://tmux.github.io/">tmux</a> for that. tmux manages terminal windows and sessions. I started using tmux some time back and it is great.</p>
+<pre><code>package main
 
-<p>OSX window management is a pain in itself, I use <a href="http://mizage.com/divvy/">DIVVY</a> to manage the windows. I am looking forward to <a href="http://www.apple.com/osx/elcapitan-preview/">OSX el capitan</a>, which has window management build in the OSX (finally).</p>
+import (
+	&quot;errors&quot;
+	&quot;fmt&quot;
+)
 
-<p>Once I have tested my code thoroughly on my local machine, I send it to github for code review. I generally use git in terminal to run all the common git commands (such as <code>git status</code>, <code>git commit</code>, and <code>git push</code>).</p>
+var toggleMe = true
 
-<p>We use <a href="http://github.com/MediaMath/grim">GRIM</a>, which is open sourced by the way, as our build server. So when I create a pull request for code review, grim takes the pull request and run the build to make sure that everything works as expected with new code, grim also updates the hipchat channel, so that team is aware about new pull request.</p>
+func foo() (boo string, err error) {
+	boo = &quot;boo&quot;
 
-<p>This continous build system gives code reviewers a test run even before reviewing the code. Once the code review is done and thumpsup are given, code is ready to be merged in master.</p>
+	defer func() {
+		if err != nil {
+			fmt.Printf(boo)
+		} else {
+			fmt.Println(&quot;bar&quot;)
+		}
+	}()
 
-<p>Once merged, time for next task and more Go code/learnings..</p>
+	if toggleMe {
+		err = errors.New(&quot;an error occurred&quot;)
+	}
 
-<p>Note: If you are a vim user, then <a href="https://github.com/fatih/vim-go">vim-go</a> is an awesome go plugin for vim.</p>
+	return
+}
+
+func main() {
+	foo()
+}
+</code></pre>
+
+<p><a href="https://play.golang.org/p/ap_zkRpcqQ">Playground</a></p>
+
+<p>I don&rsquo;t know if it is idiomatic go or not and that&rsquo;s where I need your help, let me know if this is correct to do.</p>
 
                 </section>
             </article>
@@ -84,7 +117,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fgo_dev_workflow%2f - My%20Go%20Lang%20Development%20Workflow by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fusing-if-in-defer%2f - Using%20if%20condition%20in%20a%20defer%20statement by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -100,9 +133,9 @@
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/go_dev_workflow\/';
-    var disqus_title = 'My Go Lang Development Workflow';
-    var disqus_url = 'http:\/\/varunksaini.com\/go_dev_workflow\/';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/using-if-in-defer\/';
+    var disqus_title = 'Using if condition in a defer statement';
+    var disqus_url = 'http:\/\/varunksaini.com\/using-if-in-defer\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

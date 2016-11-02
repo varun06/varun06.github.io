@@ -9,6 +9,63 @@
     <atom:link href="http://varunksaini.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Using if condition in a defer statement</title>
+      <link>http://varunksaini.com/using-if-in-defer/</link>
+      <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
+      
+      <guid>http://varunksaini.com/using-if-in-defer/</guid>
+      <description>&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;f, err := os.Open(fileName)
+    if err != nil {
+        return
+    }
+defer src.Close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We open a file and then use &lt;code&gt;defer&lt;/code&gt; to close the file handle. Using &lt;code&gt;defer&lt;/code&gt; makes sure that file handle is closed and we don&amp;rsquo;t have any bug in our code.But what if we want to make a decision(conditional) in &lt;code&gt;defer&lt;/code&gt;, is that possible?&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; and &lt;code&gt;named returns&lt;/code&gt; to rescue. Here we are using a form of defer that lets us do something if there is an error and something else if there is not an error.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;errors&amp;quot;
+	&amp;quot;fmt&amp;quot;
+)
+
+var toggleMe = true
+
+func foo() (boo string, err error) {
+	boo = &amp;quot;boo&amp;quot;
+
+	defer func() {
+		if err != nil {
+			fmt.Printf(boo)
+		} else {
+			fmt.Println(&amp;quot;bar&amp;quot;)
+		}
+	}()
+
+	if toggleMe {
+		err = errors.New(&amp;quot;an error occurred&amp;quot;)
+	}
+
+	return
+}
+
+func main() {
+	foo()
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/ap_zkRpcqQ&#34;&gt;Playground&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I don&amp;rsquo;t know if it is idiomatic go or not and that&amp;rsquo;s where I need your help, let me know if this is correct to do.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>how not to handle errors in golang</title>
       <link>http://varunksaini.com/how-not-to-handle-errors-in-golang/</link>
       <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
