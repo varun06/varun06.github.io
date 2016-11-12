@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Never stop learning...</title>
+    <link>http://varunksaini.com/tags/parental-controls/index.xml</link>
+    <description>Recent content on Never stop learning...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://varunksaini.com/tags/parental-controls/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>blocking youtube on mac</title>
+      <link>http://varunksaini.com/blocking-youtube-on-mac/</link>
+      <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/blocking-youtube-on-mac/</guid>
+      <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
+They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
+
+&lt;p&gt;In mac you can open Parental Controls, and create a new account with Parental Controls enabled or turn Parental Controls on current
+account. You need admin access to apply Parental Controls. Once you have Parental Controls on an account, Open Parental Controls -&amp;gt; Account Name -&amp;gt;
+Web -&amp;gt; &amp;ldquo;Try to limit access to adult websites&amp;rdquo; (Click on Customize button) -&amp;gt; Click + in &amp;ldquo;Never allow these websites&amp;rdquo; -&amp;gt; Add youtube URL
+Click OK, and you are done.&lt;/p&gt;
+
+&lt;p&gt;It took me some time to figure this out and it works well. I hope it will be helpful to someone else.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

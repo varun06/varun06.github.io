@@ -9,6 +9,24 @@
     <atom:link href="http://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>blocking youtube on mac</title>
+      <link>http://varunksaini.com/blocking-youtube-on-mac/</link>
+      <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/blocking-youtube-on-mac/</guid>
+      <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
+They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
+
+&lt;p&gt;In mac you can open Parental Controls, and create a new account with Parental Controls enabled or turn Parental Controls on current
+account. You need admin access to apply Parental Controls. Once you have Parental Controls on an account, Open Parental Controls -&amp;gt; Account Name -&amp;gt;
+Web -&amp;gt; &amp;ldquo;Try to limit access to adult websites&amp;rdquo; (Click on Customize button) -&amp;gt; Click + in &amp;ldquo;Never allow these websites&amp;rdquo; -&amp;gt; Add youtube URL
+Click OK, and you are done.&lt;/p&gt;
+
+&lt;p&gt;It took me some time to figure this out and it works well. I hope it will be helpful to someone else.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Using if condition in a defer statement</title>
       <link>http://varunksaini.com/using-if-in-defer/</link>
       <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
@@ -577,39 +595,6 @@ if err != nil {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;More information about Consul &lt;a href=&#34;https://www.consul.io/docs/internals/acl.html&#34;&gt;ACL&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 12 June</title>
-      <link>http://varunksaini.com/weekly-reading-12June/</link>
-      <pubDate>Sun, 12 Jun 2016 06:33:33 -0500</pubDate>
-      
-      <guid>http://varunksaini.com/weekly-reading-12June/</guid>
-      <description>
-
-&lt;p&gt;My tracking of reading is paying off. I am more aware of what I am reading and as you can see it is more technical article then general now. I am reading more books too. I am implementing more tweaks to my workflow and I hope that will save me some more time for important things.&lt;/p&gt;
-
-&lt;h4 id=&#34;technical&#34;&gt;Technical:&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;1. http://neverworkintheory.org/2016/04/26/java-exception-handling.html
-2. https://distributedalgorithm.wordpress.com/2015/06/20/architecture-of-zab-zookeeper-atomic-broadcast-protocol/
-3. http://howivim.com/2016/daniel-schauenberg/
-4. https://talks.golang.org/2016/applicative.slide
-5. http://www.doc.ic.ac.uk/~cn06/pub/2016/dingo/main.pdf
-6. https://www.petekeen.net/dns-the-good-parts
-7. https://techblog.airtime.com/microservice-continuous-integration-made-easy-with-aws-ecs-10d470e31af0#.asyuz4os3
-8. http://dave.cheney.net/2016/06/12/stack-traces-and-the-errors-package
-9. https://www.prod.facebook.com/notes/kent-beck/mastering-programming/1184427814923414
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;general&#34;&gt;General:&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;1. http://www.livemint.com/Companies/hLEBBx17cFY5rPjTjmIP9O/The-Patanjali-story.html
-2. http://www.theatlantic.com/science/archive/2016/06/how-consciousness-evolved/485558/
-3. https://www.prod.facebook.com/notes/kent-beck/mastering-programming/1184427814923414
-4. http://progrium.com/blog/2016/04/25/generativity/
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
