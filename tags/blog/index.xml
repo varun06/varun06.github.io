@@ -9,6 +9,61 @@
     <atom:link href="http://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>question about type assertion in go</title>
+      <link>http://varunksaini.com/question-about-type-assertion/</link>
+      <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/question-about-type-assertion/</guid>
+      <description>&lt;p&gt;One of our go app crashed recently because of a bug in &lt;a href=&#34;https://github.com/urfave/cli/&#34;&gt;https://github.com/urfave/cli/&lt;/a&gt;, here is the &lt;a href=&#34;https://github.com/urfave/cli/pull/568&#34;&gt;PR&lt;/a&gt; with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.&lt;/p&gt;
+
+&lt;p&gt;My question is why &lt;code&gt;bar&lt;/code&gt; works but not &lt;code&gt;foo&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+)
+
+func main() {
+	var f interface{}
+	var b interface{}
+	f = foo()
+	b = bar()
+
+	if _, ok := f.(func(string) error); ok {
+		fmt.Println(&amp;quot;FOUND IT&amp;quot;)
+	} else {
+		fmt.Println(&amp;quot;DIDNT FIND IT&amp;quot;)
+	}
+
+	if _, ok := b.(func(string) error); ok {
+		fmt.Println(&amp;quot;FOUND IT&amp;quot;)
+	} else {
+		fmt.Println(&amp;quot;DIDNT FIND IT&amp;quot;)
+	}
+}
+
+type FooFunc func(string) error
+
+func foo() func(string) error {
+	return func(e string) error {
+		return fmt.Errorf(&amp;quot;GOTCHA&amp;quot;)
+	}
+}
+
+func bar() FooFunc {
+	return func(e string) error {
+		return fmt.Errorf(&amp;quot;GOTCHA&amp;quot;)
+	}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/4EfYIMZV-p&#34;&gt;go playground&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>block youtube on apple mac osx using Parental Controls</title>
       <link>http://varunksaini.com/block-youtube-apple-mac-osx/</link>
       <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
@@ -542,59 +597,6 @@ File descriptors work by providing a layer of abstraction between an actual hard
 10. http://martinfowler.com/articles/serverless.html
 11. https://skillsmatter.com/skillscasts/8340-london-go-usergroup#video
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>using consul acl with golang</title>
-      <link>http://varunksaini.com/consul-acl-golang/</link>
-      <pubDate>Fri, 17 Jun 2016 16:56:36 -0500</pubDate>
-      
-      <guid>http://varunksaini.com/consul-acl-golang/</guid>
-      <description>&lt;p&gt;It is always a good idea to think about security. It is no exception when we are using &lt;a href=&#34;https://www.consul.io&#34;&gt;Consul&lt;/a&gt; for service discovery. Consul provides an optional Access Control List &lt;a href=&#34;https://en.wikipedia.org/wiki/Access_control_list&#34;&gt;ACL&lt;/a&gt; system which can be used to control access to data and APIs. An access control list (ACL) is a list of permissions attached to an object.&lt;/p&gt;
-
-&lt;p&gt;Consul ACL is &lt;a href=&#34;https://en.wikipedia.org/wiki/Capability-based_security&#34;&gt;Capability-based&lt;/a&gt;. If you are familiar with AWS IAM, it will look similar to AWS IAM.&lt;/p&gt;
-
-&lt;p&gt;To enable consul with ACL, add this to server configuration.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;acl_datacenter&amp;quot;: &amp;quot;&amp;lt;datacenter name&amp;gt;&amp;quot;,
-  &amp;quot;acl_master_token&amp;quot;: &amp;quot;&amp;lt;token&amp;gt;&amp;quot;,
-  &amp;quot;acl_default_policy&amp;quot;: &amp;quot;deny&amp;quot;,
-  &amp;quot;acl_down_policy&amp;quot;: &amp;quot;deny&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Consul with this configuration will &amp;lsquo;deny&amp;rsquo; by default and we can allow read/write accesses per client.&lt;/p&gt;
-
-&lt;p&gt;We can list the ACL&amp;rsquo;s with this curl command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl &amp;quot;http://localhost:8500/v1/acl/list?token=token&amp;amp;pretty=true&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Consul is running on port 8500 at localhost.&lt;/p&gt;
-
-&lt;p&gt;If we want to get a value from key/value store. We can use a curl like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;curl &amp;quot;http://localhost:8500/v1/kv/timeout?token=token&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: &lt;code&gt;timeout&lt;/code&gt; is a key in Consul &lt;a href=&#34;https://www.consul.io/docs/agent/http/kv.html&#34;&gt;key/value&lt;/a&gt; store.&lt;/p&gt;
-
-&lt;p&gt;If you are using &lt;a href=&#34;https://golang.org/&#34;&gt;golang&lt;/a&gt;, Consul provides an &lt;a href=&#34;https://github.com/hashicorp/consul/tree/master/api&#34;&gt;api&lt;/a&gt;.
-With official Consul api, accessing a service or key/value store while ACL enabled is just adding token to &lt;a href=&#34;https://godoc.org/github.com/hashicorp/consul/api#QueryOptions&#34;&gt;QueryOption&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;options := &amp;amp;consulapi.QueryOption{
-	Token: token,
-}
-
-pairs, meta, err := consulapi.Get(&amp;quot;timeout&amp;quot;, coptions)
-if err != nil {
-	return nil, nil, err
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;More information about Consul &lt;a href=&#34;https://www.consul.io/docs/internals/acl.html&#34;&gt;ACL&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

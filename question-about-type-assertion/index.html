@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.17" />
-		<title>running commands with go &middot; Never stop learning...</title>
+		<title>question about type assertion in go &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
@@ -41,34 +41,70 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>running commands with go</h1>
+                    <h1>question about type assertion in go</h1>
                     <h2 class="headline">
-                    July 12, 2015 
+                    November 23, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="http://varunksaini.com/tags/golang">golang</a>
+                        
+                            <a href="http://varunksaini.com/tags/blog">blog</a>
+                        
+                            <a href="http://varunksaini.com/tags/question">question</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>Sometimes we need to run external commands programatically to use the output of the command to drive the execution. Go provides a nice interface to run the external commands through <a href="https://golang.org/pkg/os/exec/">exec</a> package. Running an external command is very easy and an example is given below.</p>
+                    <p>One of our go app crashed recently because of a bug in <a href="https://github.com/urfave/cli/">https://github.com/urfave/cli/</a>, here is the <a href="https://github.com/urfave/cli/pull/568">PR</a> with fix from my collegue who found the issue. Then we started talking about it internally and found something that&rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.</p>
+
+<p>My question is why <code>bar</code> works but not <code>foo</code>.</p>
 
 <pre><code>package main
 
 import (
 	&quot;fmt&quot;
-	&quot;log&quot;
-	&quot;os/exec&quot;
 )
 
 func main() {
-	out, err := exec.Command(&quot;date&quot;).Output()
-	if err != nil {
-		log.Fatal(err)
+	var f interface{}
+	var b interface{}
+	f = foo()
+	b = bar()
+
+	if _, ok := f.(func(string) error); ok {
+		fmt.Println(&quot;FOUND IT&quot;)
+	} else {
+		fmt.Println(&quot;DIDNT FIND IT&quot;)
 	}
-	fmt.Printf(&quot;The time is %s\n&quot;, out)
+
+	if _, ok := b.(func(string) error); ok {
+		fmt.Println(&quot;FOUND IT&quot;)
+	} else {
+		fmt.Println(&quot;DIDNT FIND IT&quot;)
+	}
 }
+
+type FooFunc func(string) error
+
+func foo() func(string) error {
+	return func(e string) error {
+		return fmt.Errorf(&quot;GOTCHA&quot;)
+	}
+}
+
+func bar() FooFunc {
+	return func(e string) error {
+		return fmt.Errorf(&quot;GOTCHA&quot;)
+	}
+}
+
 </code></pre>
 
-<p><code>exec</code> package provides some other useful methods to work with external commands. Use this powerful package to build awesome things.</p>
+<p><a href="https://play.golang.org/p/4EfYIMZV-p">go playground</a></p>
 
                 </section>
             </article>
@@ -81,7 +117,7 @@ func main() {
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2frunning_commands_with_go%2f - running%20commands%20with%20go by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fquestion-about-type-assertion%2f - question%20about%20type%20assertion%20in%20go by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -97,9 +133,9 @@ func main() {
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/running_commands_with_go\/';
-    var disqus_title = 'running commands with go';
-    var disqus_url = 'http:\/\/varunksaini.com\/running_commands_with_go\/';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/question-about-type-assertion\/';
+    var disqus_title = 'question about type assertion in go';
+    var disqus_url = 'http:\/\/varunksaini.com\/question-about-type-assertion\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
