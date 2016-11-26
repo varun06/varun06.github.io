@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Never stop learning...</title>
+    <link>http://varunksaini.com/tags/video/index.xml</link>
+    <description>Recent content on Never stop learning...</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://varunksaini.com/tags/video/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Alan Kay interview by Joe Armstrong</title>
+      <link>http://varunksaini.com/Alan-Kay-Joe-Armstrong/</link>
+      <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/Alan-Kay-Joe-Armstrong/</guid>
+      <description>&lt;p&gt;I watched this great &lt;a href=&#34;http://www.youtube.com/watch?feature=player_embedded&amp;v=fhOHn9TClXY
+&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/fhOHn9TClXY/0.jpg&#34; 
+alt=&#34;Alan Kay Joe Armstrong&#34; width=&#34;240&#34; height=&#34;180&#34; border=&#34;10&#34; /&gt;&lt;/a&gt; where &lt;a href=&#34;http://joearms.github.io/&#34;&gt;Joe Armstrong&lt;/a&gt; interviews &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Alan Kay&lt;/a&gt;. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of &lt;strong&gt;cloud&lt;/strong&gt; and &lt;strong&gt;internet of things&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks). According to them, we need to think as real scientists and use scientific methods to solve problems. Also Alan Kay recommends a lots of great books to read in this interview.&lt;/p&gt;
+
+&lt;p&gt;Following are some quotes from interview:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The best way to predict the future is to invent it.&lt;/p&gt;
+
+&lt;p&gt;Inverse Vandalism.&lt;/p&gt;
+
+&lt;p&gt;Not Big Data, but Big meaning.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

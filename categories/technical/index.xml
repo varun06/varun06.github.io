@@ -9,6 +9,30 @@
     <atom:link href="http://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Alan Kay interview by Joe Armstrong</title>
+      <link>http://varunksaini.com/Alan-Kay-Joe-Armstrong/</link>
+      <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
+      
+      <guid>http://varunksaini.com/Alan-Kay-Joe-Armstrong/</guid>
+      <description>&lt;p&gt;I watched this great &lt;a href=&#34;http://www.youtube.com/watch?feature=player_embedded&amp;v=fhOHn9TClXY
+&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://img.youtube.com/vi/fhOHn9TClXY/0.jpg&#34; 
+alt=&#34;Alan Kay Joe Armstrong&#34; width=&#34;240&#34; height=&#34;180&#34; border=&#34;10&#34; /&gt;&lt;/a&gt; where &lt;a href=&#34;http://joearms.github.io/&#34;&gt;Joe Armstrong&lt;/a&gt; interviews &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Alan Kay&lt;/a&gt;. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of &lt;strong&gt;cloud&lt;/strong&gt; and &lt;strong&gt;internet of things&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks). According to them, we need to think as real scientists and use scientific methods to solve problems. Also Alan Kay recommends a lots of great books to read in this interview.&lt;/p&gt;
+
+&lt;p&gt;Following are some quotes from interview:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The best way to predict the future is to invent it.&lt;/p&gt;
+
+&lt;p&gt;Inverse Vandalism.&lt;/p&gt;
+
+&lt;p&gt;Not Big Data, but Big meaning.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
       <title>question about type assertion in go</title>
       <link>http://varunksaini.com/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
@@ -600,51 +624,6 @@ File descriptors work by providing a layer of abstraction between an actual hard
       
       <guid>http://varunksaini.com/gophercon-2016-here-i-come/</guid>
       <description>&lt;p&gt;I got my &lt;a href=&#34;https://gophercon.com/&#34;&gt;gophercon&lt;/a&gt; ticket today. I always wanted to go to gophercon and finally it is happening this year. I am really excited to meet fellow gophers there.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 19June</title>
-      <link>http://varunksaini.com/weekly-reading-19June/</link>
-      <pubDate>Sun, 19 Jun 2016 05:52:29 -0500</pubDate>
-      
-      <guid>http://varunksaini.com/weekly-reading-19June/</guid>
-      <description>
-
-&lt;p&gt;It seems I got overboard with reading and read a hell lot of articles from web. It confirms that I need some refinement in my workflow and that is going to happen this week. May be I will restrict my self to read only 5 general articles every week. &lt;strong&gt;&amp;ldquo;Read less, Read better&amp;rdquo;&lt;/strong&gt; is going to be my motto going forward.&lt;/p&gt;
-
-&lt;h4 id=&#34;general&#34;&gt;General:&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;1. http://atlantic.com/health/archive/2016/16/i-stopped-showering-and-life-continued/
-2. http://aeon.co/essays/there-s-a-better-way-to-get-smarter-than-brain-training-games
-3. http://engineering.stanford.edu/news/david-dill-why-online-voting-danger-democracy
-4. http://www.nytimes.com/2016/06/12/fashion/internet-technology-phones-introspection.html
-5. http://www.newyorker.com/magazine/2016/04/11/gay-talese-the-voyeurs-motel
-6. http://mobile.nytimes.com/2016/06/12/opinion/sunday/yes-there-have-been-aliens.html
-7. https://aeon.co/ideas/why-the-brains-of-teenagers-excel-at-taking-risks
-8. https://aeon.co/ideas/sex-is-a-costly-molecular-kind-of-wizardry-why-evolve-it
-9. https://aeon.co/ideas/would-it-be-immoral-to-send-out-a-generation-starship
-10. https://getpocket.com/@varunsaini06/share/772176
-11. https://aeon.co/ideas/the-concrete-buildings-of-brutalism-are-beautiful
-12. https://aeon.co/essays/should-we-trust-others-to-manage-our-own-safety-risks
-13. http://qz.com/704723/to-be-more-self-reliant-children-need-boring-summers/
-14. http://www.hanselman.com/blog/StopSayingLearningToCodeIsEasy.aspx
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id=&#34;technical&#34;&gt;Technical:&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;1. http://www.ybrikman.com/writing/2015/11/11/running-docker-aws-ground-up/#deploying-docker-containers-on-ecs
-2. http://vimcasts.org/blog/2012/08/on-sharpening-the-saw/
-3. http://jvns.ca/blog/2016/06/13/should-you-be-scared-of-signals/
-4. https://www.mauras.ch/securing-consul.html#prevent-rogue-nodes-joining-the-cluster
-5. http://www.doc.ic.ac.uk/~cn06/pub/2016/dingo/main.pdf
-6. http://www.markhneedham.com/blog/2012/07/15/tcpdump-learning-how-to-read-udp-packets/
-7. https://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-8. https://www.infoq.com/news/2016/06/programmers-write-better-code
-9. https://aphyr.com/posts/313-strong-consistency-models
-10. http://martinfowler.com/articles/serverless.html
-11. https://skillsmatter.com/skillscasts/8340-london-go-usergroup#video
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
