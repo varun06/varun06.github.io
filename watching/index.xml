@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Watching-rsses on Never stop learning...</title>
-    <link>http://varunksaini.com/watching/index.xml</link>
+    <link>https://varunksaini.com/watching/index.xml</link>
     <description>Recent content in Watching-rsses on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://varunksaini.com/watching/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://varunksaini.com/watching/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://varunksaini.com/watching/</link>
+      <link>https://varunksaini.com/watching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://varunksaini.com/watching/</guid>
+      <guid>https://varunksaini.com/watching/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.ted.com/talks/ricardo_semler_radical_wisdom_for_a_company_a_school_a_life#t-184512&#34;&gt;Recardo Semler - Radical wisdom for a company&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.thedotpost.com/2016/10/robert-griesemer-prototype-your-design&#34;&gt;Robert Griesemer - Prototype you desing(Go)&lt;/a&gt;&lt;/li&gt;

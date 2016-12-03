@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Never stop learning...</title>
-    <link>http://varunksaini.com/tags/question/index.xml</link>
+    <link>https://varunksaini.com/tags/question/index.xml</link>
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://varunksaini.com/tags/question/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://varunksaini.com/tags/question/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>question about type assertion in go</title>
-      <link>http://varunksaini.com/posts/question-about-type-assertion/</link>
+      <link>https://varunksaini.com/posts/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/question-about-type-assertion/</guid>
+      <guid>https://varunksaini.com/posts/question-about-type-assertion/</guid>
       <description>&lt;p&gt;One of our go app crashed recently because of a bug in &lt;a href=&#34;https://github.com/urfave/cli/&#34;&gt;https://github.com/urfave/cli/&lt;/a&gt;, here is the &lt;a href=&#34;https://github.com/urfave/cli/pull/568&#34;&gt;PR&lt;/a&gt; with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.&lt;/p&gt;
 
 &lt;p&gt;My question is why &lt;code&gt;bar&lt;/code&gt; works but not &lt;code&gt;foo&lt;/code&gt;.&lt;/p&gt;

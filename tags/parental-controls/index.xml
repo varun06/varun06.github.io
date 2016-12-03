@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Never stop learning...</title>
-    <link>http://varunksaini.com/tags/parental-controls/index.xml</link>
+    <link>https://varunksaini.com/tags/parental-controls/index.xml</link>
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://varunksaini.com/tags/parental-controls/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://varunksaini.com/tags/parental-controls/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>block youtube on apple mac osx using Parental Controls</title>
-      <link>http://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
+      <link>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
       <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
+      <guid>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
       <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
 They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
 

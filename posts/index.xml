@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts-rsses on Never stop learning...</title>
-    <link>http://varunksaini.com/posts/index.xml</link>
+    <link>https://varunksaini.com/posts/index.xml</link>
     <description>Recent content in Posts-rsses on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Nov 2016 20:48:29 -0600</lastBuildDate>
-    <atom:link href="http://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Sunday reading the privileged immigrant</title>
-      <link>http://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</link>
+      <link>https://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</link>
       <pubDate>Sat, 26 Nov 2016 20:48:29 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</guid>
+      <guid>https://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</guid>
       <description>&lt;p&gt;I was checking some tweets on twitter and came through one that mentioned an article &lt;a href=&#34;http://www.nytimes.com/2016/11/26/opinion/sunday/the-privileged-immigrant.html&#34;&gt;The priviliged immigrant&lt;/a&gt;. The article is written by an author who is of Indian descent. Author talks about hard work her parents did when they came to United States in 1965. Then she talked about her gardener who is a Mexican and seems like an undocumented worker.&lt;/p&gt;
 
 &lt;p&gt;There is a period of uncertainty because of recent elections. Lots of people are talking about immigration. This is an article that talk about some immigrants and two sides of this immigrant debate(legal vs illegal).&lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>aeon newsletter Nov262016</title>
-      <link>http://varunksaini.com/posts/aeon-newsletter-Nov262016/</link>
+      <link>https://varunksaini.com/posts/aeon-newsletter-Nov262016/</link>
       <pubDate>Sat, 26 Nov 2016 06:05:16 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/aeon-newsletter-Nov262016/</guid>
+      <guid>https://varunksaini.com/posts/aeon-newsletter-Nov262016/</guid>
       <description>&lt;p&gt;I get &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine newsletter every weekend. They generally have some good article that I end up reading. In my quest to log what I read and watch here at my blog, today I am going to write about Aeon newsletter. I will only be writing what I read.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -44,10 +44,10 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
     
     <item>
       <title>Alan Kay interview by Joe Armstrong</title>
-      <link>http://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</link>
+      <link>https://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</link>
       <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</guid>
+      <guid>https://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</guid>
       <description>&lt;p&gt;I watched this great &lt;a href=&#34;https://www.youtube.com/watch?v=fhOHn9TClXY&#34;&gt;video&lt;/a&gt; where &lt;a href=&#34;http://joearms.github.io/&#34;&gt;Joe Armstrong&lt;/a&gt; interviews &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Alan Kay&lt;/a&gt;. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of &lt;strong&gt;cloud&lt;/strong&gt; and &lt;strong&gt;internet of things&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks). According to them, we need to think as real scientists and use scientific methods to solve problems. Also Alan Kay recommends a lots of great books to read in this interview.&lt;/p&gt;
@@ -66,10 +66,10 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
     
     <item>
       <title>question about type assertion in go</title>
-      <link>http://varunksaini.com/posts/question-about-type-assertion/</link>
+      <link>https://varunksaini.com/posts/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/question-about-type-assertion/</guid>
+      <guid>https://varunksaini.com/posts/question-about-type-assertion/</guid>
       <description>&lt;p&gt;One of our go app crashed recently because of a bug in &lt;a href=&#34;https://github.com/urfave/cli/&#34;&gt;https://github.com/urfave/cli/&lt;/a&gt;, here is the &lt;a href=&#34;https://github.com/urfave/cli/pull/568&#34;&gt;PR&lt;/a&gt; with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.&lt;/p&gt;
 
 &lt;p&gt;My question is why &lt;code&gt;bar&lt;/code&gt; works but not &lt;code&gt;foo&lt;/code&gt;.&lt;/p&gt;
@@ -121,10 +121,10 @@ func bar() FooFunc {
     
     <item>
       <title>block youtube on apple mac osx using Parental Controls</title>
-      <link>http://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
+      <link>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
       <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
       
-      <guid>http://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
+      <guid>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
       <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
 They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
 
@@ -139,10 +139,10 @@ Click OK, and you are done.&lt;/p&gt;
     
     <item>
       <title>Using if condition in a defer statement</title>
-      <link>http://varunksaini.com/posts/using-if-in-defer/</link>
+      <link>https://varunksaini.com/posts/using-if-in-defer/</link>
       <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/using-if-in-defer/</guid>
+      <guid>https://varunksaini.com/posts/using-if-in-defer/</guid>
       <description>&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;f, err := os.Open(fileName)
@@ -196,10 +196,10 @@ func main() {
     
     <item>
       <title>how not to handle errors in golang</title>
-      <link>http://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</link>
+      <link>https://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</link>
       <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</guid>
+      <guid>https://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</guid>
       <description>&lt;p&gt;People have a love and hate relationship with golang error handling. Golang&amp;rsquo;s use to return values for error handling seems to have as many detractors as admirers. In golang, errors are of immediate interest, so you handle them then and there, so it very common to see code like this -&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var user User
@@ -226,10 +226,10 @@ if err != nil {
     
     <item>
       <title>remove big file from git repo</title>
-      <link>http://varunksaini.com/posts/remove-big-file-from-git-repo/</link>
+      <link>https://varunksaini.com/posts/remove-big-file-from-git-repo/</link>
       <pubDate>Sat, 22 Oct 2016 07:35:43 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/remove-big-file-from-git-repo/</guid>
+      <guid>https://varunksaini.com/posts/remove-big-file-from-git-repo/</guid>
       <description>&lt;p&gt;Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size. I am sure there are many ways to do it but I am going to write down what I did so somebody else can also benefit.&lt;/p&gt;
 
 &lt;p&gt;I used a tool called &lt;strong&gt;BFG Repo cleaner&lt;/strong&gt;. BFG cleans bad data from git repo. BFG can be downloaded &lt;a href=&#34;http://repo1.maven.org/maven2/com/madgag/bfg/1.12.13/bfg-1.12.13.jar&#34;&gt;here&lt;/a&gt; and provides a comprehensive list of option to clean git repo. It is an alternative to &lt;code&gt;git-filter-branch&lt;/code&gt;, which I have no idea about.&lt;/p&gt;
@@ -272,30 +272,30 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
     
     <item>
       <title>get back to blogging</title>
-      <link>http://varunksaini.com/posts/get-back-to-blogging/</link>
+      <link>https://varunksaini.com/posts/get-back-to-blogging/</link>
       <pubDate>Sun, 16 Oct 2016 09:02:02 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/get-back-to-blogging/</guid>
+      <guid>https://varunksaini.com/posts/get-back-to-blogging/</guid>
       <description>&lt;p&gt;I have not been writing anything from some time. But I want to get back to it and have decided writing something every week. I will start by writing a review of a book that I read recently. I think it will be a good way to get back to writing and I will also get some motivation to read book. I have a list of technical books that I want to go through and learn. So let&amp;rsquo;s begin.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>laptop repair</title>
-      <link>http://varunksaini.com/posts/laptop-repair/</link>
+      <link>https://varunksaini.com/posts/laptop-repair/</link>
       <pubDate>Sat, 13 Aug 2016 10:26:10 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/laptop-repair/</guid>
+      <guid>https://varunksaini.com/posts/laptop-repair/</guid>
       <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>good read on golang and generics</title>
-      <link>http://varunksaini.com/posts/good-read-on-golang-and-generics/</link>
+      <link>https://varunksaini.com/posts/good-read-on-golang-and-generics/</link>
       <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/good-read-on-golang-and-generics/</guid>
+      <guid>https://varunksaini.com/posts/good-read-on-golang-and-generics/</guid>
       <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
@@ -304,10 +304,10 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
     
     <item>
       <title>weekly reading 19July</title>
-      <link>http://varunksaini.com/posts/weekly-reading-19July/</link>
+      <link>https://varunksaini.com/posts/weekly-reading-19July/</link>
       <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/weekly-reading-19July/</guid>
+      <guid>https://varunksaini.com/posts/weekly-reading-19July/</guid>
       <description>&lt;p&gt;This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -332,10 +332,10 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
     
     <item>
       <title>weekly reading 9July</title>
-      <link>http://varunksaini.com/posts/weekly-reading-9July/</link>
+      <link>https://varunksaini.com/posts/weekly-reading-9July/</link>
       <pubDate>Sat, 09 Jul 2016 05:46:45 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/weekly-reading-9July/</guid>
+      <guid>https://varunksaini.com/posts/weekly-reading-9July/</guid>
       <description>&lt;p&gt;This week I didn&amp;rsquo;t read too many online articles. But still found some good technical articles that I read.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://videlalvaro.github.io/2015/02/programming-myths.html&#34;&gt;http://videlalvaro.github.io/2015/02/programming-myths.html&lt;/a&gt;&lt;/p&gt;
@@ -369,10 +369,10 @@ Some great quotes from article:
     
     <item>
       <title>bash fifos and golang channel</title>
-      <link>http://varunksaini.com/posts/bash-fifos-and-golang-channel/</link>
+      <link>https://varunksaini.com/posts/bash-fifos-and-golang-channel/</link>
       <pubDate>Mon, 04 Jul 2016 22:05:36 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/bash-fifos-and-golang-channel/</guid>
+      <guid>https://varunksaini.com/posts/bash-fifos-and-golang-channel/</guid>
       <description>&lt;p&gt;I have been reading about &lt;a href=&#34;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&#34;&gt;bash&lt;/a&gt; this weekend and came to know about &lt;a href=&#34;http://www.linuxjournal.com/content/using-named-pipes-fifos-bash&#34;&gt;FIFOs&lt;/a&gt;. After first glance I found similarities between &lt;code&gt;named pipes&lt;/code&gt; and &lt;code&gt;golang channel&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; are created using the &lt;code&gt;mkfifo&lt;/code&gt; command.&lt;/p&gt;
@@ -388,10 +388,10 @@ Some great quotes from article:
     
     <item>
       <title>a quick introduction to standard streams, file descriptors, and redirection</title>
-      <link>http://varunksaini.com/posts/a-quick-introduction-to-standard-streams/</link>
+      <link>https://varunksaini.com/posts/a-quick-introduction-to-standard-streams/</link>
       <pubDate>Sun, 03 Jul 2016 13:47:05 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/a-quick-introduction-to-standard-streams/</guid>
+      <guid>https://varunksaini.com/posts/a-quick-introduction-to-standard-streams/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_streams&#34;&gt;standard streams&lt;/a&gt; are pre connected input and output communication channels between a program and its environment.&lt;/p&gt;

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Never stop learning...</title>
-    <link>http://varunksaini.com/tags/consul/index.xml</link>
+    <link>https://varunksaini.com/tags/consul/index.xml</link>
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://varunksaini.com/tags/consul/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://varunksaini.com/tags/consul/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>consul service discovery using golang</title>
-      <link>http://varunksaini.com/posts/consul-service-discovery-golang/</link>
+      <link>https://varunksaini.com/posts/consul-service-discovery-golang/</link>
       <pubDate>Sat, 11 Jun 2016 06:23:57 -0500</pubDate>
       
-      <guid>http://varunksaini.com/posts/consul-service-discovery-golang/</guid>
+      <guid>https://varunksaini.com/posts/consul-service-discovery-golang/</guid>
       <description>
 
 &lt;h2 id=&#34;what-is-service-discovery&#34;&gt;What is Service discovery:&lt;/h2&gt;
