@@ -6,8 +6,76 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Nov 2016 20:48:29 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 03 Dec 2016 11:39:24 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why there is no place like home - thoughts after reading</title>
+      <link>https://varunksaini.com/posts/why-no-place-like-home/</link>
+      <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/why-no-place-like-home/</guid>
+      <description>&lt;p&gt;I really like &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine. Every weekend I get aeon newsletter and there is always some really good article/essay in newsletter. One of these essay that I read today is &lt;a href=&#34;https://aeon.co/essays/why-theres-no-place-like-home-for-anyone-any-more&#34;&gt;why there is no place like home anymore&lt;/a&gt;.This is a really thought provoking essay.&lt;/p&gt;
+
+&lt;p&gt;Essay starts by talking about &lt;a href=&#34;https://www.tumbleweedhouses.com/&#34;&gt;Tiny Homes&lt;/a&gt; that I saw some time back. Tiny home is an interesting concept but I didn&amp;rsquo;t know that you can also save tax on them. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The fact that these homes are on a trailer and don’t touch the ground can exempt their owners from property tax in states where they count not as homes but as a vehicle&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Home is not only a place where you live, you have so many memories, you feel comfortable when in your home. That&amp;rsquo;s why concept of home is very dear to humans(and to animals also). From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Home is where the heart is, and there is no place like home, yet a sense of being at home can come from many sources.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Technological advances and political environment are changing the idea of a home. Things are changing fast and the idea of home is also changing. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;which makes home as important to politics as the idea of class or rights – especially now, when so many people feel displaced, both literally and figuratively, by life in innovation-driven, high-tech, networked capitalism. On top of that, the contest over where home is and who is entitled to live there, is – in the form of the current apparent crisis over migration – driving global political debate.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sharing economy and companies such as Airbnb(&lt;a href=&#34;https://www.airbnb.com/&#34;&gt;https://www.airbnb.com/&lt;/a&gt;) are turning a private place such as home into something that you share with strangers. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A bedroom can become an income-earning asset when its role in our lives is reassigned by the click of a mouse on a digital platform.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Young people spend most of their time on devices, even when they are home. For them being online is a form of being at home. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Young people seem to be most at home when they are on – or perhaps ‘in’ – their phones, flicking between apps, surfing their social networks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Even when people do activities such as eating food etc. they are their devices with them. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In contrast, the table in our family house has to be cleared of an Apple store’s worth of equipment before we can eat.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;People are fearful of losing their homes because of technological advances or influx of immigrants(who are in fact looking a home for themselves). From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this fear of losing our place in the world to the technologies we’ve created will overshadow the next few decades.&lt;/p&gt;
+
+&lt;p&gt;this easily provoked fear of an imaginary pristine national home being ruined by outsiders.&lt;/p&gt;
+
+&lt;p&gt;from technology to immigration, urbanisation and climate change – the idea of home is central.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We need an economic system that instead of fueling the fear of losing, creates an environment where everybody feels at home. We want good capitalism that takes everybody forward. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;an economic system that helps them build a shared sense of home.&lt;/p&gt;
+
+&lt;p&gt;Capitalism needs once again to give people an orderly sense of home, rather than pitching them into insecurity, as if anything they have might be taken from them in a moment.&lt;/p&gt;
+
+&lt;p&gt;We need a new kind of shared home economics, of home-making and building. The route to power to change society starts at home.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A really good read and makes you realize why you like your home so much.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Sunday reading the privileged immigrant</title>
@@ -383,116 +451,6 @@ Some great quotes from article:
 &lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; provide a &lt;code&gt;named pipe&lt;/code&gt; to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it. If you are familiar with golang and golang channels, that&amp;rsquo;s an &lt;a href=&#34;https://golang.org/doc/effective_go.html#channels&#34;&gt;Unbuffered/synchronous channel&lt;/a&gt;. Unbuffered channel blocks until there is a receiver receiving from a channel.&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;named pipes&lt;/code&gt; are very interesting and can be used in some interesting ways.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>a quick introduction to standard streams, file descriptors, and redirection</title>
-      <link>https://varunksaini.com/posts/a-quick-introduction-to-standard-streams/</link>
-      <pubDate>Sun, 03 Jul 2016 13:47:05 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/a-quick-introduction-to-standard-streams/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Standard_streams&#34;&gt;standard streams&lt;/a&gt; are pre connected input and output communication channels between a program and its environment.&lt;/p&gt;
-
-&lt;p&gt;The three standard streams are &lt;em&gt;stdin&lt;/em&gt;, &lt;em&gt;stdout&lt;/em&gt;, and &lt;em&gt;stderr&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/File_descriptor&#34;&gt;File descriptors&lt;/a&gt; are handles that are used to access an input or output file, stream, pipe, socket, device, network interface etc.
-File descriptors work by providing a layer of abstraction between an actual hardware device and a special file created by the kernel for the device, populated by udev, and stored in the /dev directory. When a process makes a call for read/write, file descriptors provide a way to correctly route the call.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;right&#34;&gt;Name&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Stream&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;Default&lt;/th&gt;
-&lt;th align=&#34;right&#34;&gt;File Descriptors&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;Standard Input&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;stdin&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;Keyboard&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;Standard Output&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;stdout&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;Screen&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td align=&#34;right&#34;&gt;Standard error&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;stderr&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;Screen&lt;/td&gt;
-&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Redirection_(computing)&#34;&gt;File Redirection&lt;/a&gt; is a common form of redirection. In file redirection, the FD for stdout is pointed to a file, rather than a screen. output redirection is accomplished by using greater-than sign &lt;code&gt;&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ echo &amp;quot;Write to a file&amp;quot; &amp;gt; testfile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;When above command is run, instead of displaying the text on screen, text is redirected to file. If the file wasn&amp;rsquo;t already there, it will be created and written to.If the file existed, it will be overwritten. To avoid overwriting an existing file, use &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; output redirection operator, which append the data to the end of file.&lt;/p&gt;
-
-&lt;p&gt;Input redireciton is accomplished by using &lt;code&gt;&amp;lt;&lt;/code&gt; operator.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cat &amp;lt; testfile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;file-descriptor-redirection&#34;&gt;File Descriptor Redirection&lt;/h4&gt;
-
-&lt;p&gt;We can manually specify which file descriptor to redirect. It is accomplished by adding a numerical prefix of the standard stream we wish to redirect.&lt;/p&gt;
-
-&lt;p&gt;Redirecting the stdout if a command to a file will look like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ command 1&amp;gt; file
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;redirecting file to stdin will look like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ command 0&amp;lt; file
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Since the defaults (naked descriptors) do not specify stderr, we need to specify them manually.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rm testfile 2&amp;gt;/dev/null
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will discard any message generated by &lt;code&gt;rm&lt;/code&gt; to &lt;code&gt;/dev/null&lt;/code&gt;. But a better idea will be to redirect the message to a file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rm testfile 2&amp;gt; errfile
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Sometime we need to redirect more than one file descriptors. We can accomplish this by&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cat * &amp;gt; cat.log 2&amp;gt;&amp;amp;1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will redirect or stdout and sterr to &lt;code&gt;cat.log&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;It is important to know that file descriptors are read from left to right.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Here document&lt;/em&gt; &lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt; are perfect for embedding some data into a script.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wc -c &amp;lt;&amp;lt;EOF
-&amp;gt; Hello
-&amp;gt; EOF
-5
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Here string&lt;/em&gt; &lt;code&gt;&amp;lt;&amp;lt;&amp;lt;&lt;/code&gt; is very similar to &lt;em&gt;Here document&lt;/em&gt; but only works for a string.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ wc -c &amp;lt;&amp;lt;&amp;lt; &amp;quot;I am string&amp;quot;
-12
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
