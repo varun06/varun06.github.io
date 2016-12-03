@@ -10,10 +10,10 @@
     
     <item>
       <title>Using if condition in a defer statement</title>
-      <link>http://varunksaini.com/using-if-in-defer/</link>
+      <link>http://varunksaini.com/posts/using-if-in-defer/</link>
       <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
       
-      <guid>http://varunksaini.com/using-if-in-defer/</guid>
+      <guid>http://varunksaini.com/posts/using-if-in-defer/</guid>
       <description>&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;f, err := os.Open(fileName)
@@ -67,10 +67,10 @@ func main() {
     
     <item>
       <title>how not to handle errors in golang</title>
-      <link>http://varunksaini.com/how-not-to-handle-errors-in-golang/</link>
+      <link>http://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</link>
       <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
       
-      <guid>http://varunksaini.com/how-not-to-handle-errors-in-golang/</guid>
+      <guid>http://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</guid>
       <description>&lt;p&gt;People have a love and hate relationship with golang error handling. Golang&amp;rsquo;s use to return values for error handling seems to have as many detractors as admirers. In golang, errors are of immediate interest, so you handle them then and there, so it very common to see code like this -&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var user User

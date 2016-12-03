@@ -1,0 +1,295 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Varun Saini">
+		<meta name="description" content="Just write">
+		<meta name="generator" content="Hugo 0.17" />
+		<title>bash fifos and golang channel &middot; Never stop learning...</title>
+		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
+		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
+		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="http://varunksaini.com/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
+		
+
+		<meta property="og:title" content="bash fifos and golang channel" />
+<meta property="og:description" content="I have been reading about bash this weekend and came to know about FIFOs. After first glance I found similarities between named pipes and golang channel.
+FIFOs are created using the mkfifo command.
+$ mkfifo test  FIFOs provide a named pipe to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://varunksaini.com/posts/bash-fifos-and-golang-channel/" />
+
+
+<meta property="og:updated_time" content="2016-07-04T22:05:36-05:00"/>
+
+
+
+
+
+
+
+
+
+
+	    
+	    
+<meta itemprop="name" content="bash fifos and golang channel">
+<meta itemprop="description" content="I have been reading about bash this weekend and came to know about FIFOs. After first glance I found similarities between named pipes and golang channel.
+FIFOs are created using the mkfifo command.
+$ mkfifo test  FIFOs provide a named pipe to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it.">
+
+
+<meta itemprop="dateModified" content="2016-07-04T22:05:36-05:00" />
+<meta itemprop="wordCount" content="111">
+
+
+
+<meta itemprop="keywords" content="general,programming,reading,technical,blog,career,consul,errors,general,git,golang,parental-controls,question,recruitment,video,watch,youtube," />
+
+	    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="bash fifos and golang channel"/>
+<meta name="twitter:description" content="I have been reading about bash this weekend and came to know about FIFOs. After first glance I found similarities between named pipes and golang channel.
+FIFOs are created using the mkfifo command.
+$ mkfifo test  FIFOs provide a named pipe to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it."/>
+<meta name="twitter:site" content="@https://www.twitter.com/varunksaini"/>
+
+
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://varunksaini.com/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='http://varunksaini.com/reading'>Reading</a>
+	
+	
+	
+		<a href='http://varunksaini.com/watching'>Watching</a>
+	
+
+	
+		<a href='http://varunksaini.com/about'>About</a>
+	
+
+	
+	<a class="cta" href="http://varunksaini.com/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>bash fifos and golang channel</h1>
+                    <h2 class="headline">
+                    July 4, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="http://varunksaini.com/tags/general">general</a>
+                        
+                            <a href="http://varunksaini.com/tags/blog">blog</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    <p>I have been reading about <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> this weekend and came to know about <a href="http://www.linuxjournal.com/content/using-named-pipes-fifos-bash">FIFOs</a>. After first glance I found similarities between <code>named pipes</code> and <code>golang channel</code>.</p>
+
+<p><code>FIFOs</code> are created using the <code>mkfifo</code> command.</p>
+
+<pre><code>$ mkfifo test
+</code></pre>
+
+<p><code>FIFOs</code> provide a <code>named pipe</code> to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it. If you are familiar with golang and golang channels, that&rsquo;s an <a href="https://golang.org/doc/effective_go.html#channels">Unbuffered/synchronous channel</a>. Unbuffered channel blocks until there is a receiver receiving from a channel.</p>
+
+<p><code>named pipes</code> are very interesting and can be used in some interesting ways.</p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/https://twitter.com/varunksaini">
+                        <img class="avatar" src="http://varunksaini.com/images/avatar.png">
+                        <div>
+                            <span class="dark">Varun Saini</span>
+                            <span>Who am I, Why I am here...</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fposts%2fbash-fifos-and-golang-channel%2f - bash%20fifos%20and%20golang%20channel by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'varunksaini';
+    var disqus_identifier = 'http:\/\/varunksaini.com\/posts\/bash-fifos-and-golang-channel\/';
+    var disqus_title = 'bash fifos and golang channel';
+    var disqus_url = 'http:\/\/varunksaini.com\/posts\/bash-fifos-and-golang-channel\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant<aside class="dates">Nov 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/aeon-newsletter-Nov262016/">aeon newsletter Nov262016<aside class="dates">Nov 26</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/">Alan Kay interview by Joe Armstrong<aside class="dates">Nov 25</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/question-about-type-assertion/">question about type assertion in go<aside class="dates">Nov 23</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls<aside class="dates">Nov 12</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/using-if-in-defer/">Using if condition in a defer statement<aside class="dates">Nov 1</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/how-not-to-handle-errors-in-golang/">how not to handle errors in golang<aside class="dates">Oct 27</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/remove-big-file-from-git-repo/">remove big file from git repo<aside class="dates">Oct 22</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/get-back-to-blogging/">get back to blogging<aside class="dates">Oct 16</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="http://varunksaini.com/posts/laptop-repair/">laptop repair<aside class="dates">Aug 13</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/varunksaini">
+        circlefacebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/varun06">
+        circlegithub
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/varunksaini">
+        circletwitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 Varun Saini
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://varunksaini.com/js/main.js"></script>
+<script src="http://varunksaini.com/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-42065254-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    </body>
+</html>

@@ -1,62 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Readings on keep living, keep learning..</title>
-    <link>http://varunksaini.com/reading/</link>
-    <description>Recent content in Readings on keep living, keep learning..</description>
+    <title>Reading-rsses on Never stop learning...</title>
+    <link>http://varunksaini.com/reading/index.xml</link>
+    <description>Recent content in Reading-rsses on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© 2015 Copyright Text</copyright>
-    <lastBuildDate>Sat, 18 Apr 2015 10:36:30 -0400</lastBuildDate>
     <atom:link href="http://varunksaini.com/reading/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Thinking, Fast and Slow</title>
-      <link>http://varunksaini.com/reading/thinking_fast_and_slow/</link>
-      <pubDate>Sat, 18 Apr 2015 10:36:30 -0400</pubDate>
+      <title></title>
+      <link>http://varunksaini.com/reading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://varunksaini.com/reading/thinking_fast_and_slow/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555&#34;&gt;Thinking, Fast and Slow&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Particles of the universe</title>
-      <link>http://varunksaini.com/reading/Particles_of_the_universe/</link>
-      <pubDate>Sat, 13 Dec 2014 06:32:30 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/Particles_of_the_universe/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Particles-Universe-Jeff-Yee-ebook/dp/B007PM4ZZW/&#34;&gt;Particles of the universe&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Ultimate Bar Book</title>
-      <link>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</link>
-      <pubDate>Sat, 13 Dec 2014 06:29:30 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/the_Ultimate_Bar_Book/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/Ultimate-Bar-Book-Comprehensive-Cocktails-ebook/dp/B003IV8GUY&#34;&gt;The Ultimate Bar Book: The Comprehensive Guide to Over 1,000 Cocktails&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Gustavo Duarte - All about computers</title>
-      <link>http://varunksaini.com/reading/GustavoDuarte/</link>
-      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/GustavoDuarte/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://duartes.org/gustavo/blog/&#34;&gt;Gustavo&amp;rsquo;s blog entries - Computer Internals&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pragmatic Programmer</title>
-      <link>http://varunksaini.com/reading/pragmaticProgrammer/</link>
-      <pubDate>Sun, 23 Nov 2014 12:12:18 -0400</pubDate>
-      
-      <guid>http://varunksaini.com/reading/pragmaticProgrammer/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/The-Pragmatic-Programmer-Journeyman-Master/dp/020161622X&#34;&gt;Pragmatic Programmmer - A must read for every programmer&lt;/a&gt;&lt;/p&gt;
+      <guid>http://varunksaini.com/reading/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1&#34;&gt;Dave Cheney - Gopher Puzzlers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://joeduffyblog.com/2015/11/19/asynchronous-everything/&#34;&gt;Joe Duffy - Asynchronous Everything&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
