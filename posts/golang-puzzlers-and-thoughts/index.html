@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.17" />
-		<title>good read on golang and generics &middot; Never stop learning...</title>
+		<title>go puzzlers and thoughts &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="https://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="https://varunksaini.com/css/highlight.css">
@@ -21,14 +21,15 @@
 		<link href="https://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
 		
 
-		<meta property="og:title" content="good read on golang and generics" />
-<meta property="og:description" content="Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as this, this and this. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).
-I found this article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me." />
+		<meta property="og:title" content="go puzzlers and thoughts" />
+<meta property="og:description" content="Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
+package main import &quot;fmt&quot; func main() { m := make(map[string]int) m[&quot;foo&quot;]&#43;&#43; fmt.Println(m[&quot;foo&quot;]) }  Zero Values:
+Dave asks &ldquo;Is it going to compile and if yes, what will be the output&rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &quot;&quot; and 0 values respectively." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://varunksaini.com/posts/good-read-on-golang-and-generics/" />
+<meta property="og:url" content="https://varunksaini.com/posts/golang-puzzlers-and-thoughts/" />
 
 
-<meta property="og:updated_time" content="2016-07-17T06:57:00-05:00"/>
+<meta property="og:updated_time" content="2016-12-04T07:15:59-06:00"/>
 
 
 
@@ -41,13 +42,14 @@ I found this article about generics on reddit and found it very informative. I h
 
 	    
 	    
-<meta itemprop="name" content="good read on golang and generics">
-<meta itemprop="description" content="Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as this, this and this. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).
-I found this article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.">
+<meta itemprop="name" content="go puzzlers and thoughts">
+<meta itemprop="description" content="Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
+package main import &quot;fmt&quot; func main() { m := make(map[string]int) m[&quot;foo&quot;]&#43;&#43; fmt.Println(m[&quot;foo&quot;]) }  Zero Values:
+Dave asks &ldquo;Is it going to compile and if yes, what will be the output&rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &quot;&quot; and 0 values respectively.">
 
 
-<meta itemprop="dateModified" content="2016-07-17T06:57:00-05:00" />
-<meta itemprop="wordCount" content="83">
+<meta itemprop="dateModified" content="2016-12-04T07:15:59-06:00" />
+<meta itemprop="wordCount" content="295">
 
 
 
@@ -59,9 +61,10 @@ I found this article about generics on reddit and found it very informative. I h
 
 
 
-<meta name="twitter:title" content="good read on golang and generics"/>
-<meta name="twitter:description" content="Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as this, this and this. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).
-I found this article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me."/>
+<meta name="twitter:title" content="go puzzlers and thoughts"/>
+<meta name="twitter:description" content="Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
+package main import &quot;fmt&quot; func main() { m := make(map[string]int) m[&quot;foo&quot;]&#43;&#43; fmt.Println(m[&quot;foo&quot;]) }  Zero Values:
+Dave asks &ldquo;Is it going to compile and if yes, what will be the output&rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &quot;&quot; and 0 values respectively."/>
 <meta name="twitter:site" content="@https://www.twitter.com/varunksaini"/>
 
 
@@ -95,9 +98,9 @@ I found this article about generics on reddit and found it very informative. I h
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>good read on golang and generics</h1>
+                    <h1>go puzzlers and thoughts</h1>
                     <h2 class="headline">
-                    July 17, 2016 
+                    December 4, 2016 
                     <br>
                     
                     
@@ -111,9 +114,71 @@ I found this article about generics on reddit and found it very informative. I h
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as <a href="http://blog.jonathanoliver.com/golang-has-generics/">this</a>, <a href="http://bouk.co/blog/idiomatic-generics-in-go/">this</a> and <a href="http://blog.ralch.com/tutorial/golang-code-generation-and-generics/">this</a>. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).</p>
+                    <p><a href="https://dave.cheney.net/">Dave Cheney</a> gave a talk on <a href="http://golang.org">go</a> <a href="https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1">puzzlers</a>. It is a great talk and I encourage you to give it a good read.</p>
 
-<p>I found <a href="https://appliedgo.net/generics/">this</a> article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    m := make(map[string]int)
+    m[&quot;foo&quot;]++
+    fmt.Println(m[&quot;foo&quot;])
+}
+</code></pre>
+
+<p><strong>Zero Values:</strong></p>
+
+<p>Dave asks &ldquo;Is it going to compile and if yes, what will be the output&rdquo;? If you look closely, it is related to <a href="https://golang.org/ref/spec#The_zero_value">zero value</a> for a type. When we initialize <code>m := make(map[string]int)</code>, both string and int gets <code>&quot;&quot;</code> and <code>0</code> values respectively. So increment works as usual.</p>
+
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    m := map[string]int{}
+    m[&quot;foo&quot;]++
+    fmt.Println(m[&quot;foo&quot;])
+}
+</code></pre>
+
+<p>This will also work as literal map declaration is same as using <code>make</code>.</p>
+
+<p><strong>Multiple init():</strong></p>
+
+<pre><code>package main
+
+func init() {}
+func init() {}
+
+func main() {}
+</code></pre>
+
+<p>Will this compile?</p>
+
+<p>Yes, because init(), init() can appear multiple times in a package. Any other multiple function declarations will fail.</p>
+
+<pre><code>package main
+
+func foo() {}
+func foo() {}
+
+func main() {}
+</code></pre>
+
+<p>Fails with <code>foo redeclared in this block</code>. <a href="https://play.golang.org/p/czghNc45Nd">Playground</a></p>
+
+<p>If there are multiple init() in a package, they are called in the order they are declared. Also you can&rsquo;t make an explicit call to <code>init()</code> in your code, it will fail.</p>
+
+<p>More info on <a href="https://golang.org/doc/effective_go.html#init">init()</a></p>
+
+<p><strong>panic messages are written to <code>os.Stderr</code></strong></p>
+
+<p>language keywords such as <code>default</code> etc. should not be used as an identifier. <code>string</code> and <code>len</code> are predeclared identifiers. Predeclared identifiers are at universe block, so you can can shadow them inside smaller scopes, including the package block. But don&rsquo;t shadow predeclared identifiers as it will make code less readable and error prone.</p>
+
+<p>There are many more puzzles in Dave&rsquo;s slide. Go have a read.</p>
+
+<p>Note - The code examples here are used from Dave&rsquo;s talk. My intention is to solve and think about some puzzles here.</p>
 
                 </section>
             </article>
@@ -126,7 +191,7 @@ I found this article about generics on reddit and found it very informative. I h
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fvarunksaini.com%2fposts%2fgood-read-on-golang-and-generics%2f - good%20read%20on%20golang%20and%20generics by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fvarunksaini.com%2fposts%2fgolang-puzzlers-and-thoughts%2f - go%20puzzlers%20and%20thoughts by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -142,9 +207,9 @@ I found this article about generics on reddit and found it very informative. I h
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'https:\/\/varunksaini.com\/posts\/good-read-on-golang-and-generics\/';
-    var disqus_title = 'good read on golang and generics';
-    var disqus_url = 'https:\/\/varunksaini.com\/posts\/good-read-on-golang-and-generics\/';
+    var disqus_identifier = 'https:\/\/varunksaini.com\/posts\/golang-puzzlers-and-thoughts\/';
+    var disqus_title = 'go puzzlers and thoughts';
+    var disqus_url = 'https:\/\/varunksaini.com\/posts\/golang-puzzlers-and-thoughts\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

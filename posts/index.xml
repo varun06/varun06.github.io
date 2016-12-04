@@ -6,8 +6,82 @@
     <description>Recent content in Posts-rsses on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 03 Dec 2016 11:39:24 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 04 Dec 2016 07:15:59 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>go puzzlers and thoughts</title>
+      <link>https://varunksaini.com/posts/golang-puzzlers-and-thoughts/</link>
+      <pubDate>Sun, 04 Dec 2016 07:15:59 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/golang-puzzlers-and-thoughts/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/&#34;&gt;Dave Cheney&lt;/a&gt; gave a talk on &lt;a href=&#34;http://golang.org&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1&#34;&gt;puzzlers&lt;/a&gt;. It is a great talk and I encourage you to give it a good read.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    m := make(map[string]int)
+    m[&amp;quot;foo&amp;quot;]++
+    fmt.Println(m[&amp;quot;foo&amp;quot;])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Zero Values:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Dave asks &amp;ldquo;Is it going to compile and if yes, what will be the output&amp;rdquo;? If you look closely, it is related to &lt;a href=&#34;https://golang.org/ref/spec#The_zero_value&#34;&gt;zero value&lt;/a&gt; for a type. When we initialize &lt;code&gt;m := make(map[string]int)&lt;/code&gt;, both string and int gets &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; and &lt;code&gt;0&lt;/code&gt; values respectively. So increment works as usual.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    m := map[string]int{}
+    m[&amp;quot;foo&amp;quot;]++
+    fmt.Println(m[&amp;quot;foo&amp;quot;])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will also work as literal map declaration is same as using &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiple init():&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+func init() {}
+func init() {}
+
+func main() {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Will this compile?&lt;/p&gt;
+
+&lt;p&gt;Yes, because init(), init() can appear multiple times in a package. Any other multiple function declarations will fail.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+func foo() {}
+func foo() {}
+
+func main() {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fails with &lt;code&gt;foo redeclared in this block&lt;/code&gt;. &lt;a href=&#34;https://play.golang.org/p/czghNc45Nd&#34;&gt;Playground&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If there are multiple init() in a package, they are called in the order they are declared. Also you can&amp;rsquo;t make an explicit call to &lt;code&gt;init()&lt;/code&gt; in your code, it will fail.&lt;/p&gt;
+
+&lt;p&gt;More info on &lt;a href=&#34;https://golang.org/doc/effective_go.html#init&#34;&gt;init()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;panic messages are written to &lt;code&gt;os.Stderr&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;language keywords such as &lt;code&gt;default&lt;/code&gt; etc. should not be used as an identifier. &lt;code&gt;string&lt;/code&gt; and &lt;code&gt;len&lt;/code&gt; are predeclared identifiers. Predeclared identifiers are at universe block, so you can can shadow them inside smaller scopes, including the package block. But don&amp;rsquo;t shadow predeclared identifiers as it will make code less readable and error prone.&lt;/p&gt;
+
+&lt;p&gt;There are many more puzzles in Dave&amp;rsquo;s slide. Go have a read.&lt;/p&gt;
+
+&lt;p&gt;Note - The code examples here are used from Dave&amp;rsquo;s talk. My intention is to solve and think about some puzzles here.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why there is no place like home - thoughts after reading</title>
@@ -432,25 +506,6 @@ Some great quotes from article:
 &lt;p&gt;&lt;a href=&#34;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&#34;&gt;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&#34;&gt;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>bash fifos and golang channel</title>
-      <link>https://varunksaini.com/posts/bash-fifos-and-golang-channel/</link>
-      <pubDate>Mon, 04 Jul 2016 22:05:36 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/bash-fifos-and-golang-channel/</guid>
-      <description>&lt;p&gt;I have been reading about &lt;a href=&#34;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&#34;&gt;bash&lt;/a&gt; this weekend and came to know about &lt;a href=&#34;http://www.linuxjournal.com/content/using-named-pipes-fifos-bash&#34;&gt;FIFOs&lt;/a&gt;. After first glance I found similarities between &lt;code&gt;named pipes&lt;/code&gt; and &lt;code&gt;golang channel&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; are created using the &lt;code&gt;mkfifo&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkfifo test
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; provide a &lt;code&gt;named pipe&lt;/code&gt; to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it. If you are familiar with golang and golang channels, that&amp;rsquo;s an &lt;a href=&#34;https://golang.org/doc/effective_go.html#channels&#34;&gt;Unbuffered/synchronous channel&lt;/a&gt;. Unbuffered channel blocks until there is a receiver receiving from a channel.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;named pipes&lt;/code&gt; are very interesting and can be used in some interesting ways.&lt;/p&gt;
 </description>
     </item>
     
