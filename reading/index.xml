@@ -15,6 +15,9 @@
       
       <guid>https://varunksaini.com/reading/</guid>
       <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.gopheracademy.com/advent-2016/context-logging/&#34;&gt;Using Go&amp;rsquo;s &amp;lsquo;context&amp;rsquo; library for making your logs make sense&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.theatlantic.com/health/archive/2016/03/no-spanking-no-time-out-no-problems/475440/&#34;&gt;No Spanking, No Timeout, No Problems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.gopheracademy.com/advent-2016/go-timers/&#34;&gt;How Do They Do It: Timers in Go&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://aeon.co/essays/why-theres-no-place-like-home-for-anyone-any-more&#34;&gt;There is no place like home&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1&#34;&gt;Dave Cheney - Gopher Puzzlers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://joeduffyblog.com/2015/11/19/asynchronous-everything/&#34;&gt;Joe Duffy - Asynchronous Everything&lt;/a&gt;&lt;/li&gt;
