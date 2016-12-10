@@ -6,8 +6,31 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Dec 2016 12:15:46 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 10 Dec 2016 06:05:16 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>notes on Stories of your life and others by Ted Chiang</title>
+      <link>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
+      <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
+      <description>&lt;p&gt;I came to know about &lt;a href=&#34;https://en.wikipedia.org/wiki/Ted_Chiang&#34;&gt;Ted Chiang&lt;/a&gt; and his work after movie &lt;a href=&#34;http://www.imdb.com/title/tt2543164/&#34;&gt;Arrival&lt;/a&gt;. I bought &lt;a href=&#34;https://www.amazon.com/dp/B0048EKOP0/&#34;&gt;The story of your life and others&lt;/a&gt; on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Story of your life - My favorite story and Arrival movie is based on this story. In this story a linguist tries to communicate with aliens. Story is about how it works and impacts her life and people around her. A fascinating story and you need to give couple of read to understand everything that is going on in the story.&lt;/li&gt;
+&lt;li&gt;Tower of Babylon - My second favorite story from the book, this story make you think about religion and religious beliefs. I still can&amp;rsquo;t visualize how that tower was built, but it is a sci-fi for a reason.&lt;/li&gt;
+&lt;li&gt;Liking What you see: A Documentary - This short story asks a question &amp;ldquo;what will happen if everybody looks same&amp;rdquo;. Very interesting read and I will love to see this turned into a movie.&lt;/li&gt;
+&lt;li&gt;Division by Zero - How a mathematician goes insane when she finds that she can prove something that deemed impossible in mathematics. Another great read.&lt;/li&gt;
+&lt;li&gt;Hell is the absence of God - Another sci-fi story that asks questions about religious beliefs. This story also has angels.&lt;/li&gt;
+&lt;li&gt;Understand - A therapy gone wrong and we have a super human with high cognitive functioning.&lt;/li&gt;
+&lt;li&gt;Seventy-Two letters - Story about magic and robots.&lt;/li&gt;
+&lt;li&gt;The Evolution of Human Science - As the name says, a short sci-fi story about the evolution of human science.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I liked this book very much and I am looking forward to read more from Ted Chiang.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>what do you learn from technical videos</title>
@@ -451,34 +474,6 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
       <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 19July</title>
-      <link>https://varunksaini.com/posts/weekly-reading-19July/</link>
-      <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/weekly-reading-19July/</guid>
-      <description>&lt;p&gt;This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&#34;&gt;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&#34;&gt;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://docs.confluent.io/1.0/index.html&#34;&gt;http://docs.confluent.io/1.0/index.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://peter.bourgon.org/blog/2016/07/11/context.html&#34;&gt;http://peter.bourgon.org/blog/2016/07/11/context.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jamesclear.com/power-of-environment&#34;&gt;http://jamesclear.com/power-of-environment&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&#34;&gt;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://spinroot.com/gerard/pdf/P10.pdf&#34;&gt;http://spinroot.com/gerard/pdf/P10.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/golang/go/wiki/CodeReviewComments&#34;&gt;https://github.com/golang/go/wiki/CodeReviewComments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
