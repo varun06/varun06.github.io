@@ -9,6 +9,33 @@
     <atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>how do you write error statement</title>
+      <link>https://varunksaini.com/posts/how-do-you-write-error-statement/</link>
+      <pubDate>Thu, 22 Dec 2016 12:48:00 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/how-do-you-write-error-statement/</guid>
+      <description>&lt;p&gt;In go, when I write an error statement, I don&amp;rsquo;t keep any space between function call and error check statement, such as -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
+if err != nil {
+	//handle error
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But I have also seen people doing following -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
+
+if err != nil {
+	//handle error
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How do you write that error check?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>
       <link>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
       <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
@@ -425,43 +452,6 @@ func main() {
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/golang/go/wiki/CodeReviewComments&#34;&gt;https://github.com/golang/go/wiki/CodeReviewComments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 9July</title>
-      <link>https://varunksaini.com/posts/weekly-reading-9July/</link>
-      <pubDate>Sat, 09 Jul 2016 05:46:45 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/weekly-reading-9July/</guid>
-      <description>&lt;p&gt;This week I didn&amp;rsquo;t read too many online articles. But still found some good technical articles that I read.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://videlalvaro.github.io/2015/02/programming-myths.html&#34;&gt;http://videlalvaro.github.io/2015/02/programming-myths.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;The real problem is forming our opinion very quicky without thinking a bit and looking at the context. Are &amp;quot;Goto&amp;quot; really harmful in computer programming or it is just a myth. This Statement by Donanld Knuth summerise this whole article -
-&amp;quot;We shouldn’t merely remove go to statements because it’s the fashionable thing to do; the presence or absence of go to statements is not really the issue.&amp;quot;
-
-Some great quotes from article:
-
-&amp;quot;we should strive most of all for a program that is easy to understand and almost sure to work&amp;quot;
-
-&amp;quot;the universal experience of programmers who have been using measurement tools has been that their intuitive guesses fail.&amp;quot;
-
-&amp;quot;premature optimization is the root of all evil&amp;quot;
-
-&amp;quot;Experience indicates that nearly everybody has the wrong idea about the real bottlenecks in his programs&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/&#34;&gt;http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tmux rocks and I use it everyday with vim :)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g&#34;&gt;https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&#34;&gt;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&#34;&gt;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

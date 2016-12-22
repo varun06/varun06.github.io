@@ -6,8 +6,35 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Dec 2016 06:05:16 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 22 Dec 2016 12:48:00 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>how do you write error statement</title>
+      <link>https://varunksaini.com/posts/how-do-you-write-error-statement/</link>
+      <pubDate>Thu, 22 Dec 2016 12:48:00 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/how-do-you-write-error-statement/</guid>
+      <description>&lt;p&gt;In go, when I write an error statement, I don&amp;rsquo;t keep any space between function call and error check statement, such as -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
+if err != nil {
+	//handle error
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But I have also seen people doing following -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
+
+if err != nil {
+	//handle error
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How do you write that error check?&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>
@@ -462,18 +489,6 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
       
       <guid>https://varunksaini.com/posts/laptop-repair/</guid>
       <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>good read on golang and generics</title>
-      <link>https://varunksaini.com/posts/good-read-on-golang-and-generics/</link>
-      <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/good-read-on-golang-and-generics/</guid>
-      <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
-
-&lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
 </description>
     </item>
     
