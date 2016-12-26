@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Never stop learning...</title>
+    <title>Review on Never stop learning...</title>
     <link>https://varunksaini.com/categories/review/index.xml</link>
-    <description>Recent content on Never stop learning...</description>
+    <description>Recent content in Review on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://varunksaini.com/categories/review/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>rise of the robots by martin ford</title>
+      <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</guid>
+      <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
+
+&lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>

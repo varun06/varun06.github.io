@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Never stop learning...</title>
+    <title>Blog on Never stop learning...</title>
     <link>https://varunksaini.com/tags/blog/index.xml</link>
-    <description>Recent content on Never stop learning...</description>
+    <description>Recent content in Blog on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>rise of the robots by martin ford</title>
+      <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</guid>
+      <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
+
+&lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>how do you write error statement</title>
@@ -424,34 +436,6 @@ func main() {
       <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 19July</title>
-      <link>https://varunksaini.com/posts/weekly-reading-19July/</link>
-      <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/weekly-reading-19July/</guid>
-      <description>&lt;p&gt;This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&#34;&gt;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&#34;&gt;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://docs.confluent.io/1.0/index.html&#34;&gt;http://docs.confluent.io/1.0/index.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://peter.bourgon.org/blog/2016/07/11/context.html&#34;&gt;http://peter.bourgon.org/blog/2016/07/11/context.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jamesclear.com/power-of-environment&#34;&gt;http://jamesclear.com/power-of-environment&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&#34;&gt;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://spinroot.com/gerard/pdf/P10.pdf&#34;&gt;http://spinroot.com/gerard/pdf/P10.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/golang/go/wiki/CodeReviewComments&#34;&gt;https://github.com/golang/go/wiki/CodeReviewComments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

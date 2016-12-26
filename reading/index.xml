@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reading-rsses on Never stop learning...</title>
+    <title>Readings on Never stop learning...</title>
     <link>https://varunksaini.com/reading/index.xml</link>
-    <description>Recent content in Reading-rsses on Never stop learning...</description>
+    <description>Recent content in Readings on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://varunksaini.com/reading/index.xml" rel="self" type="application/rss+xml" />
@@ -15,6 +15,9 @@
       
       <guid>https://varunksaini.com/reading/</guid>
       <description>&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theguardian.com/technology/2016/dec/22/why-time-management-is-ruining-our-lives&#34;&gt;Why time management is ruining our lives&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://lemire.me/blog/2016/12/15/how-to-build-robust-systems/&#34;&gt;how to build robust systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://bravenewgeek.com/take-it-to-the-limit-considerations-for-building-reliable-systems/&#34;&gt;Take It to the Limit: Considerations for Building Reliable Systems&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.gopheracademy.com/advent-2016/exposing-go-on-the-internet/&#34;&gt;exposing go on the internet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://medium.com/@octskyward/modern-garbage-collection-911ef4f8bd8e#.qzwthluhi&#34;&gt;Modern garbage collection&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.facebook.com/notes/kent-beck/mastering-programming/1184427814923414/&#34;&gt;mastering programming&lt;/a&gt;&lt;/li&gt;

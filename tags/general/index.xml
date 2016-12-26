@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Never stop learning...</title>
+    <title>General on Never stop learning...</title>
     <link>https://varunksaini.com/tags/general/index.xml</link>
-    <description>Recent content on Never stop learning...</description>
+    <description>Recent content in General on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="https://varunksaini.com/tags/general/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>rise of the robots by martin ford</title>
+      <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</guid>
+      <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
+
+&lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>how do you write error statement</title>
@@ -377,25 +389,6 @@ Some great quotes from article:
 &lt;p&gt;&lt;a href=&#34;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&#34;&gt;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&#34;&gt;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>bash fifos and golang channel</title>
-      <link>https://varunksaini.com/posts/bash-fifos-and-golang-channel/</link>
-      <pubDate>Mon, 04 Jul 2016 22:05:36 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/bash-fifos-and-golang-channel/</guid>
-      <description>&lt;p&gt;I have been reading about &lt;a href=&#34;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&#34;&gt;bash&lt;/a&gt; this weekend and came to know about &lt;a href=&#34;http://www.linuxjournal.com/content/using-named-pipes-fifos-bash&#34;&gt;FIFOs&lt;/a&gt;. After first glance I found similarities between &lt;code&gt;named pipes&lt;/code&gt; and &lt;code&gt;golang channel&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; are created using the &lt;code&gt;mkfifo&lt;/code&gt; command.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkfifo test
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;FIFOs&lt;/code&gt; provide a &lt;code&gt;named pipe&lt;/code&gt; to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it. If you are familiar with golang and golang channels, that&amp;rsquo;s an &lt;a href=&#34;https://golang.org/doc/effective_go.html#channels&#34;&gt;Unbuffered/synchronous channel&lt;/a&gt;. Unbuffered channel blocks until there is a receiver receiving from a channel.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;named pipes&lt;/code&gt; are very interesting and can be used in some interesting ways.&lt;/p&gt;
 </description>
     </item>
     

@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts-rsses on Never stop learning...</title>
+    <title>Posts on Never stop learning...</title>
     <link>https://varunksaini.com/posts/index.xml</link>
-    <description>Recent content in Posts-rsses on Never stop learning...</description>
+    <description>Recent content in Posts on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Dec 2016 12:48:00 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 25 Dec 2016 18:38:20 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>rise of the robots by martin ford</title>
+      <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</guid>
+      <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
+
+&lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>how do you write error statement</title>
@@ -479,16 +491,6 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
       
       <guid>https://varunksaini.com/posts/get-back-to-blogging/</guid>
       <description>&lt;p&gt;I have not been writing anything from some time. But I want to get back to it and have decided writing something every week. I will start by writing a review of a book that I read recently. I think it will be a good way to get back to writing and I will also get some motivation to read book. I have a list of technical books that I want to go through and learn. So let&amp;rsquo;s begin.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>laptop repair</title>
-      <link>https://varunksaini.com/posts/laptop-repair/</link>
-      <pubDate>Sat, 13 Aug 2016 10:26:10 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/laptop-repair/</guid>
-      <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
 </description>
     </item>
     
