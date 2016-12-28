@@ -9,6 +9,87 @@
     <atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>var block changed to init function in assembly</title>
+      <link>https://varunksaini.com/posts/var-changed-to-init-in-assembly/</link>
+      <pubDate>Wed, 28 Dec 2016 14:29:42 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/var-changed-to-init-in-assembly/</guid>
+      <description>&lt;p&gt;TIL - &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; turns a var block in init function behind the scenes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+var (
+	testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;)
+	testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;)
+)
+
+func main() {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So if you look at the assembly code below, you will see that we have &lt;code&gt;.main&lt;/code&gt; and &lt;code&gt;.init&lt;/code&gt;. &lt;code&gt;.init&lt;/code&gt; function has &lt;code&gt;0x0049 00073 (/Users/vakumar/temp/test.go:6)    LEAQ    go.string.&amp;quot;I am error one&amp;quot;(SB), AX&lt;/code&gt; which is in &lt;code&gt;var block&lt;/code&gt; in my go code above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;.main t=1 size=1 args=0x0 locals=0x0
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   TEXT    &amp;quot;&amp;quot;.main(SB), $0-0
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   NOP
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   NOP
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   FUNCDATA        $0, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   FUNCDATA        $1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   RET
+        0x0000 c3                                               .
+&amp;quot;&amp;quot;.init t=1 size=605 args=0x0 locals=0x70
+        0x0000 00000 (/Users/vakumar/temp/test.go:11)   TEXT    &amp;quot;&amp;quot;.init(SB), $112-0
+        0x0000 00000 (/Users/vakumar/temp/test.go:11)   MOVQ    (TLS), CX
+        0x0009 00009 (/Users/vakumar/temp/test.go:11)   CMPQ    SP, 16(CX)
+        0x000d 00013 (/Users/vakumar/temp/test.go:11)   JLS     595
+        0x0013 00019 (/Users/vakumar/temp/test.go:11)   SUBQ    $112, SP
+        0x0017 00023 (/Users/vakumar/temp/test.go:11)   MOVQ    BP, 104(SP)
+        0x001c 00028 (/Users/vakumar/temp/test.go:11)   LEAQ    104(SP), BP
+        0x0021 00033 (/Users/vakumar/temp/test.go:11)   FUNCDATA        $0, gclocals·3e27b3aa6b89137cce48b3379a2a6610(SB)
+        0x0021 00033 (/Users/vakumar/temp/test.go:11)   FUNCDATA        $1, gclocals·3672590320383b7a4beab9e3e42e1c00(SB)
+        0x0021 00033 (/Users/vakumar/temp/test.go:11)   MOVBLZX &amp;quot;&amp;quot;.initdone·(SB), AX
+        0x0028 00040 (/Users/vakumar/temp/test.go:11)   CMPB    AL, $1
+        0x002a 00042 (/Users/vakumar/temp/test.go:11)   JLS     $0, 54
+        0x002c 00044 (/Users/vakumar/temp/test.go:11)   MOVQ    104(SP), BP
+        0x0031 00049 (/Users/vakumar/temp/test.go:11)   ADDQ    $112, SP
+        0x0035 00053 (/Users/vakumar/temp/test.go:11)   RET
+        0x0036 00054 (/Users/vakumar/temp/test.go:11)   JNE     $0, 61
+        0x0038 00056 (/Users/vakumar/temp/test.go:11)   PCDATA  $0, $0
+        0x0038 00056 (/Users/vakumar/temp/test.go:11)   CALL    runtime.throwinit(SB)
+        0x003d 00061 (/Users/vakumar/temp/test.go:11)   MOVB    $1, &amp;quot;&amp;quot;.initdone·(SB)
+        0x0044 00068 (/Users/vakumar/temp/test.go:11)   PCDATA  $0, $0
+        0x0044 00068 (/Users/vakumar/temp/test.go:11)   CALL    fmt.init(SB)
+        0x0049 00073 (/Users/vakumar/temp/test.go:6)    LEAQ    go.string.&amp;quot;I am error one&amp;quot;(SB), AX
+        0x0050 00080 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, &amp;quot;&amp;quot;.autotmp_0+88(SP)
+        0x0055 00085 (/Users/vakumar/temp/test.go:6)    MOVQ    $14, &amp;quot;&amp;quot;.autotmp_0+96(SP)
+        0x005e 00094 (/Users/vakumar/temp/test.go:6)    LEAQ    type.[1]interface {}(SB), AX
+        0x0065 00101 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, (SP)
+        0x0069 00105 (/Users/vakumar/temp/test.go:6)    PCDATA  $0, $1
+        0x0069 00105 (/Users/vakumar/temp/test.go:6)    CALL    runtime.newobject(SB)
+        0x006e 00110 (/Users/vakumar/temp/test.go:6)    MOVQ    8(SP), AX
+        0x0073 00115 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, &amp;quot;&amp;quot;.autotmp_8+64(SP)
+        0x0078 00120 (/Users/vakumar/temp/test.go:6)    LEAQ    type.string(SB), CX
+        0x007f 00127 (/Users/vakumar/temp/test.go:6)    MOVQ    CX, (SP)
+        0x0083 00131 (/Users/vakumar/temp/test.go:6)    LEAQ    &amp;quot;&amp;quot;.autotmp_0+88(SP), DX
+        0x0088 00136 (/Users/vakumar/temp/test.go:6)    MOVQ    DX, 8(SP)
+        0x008d 00141 (/Users/vakumar/temp/test.go:6)    MOVQ    $0, 16(SP)
+        0x0096 00150 (/Users/vakumar/temp/test.go:6)    PCDATA  $0, $2
+        0x0096 00150 (/Users/vakumar/temp/test.go:6)    CALL    runtime.convT2E(SB)
+        0x009b 00155 (/Users/vakumar/temp/test.go:6)    MOVQ    32(SP), AX
+        0x00a0 00160 (/Users/vakumar/temp/test.go:6)    MOVQ    24(SP), CX
+        0x00a5 00165 (/Users/vakumar/temp/test.go:6)    MOVQ    &amp;quot;&amp;quot;.autotmp_8+64(SP), DX
+        0x00aa 00170 (/Users/vakumar/temp/test.go:6)    MOVQ    CX, (DX)
+        0x00ad 00173 (/Users/vakumar/temp/test.go:6)    MOVL    runtime.writeBarrier(SB), CX
+        0x00b3 00179 (/Users/vakumar/temp/test.go:6)    TESTB   CL, CL
+        0x00b5 00181 (/Users/vakumar/temp/test.go:6)    JNE     $0, 567
+        0x00bb 00187 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, 8(DX)
+        0x00bf 00191 (/Users/vakumar/temp/test.go:6)    LEAQ    go.string.&amp;quot;%s &amp;quot;(SB), AX
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>rise of the robots by martin ford</title>
       <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
@@ -424,18 +505,6 @@ func main() {
       
       <guid>https://varunksaini.com/posts/laptop-repair/</guid>
       <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>good read on golang and generics</title>
-      <link>https://varunksaini.com/posts/good-read-on-golang-and-generics/</link>
-      <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/good-read-on-golang-and-generics/</guid>
-      <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
-
-&lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
 </description>
     </item>
     
