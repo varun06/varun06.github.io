@@ -6,8 +6,20 @@
     <description>Recent content in Posts on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Dec 2016 14:29:42 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 31 Dec 2016 19:07:32 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>google hangouts wants to chat with me</title>
+      <link>https://varunksaini.com/posts/my-google-hangout-wants-to-chat-with-me/</link>
+      <pubDate>Sat, 31 Dec 2016 19:07:32 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/my-google-hangout-wants-to-chat-with-me/</guid>
+      <description>&lt;p&gt;From last couple of days I am getting chats from myself on my google hangout. It has happened couple of times and I don&amp;rsquo;t know why. I chat back and get no response though. Is it random &lt;strong&gt;google assistent&lt;/strong&gt; code in hangout. Don&amp;rsquo;t know.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;img/hangout.png&#34; alt=&#34;google hangout screenshot&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>var block changed to init function in assembly</title>
@@ -516,52 +528,6 @@ if err != nil {
 &lt;p&gt;These common functions seems helpful, but again, in a large code base, they get out of hand quickly. Debugging becomes difficult.&lt;/p&gt;
 
 &lt;p&gt;My suggestion would be handle errors when and where you see them. keep things simple and readable. Also if you want to do something with your errors, use a good library such as &lt;a href=&#34;https://github.com/davecheney/errors&#34;&gt;this&lt;/a&gt; one from &lt;a href=&#34;http://dave.cheney.net/&#34;&gt;Dave Cheney&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>remove big file from git repo</title>
-      <link>https://varunksaini.com/posts/remove-big-file-from-git-repo/</link>
-      <pubDate>Sat, 22 Oct 2016 07:35:43 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/remove-big-file-from-git-repo/</guid>
-      <description>&lt;p&gt;Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size. I am sure there are many ways to do it but I am going to write down what I did so somebody else can also benefit.&lt;/p&gt;
-
-&lt;p&gt;I used a tool called &lt;strong&gt;BFG Repo cleaner&lt;/strong&gt;. BFG cleans bad data from git repo. BFG can be downloaded &lt;a href=&#34;http://repo1.maven.org/maven2/com/madgag/bfg/1.12.13/bfg-1.12.13.jar&#34;&gt;here&lt;/a&gt; and provides a comprehensive list of option to clean git repo. It is an alternative to &lt;code&gt;git-filter-branch&lt;/code&gt;, which I have no idea about.&lt;/p&gt;
-
-&lt;p&gt;To use BFG on a git repo follow these steps:&lt;/p&gt;
-
-&lt;p&gt;First clone a fresh copy of your repo, using the &lt;code&gt;--mirror&lt;/code&gt; flag:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git clone --mirror git://github.com/big-repo.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Run the BFG to clean any big file that has a size greater then 100mb:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ java -jar bfg.jar --strip-blobs-bigger-than 100M big-repo.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or, if you know the name of file, you can give the name too:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ java -jar bfg.jar --delete-files file_name  big-repo.git 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After running the command above, BFG will update your commits and all branches and tags so they are clean, but it doesn&amp;rsquo;t physically delete the unwanted stuff. Examine the repo to make sure your history has been updated, and then use the standard &lt;code&gt;git gc&lt;/code&gt; command to strip out the unwanted dirty data, which Git will now recognise as surplus to requirements:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cd big-repo 
-$ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --aggressive
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Finally, once you&amp;rsquo;re happy with the updated state of your repo, push it back up (note that because your clone command used the &lt;code&gt;--mirror&lt;/code&gt; flag, this push will update all refs on your remote server):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git push
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Once you push new and clean history to your repo, ditch old copies of the repo and then fresh clone/fork. Delete the old clones as they have dirty history, if you have some PR&amp;rsquo;s, fetch them from master or cherry pick the commits you want.&lt;/p&gt;
-
-&lt;p&gt;After all these your repo size should be significantly lower. In my case, I brought the size down from 82mb to 4.1mb.&lt;/p&gt;
-
-&lt;p&gt;Let me know if you have any question or suggestions.&lt;/p&gt;
 </description>
     </item>
     

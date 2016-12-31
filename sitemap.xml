@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://varunksaini.com/posts/my-google-hangout-wants-to-chat-with-me/</loc>
+    <lastmod>2016-12-31T19:07:32-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/posts/var-changed-to-init-in-assembly/</loc>
     <lastmod>2016-12-28T14:29:42-06:00</lastmod>
   </url>
@@ -342,10 +347,6 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/imo/</loc>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/about/</loc>
     <lastmod>2015-06-20T14:02:37+02:00</lastmod>
     <priority>0</priority>
@@ -387,14 +388,14 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/general/</loc>
-    <lastmod>2016-12-28T14:29:42-06:00</lastmod>
+    <loc>https://varunksaini.com/tags/general/</loc>
+    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/general/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
+    <loc>https://varunksaini.com/categories/general/</loc>
+    <lastmod>2016-12-28T14:29:42-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -405,13 +406,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/go/</loc>
+    <loc>https://varunksaini.com/tags/go/</loc>
     <lastmod>2016-12-28T14:29:42-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/go/</loc>
+    <loc>https://varunksaini.com/categories/go/</loc>
     <lastmod>2016-12-28T14:29:42-06:00</lastmod>
     <priority>0</priority>
   </url>
@@ -424,7 +425,7 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2016-12-28T14:29:42-06:00</lastmod>
+    <lastmod>2016-12-31T19:07:32-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -436,7 +437,7 @@
   
   <url>
     <loc>https://varunksaini.com/posts/</loc>
-    <lastmod>2016-12-28T14:29:42-06:00</lastmod>
+    <lastmod>2016-12-31T19:07:32-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -465,13 +466,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/review/</loc>
+    <loc>https://varunksaini.com/tags/review/</loc>
     <lastmod>2016-12-25T18:38:20-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/review/</loc>
+    <loc>https://varunksaini.com/categories/review/</loc>
     <lastmod>2016-12-25T18:38:20-06:00</lastmod>
     <priority>0</priority>
   </url>
