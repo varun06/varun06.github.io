@@ -1,0 +1,285 @@
+    <!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Varun Saini">
+		<meta name="description" content="Just write">
+		<meta name="generator" content="Hugo 0.18.1" />
+		<title>send key value messages to kafka from console producer &middot; Never stop learning...</title>
+		<link rel="shortcut icon" href="https://varunksaini.com/images/favicon.ico">
+		<link rel="stylesheet" href="https://varunksaini.com/css/style.css">
+		<link rel="stylesheet" href="https://varunksaini.com/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://varunksaini.com/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="https://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
+		
+
+		<meta property="og:title" content="send key value messages to kafka from console producer" />
+<meta property="og:description" content="Kafka provides kafka-console-producer.sh to send messages from stdin
+&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2  or file.
+&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &lt; messages.txt  messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&lt;=10; i&#43;&#43; )); do echo &quot;key$$i:value$$i&quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &quot;parse.key=true&quot; --property &quot;key." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/" />
+
+
+<meta property="og:updated_time" content="2017-01-20T05:40:02-06:00"/>
+
+
+
+
+
+
+
+
+
+
+	    
+	    
+<meta itemprop="name" content="send key value messages to kafka from console producer">
+<meta itemprop="description" content="Kafka provides kafka-console-producer.sh to send messages from stdin
+&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2  or file.
+&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &lt; messages.txt  messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&lt;=10; i&#43;&#43; )); do echo &quot;key$$i:value$$i&quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &quot;parse.key=true&quot; --property &quot;key.">
+
+
+<meta itemprop="dateModified" content="2017-01-20T05:40:02-06:00" />
+<meta itemprop="wordCount" content="69">
+
+
+
+<meta itemprop="keywords" content="book,general,go,kafka,programming,reading,review,technical,assembly,bash,blog,career,consul,errors,general,git,go,golang,kafka,parental-controls,question,recruitment,review,til,video,watch,youtube," />
+
+	    
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:title" content="send key value messages to kafka from console producer"/>
+<meta name="twitter:description" content="Kafka provides kafka-console-producer.sh to send messages from stdin
+&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2  or file.
+&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &lt; messages.txt  messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&lt;=10; i&#43;&#43; )); do echo &quot;key$$i:value$$i&quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &quot;parse.key=true&quot; --property &quot;key."/>
+<meta name="twitter:site" content="@https://www.twitter.com/varunksaini"/>
+
+
+		<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">	
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://varunksaini.com/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+	<a class="cta" href="https://varunksaini.com/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>send key value messages to kafka from console producer</h1>
+                    <h2 class="headline">
+                    January 20, 2017 
+                    <br>
+                    
+                    
+                        
+                            <a href="https://varunksaini.com/tags/kafka">kafka</a>
+                        
+                            <a href="https://varunksaini.com/tags/bash">bash</a>
+                        
+                            <a href="https://varunksaini.com/tags/blog">blog</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    <p><a href="https://kafka.apache.org">Kafka</a> provides <a href="https://kafka.apache.org/quickstart#quickstart_send">kafka-console-producer.sh</a> to send messages from stdin</p>
+
+<pre><code>&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+message1
+message2
+</code></pre>
+
+<p>or file.</p>
+
+<pre><code>&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &lt; messages.txt
+</code></pre>
+
+<p>messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.</p>
+
+<pre><code>	for (( i=1; i&lt;=10; i++ )); do echo &quot;key$$i:value$$i&quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &quot;parse.key=true&quot; --property &quot;key.separator=:&quot;; done;
+</code></pre>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/https://twitter.com/varunksaini">
+                        <img class="avatar" src="https://varunksaini.com/images/avatar.png">
+                        <div>
+                            <span class="dark">Varun Saini</span>
+                            <span>Who am I, Why I am here...</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fvarunksaini.com%2fposts%2fsend-key-value-messages-to-kafka-from-console-producer%2f - send%20key%20value%20messages%20to%20kafka%20from%20console%20producer by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+                </section>
+            </footer>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'varunksaini';
+    var disqus_identifier = 'https:\/\/varunksaini.com\/posts\/send-key-value-messages-to-kafka-from-console-producer\/';
+    var disqus_title = 'send key value messages to kafka from console producer';
+    var disqus_url = 'https:\/\/varunksaini.com\/posts\/send-key-value-messages-to-kafka-from-console-producer\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/">send key value messages to kafka from console producer<aside class="dates">Jan 20</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/how-to-get-assembly-for-go-program/">how to see assembly code for a go program<aside class="dates">Jan 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/my-google-hangout-wants-to-chat-with-me/">google hangouts wants to chat with me<aside class="dates">Dec 31</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/var-changed-to-init-in-assembly/">var block changed to init function in assembly<aside class="dates">Dec 28</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/">rise of the robots by martin ford<aside class="dates">Dec 25</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/how-do-you-write-error-statement/">how do you write error statement<aside class="dates">Dec 22</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/">notes on Stories of your life and others by Ted Chiang<aside class="dates">Dec 10</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/what-do-you-learn-from-technical-vidoes/">what do you learn from technical videos<aside class="dates">Dec 7</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/golang-puzzlers-and-thoughts/">go puzzlers and thoughts<aside class="dates">Dec 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://varunksaini.com/posts/why-no-place-like-home/">Why there is no place like home - thoughts after reading<aside class="dates">Dec 3</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/varunksaini">
+        circlefacebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/varun06">
+        circlegithub
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/varunksaini">
+        circletwitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2017 Varun Saini
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://varunksaini.com/js/main.js"></script>
+<script src="https://varunksaini.com/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

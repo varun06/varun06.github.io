@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/posts/how-to-get-assembly-for-go-program/</loc>
     <lastmod>2017-01-02T18:38:12-06:00</lastmod>
   </url>
@@ -353,8 +358,14 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/bash/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/tags/blog/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -424,8 +435,20 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/kafka/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/kafka/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -437,7 +460,7 @@
   
   <url>
     <loc>https://varunksaini.com/posts/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -484,7 +507,7 @@
   
   <url>
     <loc>https://varunksaini.com/categories/technical/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
     <priority>0</priority>
   </url>
   
