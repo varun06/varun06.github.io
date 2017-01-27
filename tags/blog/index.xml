@@ -9,6 +9,31 @@
     <atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>http multiple registration error in go</title>
+      <link>https://varunksaini.com/posts/go-http-multiple-registration-error/</link>
+      <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-http-multiple-registration-error/</guid>
+      <description>&lt;p&gt;Today while adding a simple http endpoint to one of our app, I saw this &lt;code&gt;panic: http: multiple registrations with /myhandler&lt;/code&gt;. My code was simply&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	http.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I read some official documentation and asked around. I came to know it happens if you use &lt;code&gt;defaultHTTPMux&lt;/code&gt;, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	mux := http.NewServeMux()
+	mux.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>send key value messages to kafka from console producer</title>
       <link>https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/</link>
       <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
@@ -649,63 +674,6 @@ Web -&amp;gt; &amp;ldquo;Try to limit access to adult websites&amp;rdquo; (Click
 Click OK, and you are done.&lt;/p&gt;
 
 &lt;p&gt;It took me some time to figure this out and it works well. I hope it will be helpful to someone else.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Using if condition in a defer statement</title>
-      <link>https://varunksaini.com/posts/using-if-in-defer/</link>
-      <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/using-if-in-defer/</guid>
-      <description>&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;f, err := os.Open(fileName)
-    if err != nil {
-        return
-    }
-defer src.Close()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We open a file and then use &lt;code&gt;defer&lt;/code&gt; to close the file handle. Using &lt;code&gt;defer&lt;/code&gt; makes sure that file handle is closed and we don&amp;rsquo;t have any bug in our code.But what if we want to make a decision(conditional) in &lt;code&gt;defer&lt;/code&gt;, is that possible?&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; and &lt;code&gt;named returns&lt;/code&gt; to rescue. Here we are using a form of defer that lets us do something if there is an error and something else if there is not an error.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;errors&amp;quot;
-	&amp;quot;fmt&amp;quot;
-)
-
-var toggleMe = true
-
-func foo() (boo string, err error) {
-	boo = &amp;quot;boo&amp;quot;
-
-	defer func() {
-		if err != nil {
-			fmt.Printf(boo)
-		} else {
-			fmt.Println(&amp;quot;bar&amp;quot;)
-		}
-	}()
-
-	if toggleMe {
-		err = errors.New(&amp;quot;an error occurred&amp;quot;)
-	}
-
-	return
-}
-
-func main() {
-	foo()
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/ap_zkRpcqQ&#34;&gt;Playground&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I don&amp;rsquo;t know if it is idiomatic go or not and that&amp;rsquo;s where I need your help, let me know if this is correct to do.&lt;/p&gt;
 </description>
     </item>
     

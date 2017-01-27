@@ -7,7 +7,7 @@
 		<meta name="author" content="Varun Saini">
 		<meta name="description" content="Just write">
 		<meta name="generator" content="Hugo 0.18.1" />
-		<title>Podcasts I listen &middot; Never stop learning...</title>
+		<title>http multiple registration error in go &middot; Never stop learning...</title>
 		<link rel="shortcut icon" href="https://varunksaini.com/images/favicon.ico">
 		<link rel="stylesheet" href="https://varunksaini.com/css/style.css">
 		<link rel="stylesheet" href="https://varunksaini.com/css/highlight.css">
@@ -21,13 +21,15 @@
 		<link href="https://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
 		
 
-		<meta property="og:title" content="Podcasts I listen" />
-<meta property="og:description" content="I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&rsquo;s enough time to listen to most of these podcasts." />
+		<meta property="og:title" content="http multiple registration error in go" />
+<meta property="og:description" content="Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
+go func(){ http.Handler(&quot;/request&quot;, requesthandler) http.ListenAndServe(&quot;:9000&quot;, nil) }  I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&quot;/request&quot;, requesthandler) http.ListenAndServe(&quot;:9000&quot;, nil) }  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://varunksaini.com/posts/fav-podcasts/" />
+<meta property="og:url" content="https://varunksaini.com/posts/go-http-multiple-registration-error/" />
 
 
-<meta property="og:updated_time" content="2015-09-19T19:58:28-06:00"/>
+<meta property="og:updated_time" content="2017-01-27T15:02:51-06:00"/>
 
 
 
@@ -40,12 +42,14 @@
 
 	    
 	    
-<meta itemprop="name" content="Podcasts I listen">
-<meta itemprop="description" content="I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&rsquo;s enough time to listen to most of these podcasts.">
+<meta itemprop="name" content="http multiple registration error in go">
+<meta itemprop="description" content="Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
+go func(){ http.Handler(&quot;/request&quot;, requesthandler) http.ListenAndServe(&quot;:9000&quot;, nil) }  I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&quot;/request&quot;, requesthandler) http.ListenAndServe(&quot;:9000&quot;, nil) }  ">
 
 
-<meta itemprop="dateModified" content="2015-09-19T19:58:28-06:00" />
-<meta itemprop="wordCount" content="257">
+<meta itemprop="dateModified" content="2017-01-27T15:02:51-06:00" />
+<meta itemprop="wordCount" content="70">
 
 
 
@@ -57,8 +61,10 @@
 
 
 
-<meta name="twitter:title" content="Podcasts I listen"/>
-<meta name="twitter:description" content="I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&rsquo;s enough time to listen to most of these podcasts."/>
+<meta name="twitter:title" content="http multiple registration error in go"/>
+<meta name="twitter:description" content="Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
+go func(){ http.Handler(&quot;/request&quot;, requesthandler) http.ListenAndServe(&quot;:9000&quot;, nil) }  I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&quot;/request&quot;, requesthandler) http.ListenAndServe(&quot;:9000&quot;, nil) }  "/>
 <meta name="twitter:site" content="@https://www.twitter.com/varunksaini"/>
 
 
@@ -81,31 +87,40 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Podcasts I listen</h1>
+                    <h1>http multiple registration error in go</h1>
                     <h2 class="headline">
-                    September 19, 2015 
+                    January 27, 2017 
                     <br>
+                    
+                    
+                        
+                            <a href="https://varunksaini.com/tags/go">go</a>
+                        
+                            <a href="https://varunksaini.com/tags/blog">blog</a>
+                        
+                            <a href="https://varunksaini.com/tags/til">TIL</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
-                    <p>I find podcasts informative and entertaining. Every week I listen to at least 3-4 hours of podcasts. I can only listen to podcasts when I am in gym or in car. I can not listen while working because of distraction and I do not want to be hit by cars, so I also do not listen while walking. But it seems that I can still get at least 4-5 hours every week and that&rsquo;s enough time to listen to most of these podcasts.</p>
+                    <p>Today while adding a simple http endpoint to one of our app, I saw this <code>panic: http: multiple registrations with /myhandler</code>. My code was simply</p>
 
-<p>These are the podcasts that I listen to:</p>
+<pre><code>go func(){
+	http.Handler(&quot;/request&quot;, requesthandler)
+	http.ListenAndServe(&quot;:9000&quot;, nil)
+}
+</code></pre>
 
-<ul>
-<li><a href="http://www.motherjones.com/category/secondary-tags/inquiring-minds">Inquiring minds</a> - This is my favorite science podcast. The topics are diverse and hosts are really good.</li>
-<li><a href="http://www.npr.org/sections/money/">Planet Money</a> - Who would not like Planet Money. It is informative and interesting at the same time.</li>
-<li><a href="http://99percentinvisible.org/">99% Invisible</a> - A podcast about design, architecture and other interesting things related to them.</li>
-<li><a href="http://freakonomics.com/category/freakonomics-radio/podcasts/">Freakonomics Radio</a> - This is my favorite too. If you are interested in economics/phycology and their impacts on world, Do not miss this podcast.</li>
-<li><a href="http://hanselminutes.com/">Hanselminutes</a> - My only dev podcast. Scott Hanselman  talks to people about different technologies and ideas.</li>
-<li><a href="http://www.thisamericanlife.org/">This American Life</a> - This is also a popular podcast. Topics are diverse and interesting.</li>
-<li><a href="http://nerdist.com/podcasts/nerdist-podcast-channel/">The Nerdist</a> - If you like stand up comedy and want to listen to some interesting people talk in very open environment, this is the podcast for you.</li>
-</ul>
+<p>I read some official documentation and asked around. I came to know it happens if you use <code>defaultHTTPMux</code>, which doesn&rsquo;t support multiple registrations. This can be fixed with</p>
 
-<p>I also listen to some other podcasts if I find some interesting topic, otherwise these are the podcast that I listen to.</p>
-
-<p>What are the podcasts that you guys like, Please share.</p>
+<pre><code>go func(){
+	mux := http.NewServeMux()
+	mux.Handler(&quot;/request&quot;, requesthandler)
+	http.ListenAndServe(&quot;:9000&quot;, nil)
+}
+</code></pre>
 
                 </section>
             </article>
@@ -118,7 +133,7 @@
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fvarunksaini.com%2fposts%2ffav-podcasts%2f - Podcasts%20I%20listen by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fvarunksaini.com%2fposts%2fgo-http-multiple-registration-error%2f - http%20multiple%20registration%20error%20in%20go by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
@@ -134,9 +149,9 @@
             <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'https:\/\/varunksaini.com\/posts\/fav-podcasts\/';
-    var disqus_title = 'Podcasts I listen';
-    var disqus_url = 'https:\/\/varunksaini.com\/posts\/fav-podcasts\/';
+    var disqus_identifier = 'https:\/\/varunksaini.com\/posts\/go-http-multiple-registration-error\/';
+    var disqus_title = 'http multiple registration error in go';
+    var disqus_url = 'https:\/\/varunksaini.com\/posts\/go-http-multiple-registration-error\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

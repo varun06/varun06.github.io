@@ -6,8 +6,33 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jan 2017 05:40:02 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jan 2017 15:02:51 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>http multiple registration error in go</title>
+      <link>https://varunksaini.com/posts/go-http-multiple-registration-error/</link>
+      <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-http-multiple-registration-error/</guid>
+      <description>&lt;p&gt;Today while adding a simple http endpoint to one of our app, I saw this &lt;code&gt;panic: http: multiple registrations with /myhandler&lt;/code&gt;. My code was simply&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	http.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I read some official documentation and asked around. I came to know it happens if you use &lt;code&gt;defaultHTTPMux&lt;/code&gt;, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	mux := http.NewServeMux()
+	mux.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>send key value messages to kafka from console producer</title>
@@ -644,24 +669,6 @@ func bar() FooFunc {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/4EfYIMZV-p&#34;&gt;go playground&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>block youtube on apple mac osx using Parental Controls</title>
-      <link>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
-      <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
-      <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
-They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
-
-&lt;p&gt;In mac you can open Parental Controls, and create a new account with Parental Controls enabled or turn Parental Controls on current
-account. You need admin access to apply Parental Controls. Once you have Parental Controls on an account, Open Parental Controls -&amp;gt; Account Name -&amp;gt;
-Web -&amp;gt; &amp;ldquo;Try to limit access to adult websites&amp;rdquo; (Click on Customize button) -&amp;gt; Click + in &amp;ldquo;Never allow these websites&amp;rdquo; -&amp;gt; Add youtube URL
-Click OK, and you are done.&lt;/p&gt;
-
-&lt;p&gt;It took me some time to figure this out and it works well. I hope it will be helpful to someone else.&lt;/p&gt;
 </description>
     </item>
     

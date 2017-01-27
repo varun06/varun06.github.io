@@ -9,6 +9,31 @@
     <atom:link href="https://varunksaini.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>http multiple registration error in go</title>
+      <link>https://varunksaini.com/posts/go-http-multiple-registration-error/</link>
+      <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-http-multiple-registration-error/</guid>
+      <description>&lt;p&gt;Today while adding a simple http endpoint to one of our app, I saw this &lt;code&gt;panic: http: multiple registrations with /myhandler&lt;/code&gt;. My code was simply&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	http.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I read some official documentation and asked around. I came to know it happens if you use &lt;code&gt;defaultHTTPMux&lt;/code&gt;, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	mux := http.NewServeMux()
+	mux.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>how to see assembly code for a go program</title>
       <link>https://varunksaini.com/posts/how-to-get-assembly-for-go-program/</link>
       <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
