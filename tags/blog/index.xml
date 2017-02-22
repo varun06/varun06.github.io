@@ -9,6 +9,50 @@
     <atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>go slice array allocation gotcha</title>
+      <link>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</link>
+      <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</guid>
+      <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows there is no extra memory allocated while a program with that slice is running.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arr := [1024*1024]byte{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows that memory is allocated while that program is running.&lt;/p&gt;
+
+&lt;p&gt;I am baffled why there is difference when slice also has a backing array that need to be initialized?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Program you can run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func main() {
+	fmt.Println(&amp;quot;start&amp;quot;)
+	time.Sleep(10 * time.Second)
+	fmt.Println(&amp;quot;go!&amp;quot;)
+	slicey := make([]byte, 1024*1024)
+	time.Sleep(time.Minute)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;go run&lt;/code&gt; and check &lt;code&gt;top&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note - I ran this on &lt;code&gt;mac osx El Capitan&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>http multiple registration error in go</title>
       <link>https://varunksaini.com/posts/go-http-multiple-registration-error/</link>
       <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
@@ -656,24 +700,6 @@ func bar() FooFunc {
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/4EfYIMZV-p&#34;&gt;go playground&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>block youtube on apple mac osx using Parental Controls</title>
-      <link>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
-      <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
-      <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
-They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
-
-&lt;p&gt;In mac you can open Parental Controls, and create a new account with Parental Controls enabled or turn Parental Controls on current
-account. You need admin access to apply Parental Controls. Once you have Parental Controls on an account, Open Parental Controls -&amp;gt; Account Name -&amp;gt;
-Web -&amp;gt; &amp;ldquo;Try to limit access to adult websites&amp;rdquo; (Click on Customize button) -&amp;gt; Click + in &amp;ldquo;Never allow these websites&amp;rdquo; -&amp;gt; Add youtube URL
-Click OK, and you are done.&lt;/p&gt;
-
-&lt;p&gt;It took me some time to figure this out and it works well. I hope it will be helpful to someone else.&lt;/p&gt;
 </description>
     </item>
     

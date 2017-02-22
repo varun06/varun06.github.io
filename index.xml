@@ -6,8 +6,52 @@
     <description>Recent content on Never stop learning...</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Jan 2017 15:02:51 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 21 Feb 2017 16:19:52 -0600</lastBuildDate>
     <atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>go slice array allocation gotcha</title>
+      <link>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</link>
+      <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</guid>
+      <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows there is no extra memory allocated while a program with that slice is running.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arr := [1024*1024]byte{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows that memory is allocated while that program is running.&lt;/p&gt;
+
+&lt;p&gt;I am baffled why there is difference when slice also has a backing array that need to be initialized?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Program you can run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func main() {
+	fmt.Println(&amp;quot;start&amp;quot;)
+	time.Sleep(10 * time.Second)
+	fmt.Println(&amp;quot;go!&amp;quot;)
+	slicey := make([]byte, 1024*1024)
+	time.Sleep(time.Minute)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;go run&lt;/code&gt; and check &lt;code&gt;top&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note - I ran this on &lt;code&gt;mac osx El Capitan&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>http multiple registration error in go</title>
@@ -614,61 +658,6 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
 
 &lt;p&gt;Not Big Data, but Big meaning.&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>question about type assertion in go</title>
-      <link>https://varunksaini.com/posts/question-about-type-assertion/</link>
-      <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/posts/question-about-type-assertion/</guid>
-      <description>&lt;p&gt;One of our go app crashed recently because of a bug in &lt;a href=&#34;https://github.com/urfave/cli/&#34;&gt;https://github.com/urfave/cli/&lt;/a&gt;, here is the &lt;a href=&#34;https://github.com/urfave/cli/pull/568&#34;&gt;PR&lt;/a&gt; with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.&lt;/p&gt;
-
-&lt;p&gt;My question is why &lt;code&gt;bar&lt;/code&gt; works but not &lt;code&gt;foo&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;package main
-
-import (
-	&amp;quot;fmt&amp;quot;
-)
-
-func main() {
-	var f interface{}
-	var b interface{}
-	f = foo()
-	b = bar()
-
-	if _, ok := f.(func(string) error); ok {
-		fmt.Println(&amp;quot;FOUND IT&amp;quot;)
-	} else {
-		fmt.Println(&amp;quot;DIDNT FIND IT&amp;quot;)
-	}
-
-	if _, ok := b.(func(string) error); ok {
-		fmt.Println(&amp;quot;FOUND IT&amp;quot;)
-	} else {
-		fmt.Println(&amp;quot;DIDNT FIND IT&amp;quot;)
-	}
-}
-
-type FooFunc func(string) error
-
-func foo() func(string) error {
-	return func(e string) error {
-		return fmt.Errorf(&amp;quot;GOTCHA&amp;quot;)
-	}
-}
-
-func bar() FooFunc {
-	return func(e string) error {
-		return fmt.Errorf(&amp;quot;GOTCHA&amp;quot;)
-	}
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://play.golang.org/p/4EfYIMZV-p&#34;&gt;go playground&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

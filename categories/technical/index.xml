@@ -9,6 +9,50 @@
     <atom:link href="https://varunksaini.com/categories/technical/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>go slice array allocation gotcha</title>
+      <link>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</link>
+      <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</guid>
+      <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows there is no extra memory allocated while a program with that slice is running.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arr := [1024*1024]byte{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows that memory is allocated while that program is running.&lt;/p&gt;
+
+&lt;p&gt;I am baffled why there is difference when slice also has a backing array that need to be initialized?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Program you can run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func main() {
+	fmt.Println(&amp;quot;start&amp;quot;)
+	time.Sleep(10 * time.Second)
+	fmt.Println(&amp;quot;go!&amp;quot;)
+	slicey := make([]byte, 1024*1024)
+	time.Sleep(time.Minute)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;go run&lt;/code&gt; and check &lt;code&gt;top&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note - I ran this on &lt;code&gt;mac osx El Capitan&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>http multiple registration error in go</title>
       <link>https://varunksaini.com/posts/go-http-multiple-registration-error/</link>
       <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
@@ -686,34 +730,6 @@ $ git reflog expire --expire=now --all &amp;amp;&amp;amp; git gc --prune=now --a
       <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 19July</title>
-      <link>https://varunksaini.com/posts/weekly-reading-19July/</link>
-      <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/weekly-reading-19July/</guid>
-      <description>&lt;p&gt;This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&#34;&gt;http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&#34;&gt;https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://docs.confluent.io/1.0/index.html&#34;&gt;http://docs.confluent.io/1.0/index.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://peter.bourgon.org/blog/2016/07/11/context.html&#34;&gt;http://peter.bourgon.org/blog/2016/07/11/context.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://jamesclear.com/power-of-environment&#34;&gt;http://jamesclear.com/power-of-environment&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&#34;&gt;http://www.newyorker.com/culture/cultural-comment/headphones-everywhere&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://spinroot.com/gerard/pdf/P10.pdf&#34;&gt;http://spinroot.com/gerard/pdf/P10.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/golang/go/wiki/CodeReviewComments&#34;&gt;https://github.com/golang/go/wiki/CodeReviewComments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

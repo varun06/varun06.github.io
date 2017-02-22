@@ -9,6 +9,50 @@
     <atom:link href="https://varunksaini.com/tags/general/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>go slice array allocation gotcha</title>
+      <link>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</link>
+      <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</guid>
+      <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows there is no extra memory allocated while a program with that slice is running.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arr := [1024*1024]byte{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows that memory is allocated while that program is running.&lt;/p&gt;
+
+&lt;p&gt;I am baffled why there is difference when slice also has a backing array that need to be initialized?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Program you can run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func main() {
+	fmt.Println(&amp;quot;start&amp;quot;)
+	time.Sleep(10 * time.Second)
+	fmt.Println(&amp;quot;go!&amp;quot;)
+	slicey := make([]byte, 1024*1024)
+	time.Sleep(time.Minute)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;go run&lt;/code&gt; and check &lt;code&gt;top&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note - I ran this on &lt;code&gt;mac osx El Capitan&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>rise of the robots by martin ford</title>
       <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
@@ -352,43 +396,6 @@ Click OK, and you are done.&lt;/p&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/golang/go/wiki/CodeReviewComments&#34;&gt;https://github.com/golang/go/wiki/CodeReviewComments&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>weekly reading 9July</title>
-      <link>https://varunksaini.com/posts/weekly-reading-9July/</link>
-      <pubDate>Sat, 09 Jul 2016 05:46:45 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/posts/weekly-reading-9July/</guid>
-      <description>&lt;p&gt;This week I didn&amp;rsquo;t read too many online articles. But still found some good technical articles that I read.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://videlalvaro.github.io/2015/02/programming-myths.html&#34;&gt;http://videlalvaro.github.io/2015/02/programming-myths.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;The real problem is forming our opinion very quicky without thinking a bit and looking at the context. Are &amp;quot;Goto&amp;quot; really harmful in computer programming or it is just a myth. This Statement by Donanld Knuth summerise this whole article -
-&amp;quot;We shouldn’t merely remove go to statements because it’s the fashionable thing to do; the presence or absence of go to statements is not really the issue.&amp;quot;
-
-Some great quotes from article:
-
-&amp;quot;we should strive most of all for a program that is easy to understand and almost sure to work&amp;quot;
-
-&amp;quot;the universal experience of programmers who have been using measurement tools has been that their intuitive guesses fail.&amp;quot;
-
-&amp;quot;premature optimization is the root of all evil&amp;quot;
-
-&amp;quot;Experience indicates that nearly everybody has the wrong idea about the real bottlenecks in his programs&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/&#34;&gt;http://dominik.honnef.co/posts/2010/10/why_you_should_try_tmux_instead_of_screen/&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;tmux rocks and I use it everyday with vim :)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g&#34;&gt;https://blog.twitch.tv/gos-march-to-low-latency-gc-a6fa96f06eb7#.dii68tn9g&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&#34;&gt;https://medium.com/@johannes_gehrs/getting-started-with-systemd-on-debian-jessie-e024758ca63d#.7jy8vcfdu&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&#34;&gt;https://blog.cloudflare.com/why-we-use-the-linux-kernels-tcp-stack/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
