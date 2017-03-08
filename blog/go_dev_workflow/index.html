@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="map[]" />
+    <meta name="description" content="Describe your website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
+    <title>My Go Lang Development Workflow</title>
+    <meta name="generator" content="Hugo 0.19" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://varunksaini.com/"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/reading/">READING</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://varunksaini.com/blog/go_dev_workflow/">My Go Lang Development Workflow</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          June 13, 2015
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>I have been doing programming in Go from last 6 months. When you start a new project or start learning a new programming language, chossing your tools(text editor, plugins etc.) is as important as any other process.</p>
+
+<p>I use Sublime Text 3 with <a href="https://github.com/DisposaBoy/GoSublime">go-sublime</a> plugin as my text editor. go-sublime adds many features to Sublime Text for go development and make the whole development process a little easier. I particularly like &lsquo;go linting&rsquo; and &lsquo;go to definition&rsquo;.</p>
+
+<p><br>
+<img src="/img/sublime.png" alt="Sublime Text" title="Sublime Text" style="width:700px; height: 500px;">
+<br></p>
+
+<p>Once I have written the code and tests, I run <code>go test</code> in terminal (I use iterm2 instead of default terminal app) to test my code. To check code coverage, I run <code>go test -cover</code>.</p>
+
+<p>because sometime you need more than one terminal window, I use <a href="http://tmux.github.io/">tmux</a> for that. tmux manages terminal windows and sessions. I started using tmux some time back and it is great.</p>
+
+<p>OSX window management is a pain in itself, I use <a href="http://mizage.com/divvy/">DIVVY</a> to manage the windows. I am looking forward to <a href="http://www.apple.com/osx/elcapitan-preview/">OSX el capitan</a>, which has window management build in the OSX (finally).</p>
+
+<p>Once I have tested my code thoroughly on my local machine, I send it to github for code review. I generally use git in terminal to run all the common git commands (such as <code>git status</code>, <code>git commit</code>, and <code>git push</code>).</p>
+
+<p>We use <a href="http://github.com/MediaMath/grim">GRIM</a>, which is open sourced by the way, as our build server. So when I create a pull request for code review, grim takes the pull request and run the build to make sure that everything works as expected with new code, grim also updates the hipchat channel, so that team is aware about new pull request.</p>
+
+<p>This continous build system gives code reviewers a test run even before reviewing the code. Once the code review is done and thumpsup are given, code is ready to be merged in master.</p>
+
+<p>Once merged, time for next task and more Go code/learnings..</p>
+
+<p>Note: If you are a vim user, then <a href="https://github.com/fatih/vim-go">vim-go</a> is an awesome go plugin for vim.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://varunksaini.com/js/docs.min.js"></script>
+<script src="https://varunksaini.com/js/main.js"></script>
+
+<script src="https://varunksaini.com/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

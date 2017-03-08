@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>General on Never stop learning...</title>
+    <title>General on Varun Saini</title>
     <link>https://varunksaini.com/tags/general/index.xml</link>
-    <description>Recent content in General on Never stop learning...</description>
+    <description>Recent content in General on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <atom:link href="https://varunksaini.com/tags/general/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>go slice array allocation gotcha</title>
-      <link>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</link>
+      <link>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</link>
       <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</guid>
+      <guid>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</guid>
       <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
@@ -54,10 +54,10 @@ func main() {
     
     <item>
       <title>rise of the robots by martin ford</title>
-      <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
+      <link>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</link>
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</guid>
+      <guid>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</guid>
       <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
 
 &lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
@@ -66,10 +66,10 @@ func main() {
     
     <item>
       <title>how do you write error statement</title>
-      <link>https://varunksaini.com/posts/how-do-you-write-error-statement/</link>
+      <link>https://varunksaini.com/blog/how-do-you-write-error-statement/</link>
       <pubDate>Thu, 22 Dec 2016 12:48:00 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/how-do-you-write-error-statement/</guid>
+      <guid>https://varunksaini.com/blog/how-do-you-write-error-statement/</guid>
       <description>&lt;p&gt;In go, when I write an error statement, I don&amp;rsquo;t keep any space between function call and error check statement, such as -&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
@@ -93,10 +93,10 @@ if err != nil {
     
     <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>
-      <link>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
+      <link>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
       <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
+      <guid>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
       <description>&lt;p&gt;I came to know about &lt;a href=&#34;https://en.wikipedia.org/wiki/Ted_Chiang&#34;&gt;Ted Chiang&lt;/a&gt; and his work after movie &lt;a href=&#34;http://www.imdb.com/title/tt2543164/&#34;&gt;Arrival&lt;/a&gt;. I bought &lt;a href=&#34;https://www.amazon.com/dp/B0048EKOP0/&#34;&gt;The story of your life and others&lt;/a&gt; on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -116,20 +116,20 @@ if err != nil {
     
     <item>
       <title>what do you learn from technical videos</title>
-      <link>https://varunksaini.com/posts/what-do-you-learn-from-technical-vidoes/</link>
+      <link>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</link>
       <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/what-do-you-learn-from-technical-vidoes/</guid>
+      <guid>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</guid>
       <description>&lt;p&gt;I watch many technical videos but I feel that I don&amp;rsquo;t learn much from the technical videos. I have tried some techniques but nothing has worked as much as I want. That&amp;rsquo;s why I thoguht of asking, What and how people learn from technical videos.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>go puzzlers and thoughts</title>
-      <link>https://varunksaini.com/posts/golang-puzzlers-and-thoughts/</link>
+      <link>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</link>
       <pubDate>Sun, 04 Dec 2016 07:15:59 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/golang-puzzlers-and-thoughts/</guid>
+      <guid>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/&#34;&gt;Dave Cheney&lt;/a&gt; gave a talk on &lt;a href=&#34;http://golang.org&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1&#34;&gt;puzzlers&lt;/a&gt;. It is a great talk and I encourage you to give it a good read.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
@@ -200,10 +200,10 @@ func main() {}
     
     <item>
       <title>Why there is no place like home - thoughts after reading</title>
-      <link>https://varunksaini.com/posts/why-no-place-like-home/</link>
+      <link>https://varunksaini.com/blog/why-no-place-like-home/</link>
       <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/why-no-place-like-home/</guid>
+      <guid>https://varunksaini.com/blog/why-no-place-like-home/</guid>
       <description>&lt;p&gt;I really like &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine. Every weekend I get aeon newsletter and there is always some really good article/essay in newsletter. One of these essay that I read today is &lt;a href=&#34;https://aeon.co/essays/why-theres-no-place-like-home-for-anyone-any-more&#34;&gt;why there is no place like home anymore&lt;/a&gt;.This is a really thought provoking essay.&lt;/p&gt;
 
 &lt;p&gt;Essay starts by talking about &lt;a href=&#34;https://www.tumbleweedhouses.com/&#34;&gt;Tiny Homes&lt;/a&gt; that I saw some time back. Tiny home is an interesting concept but I didn&amp;rsquo;t know that you can also save tax on them. From essay -&lt;/p&gt;
@@ -268,10 +268,10 @@ func main() {}
     
     <item>
       <title>Sunday reading the privileged immigrant</title>
-      <link>https://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</link>
+      <link>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</link>
       <pubDate>Sat, 26 Nov 2016 20:48:29 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</guid>
+      <guid>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</guid>
       <description>&lt;p&gt;I was checking some tweets on twitter and came through one that mentioned an article &lt;a href=&#34;http://www.nytimes.com/2016/11/26/opinion/sunday/the-privileged-immigrant.html&#34;&gt;The priviliged immigrant&lt;/a&gt;. The article is written by an author who is of Indian descent. Author talks about hard work her parents did when they came to United States in 1965. Then she talked about her gardener who is a Mexican and seems like an undocumented worker.&lt;/p&gt;
 
 &lt;p&gt;There is a period of uncertainty because of recent elections. Lots of people are talking about immigration. This is an article that talk about some immigrants and two sides of this immigrant debate(legal vs illegal).&lt;/p&gt;
@@ -280,10 +280,10 @@ func main() {}
     
     <item>
       <title>aeon newsletter Nov262016</title>
-      <link>https://varunksaini.com/posts/aeon-newsletter-Nov262016/</link>
+      <link>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</link>
       <pubDate>Sat, 26 Nov 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/aeon-newsletter-Nov262016/</guid>
+      <guid>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</guid>
       <description>&lt;p&gt;I get &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine newsletter every weekend. They generally have some good article that I end up reading. In my quest to log what I read and watch here at my blog, today I am going to write about Aeon newsletter. I will only be writing what I read.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -301,10 +301,10 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
     
     <item>
       <title>Alan Kay interview by Joe Armstrong</title>
-      <link>https://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</link>
+      <link>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</link>
       <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</guid>
+      <guid>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</guid>
       <description>&lt;p&gt;I watched this great &lt;a href=&#34;https://www.youtube.com/watch?v=fhOHn9TClXY&#34;&gt;video&lt;/a&gt; where &lt;a href=&#34;http://joearms.github.io/&#34;&gt;Joe Armstrong&lt;/a&gt; interviews &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Alan Kay&lt;/a&gt;. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of &lt;strong&gt;cloud&lt;/strong&gt; and &lt;strong&gt;internet of things&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks). According to them, we need to think as real scientists and use scientific methods to solve problems. Also Alan Kay recommends a lots of great books to read in this interview.&lt;/p&gt;
@@ -323,10 +323,10 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
     
     <item>
       <title>block youtube on apple mac osx using Parental Controls</title>
-      <link>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</link>
+      <link>https://varunksaini.com/blog/block-youtube-apple-mac-osx/</link>
       <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/block-youtube-apple-mac-osx/</guid>
+      <guid>https://varunksaini.com/blog/block-youtube-apple-mac-osx/</guid>
       <description>&lt;p&gt;I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc.
 They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.&lt;/p&gt;
 
@@ -341,30 +341,30 @@ Click OK, and you are done.&lt;/p&gt;
     
     <item>
       <title>get back to blogging</title>
-      <link>https://varunksaini.com/posts/get-back-to-blogging/</link>
+      <link>https://varunksaini.com/blog/get-back-to-blogging/</link>
       <pubDate>Sun, 16 Oct 2016 09:02:02 -0500</pubDate>
       
-      <guid>https://varunksaini.com/posts/get-back-to-blogging/</guid>
+      <guid>https://varunksaini.com/blog/get-back-to-blogging/</guid>
       <description>&lt;p&gt;I have not been writing anything from some time. But I want to get back to it and have decided writing something every week. I will start by writing a review of a book that I read recently. I think it will be a good way to get back to writing and I will also get some motivation to read book. I have a list of technical books that I want to go through and learn. So let&amp;rsquo;s begin.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>laptop repair</title>
-      <link>https://varunksaini.com/posts/laptop-repair/</link>
+      <link>https://varunksaini.com/blog/laptop-repair/</link>
       <pubDate>Sat, 13 Aug 2016 10:26:10 -0500</pubDate>
       
-      <guid>https://varunksaini.com/posts/laptop-repair/</guid>
+      <guid>https://varunksaini.com/blog/laptop-repair/</guid>
       <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>good read on golang and generics</title>
-      <link>https://varunksaini.com/posts/good-read-on-golang-and-generics/</link>
+      <link>https://varunksaini.com/blog/good-read-on-golang-and-generics/</link>
       <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
       
-      <guid>https://varunksaini.com/posts/good-read-on-golang-and-generics/</guid>
+      <guid>https://varunksaini.com/blog/good-read-on-golang-and-generics/</guid>
       <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
@@ -373,10 +373,10 @@ Click OK, and you are done.&lt;/p&gt;
     
     <item>
       <title>weekly reading 19July</title>
-      <link>https://varunksaini.com/posts/weekly-reading-19July/</link>
+      <link>https://varunksaini.com/blog/weekly-reading-19July/</link>
       <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
       
-      <guid>https://varunksaini.com/posts/weekly-reading-19July/</guid>
+      <guid>https://varunksaini.com/blog/weekly-reading-19July/</guid>
       <description>&lt;p&gt;This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.&lt;/p&gt;
 
 &lt;ul&gt;

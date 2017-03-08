@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Varun Saini</title>
+    <link>https://varunksaini.com/blog/index.xml</link>
+    <description>Recent content in Blogs on Varun Saini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 07 Mar 2017 21:35:43 -0600</lastBuildDate>
+    <atom:link href="https://varunksaini.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Distributed systems class by Aphyr</title>
+      <link>https://varunksaini.com/blog/distributed-systems-training-by-aphyr/</link>
+      <pubDate>Tue, 07 Mar 2017 21:35:43 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/distributed-systems-training-by-aphyr/</guid>
+      <description>&lt;p&gt;This week I got a chance to attend a 2 day training on &lt;a href=&#34;https://github.com/aphyr/distsys-class&#34;&gt;&amp;ldquo;Basics of distributed trainings&amp;rdquo;&lt;/a&gt; by &lt;a href=&#34;https://aphyr.com/&#34;&gt;Aphyr&lt;/a&gt;. It was a great learning experience and I learned more about distributed systems. Kyle is a great guy and he answered our questions, helped us reason about our existing systems too. I will suggest anybody who is interested in distributed systems, to attend this class at least once.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>go slice array allocation gotcha</title>
+      <link>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</link>
+      <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</guid>
+      <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows there is no extra memory allocated while a program with that slice is running.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arr := [1024*1024]byte{}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;top&lt;/code&gt; shows that memory is allocated while that program is running.&lt;/p&gt;
+
+&lt;p&gt;I am baffled why there is difference when slice also has a backing array that need to be initialized?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Program you can run&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import (
+	&amp;quot;fmt&amp;quot;
+	&amp;quot;time&amp;quot;
+)
+
+func main() {
+	fmt.Println(&amp;quot;start&amp;quot;)
+	time.Sleep(10 * time.Second)
+	fmt.Println(&amp;quot;go!&amp;quot;)
+	slicey := make([]byte, 1024*1024)
+	time.Sleep(time.Minute)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;go run&lt;/code&gt; and check &lt;code&gt;top&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Note - I ran this on &lt;code&gt;Mac OSX El Capitan&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>http multiple registration error in go</title>
+      <link>https://varunksaini.com/blog/go-http-multiple-registration-error/</link>
+      <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/go-http-multiple-registration-error/</guid>
+      <description>&lt;p&gt;Today while adding a simple http endpoint to one of our app, I saw this &lt;code&gt;panic: http: multiple registrations with /myhandler&lt;/code&gt;. My code was simply&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	http.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I read some official documentation and asked around. I came to know it happens if you use &lt;code&gt;defaultHTTPMux&lt;/code&gt;, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;go func(){
+	mux := http.NewServeMux()
+	mux.Handler(&amp;quot;/request&amp;quot;, requesthandler)
+	http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil)
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>send key value messages to kafka from console producer</title>
+      <link>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</link>
+      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://kafka.apache.org&#34;&gt;Kafka&lt;/a&gt; provides &lt;a href=&#34;https://kafka.apache.org/quickstart#quickstart_send&#34;&gt;kafka-console-producer.sh&lt;/a&gt; to send messages from stdin&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+message1
+message2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	for (( i=1; i&amp;lt;=10; i++ )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.separator=:&amp;quot;; done;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>how to see assembly code for a go program</title>
+      <link>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</link>
+      <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt; makes it very easy to look at assembly code for a go program. You can use &lt;code&gt;go tool compile&lt;/code&gt; or &lt;code&gt;go build&lt;/code&gt; with &lt;code&gt;gcflags&lt;/code&gt; to print the assembly on stdout.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat hello.go
+package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+        fmt.Println(&amp;quot;Hello, Assembly!&amp;quot;)
+}
+
+$ go build -gcflags -S hello.go
+# command-line-arguments
+&amp;quot;&amp;quot;.main t=1 size=179 args=0x0 locals=0x58
+        0x0000 00000 (hello.go:5)  TEXT    &amp;quot;&amp;quot;.main(SB), $88-0
+        0x0000 00000 (hello.go:5)  MOVQ    (TLS), CX
+        0x0009 00009 (hello.go:5)  CMPQ    SP, 16(CX)
+        0x000d 00013 (hello.go:5)  JLS     169
+        0x0013 00019 (hello.go:5)  SUBQ    $88, SP
+        0x0017 00023 (hello.go:5)  MOVQ    BP, 80(SP)
+        0x001c 00028 (hello.go:5)  LEAQ    80(SP), BP
+        0x0021 00033 (hello.go:5)  FUNCDATA        $0, gclocals·69c1753bd5f81501d95132d08af04464(SB)
+        0x0021 00033 (hello.go:5)  FUNCDATA        $1, gclocals·e29b39dba2f7b47ee8f21f123fdd2633(SB)
+        0x0021 00033 (hello.go:6)  LEAQ    go.string.&amp;quot;Hello, Assembly!&amp;quot;(SB), AX
+        0x0028 00040 (hello.go:6)  MOVQ    AX, &amp;quot;&amp;quot;.autotmp_0+64(SP)
+        0x002d 00045 (hello.go:6)  MOVQ    $16, &amp;quot;&amp;quot;.autotmp_0+72(SP)
+        0x0036 00054 (hello.go:6)  MOVQ    $0, &amp;quot;&amp;quot;.autotmp_4+48(SP)
+        0x003f 00063 (hello.go:6)  MOVQ    $0, &amp;quot;&amp;quot;.autotmp_4+56(SP)
+        0x0048 00072 (hello.go:6)  LEAQ    type.string(SB), AX
+        0x004f 00079 (hello.go:6)  MOVQ    AX, (SP)
+        0x0053 00083 (hello.go:6)  LEAQ    &amp;quot;&amp;quot;.autotmp_0+64(SP), AX
+        0x0058 00088 (hello.go:6)  MOVQ    AX, 8(SP)
+        0x005d 00093 (hello.go:6)  MOVQ    $0, 16(SP)
+        0x0066 00102 (hello.go:6)  PCDATA  $0, $1
+        0x0066 00102 (hello.go:6)  CALL    runtime.convT2E(SB)
+        0x006b 00107 (hello.go:6)  MOVQ    32(SP), AX
+        0x0070 00112 (hello.go:6)  MOVQ    24(SP), CX
+        0x0075 00117 (hello.go:6)  MOVQ    CX, &amp;quot;&amp;quot;.autotmp_4+48(SP)
+        0x007a 00122 (hello.go:6)  MOVQ    AX, &amp;quot;&amp;quot;.autotmp_4+56(SP)
+        0x007f 00127 (hello.go:6)  LEAQ    &amp;quot;&amp;quot;.autotmp_4+48(SP), AX
+        0x0084 00132 (hello.go:6)  MOVQ    AX, (SP)
+        0x0088 00136 (hello.go:6)  MOVQ    $1, 8(SP)
+        0x0091 00145 (hello.go:6)  MOVQ    $1, 16(SP)
+        0x009a 00154 (hello.go:6)  PCDATA  $0, $1
+        0x009a 00154 (hello.go:6)  CALL    fmt.Println(SB)
+        0x009f 00159 (hello.go:7)  MOVQ    80(SP), BP
+        0x00a4 00164 (hello.go:7)  ADDQ    $88, SP
+        0x00a8 00168 (hello.go:7)  RET
+        0x00a9 00169 (hello.go:7)  NOP
+        0x00a9 00169 (hello.go:5)  CALL    runtime.morestack_noctxt(SB)
+        0x00ae 00174 (hello.go:5)  JMP     0
+        0x0000 65 48 8b 0c 25 00 00 00 00 48 3b 61 10 0f 86 96  eH..%....H;a....
+        0x0010 00 00 00 48 83 ec 58 48 89 6c 24 50 48 8d 6c 24  ...H..XH.l$PH.l$
+        0x0020 50 48 8d 05 00 00 00 00 48 89 44 24 40 48 c7 44  PH......H.D$@H.D
+        0x0030 24 48 10 00 00 00 48 c7 44 24 30 00 00 00 00 48  $H....H.D$0....H
+        0x0040 c7 44 24 38 00 00 00 00 48 8d 05 00 00 00 00 48  .D$8....H......H
+        0x0050 89 04 24 48 8d 44 24 40 48 89 44 24 08 48 c7 44  ..$H.D$@H.D$.H.D
+        0x0060 24 10 00 00 00 00 e8 00 00 00 00 48 8b 44 24 20  $..........H.D$
+        0x0070 48 8b 4c 24 18 48 89 4c 24 30 48 89 44 24 38 48  H.L$.H.L$0H.D$8H
+        0x0080 8d 44 24 30 48 89 04 24 48 c7 44 24 08 01 00 00  .D$0H..$H.D$....
+        0x0090 00 48 c7 44 24 10 01 00 00 00 e8 00 00 00 00 48  .H.D$..........H
+        0x00a0 8b 6c 24 50 48 83 c4 58 c3 e8 00 00 00 00 e9 4d  .l$PH..X.......M
+        0x00b0 ff ff ff                                         ...
+        rel 5+4 t=15 TLS+0
+        rel 36+4 t=14 go.string.&amp;quot;Hello, Assembly!&amp;quot;+0
+        rel 75+4 t=14 type.string+0
+        rel 103+4 t=7 runtime.convT2E+0
+        rel 155+4 t=7 fmt.Println+0
+        rel 170+4 t=7 runtime.morestack_noctxt+0
+&amp;quot;&amp;quot;.init t=1 size=61 args=0x0 locals=0x0
+        0x0000 00000 (hello.go:8)  TEXT    &amp;quot;&amp;quot;.init(SB), $0-0
+        0x0000 00000 (hello.go:8)  MOVQ    (TLS), CX
+        0x0009 00009 (hello.go:8)  CMPQ    SP, 16(CX)
+        0x000d 00013 (hello.go:8)  JLS     54
+        0x000f 00015 (hello.go:8)  NOP
+        0x000f 00015 (hello.go:8)  NOP
+        0x000f 00015 (hello.go:8)  FUNCDATA        $0, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+        0x000f 00015 (hello.go:8)  FUNCDATA        $1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+        0x000f 00015 (hello.go:8)  MOVBLZX &amp;quot;&amp;quot;.initdone·(SB), AX
+        0x0016 00022 (hello.go:8)  CMPB    AL, $1
+        0x0018 00024 (hello.go:8)  JLS     $0, 27
+        0x001a 00026 (hello.go:8)  RET
+        0x001b 00027 (hello.go:8)  JNE     $0, 34
+        0x001d 00029 (hello.go:8)  PCDATA  $0, $0
+        0x001d 00029 (hello.go:8)  CALL    runtime.throwinit(SB)
+        0x0022 00034 (hello.go:8)  MOVB    $1, &amp;quot;&amp;quot;.initdone·(SB)
+        0x0029 00041 (hello.go:8)  PCDATA  $0, $0
+        0x0029 00041 (hello.go:8)  CALL    fmt.init(SB)
+        0x002e 00046 (hello.go:8)  MOVB    $2, &amp;quot;&amp;quot;.initdone·(SB)
+        0x0035 00053 (hello.go:8)  RET
+        0x0036 00054 (hello.go:8)  NOP
+        0x0036 00054 (hello.go:8)  CALL    runtime.morestack_noctxt(SB)
+        0x003b 00059 (hello.go:8)  JMP     0
+        0x0000 65 48 8b 0c 25 00 00 00 00 48 3b 61 10 76 27 0f  eH..%....H;a.v&#39;.
+        0x0010 b6 05 00 00 00 00 3c 01 76 01 c3 75 05 e8 00 00  ......&amp;lt;.v..u....
+        0x0020 00 00 c6 05 00 00 00 00 01 e8 00 00 00 00 c6 05  ................
+        0x0030 00 00 00 00 02 c3 e8 00 00 00 00 eb c3           .............
+        rel 5+4 t=15 TLS+0
+        rel 18+4 t=14 &amp;quot;&amp;quot;.initdone·+0
+        rel 30+4 t=7 runtime.throwinit+0
+        rel 36+4 t=14 &amp;quot;&amp;quot;.initdone·+-1
+        rel 42+4 t=7 fmt.init+0
+        rel 48+4 t=14 &amp;quot;&amp;quot;.initdone·+-1
+        rel 55+4 t=7 runtime.morestack_noctxt+0
+go.string.hdr.&amp;quot;Hello, Assembly!&amp;quot; t=9 dupok size=16
+        0x0000 00 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+        rel 0+8 t=1 go.string.&amp;quot;Hello, Assembly!&amp;quot;+0
+go.string.&amp;quot;Hello, Assembly!&amp;quot; t=9 dupok size=16
+        0x0000 48 65 6c 6c 6f 2c 20 41 73 73 65 6d 62 6c 79 21  Hello, Assembly!
+gclocals·e29b39dba2f7b47ee8f21f123fdd2633 t=9 dupok size=16
+        0x0000 02 00 00 00 04 00 00 00 00 00 00 00 07 00 00 00  ................
+gclocals·69c1753bd5f81501d95132d08af04464 t=9 dupok size=8
+        0x0000 02 00 00 00 00 00 00 00                          ........
+gclocals·33cdeccccebe80329f1fdbee7f5874cb t=9 dupok size=8
+        0x0000 01 00 00 00 00 00 00 00                          ........
+&amp;quot;&amp;quot;.initdone· t=34 size=1
+&amp;quot;&amp;quot;.main·f t=9 dupok size=8
+        0x0000 00 00 00 00 00 00 00 00                          ........
+        rel 0+8 t=1 &amp;quot;&amp;quot;.main+0
+&amp;quot;&amp;quot;.init·f t=9 dupok size=8
+        0x0000 00 00 00 00 00 00 00 00                          ........
+        rel 0+8 t=1 &amp;quot;&amp;quot;.init+0
+runtime.gcbits.03 t=9 dupok size=1
+        0x0000 03                                               .
+type..namedata.*interface {}. t=9 dupok size=16
+        0x0000 00 00 0d 2a 69 6e 74 65 72 66 61 63 65 20 7b 7d  ...*interface {}
+type.interface {} t=9 dupok size=80
+        0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+        0x0010 e7 57 a0 18 02 08 08 14 00 00 00 00 00 00 00 00  .W..............
+        0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        0x0040 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        rel 24+8 t=1 runtime.algarray+144
+        rel 32+8 t=1 runtime.gcbits.03+0
+        rel 40+4 t=5 type..namedata.*interface {}.+0
+        rel 56+8 t=1 type.interface {}+80
+runtime.gcbits.01 t=9 dupok size=1
+        0x0000 01                                               .
+type..namedata.*[]interface {}. t=9 dupok size=18
+        0x0000 00 00 0f 2a 5b 5d 69 6e 74 65 72 66 61 63 65 20  ...*[]interface
+        0x0010 7b 7d                                            {}
+type.[]interface {} t=9 dupok size=56
+        0x0000 18 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+        0x0010 70 93 ea 2f 02 08 08 17 00 00 00 00 00 00 00 00  p../............
+        0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        0x0030 00 00 00 00 00 00 00 00                          ........
+        rel 24+8 t=1 runtime.algarray+0
+        rel 32+8 t=1 runtime.gcbits.01+0
+        rel 40+4 t=5 type..namedata.*[]interface {}.+0
+        rel 48+8 t=1 type.interface {}+0
+go.typelink.[]interface {} t=9 dupok size=4
+        0x0000 00 00 00 00                                      ....
+        rel 0+4 t=5 type.[]interface {}+0
+type..namedata.*[1]interface {}. t=9 dupok size=19
+        0x0000 00 00 10 2a 5b 31 5d 69 6e 74 65 72 66 61 63 65  ...*[1]interface
+        0x0010 20 7b 7d                                          {}
+type.[1]interface {} t=9 dupok size=72
+        0x0000 10 00 00 00 00 00 00 00 10 00 00 00 00 00 00 00  ................
+        0x0010 50 91 5b fa 02 08 08 11 00 00 00 00 00 00 00 00  P.[.............
+        0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        0x0030 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        0x0040 01 00 00 00 00 00 00 00                          ........
+        rel 24+8 t=1 runtime.algarray+144
+        rel 32+8 t=1 runtime.gcbits.03+0
+        rel 40+4 t=5 type..namedata.*[1]interface {}.+0
+        rel 48+8 t=1 type.interface {}+0
+        rel 56+8 t=1 type.[]interface {}+0
+go.typelink.[1]interface {} t=9 dupok size=4
+        0x0000 00 00 00 00                                      ....
+        rel 0+4 t=5 type.[1]interface {}+0
+type.*[1]interface {} t=9 dupok size=56
+        0x0000 08 00 00 00 00 00 00 00 08 00 00 00 00 00 00 00  ................
+        0x0010 bf 03 a8 35 00 08 08 36 00 00 00 00 00 00 00 00  ...5...6........
+        0x0020 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+        0x0030 00 00 00 00 00 00 00 00                          ........
+        rel 24+8 t=1 runtime.algarray+80
+        rel 32+8 t=1 runtime.gcbits.01+0
+        rel 40+4 t=5 type..namedata.*[1]interface {}.+0
+        rel 48+8 t=1 type.[1]interface {}+0
+go.typelink.*[1]interface {} t=9 dupok size=4
+        0x0000 00 00 00 00                                      ....
+        rel 0+4 t=5 type.*[1]interface {}+0
+type..importpath.fmt. t=9 dupok size=6
+        0x0000 00 00 03 66 6d 74                                ...fmt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For detailed info, read &lt;a href=&#34;https://golang.org/doc/asm&#34;&gt;A Quick Guide to Go&amp;rsquo;s Assembler&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>google hangouts wants to chat with me</title>
+      <link>https://varunksaini.com/blog/my-google-hangout-wants-to-chat-with-me/</link>
+      <pubDate>Sat, 31 Dec 2016 19:07:32 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/my-google-hangout-wants-to-chat-with-me/</guid>
+      <description>&lt;p&gt;From last couple of days I am getting chats from myself on my google hangout. It has happened couple of times and I don&amp;rsquo;t know why. I chat back and get no response though. Is it random &lt;strong&gt;google assistent&lt;/strong&gt; code in hangout. Don&amp;rsquo;t know.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../hangout.png&#34; alt=&#34;google hangout screenshot&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>var block changed to init function in assembly</title>
+      <link>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</link>
+      <pubDate>Wed, 28 Dec 2016 14:29:42 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</guid>
+      <description>&lt;p&gt;TIL - &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; turns a var block in init function behind the scenes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+var (
+	testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;)
+	testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;)
+)
+
+func main() {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So if you look at the assembly code below, you will see that we have &lt;code&gt;.main&lt;/code&gt; and &lt;code&gt;.init&lt;/code&gt;. &lt;code&gt;.init&lt;/code&gt; function has &lt;code&gt;0x0049 00073 (/Users/vakumar/temp/test.go:6)    LEAQ    go.string.&amp;quot;I am error one&amp;quot;(SB), AX&lt;/code&gt; which is in &lt;code&gt;var block&lt;/code&gt; in my go code above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;&amp;quot;.main t=1 size=1 args=0x0 locals=0x0
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   TEXT    &amp;quot;&amp;quot;.main(SB), $0-0
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   NOP
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   NOP
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   FUNCDATA        $0, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   FUNCDATA        $1, gclocals·33cdeccccebe80329f1fdbee7f5874cb(SB)
+        0x0000 00000 (/Users/vakumar/temp/test.go:10)   RET
+        0x0000 c3                                               .
+&amp;quot;&amp;quot;.init t=1 size=605 args=0x0 locals=0x70
+        0x0000 00000 (/Users/vakumar/temp/test.go:11)   TEXT    &amp;quot;&amp;quot;.init(SB), $112-0
+        0x0000 00000 (/Users/vakumar/temp/test.go:11)   MOVQ    (TLS), CX
+        0x0009 00009 (/Users/vakumar/temp/test.go:11)   CMPQ    SP, 16(CX)
+        0x000d 00013 (/Users/vakumar/temp/test.go:11)   JLS     595
+        0x0013 00019 (/Users/vakumar/temp/test.go:11)   SUBQ    $112, SP
+        0x0017 00023 (/Users/vakumar/temp/test.go:11)   MOVQ    BP, 104(SP)
+        0x001c 00028 (/Users/vakumar/temp/test.go:11)   LEAQ    104(SP), BP
+        0x0021 00033 (/Users/vakumar/temp/test.go:11)   FUNCDATA        $0, gclocals·3e27b3aa6b89137cce48b3379a2a6610(SB)
+        0x0021 00033 (/Users/vakumar/temp/test.go:11)   FUNCDATA        $1, gclocals·3672590320383b7a4beab9e3e42e1c00(SB)
+        0x0021 00033 (/Users/vakumar/temp/test.go:11)   MOVBLZX &amp;quot;&amp;quot;.initdone·(SB), AX
+        0x0028 00040 (/Users/vakumar/temp/test.go:11)   CMPB    AL, $1
+        0x002a 00042 (/Users/vakumar/temp/test.go:11)   JLS     $0, 54
+        0x002c 00044 (/Users/vakumar/temp/test.go:11)   MOVQ    104(SP), BP
+        0x0031 00049 (/Users/vakumar/temp/test.go:11)   ADDQ    $112, SP
+        0x0035 00053 (/Users/vakumar/temp/test.go:11)   RET
+        0x0036 00054 (/Users/vakumar/temp/test.go:11)   JNE     $0, 61
+        0x0038 00056 (/Users/vakumar/temp/test.go:11)   PCDATA  $0, $0
+        0x0038 00056 (/Users/vakumar/temp/test.go:11)   CALL    runtime.throwinit(SB)
+        0x003d 00061 (/Users/vakumar/temp/test.go:11)   MOVB    $1, &amp;quot;&amp;quot;.initdone·(SB)
+        0x0044 00068 (/Users/vakumar/temp/test.go:11)   PCDATA  $0, $0
+        0x0044 00068 (/Users/vakumar/temp/test.go:11)   CALL    fmt.init(SB)
+        0x0049 00073 (/Users/vakumar/temp/test.go:6)    LEAQ    go.string.&amp;quot;I am error one&amp;quot;(SB), AX
+        0x0050 00080 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, &amp;quot;&amp;quot;.autotmp_0+88(SP)
+        0x0055 00085 (/Users/vakumar/temp/test.go:6)    MOVQ    $14, &amp;quot;&amp;quot;.autotmp_0+96(SP)
+        0x005e 00094 (/Users/vakumar/temp/test.go:6)    LEAQ    type.[1]interface {}(SB), AX
+        0x0065 00101 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, (SP)
+        0x0069 00105 (/Users/vakumar/temp/test.go:6)    PCDATA  $0, $1
+        0x0069 00105 (/Users/vakumar/temp/test.go:6)    CALL    runtime.newobject(SB)
+        0x006e 00110 (/Users/vakumar/temp/test.go:6)    MOVQ    8(SP), AX
+        0x0073 00115 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, &amp;quot;&amp;quot;.autotmp_8+64(SP)
+        0x0078 00120 (/Users/vakumar/temp/test.go:6)    LEAQ    type.string(SB), CX
+        0x007f 00127 (/Users/vakumar/temp/test.go:6)    MOVQ    CX, (SP)
+        0x0083 00131 (/Users/vakumar/temp/test.go:6)    LEAQ    &amp;quot;&amp;quot;.autotmp_0+88(SP), DX
+        0x0088 00136 (/Users/vakumar/temp/test.go:6)    MOVQ    DX, 8(SP)
+        0x008d 00141 (/Users/vakumar/temp/test.go:6)    MOVQ    $0, 16(SP)
+        0x0096 00150 (/Users/vakumar/temp/test.go:6)    PCDATA  $0, $2
+        0x0096 00150 (/Users/vakumar/temp/test.go:6)    CALL    runtime.convT2E(SB)
+        0x009b 00155 (/Users/vakumar/temp/test.go:6)    MOVQ    32(SP), AX
+        0x00a0 00160 (/Users/vakumar/temp/test.go:6)    MOVQ    24(SP), CX
+        0x00a5 00165 (/Users/vakumar/temp/test.go:6)    MOVQ    &amp;quot;&amp;quot;.autotmp_8+64(SP), DX
+        0x00aa 00170 (/Users/vakumar/temp/test.go:6)    MOVQ    CX, (DX)
+        0x00ad 00173 (/Users/vakumar/temp/test.go:6)    MOVL    runtime.writeBarrier(SB), CX
+        0x00b3 00179 (/Users/vakumar/temp/test.go:6)    TESTB   CL, CL
+        0x00b5 00181 (/Users/vakumar/temp/test.go:6)    JNE     $0, 567
+        0x00bb 00187 (/Users/vakumar/temp/test.go:6)    MOVQ    AX, 8(DX)
+        0x00bf 00191 (/Users/vakumar/temp/test.go:6)    LEAQ    go.string.&amp;quot;%s &amp;quot;(SB), AX
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>rise of the robots by martin ford</title>
+      <link>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</guid>
+      <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
+
+&lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>how do you write error statement</title>
+      <link>https://varunksaini.com/blog/how-do-you-write-error-statement/</link>
+      <pubDate>Thu, 22 Dec 2016 12:48:00 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/how-do-you-write-error-statement/</guid>
+      <description>&lt;p&gt;In go, when I write an error statement, I don&amp;rsquo;t keep any space between function call and error check statement, such as -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
+if err != nil {
+	//handle error
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But I have also seen people doing following -&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
+
+if err != nil {
+	//handle error
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How do you write that error check?&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>notes on Stories of your life and others by Ted Chiang</title>
+      <link>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
+      <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
+      <description>&lt;p&gt;I came to know about &lt;a href=&#34;https://en.wikipedia.org/wiki/Ted_Chiang&#34;&gt;Ted Chiang&lt;/a&gt; and his work after movie &lt;a href=&#34;http://www.imdb.com/title/tt2543164/&#34;&gt;Arrival&lt;/a&gt;. I bought &lt;a href=&#34;https://www.amazon.com/dp/B0048EKOP0/&#34;&gt;The story of your life and others&lt;/a&gt; on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Story of your life - My favorite story and Arrival movie is based on this story. In this story a linguist tries to communicate with aliens. Story is about how it works and impacts her life and people around her. A fascinating story and you need to give couple of read to understand everything that is going on in the story.&lt;/li&gt;
+&lt;li&gt;Tower of Babylon - My second favorite story from the book, this story make you think about religion and religious beliefs. I still can&amp;rsquo;t visualize how that tower was built, but it is a sci-fi for a reason.&lt;/li&gt;
+&lt;li&gt;Liking What you see: A Documentary - This short story asks a question &amp;ldquo;what will happen if everybody looks same&amp;rdquo;. Very interesting read and I will love to see this turned into a movie.&lt;/li&gt;
+&lt;li&gt;Division by Zero - How a mathematician goes insane when she finds that she can prove something that deemed impossible in mathematics. Another great read.&lt;/li&gt;
+&lt;li&gt;Hell is the absence of God - Another sci-fi story that asks questions about religious beliefs. This story also has angels.&lt;/li&gt;
+&lt;li&gt;Understand - A therapy gone wrong and we have a super human with high cognitive functioning.&lt;/li&gt;
+&lt;li&gt;Seventy-Two letters - Story about magic and robots.&lt;/li&gt;
+&lt;li&gt;The Evolution of Human Science - As the name says, a short sci-fi story about the evolution of human science.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I liked this book very much and I am looking forward to read more from Ted Chiang.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>what do you learn from technical videos</title>
+      <link>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</link>
+      <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</guid>
+      <description>&lt;p&gt;I watch many technical videos but I feel that I don&amp;rsquo;t learn much from the technical videos. I have tried some techniques but nothing has worked as much as I want. That&amp;rsquo;s why I thoguht of asking, What and how people learn from technical videos.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>go puzzlers and thoughts</title>
+      <link>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</link>
+      <pubDate>Sun, 04 Dec 2016 07:15:59 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/&#34;&gt;Dave Cheney&lt;/a&gt; gave a talk on &lt;a href=&#34;http://golang.org&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1&#34;&gt;puzzlers&lt;/a&gt;. It is a great talk and I encourage you to give it a good read.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    m := make(map[string]int)
+    m[&amp;quot;foo&amp;quot;]++
+    fmt.Println(m[&amp;quot;foo&amp;quot;])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Zero Values:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Dave asks &amp;ldquo;Is it going to compile and if yes, what will be the output&amp;rdquo;? If you look closely, it is related to &lt;a href=&#34;https://golang.org/ref/spec#The_zero_value&#34;&gt;zero value&lt;/a&gt; for a type. When we initialize &lt;code&gt;m := make(map[string]int)&lt;/code&gt;, both string and int gets &lt;code&gt;&amp;quot;&amp;quot;&lt;/code&gt; and &lt;code&gt;0&lt;/code&gt; values respectively. So increment works as usual.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+import &amp;quot;fmt&amp;quot;
+
+func main() {
+    m := map[string]int{}
+    m[&amp;quot;foo&amp;quot;]++
+    fmt.Println(m[&amp;quot;foo&amp;quot;])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will also work as literal map declaration is same as using &lt;code&gt;make&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Multiple init():&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+func init() {}
+func init() {}
+
+func main() {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Will this compile?&lt;/p&gt;
+
+&lt;p&gt;Yes, because init(), init() can appear multiple times in a package. Any other multiple function declarations will fail.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;package main
+
+func foo() {}
+func foo() {}
+
+func main() {}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Fails with &lt;code&gt;foo redeclared in this block&lt;/code&gt;. &lt;a href=&#34;https://play.golang.org/p/czghNc45Nd&#34;&gt;Playground&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If there are multiple init() in a package, they are called in the order they are declared. Also you can&amp;rsquo;t make an explicit call to &lt;code&gt;init()&lt;/code&gt; in your code, it will fail.&lt;/p&gt;
+
+&lt;p&gt;More info on &lt;a href=&#34;https://golang.org/doc/effective_go.html#init&#34;&gt;init()&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;panic messages are written to &lt;code&gt;os.Stderr&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;language keywords such as &lt;code&gt;default&lt;/code&gt; etc. should not be used as an identifier. &lt;code&gt;string&lt;/code&gt; and &lt;code&gt;len&lt;/code&gt; are predeclared identifiers. Predeclared identifiers are at universe block, so you can can shadow them inside smaller scopes, including the package block. But don&amp;rsquo;t shadow predeclared identifiers as it will make code less readable and error prone.&lt;/p&gt;
+
+&lt;p&gt;There are many more puzzles in Dave&amp;rsquo;s slide. Go have a read.&lt;/p&gt;
+
+&lt;p&gt;Note - The code examples here are used from Dave&amp;rsquo;s talk. My intention is to solve and think about some puzzles here.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Why there is no place like home - thoughts after reading</title>
+      <link>https://varunksaini.com/blog/why-no-place-like-home/</link>
+      <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/why-no-place-like-home/</guid>
+      <description>&lt;p&gt;I really like &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine. Every weekend I get aeon newsletter and there is always some really good article/essay in newsletter. One of these essay that I read today is &lt;a href=&#34;https://aeon.co/essays/why-theres-no-place-like-home-for-anyone-any-more&#34;&gt;why there is no place like home anymore&lt;/a&gt;.This is a really thought provoking essay.&lt;/p&gt;
+
+&lt;p&gt;Essay starts by talking about &lt;a href=&#34;https://www.tumbleweedhouses.com/&#34;&gt;Tiny Homes&lt;/a&gt; that I saw some time back. Tiny home is an interesting concept but I didn&amp;rsquo;t know that you can also save tax on them. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The fact that these homes are on a trailer and don’t touch the ground can exempt their owners from property tax in states where they count not as homes but as a vehicle&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Home is not only a place where you live, you have so many memories, you feel comfortable when in your home. That&amp;rsquo;s why concept of home is very dear to humans(and to animals also). From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Home is where the heart is, and there is no place like home, yet a sense of being at home can come from many sources.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Technological advances and political environment are changing the idea of a home. Things are changing fast and the idea of home is also changing. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;which makes home as important to politics as the idea of class or rights – especially now, when so many people feel displaced, both literally and figuratively, by life in innovation-driven, high-tech, networked capitalism. On top of that, the contest over where home is and who is entitled to live there, is – in the form of the current apparent crisis over migration – driving global political debate.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Sharing economy and companies such as Airbnb(&lt;a href=&#34;https://www.airbnb.com/&#34;&gt;https://www.airbnb.com/&lt;/a&gt;) are turning a private place such as home into something that you share with strangers. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;A bedroom can become an income-earning asset when its role in our lives is reassigned by the click of a mouse on a digital platform.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Young people spend most of their time on devices, even when they are home. For them being online is a form of being at home. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Young people seem to be most at home when they are on – or perhaps ‘in’ – their phones, flicking between apps, surfing their social networks.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Even when people do activities such as eating food etc. they are their devices with them. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In contrast, the table in our family house has to be cleared of an Apple store’s worth of equipment before we can eat.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;People are fearful of losing their homes because of technological advances or influx of immigrants(who are in fact looking a home for themselves). From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;this fear of losing our place in the world to the technologies we’ve created will overshadow the next few decades.&lt;/p&gt;
+
+&lt;p&gt;this easily provoked fear of an imaginary pristine national home being ruined by outsiders.&lt;/p&gt;
+
+&lt;p&gt;from technology to immigration, urbanisation and climate change – the idea of home is central.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;We need an economic system that instead of fueling the fear of losing, creates an environment where everybody feels at home. We want good capitalism that takes everybody forward. From essay -&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;an economic system that helps them build a shared sense of home.&lt;/p&gt;
+
+&lt;p&gt;Capitalism needs once again to give people an orderly sense of home, rather than pitching them into insecurity, as if anything they have might be taken from them in a moment.&lt;/p&gt;
+
+&lt;p&gt;We need a new kind of shared home economics, of home-making and building. The route to power to change society starts at home.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A really good read and makes you realize why you like your home so much.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sunday reading the privileged immigrant</title>
+      <link>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</link>
+      <pubDate>Sat, 26 Nov 2016 20:48:29 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</guid>
+      <description>&lt;p&gt;I was checking some tweets on twitter and came through one that mentioned an article &lt;a href=&#34;http://www.nytimes.com/2016/11/26/opinion/sunday/the-privileged-immigrant.html&#34;&gt;The priviliged immigrant&lt;/a&gt;. The article is written by an author who is of Indian descent. Author talks about hard work her parents did when they came to United States in 1965. Then she talked about her gardener who is a Mexican and seems like an undocumented worker.&lt;/p&gt;
+
+&lt;p&gt;There is a period of uncertainty because of recent elections. Lots of people are talking about immigration. This is an article that talk about some immigrants and two sides of this immigrant debate(legal vs illegal).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>aeon newsletter Nov262016</title>
+      <link>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</link>
+      <pubDate>Sat, 26 Nov 2016 06:05:16 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</guid>
+      <description>&lt;p&gt;I get &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine newsletter every weekend. They generally have some good article that I end up reading. In my quest to log what I read and watch here at my blog, today I am going to write about Aeon newsletter. I will only be writing what I read.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Does &lt;strong&gt;Work mean everything to us&lt;/strong&gt;, That is the question author is asking in &lt;a href=&#34;https://aeon.co/essays/what-if-jobs-are-not-the-solution-but-the-problem&#34;&gt;Fuck Work&lt;/a&gt;, an article I read in &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt;. From very long time we have been believing that work is necessary to build human nature. Author asks what if we stop working. He also talks about inequality in job markets.
+This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/item?id=13037810&#34;&gt;Hacker News&lt;/a&gt;. Lots of interesting comments in hacker news threads.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;How some Chinese moving to mountains to get out of daily grind in big cities. They live a life of hermit there, they read and meditate. This video talks about how important it is to take a break and find the piece of mind. The video is in Chinese but has English subtitles.
+&lt;a href=&#34;https://aeon.co/videos/why-some-chinese-millennials-are-taking-up-the-hermit-s-life-in-the-mountains&#34;&gt;video&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leonard Cohen&amp;rsquo;s poem that talks about dreams and being sleepless. Very interesting and thought provoking.
+&lt;a href=&#34;https://aeon.co/videos/leonard-cohen-turns-an-erotic-fantasy-that-wasn-t-into-a-sleepless-night-s-dream&#34;&gt;video&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

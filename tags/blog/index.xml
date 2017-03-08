@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Never stop learning...</title>
+    <title>Blog on Varun Saini</title>
     <link>https://varunksaini.com/tags/blog/index.xml</link>
-    <description>Recent content in Blog on Never stop learning...</description>
+    <description>Recent content in Blog on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>go slice array allocation gotcha</title>
-      <link>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</link>
+      <link>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</link>
       <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/go-slice-array-allocation-gotcha/</guid>
+      <guid>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</guid>
       <description>&lt;p&gt;Why is memory is allocated differently when you preallocate a slice and an array in golang.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;slicey := make([]byte, 1024*1024)
@@ -54,10 +54,10 @@ func main() {
     
     <item>
       <title>http multiple registration error in go</title>
-      <link>https://varunksaini.com/posts/go-http-multiple-registration-error/</link>
+      <link>https://varunksaini.com/blog/go-http-multiple-registration-error/</link>
       <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/go-http-multiple-registration-error/</guid>
+      <guid>https://varunksaini.com/blog/go-http-multiple-registration-error/</guid>
       <description>&lt;p&gt;Today while adding a simple http endpoint to one of our app, I saw this &lt;code&gt;panic: http: multiple registrations with /myhandler&lt;/code&gt;. My code was simply&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;go func(){
@@ -79,10 +79,10 @@ func main() {
     
     <item>
       <title>send key value messages to kafka from console producer</title>
-      <link>https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/</link>
+      <link>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</link>
       <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/</guid>
+      <guid>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://kafka.apache.org&#34;&gt;Kafka&lt;/a&gt; provides &lt;a href=&#34;https://kafka.apache.org/quickstart#quickstart_send&#34;&gt;kafka-console-producer.sh&lt;/a&gt; to send messages from stdin&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
@@ -104,10 +104,10 @@ message2
     
     <item>
       <title>how to see assembly code for a go program</title>
-      <link>https://varunksaini.com/posts/how-to-get-assembly-for-go-program/</link>
+      <link>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</link>
       <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/how-to-get-assembly-for-go-program/</guid>
+      <guid>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt; makes it very easy to look at assembly code for a go program. You can use &lt;code&gt;go tool compile&lt;/code&gt; or &lt;code&gt;go build&lt;/code&gt; with &lt;code&gt;gcflags&lt;/code&gt; to print the assembly on stdout.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cat hello.go
@@ -300,10 +300,10 @@ type..importpath.fmt. t=9 dupok size=6
     
     <item>
       <title>var block changed to init function in assembly</title>
-      <link>https://varunksaini.com/posts/var-changed-to-init-in-assembly/</link>
+      <link>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</link>
       <pubDate>Wed, 28 Dec 2016 14:29:42 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/var-changed-to-init-in-assembly/</guid>
+      <guid>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</guid>
       <description>&lt;p&gt;TIL - &lt;a href=&#34;https://golang.org&#34;&gt;go&lt;/a&gt; turns a var block in init function behind the scenes.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
@@ -381,10 +381,10 @@ func main() {}
     
     <item>
       <title>rise of the robots by martin ford</title>
-      <link>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</link>
+      <link>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</link>
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/rise-of-the-robots-by-martin-ford/</guid>
+      <guid>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</guid>
       <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
 
 &lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
@@ -393,10 +393,10 @@ func main() {}
     
     <item>
       <title>how do you write error statement</title>
-      <link>https://varunksaini.com/posts/how-do-you-write-error-statement/</link>
+      <link>https://varunksaini.com/blog/how-do-you-write-error-statement/</link>
       <pubDate>Thu, 22 Dec 2016 12:48:00 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/how-do-you-write-error-statement/</guid>
+      <guid>https://varunksaini.com/blog/how-do-you-write-error-statement/</guid>
       <description>&lt;p&gt;In go, when I write an error statement, I don&amp;rsquo;t keep any space between function call and error check statement, such as -&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;something, err := doSoemthing()
@@ -420,10 +420,10 @@ if err != nil {
     
     <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>
-      <link>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
+      <link>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
       <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
+      <guid>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
       <description>&lt;p&gt;I came to know about &lt;a href=&#34;https://en.wikipedia.org/wiki/Ted_Chiang&#34;&gt;Ted Chiang&lt;/a&gt; and his work after movie &lt;a href=&#34;http://www.imdb.com/title/tt2543164/&#34;&gt;Arrival&lt;/a&gt;. I bought &lt;a href=&#34;https://www.amazon.com/dp/B0048EKOP0/&#34;&gt;The story of your life and others&lt;/a&gt; on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.&lt;/p&gt;
 
 &lt;ol&gt;
@@ -443,20 +443,20 @@ if err != nil {
     
     <item>
       <title>what do you learn from technical videos</title>
-      <link>https://varunksaini.com/posts/what-do-you-learn-from-technical-vidoes/</link>
+      <link>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</link>
       <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/what-do-you-learn-from-technical-vidoes/</guid>
+      <guid>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</guid>
       <description>&lt;p&gt;I watch many technical videos but I feel that I don&amp;rsquo;t learn much from the technical videos. I have tried some techniques but nothing has worked as much as I want. That&amp;rsquo;s why I thoguht of asking, What and how people learn from technical videos.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>go puzzlers and thoughts</title>
-      <link>https://varunksaini.com/posts/golang-puzzlers-and-thoughts/</link>
+      <link>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</link>
       <pubDate>Sun, 04 Dec 2016 07:15:59 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/golang-puzzlers-and-thoughts/</guid>
+      <guid>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://dave.cheney.net/&#34;&gt;Dave Cheney&lt;/a&gt; gave a talk on &lt;a href=&#34;http://golang.org&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1&#34;&gt;puzzlers&lt;/a&gt;. It is a great talk and I encourage you to give it a good read.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;package main
@@ -527,10 +527,10 @@ func main() {}
     
     <item>
       <title>Why there is no place like home - thoughts after reading</title>
-      <link>https://varunksaini.com/posts/why-no-place-like-home/</link>
+      <link>https://varunksaini.com/blog/why-no-place-like-home/</link>
       <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/why-no-place-like-home/</guid>
+      <guid>https://varunksaini.com/blog/why-no-place-like-home/</guid>
       <description>&lt;p&gt;I really like &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine. Every weekend I get aeon newsletter and there is always some really good article/essay in newsletter. One of these essay that I read today is &lt;a href=&#34;https://aeon.co/essays/why-theres-no-place-like-home-for-anyone-any-more&#34;&gt;why there is no place like home anymore&lt;/a&gt;.This is a really thought provoking essay.&lt;/p&gt;
 
 &lt;p&gt;Essay starts by talking about &lt;a href=&#34;https://www.tumbleweedhouses.com/&#34;&gt;Tiny Homes&lt;/a&gt; that I saw some time back. Tiny home is an interesting concept but I didn&amp;rsquo;t know that you can also save tax on them. From essay -&lt;/p&gt;
@@ -595,10 +595,10 @@ func main() {}
     
     <item>
       <title>Sunday reading the privileged immigrant</title>
-      <link>https://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</link>
+      <link>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</link>
       <pubDate>Sat, 26 Nov 2016 20:48:29 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/sunday-reading-the-priviliged-immigrant/</guid>
+      <guid>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</guid>
       <description>&lt;p&gt;I was checking some tweets on twitter and came through one that mentioned an article &lt;a href=&#34;http://www.nytimes.com/2016/11/26/opinion/sunday/the-privileged-immigrant.html&#34;&gt;The priviliged immigrant&lt;/a&gt;. The article is written by an author who is of Indian descent. Author talks about hard work her parents did when they came to United States in 1965. Then she talked about her gardener who is a Mexican and seems like an undocumented worker.&lt;/p&gt;
 
 &lt;p&gt;There is a period of uncertainty because of recent elections. Lots of people are talking about immigration. This is an article that talk about some immigrants and two sides of this immigrant debate(legal vs illegal).&lt;/p&gt;
@@ -607,10 +607,10 @@ func main() {}
     
     <item>
       <title>aeon newsletter Nov262016</title>
-      <link>https://varunksaini.com/posts/aeon-newsletter-Nov262016/</link>
+      <link>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</link>
       <pubDate>Sat, 26 Nov 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/aeon-newsletter-Nov262016/</guid>
+      <guid>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</guid>
       <description>&lt;p&gt;I get &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine newsletter every weekend. They generally have some good article that I end up reading. In my quest to log what I read and watch here at my blog, today I am going to write about Aeon newsletter. I will only be writing what I read.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -628,10 +628,10 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
     
     <item>
       <title>Alan Kay interview by Joe Armstrong</title>
-      <link>https://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</link>
+      <link>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</link>
       <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/Alan-Kay-Joe-Armstrong/</guid>
+      <guid>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</guid>
       <description>&lt;p&gt;I watched this great &lt;a href=&#34;https://www.youtube.com/watch?v=fhOHn9TClXY&#34;&gt;video&lt;/a&gt; where &lt;a href=&#34;http://joearms.github.io/&#34;&gt;Joe Armstrong&lt;/a&gt; interviews &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Alan Kay&lt;/a&gt;. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of &lt;strong&gt;cloud&lt;/strong&gt; and &lt;strong&gt;internet of things&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks). According to them, we need to think as real scientists and use scientific methods to solve problems. Also Alan Kay recommends a lots of great books to read in this interview.&lt;/p&gt;
@@ -650,10 +650,10 @@ This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/
     
     <item>
       <title>question about type assertion in go</title>
-      <link>https://varunksaini.com/posts/question-about-type-assertion/</link>
+      <link>https://varunksaini.com/blog/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/question-about-type-assertion/</guid>
+      <guid>https://varunksaini.com/blog/question-about-type-assertion/</guid>
       <description>&lt;p&gt;One of our go app crashed recently because of a bug in &lt;a href=&#34;https://github.com/urfave/cli/&#34;&gt;https://github.com/urfave/cli/&lt;/a&gt;, here is the &lt;a href=&#34;https://github.com/urfave/cli/pull/568&#34;&gt;PR&lt;/a&gt; with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.&lt;/p&gt;
 
 &lt;p&gt;My question is why &lt;code&gt;bar&lt;/code&gt; works but not &lt;code&gt;foo&lt;/code&gt;.&lt;/p&gt;

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Assembly on Never stop learning...</title>
+    <title>Assembly on Varun Saini</title>
     <link>https://varunksaini.com/tags/assembly/index.xml</link>
-    <description>Recent content in Assembly on Never stop learning...</description>
+    <description>Recent content in Assembly on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <atom:link href="https://varunksaini.com/tags/assembly/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>how to see assembly code for a go program</title>
-      <link>https://varunksaini.com/posts/how-to-get-assembly-for-go-program/</link>
+      <link>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</link>
       <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/how-to-get-assembly-for-go-program/</guid>
+      <guid>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://golang.org&#34;&gt;Go&lt;/a&gt; makes it very easy to look at assembly code for a go program. You can use &lt;code&gt;go tool compile&lt;/code&gt; or &lt;code&gt;go build&lt;/code&gt; with &lt;code&gt;gcflags&lt;/code&gt; to print the assembly on stdout.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ cat hello.go

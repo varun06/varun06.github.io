@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="map[]" />
+    <meta name="description" content="Describe your website">
+    <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
+    <title>consul service discovery using golang</title>
+    <meta name="generator" content="Hugo 0.19" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://varunksaini.com/"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/reading/">READING</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://varunksaini.com/blog/consul-service-discovery-golang/">consul service discovery using golang</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          June 11, 2016
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">general</span>
+            
+            <span class="label label-success">blog</span>
+            
+            <span class="label label-success">consul</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<h2 id="what-is-service-discovery">What is Service discovery:</h2>
+
+<p>Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:</p>
+
+<p><em>How do clients determine the IP and port for a service that exist on multiple hosts?</em></p>
+
+<p>Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.</p>
+
+<p>Dynamic service registration and discovery becomes very important in these scenarios in order to avoid service interruption.</p>
+
+<p>There are two sides to the problem of locating services.
+    • Service Registration
+    • and Service Discovery.</p>
+
+<h4 id="service-registration">Service Registration:</h4>
+
+<p>The process of a service registering its location in a central registry. It usually register its host and port and sometimes authentication credentials, protocols, versions numbers, and/or environment details.</p>
+
+<h4 id="service-discovery">Service Discovery:</h4>
+
+<p>The process of a client application querying the central registry to learn of the location of services.</p>
+
+<p>Example of popular service discovery systems are Consul, Zookeeper, etcd etc. Out of these, Consul is the only one that really tries to provide a comprehensive solution for service discovery.</p>
+
+<h4 id="consul">Consul:</h4>
+
+<p>consul is a service discovery tool from <a href="https://www.hashicorp.com/">hashicorp</a>. Consul provides a consistent view of services and configuration. Consul monitors and changes service information based on the health of nodes. Consul provides a REST interface and web UI to see services and service configurations. Consul organizes services in service catalog and provides a DNS/REST/HTTP interface to it.</p>
+
+<ul>
+<li><p><strong>Service Discovery</strong>: Clients of Consul can provide a service, such as API or postgresql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon.</p></li>
+
+<li><p><strong>Health Checking</strong>: Consul clients can provide any number of health checks, either associated with a given service (&ldquo;is the webserver returning 200 OK&rdquo;), or with the local node (&ldquo;is memory utilization below 90%&rdquo;). This information can be used by an operator to monitor cluster health, and it is used by the service discovery components to route traffic away from unhealthy hosts.</p></li>
+
+<li><p><strong>Key/Value Store</strong>: Applications can make use of Consul&rsquo;s hierarchical key/value store for any number of purposes, including dynamic configuration, feature flagging, coordination, leader election, and more. The simple HTTP API makes it easy to use.</p></li>
+
+<li><p><strong>Multi Datacenter</strong>: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.</p></li>
+</ul>
+
+<p>To use Consul you start up an agent process. The Consul agent process is a long running daemon on every member of Consul cluster. The agent process can be run in server mode or client mode. Consul agent clients would run on every physical server or OS virtual machine (if that makes more sense). Client runs on server hosting services. The clients use gossip and RPC calls to stay in sync with Consul.</p>
+
+<p>Consul is built on top of serf, <a href="https://www.serfdom.io/"> a full gossip protocol</a>.</p>
+
+<h2 id="setting-up-a-local-consul-cluster">setting up a local consul cluster</h2>
+
+<p>consul can be downloaded from <a href="https://www.consul.io/downloads.html">consul</a> website . On OSX, if you are using homebrew as a package manager, consul can be installed from homebrew.</p>
+
+<pre><code>brew cask install consul
+</code></pre>
+
+<p>Verify the installation by running:</p>
+
+<pre><code>$ consul
+usage: consul [--version] [--help] &lt;command&gt; [&lt;args&gt;]
+
+Available commands are:
+	agent          Runs a Consul agent
+	configtest     Validate config file
+	event          Fire a new event
+	exec           Executes a command on Consul nodes
+	force-leave    Forces a member of the cluster to enter the &quot;left&quot; state
+	info           Provides debugging information for operators
+	join           Tell Consul agent to join cluster
+	keygen         Generates a new encryption key
+	keyring        Manages gossip layer encryption keys
+	leave          Gracefully leaves the Consul cluster and shuts down
+	lock           Execute a command holding a lock
+	maint          Controls node or service maintenance mode
+	members        Lists the members of a Consul cluster
+	monitor        Stream logs from a Consul agent
+	reload         Triggers the agent to reload configuration files
+	rtt            Estimates network round trip time between nodes
+	version        Prints the Consul version
+	watch          Watch for changes in Consul
+</code></pre>
+
+<p>If you get an error, set your PATH correctly.</p>
+
+<p>After Consul is installed, the agent must be run. The agent can run either in server or client mode. Each datacenter must have at least one server, a cluster of 3 or 5 servers is recommended.</p>
+
+<p>All other agents run in client mode. A client is a very lightweight process that registers services, runs health checks, and forwards queries to servers. The agent must be run on every node that is part of the cluster so that we can get information from every node.</p>
+
+<p><em>-dev</em> will run consul in  dev mode.</p>
+
+<pre><code>consul agent -dev
+</code></pre>
+
+<p>We can use CTRL+C to stop the consul server.</p>
+
+<p>We have a server running, now let&rsquo;s add a service to our consul server.</p>
+
+<h4 id="consul-service">Consul Service:</h4>
+
+<p>A service can be defined by providing a consul <a href="https://www.consul.io/docs/agent/services.html">service definition</a> or by making <a href="https://www.consul.io/docs/agent/http/agent.html#agent_service_register">HTTP calls</a> to consul server.</p>
+
+<h4 id="example-service-definition">Example service definition:</h4>
+
+<pre><code>{
+  &quot;service&quot;: {
+    &quot;name&quot;: &quot;myservice&quot;,
+    &quot;tags&quot;: [&quot;prod&quot;],
+    &quot;address&quot;: &quot;127.0.0.1&quot;,
+    &quot;port&quot;: 8000,
+    &quot;enableTagOverride&quot;: false,
+    &quot;checks&quot;: [
+      {
+        &quot;script&quot;:&quot;check&quot;,
+        &quot;interval&quot;: &quot;10s&quot;
+      }
+    ]
+  }
+  }
+</code></pre>
+
+<h4 id="querying-consul-service">Querying Consul service</h4>
+
+<p>We can query consul service using DNS or HTTP API.</p>
+
+<h4 id="dns-api">DNS API:</h4>
+
+<pre><code>dig @127.0.0.1 -p 8600 myservice.service.consul
+</code></pre>
+
+<h4 id="http-api">HTTP API:</h4>
+
+<pre><code>curl http://localhost:8500/v1/catalog/service/myservice
+</code></pre>
+
+<p>Once we have our server and client up and running. We can use consul to find our services</p>
+
+<h4 id="service-discovery-from-golang">Service Discovery from Golang:</h4>
+
+<p>We can use both DNS and HTTP <a href="https://godoc.org/github.com/hashicorp/consul/api">API</a> to discover service information from consul. I have only used HTTP API and that&rsquo;s what we are going to use today. We create an interface that give us methods to register, deregister, and get services from consul.</p>
+
+<p>Example:</p>
+
+<pre><code>Package consul
+
+import (
+	&quot;fmt&quot;
+	&quot;time&quot;
+
+	consul &quot;github.com/hashicorp/consul/api&quot;
+)
+
+//Client provides an interface for getting data out of Consul
+type Client interface {
+// Get a Service from consul
+	Service(string, string) ([]string, error)
+// Register a service with local agent
+	Register(string, int) error
+// Deregister a service with local agent
+	DeRegister(string) error
+}
+
+type client struct {
+	consul *consul.Client
+}
+
+//NewConsul returns a Client interface for given consul address
+Func NewConsulClient(addr string) (Client, error) {
+	config := consul.DefaultConfig()
+	config.Address = addr
+	c, err := consul.NewClient(config)
+	if err != nil {
+		return nil, err
+	}
+	return &amp;client{consul: c}, nil
+}
+
+// Register a service with consul local agent
+func (c *client) Register(name string, port int) error {
+	reg := &amp;consul.AgentServiceRegistration{
+		ID:   name,
+		Name: name,
+		Port: port,
+	}
+	return c.consul.Agent().ServiceRegister(reg)
+}
+
+// DeRegister a service with consul local agent
+func (c *client) DeRegister(id string) error {
+	return c.consul.Agent().ServiceDeregister(id)
+}
+
+// Service return a service 
+func (c *client) Service(service, tag string) ([]*ServiceEntry, *QueryMeta, error) {
+	passingOnly := true 
+	addrs, meta, err := c.consul.Health().Service(service, tag, passingOnly, nil)
+	if len(addrs) == 0 &amp;&amp; err == nil {
+		return nil, fmt.Errorf(&quot;service ( %s ) was not found&quot;, service)
+	}
+	if err != nil {
+		return nil, err
+	}
+	return addrs, meta, nil
+}
+</code></pre>
+
+<p>Now when we have consul running and we know how to interact with consul with golang. It is time to build .</p>
+
+<p>Also, if you have any question, feel free to ping me <a href="https://twitter.com/varunksaini">@varunksaini</a>.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        February 21, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/go-slice-array-allocation-gotcha/">go slice array allocation gotcha</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 27, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/go-http-multiple-registration-error/">http multiple registration error in go</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 20, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/send-key-value-messages-to-kafka-from-console-producer/">send key value messages to kafka from console producer</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = '';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://varunksaini.com/js/docs.min.js"></script>
+<script src="https://varunksaini.com/js/main.js"></script>
+
+<script src="https://varunksaini.com/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

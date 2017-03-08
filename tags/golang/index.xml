@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on Never stop learning...</title>
+    <title>Golang on Varun Saini</title>
     <link>https://varunksaini.com/tags/golang/index.xml</link>
-    <description>Recent content in Golang on Never stop learning...</description>
+    <description>Recent content in Golang on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <atom:link href="https://varunksaini.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>question about type assertion in go</title>
-      <link>https://varunksaini.com/posts/question-about-type-assertion/</link>
+      <link>https://varunksaini.com/blog/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/question-about-type-assertion/</guid>
+      <guid>https://varunksaini.com/blog/question-about-type-assertion/</guid>
       <description>&lt;p&gt;One of our go app crashed recently because of a bug in &lt;a href=&#34;https://github.com/urfave/cli/&#34;&gt;https://github.com/urfave/cli/&lt;/a&gt;, here is the &lt;a href=&#34;https://github.com/urfave/cli/pull/568&#34;&gt;PR&lt;/a&gt; with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.&lt;/p&gt;
 
 &lt;p&gt;My question is why &lt;code&gt;bar&lt;/code&gt; works but not &lt;code&gt;foo&lt;/code&gt;.&lt;/p&gt;
@@ -65,10 +65,10 @@ func bar() FooFunc {
     
     <item>
       <title>Using if condition in a defer statement</title>
-      <link>https://varunksaini.com/posts/using-if-in-defer/</link>
+      <link>https://varunksaini.com/blog/using-if-in-defer/</link>
       <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
       
-      <guid>https://varunksaini.com/posts/using-if-in-defer/</guid>
+      <guid>https://varunksaini.com/blog/using-if-in-defer/</guid>
       <description>&lt;p&gt;&lt;code&gt;defer&lt;/code&gt; statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;f, err := os.Open(fileName)
@@ -122,10 +122,10 @@ func main() {
     
     <item>
       <title>how not to handle errors in golang</title>
-      <link>https://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</link>
+      <link>https://varunksaini.com/blog/how-not-to-handle-errors-in-golang/</link>
       <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
       
-      <guid>https://varunksaini.com/posts/how-not-to-handle-errors-in-golang/</guid>
+      <guid>https://varunksaini.com/blog/how-not-to-handle-errors-in-golang/</guid>
       <description>&lt;p&gt;People have a love and hate relationship with golang error handling. Golang&amp;rsquo;s use to return values for error handling seems to have as many detractors as admirers. In golang, errors are of immediate interest, so you handle them then and there, so it very common to see code like this -&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;var user User

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kafka on Never stop learning...</title>
+    <title>Kafka on Varun Saini</title>
     <link>https://varunksaini.com/categories/kafka/index.xml</link>
-    <description>Recent content in Kafka on Never stop learning...</description>
+    <description>Recent content in Kafka on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en-US</language>
     <atom:link href="https://varunksaini.com/categories/kafka/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>send key value messages to kafka from console producer</title>
-      <link>https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/</link>
+      <link>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</link>
       <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
       
-      <guid>https://varunksaini.com/posts/send-key-value-messages-to-kafka-from-console-producer/</guid>
+      <guid>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://kafka.apache.org&#34;&gt;Kafka&lt;/a&gt; provides &lt;a href=&#34;https://kafka.apache.org/quickstart#quickstart_send&#34;&gt;kafka-console-producer.sh&lt;/a&gt; to send messages from stdin&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
