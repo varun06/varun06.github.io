@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Videos on Varun Saini</title>
+    <link>https://varunksaini.com/categories/videos/index.xml</link>
+    <description>Recent content in Videos on Varun Saini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <atom:link href="https://varunksaini.com/categories/videos/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>videos</title>
+      <link>https://varunksaini.com/videos/</link>
+      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/videos/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

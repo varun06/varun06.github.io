@@ -6,8 +6,17 @@
     <description>Recent content on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 07 Mar 2017 21:35:43 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 25 Mar 2017 22:55:05 -0400</lastBuildDate>
     <atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>videos</title>
+      <link>https://varunksaini.com/videos/</link>
+      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/videos/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Distributed systems class by Aphyr</title>
@@ -625,27 +634,6 @@ func main() {}
       <description>&lt;p&gt;I was checking some tweets on twitter and came through one that mentioned an article &lt;a href=&#34;http://www.nytimes.com/2016/11/26/opinion/sunday/the-privileged-immigrant.html&#34;&gt;The priviliged immigrant&lt;/a&gt;. The article is written by an author who is of Indian descent. Author talks about hard work her parents did when they came to United States in 1965. Then she talked about her gardener who is a Mexican and seems like an undocumented worker.&lt;/p&gt;
 
 &lt;p&gt;There is a period of uncertainty because of recent elections. Lots of people are talking about immigration. This is an article that talk about some immigrants and two sides of this immigrant debate(legal vs illegal).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>aeon newsletter Nov262016</title>
-      <link>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</link>
-      <pubDate>Sat, 26 Nov 2016 06:05:16 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</guid>
-      <description>&lt;p&gt;I get &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt; magazine newsletter every weekend. They generally have some good article that I end up reading. In my quest to log what I read and watch here at my blog, today I am going to write about Aeon newsletter. I will only be writing what I read.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Does &lt;strong&gt;Work mean everything to us&lt;/strong&gt;, That is the question author is asking in &lt;a href=&#34;https://aeon.co/essays/what-if-jobs-are-not-the-solution-but-the-problem&#34;&gt;Fuck Work&lt;/a&gt;, an article I read in &lt;a href=&#34;https://aeon.co&#34;&gt;Aeon&lt;/a&gt;. From very long time we have been believing that work is necessary to build human nature. Author asks what if we stop working. He also talks about inequality in job markets.
-This article got popular and is in &lt;a href=&#34;https://news.ycombinator.com/item?id=13037810&#34;&gt;Hacker News&lt;/a&gt;. Lots of interesting comments in hacker news threads.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;How some Chinese moving to mountains to get out of daily grind in big cities. They live a life of hermit there, they read and meditate. This video talks about how important it is to take a break and find the piece of mind. The video is in Chinese but has English subtitles.
-&lt;a href=&#34;https://aeon.co/videos/why-some-chinese-millennials-are-taking-up-the-hermit-s-life-in-the-mountains&#34;&gt;video&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Leonard Cohen&amp;rsquo;s poem that talks about dreams and being sleepless. Very interesting and thought provoking.
-&lt;a href=&#34;https://aeon.co/videos/leonard-cohen-turns-an-erotic-fantasy-that-wasn-t-into-a-sleepless-night-s-dream&#34;&gt;video&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://varunksaini.com/videos/</loc>
+    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/distributed-systems-training-by-aphyr/</loc>
     <lastmod>2017-03-07T21:35:43-06:00</lastmod>
   </url>
@@ -556,13 +561,25 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2017-03-07T21:35:43-06:00</lastmod>
+    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://varunksaini.com/tags/video/</loc>
     <lastmod>2016-11-25T20:47:08-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/videos/</loc>
+    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/videos/</loc>
+    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
