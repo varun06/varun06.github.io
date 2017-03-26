@@ -9,6 +9,16 @@
     <atom:link href="https://varunksaini.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Is netflix new facebook?</title>
+      <link>https://varunksaini.com/blog/is-netflix-new-facebook/</link>
+      <pubDate>Sun, 26 Mar 2017 06:18:30 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/is-netflix-new-facebook/</guid>
+      <description>&lt;p&gt;Whenever there is a new show/movie on netflix that I like, I will watch it. Sometimes those shows are 10-13 episodes long and that means, investing 10-13 hours in watching TV. I remember when I started using Facebook, I was spending lots of time on Facebook too, If I wasn&amp;rsquo;t, I was getting FOMO. Same thing is happening with Netflix now, If I watch all those new cool shows, I end up spending way too much time watching TV, If not, then there is FOMO.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>go slice array allocation gotcha</title>
       <link>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</link>
       <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
@@ -437,18 +447,6 @@ Click OK, and you are done.&lt;/p&gt;
       
       <guid>https://varunksaini.com/blog/laptop-repair/</guid>
       <description>&lt;p&gt;I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was &lt;code&gt;kernel panicking&lt;/code&gt; and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the &lt;code&gt;logic board&lt;/code&gt;. Apple charged a flat fee of &lt;code&gt;$310 + tax&lt;/code&gt; for repairs. After repairs, laptop is working fine and I should be back to blooging now.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>good read on golang and generics</title>
-      <link>https://varunksaini.com/blog/good-read-on-golang-and-generics/</link>
-      <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/blog/good-read-on-golang-and-generics/</guid>
-      <description>&lt;p&gt;Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as &lt;a href=&#34;http://blog.jonathanoliver.com/golang-has-generics/&#34;&gt;this&lt;/a&gt;, &lt;a href=&#34;http://bouk.co/blog/idiomatic-generics-in-go/&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://blog.ralch.com/tutorial/golang-code-generation-and-generics/&#34;&gt;this&lt;/a&gt;. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).&lt;/p&gt;
-
-&lt;p&gt;I found &lt;a href=&#34;https://appliedgo.net/generics/&#34;&gt;this&lt;/a&gt; article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.&lt;/p&gt;
 </description>
     </item>
     
