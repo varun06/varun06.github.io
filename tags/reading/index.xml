@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reading on Varun Saini</title>
-    <link>https://varunksaini.com/tags/reading/index.xml</link>
+    <link>https://varunksaini.com/tags/reading/</link>
     <description>Recent content in Reading on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://varunksaini.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>reading list</title>

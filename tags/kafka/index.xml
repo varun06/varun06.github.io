@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kafka on Varun Saini</title>
-    <link>https://varunksaini.com/tags/kafka/index.xml</link>
+    <link>https://varunksaini.com/tags/kafka/</link>
     <description>Recent content in Kafka on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://varunksaini.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Jan 2017 05:40:02 -0600</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>send key value messages to kafka from console producer</title>
@@ -14,23 +17,10 @@
       <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
       
       <guid>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://kafka.apache.org&#34;&gt;Kafka&lt;/a&gt; provides &lt;a href=&#34;https://kafka.apache.org/quickstart#quickstart_send&#34;&gt;kafka-console-producer.sh&lt;/a&gt; to send messages from stdin&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
-message1
-message2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;or file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	for (( i=1; i&amp;lt;=10; i++ )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.separator=:&amp;quot;; done;
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Kafka provides kafka-console-producer.sh to send messages from stdin
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2  or file.
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt  messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&amp;lt;=10; i++ )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.</description>
     </item>
     
   </channel>

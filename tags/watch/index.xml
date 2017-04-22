@@ -2,32 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Watch on Varun Saini</title>
-    <link>https://varunksaini.com/tags/watch/index.xml</link>
+    <link>https://varunksaini.com/tags/watch/</link>
     <description>Recent content in Watch on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://varunksaini.com/tags/watch/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Nov 2016 20:47:08 -0600</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/tags/watch/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Alan Kay interview by Joe Armstrong</title>
-      <link>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</link>
+      <link>https://varunksaini.com/blog/alan-kay-joe-armstrong/</link>
       <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</guid>
-      <description>&lt;p&gt;I watched this great &lt;a href=&#34;https://www.youtube.com/watch?v=fhOHn9TClXY&#34;&gt;video&lt;/a&gt; where &lt;a href=&#34;http://joearms.github.io/&#34;&gt;Joe Armstrong&lt;/a&gt; interviews &lt;a href=&#34;https://en.wikipedia.org/wiki/Alan_Kay&#34;&gt;Alan Kay&lt;/a&gt;. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of &lt;strong&gt;cloud&lt;/strong&gt; and &lt;strong&gt;internet of things&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks). According to them, we need to think as real scientists and use scientific methods to solve problems. Also Alan Kay recommends a lots of great books to read in this interview.&lt;/p&gt;
-
-&lt;p&gt;Following are some quotes from interview:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;The best way to predict the future is to invent it.&lt;/p&gt;
-
-&lt;p&gt;Inverse Vandalism.&lt;/p&gt;
-
-&lt;p&gt;Not Big Data, but Big meaning.&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>https://varunksaini.com/blog/alan-kay-joe-armstrong/</guid>
+      <description>I watched this great video where Joe Armstrong interviews Alan Kay. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of cloud and internet of things.
+Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks).</description>
     </item>
     
   </channel>

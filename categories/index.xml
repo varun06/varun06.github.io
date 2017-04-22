@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Varun Saini</title>
+    <link>https://varunksaini.com/categories/</link>
+    <description>Recent content in Categories on Varun Saini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://varunksaini.com/categories/about/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/categories/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
+      <link>https://varunksaini.com/categories/book/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>https://varunksaini.com/categories/general/</link>
+      <pubDate>Sun, 26 Mar 2017 06:18:30 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/categories/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://varunksaini.com/categories/go/</link>
+      <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://varunksaini.com/categories/kafka/</link>
+      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://varunksaini.com/categories/programming/</link>
+      <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reading</title>
+      <link>https://varunksaini.com/categories/reading/</link>
+      <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Review</title>
+      <link>https://varunksaini.com/categories/review/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technical</title>
+      <link>https://varunksaini.com/categories/technical/</link>
+      <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/technical/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Videos</title>
+      <link>https://varunksaini.com/categories/videos/</link>
+      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/categories/videos/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

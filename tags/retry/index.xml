@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Retry on Varun Saini</title>
+    <link>https://varunksaini.com/tags/retry/</link>
+    <description>Recent content in Retry on Varun Saini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 16 Apr 2017 08:01:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/tags/retry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>backoff and  retry in go</title>
+      <link>https://varunksaini.com/blog/backoff-retry-in-golang/</link>
+      <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/backoff-retry-in-golang/</guid>
+      <description>Failure is a way of life. Requests(http or others..) can fail for many reasons. Decision to stop or retry can be very critical for applications. backoff algorithms provide a way to backoff and retry on a failure. There are two popular methods to backoff, constant backoff and exponential backoff.
+I use backoff library, which is a Go port of exponential backoff algorithm from Google&amp;rsquo;s HTTP Client Library for Java.</description>
+    </item>
+    
+  </channel>
+</rss>

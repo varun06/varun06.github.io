@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Book on Varun Saini</title>
-    <link>https://varunksaini.com/categories/book/index.xml</link>
+    <link>https://varunksaini.com/categories/book/</link>
     <description>Recent content in Book on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <atom:link href="https://varunksaini.com/categories/book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Dec 2016 18:38:20 -0600</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/categories/book/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>rise of the robots by martin ford</title>
@@ -14,33 +17,17 @@
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
       
       <guid>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</guid>
-      <description>&lt;p&gt;I have been reading &lt;a href=&#34;https://www.amazon.com/Rise-Robots-Technology-Threat-Jobless/dp/0465097537/&#34;&gt;Rise of the robots&lt;/a&gt; from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a &lt;a href=&#34;http://www.nytimes.com/2016/12/21/upshot/the-long-term-jobs-killer-is-not-china-its-automation.html?_r=0&#34;&gt;job killer&lt;/a&gt;. So the book talk about some of the actions that can be taken to help society in general. The book also talks about Artificial Intelligence, nano-technology etc.&lt;/p&gt;
-
-&lt;p&gt;Overall a good book and I will recommend it for sure.&lt;/p&gt;
-</description>
+      <description>I have been reading Rise of the robots from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a job killer. So the book talk about some of the actions that can be taken to help society in general.</description>
     </item>
     
     <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>
-      <link>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</link>
+      <link>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</link>
       <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</guid>
-      <description>&lt;p&gt;I came to know about &lt;a href=&#34;https://en.wikipedia.org/wiki/Ted_Chiang&#34;&gt;Ted Chiang&lt;/a&gt; and his work after movie &lt;a href=&#34;http://www.imdb.com/title/tt2543164/&#34;&gt;Arrival&lt;/a&gt;. I bought &lt;a href=&#34;https://www.amazon.com/dp/B0048EKOP0/&#34;&gt;The story of your life and others&lt;/a&gt; on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Story of your life - My favorite story and Arrival movie is based on this story. In this story a linguist tries to communicate with aliens. Story is about how it works and impacts her life and people around her. A fascinating story and you need to give couple of read to understand everything that is going on in the story.&lt;/li&gt;
-&lt;li&gt;Tower of Babylon - My second favorite story from the book, this story make you think about religion and religious beliefs. I still can&amp;rsquo;t visualize how that tower was built, but it is a sci-fi for a reason.&lt;/li&gt;
-&lt;li&gt;Liking What you see: A Documentary - This short story asks a question &amp;ldquo;what will happen if everybody looks same&amp;rdquo;. Very interesting read and I will love to see this turned into a movie.&lt;/li&gt;
-&lt;li&gt;Division by Zero - How a mathematician goes insane when she finds that she can prove something that deemed impossible in mathematics. Another great read.&lt;/li&gt;
-&lt;li&gt;Hell is the absence of God - Another sci-fi story that asks questions about religious beliefs. This story also has angels.&lt;/li&gt;
-&lt;li&gt;Understand - A therapy gone wrong and we have a super human with high cognitive functioning.&lt;/li&gt;
-&lt;li&gt;Seventy-Two letters - Story about magic and robots.&lt;/li&gt;
-&lt;li&gt;The Evolution of Human Science - As the name says, a short sci-fi story about the evolution of human science.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I liked this book very much and I am looking forward to read more from Ted Chiang.&lt;/p&gt;
-</description>
+      <guid>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</guid>
+      <description>I came to know about Ted Chiang and his work after movie Arrival. I bought The story of your life and others on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.
+ Story of your life - My favorite story and Arrival movie is based on this story.</description>
     </item>
     
   </channel>

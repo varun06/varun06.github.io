@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://varunksaini.com/blog/backoff-retry-in-golang/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/is-netflix-new-facebook/</loc>
     <lastmod>2017-03-26T06:18:30-05:00</lastmod>
   </url>
@@ -57,7 +62,7 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-Ted-Chiang/</loc>
+    <loc>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</loc>
     <lastmod>2016-12-10T06:05:16-06:00</lastmod>
   </url>
   
@@ -82,12 +87,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/aeon-newsletter-Nov262016/</loc>
+    <loc>https://varunksaini.com/blog/aeon-newsletter-nov262016/</loc>
     <lastmod>2016-11-26T06:05:16-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/Alan-Kay-Joe-Armstrong/</loc>
+    <loc>https://varunksaini.com/blog/alan-kay-joe-armstrong/</loc>
     <lastmod>2016-11-25T20:47:08-06:00</lastmod>
   </url>
   
@@ -142,12 +147,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-19July/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-19july/</loc>
     <lastmod>2016-07-16T06:25:13-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-9July/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-9july/</loc>
     <lastmod>2016-07-09T05:46:45-05:00</lastmod>
   </url>
   
@@ -167,12 +172,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-2July/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-2july/</loc>
     <lastmod>2016-07-02T20:13:23-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-26June/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-26june/</loc>
     <lastmod>2016-06-26T06:36:44-05:00</lastmod>
   </url>
   
@@ -182,7 +187,7 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-19June/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-19june/</loc>
     <lastmod>2016-06-19T05:52:29-05:00</lastmod>
   </url>
   
@@ -192,7 +197,7 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-12June/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-12june/</loc>
     <lastmod>2016-06-12T06:33:33-05:00</lastmod>
   </url>
   
@@ -202,12 +207,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-4June/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-4june/</loc>
     <lastmod>2016-06-04T16:45:52-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-29May/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-29may/</loc>
     <lastmod>2016-05-29T08:38:58-05:00</lastmod>
   </url>
   
@@ -217,12 +222,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-22May/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-22may/</loc>
     <lastmod>2016-05-22T06:20:37-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/weekly-reading-15May/</loc>
+    <loc>https://varunksaini.com/blog/weekly-reading-15may/</loc>
     <lastmod>2016-05-15T08:43:02-05:00</lastmod>
   </url>
   
@@ -242,7 +247,7 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/the-Go-Programming-language-book-review/</loc>
+    <loc>https://varunksaini.com/blog/the-go-programming-language-book-review/</loc>
     <lastmod>2015-12-12T19:59:32-06:00</lastmod>
   </url>
   
@@ -272,12 +277,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/using-sectionReader/</loc>
+    <loc>https://varunksaini.com/blog/using-sectionreader/</loc>
     <lastmod>2015-05-31T06:30:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/notes-from-Go-In-Action-book/</loc>
+    <loc>https://varunksaini.com/blog/notes-from-go-in-action-book/</loc>
     <lastmod>2015-05-25T19:58:00-06:00</lastmod>
   </url>
   
@@ -327,12 +332,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/Particles_of_the_universe/</loc>
+    <loc>https://varunksaini.com/blog/particles_of_the_universe/</loc>
     <lastmod>2014-12-13T06:32:30-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/the_Ultimate_Bar_Book/</loc>
+    <loc>https://varunksaini.com/blog/the_ultimate_bar_book/</loc>
     <lastmod>2014-12-13T06:29:30-04:00</lastmod>
   </url>
   
@@ -362,17 +367,17 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/goProgrammingBook/</loc>
+    <loc>https://varunksaini.com/blog/goprogrammingbook/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/GustavoDuarte/</loc>
+    <loc>https://varunksaini.com/blog/gustavoduarte/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/blog/pragmaticProgrammer/</loc>
+    <loc>https://varunksaini.com/blog/pragmaticprogrammer/</loc>
     <lastmod>2014-11-23T12:12:18-04:00</lastmod>
   </url>
   
@@ -387,13 +392,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/about/</loc>
+    <loc>https://varunksaini.com/tags/about/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/about/</loc>
+    <loc>https://varunksaini.com/categories/about/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -401,6 +406,12 @@
   <url>
     <loc>https://varunksaini.com/tags/assembly/</loc>
     <lastmod>2017-01-02T18:38:12-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/backoff/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -418,7 +429,7 @@
   
   <url>
     <loc>https://varunksaini.com/blog/</loc>
-    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -436,6 +447,7 @@
   
   <url>
     <loc>https://varunksaini.com/categories/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -452,13 +464,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/general/</loc>
+    <loc>https://varunksaini.com/tags/general/</loc>
     <lastmod>2017-03-26T06:18:30-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/general/</loc>
+    <loc>https://varunksaini.com/categories/general/</loc>
     <lastmod>2017-03-26T06:18:30-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -470,14 +482,14 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/go/</loc>
-    <lastmod>2017-01-27T15:02:51-06:00</lastmod>
+    <loc>https://varunksaini.com/tags/go/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/go/</loc>
-    <lastmod>2017-01-27T15:02:51-06:00</lastmod>
+    <loc>https://varunksaini.com/categories/go/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -488,13 +500,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/kafka/</loc>
+    <loc>https://varunksaini.com/tags/kafka/</loc>
     <lastmod>2017-01-20T05:40:02-06:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/kafka/</loc>
+    <loc>https://varunksaini.com/categories/kafka/</loc>
     <lastmod>2017-01-20T05:40:02-06:00</lastmod>
     <priority>0</priority>
   </url>
@@ -518,14 +530,14 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/reading/</loc>
-    <lastmod>2016-12-03T11:39:24-06:00</lastmod>
+    <loc>https://varunksaini.com/tags/reading/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/reading/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <loc>https://varunksaini.com/categories/reading/</loc>
+    <lastmod>2016-12-03T11:39:24-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -536,8 +548,8 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/review/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
+    <loc>https://varunksaini.com/tags/retry/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -548,7 +560,14 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/categories/review/</loc>
+    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/tags/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -566,7 +585,7 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -577,13 +596,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/categories/videos/</loc>
+    <loc>https://varunksaini.com/tags/videos/</loc>
     <lastmod>2017-03-25T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/videos/</loc>
+    <loc>https://varunksaini.com/categories/videos/</loc>
     <lastmod>2017-03-25T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
