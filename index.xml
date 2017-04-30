@@ -31,11 +31,11 @@ I use backoff library, which is a Go port of exponential backoff algorithm from 
     </item>
     
     <item>
-      <title>videos</title>
-      <link>https://varunksaini.com/videos/</link>
+      <title>meetup</title>
+      <link>https://varunksaini.com/meetup/</link>
       <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
       
-      <guid>https://varunksaini.com/videos/</guid>
+      <guid>https://varunksaini.com/meetup/</guid>
       <description></description>
     </item>
     
