@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>File on Varun Saini</title>
+    <link>https://varunksaini.com/tags/file/</link>
+    <description>Recent content in File on Varun Saini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 27 Jun 2017 08:01:00 -0500</lastBuildDate>
+    
+	<atom:link href="https://varunksaini.com/tags/file/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>writing files completely to disk in go</title>
+      <link>https://varunksaini.com/blog/write-file-completely-go/</link>
+      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/write-file-completely-go/</guid>
+      <description>When we write a file, how we make sure that file is written completely to disk. One of the way is write a temporary file first and then rename it, rename operation is atomic, so we get a complete file.
+tempFile, err := ioutil.TempFile(path, name) if err != nil { return err } defer tempFile.Close() tempname := tempFile.Name() defer os.Remove(tempname) //Write to temp file err = os.Rename(tempname, filename) if err !</description>
+    </item>
+    
+  </channel>
+</rss>

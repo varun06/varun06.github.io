@@ -7,7 +7,7 @@
     <meta name="author" content="map[]" />
     <meta name="description" content="personal blog">
     <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
-    <title>http multiple registration error in go</title>
+    <title>writing files completely to disk in go</title>
     <meta name="generator" content="Hugo 0.24" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
@@ -51,58 +51,47 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://varunksaini.com/blog/go-http-multiple-registration-error/">http multiple registration error in go</a></strong>
+            <strong><a href="https://varunksaini.com/blog/write-file-completely-go/">writing files completely to disk in go</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          January 27, 2017
+          June 27, 2017
             &nbsp;&nbsp;
             
             <span class="label label-success">go</span>
             
-            <span class="label label-success">blog</span>
+            <span class="label label-success">file</span>
             
-            <span class="label label-success">TIL</span>
+            <span class="label label-success">write</span>
             
           </h4>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <p>Today while adding a simple http endpoint to one of our app, I saw this <code>panic: http: multiple registrations with /myhandler</code>. My code was simply</p>
+              <p>When we write a file, how we make sure that file is written completely to disk. One of the way is write a <strong>temporary</strong> file first and then rename it, rename operation is atomic, so we get a complete file.</p>
 
-<pre><code>go func(){
-	http.Handler(&quot;/request&quot;, requesthandler)
-	http.ListenAndServe(&quot;:9000&quot;, nil)
+<pre><code>tempFile, err := ioutil.TempFile(path, name)
+if err != nil {
+    return err
 }
-</code></pre>
+defer tempFile.Close()
 
-<p>I read some official documentation and asked around. I came to know it happens if you use <code>defaultHTTPMux</code>, which doesn&rsquo;t support multiple registrations. This can be fixed with</p>
+tempname := tempFile.Name()
+defer os.Remove(tempname)
 
-<pre><code>go func(){
-	mux := http.NewServeMux()
-	mux.Handler(&quot;/request&quot;, requesthandler)
-	http.ListenAndServe(&quot;:9000&quot;, nil)
+//Write to temp file
+
+err = os.Rename(tempname, filename)
+if err != nil {
+    return err
 }
 </code></pre>
 
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
-                
-                  <div class="row">
-                    <div class="col-sm-4 col-md-4 col-lg-4">
-                      <h6 style="text-align: right">
-                        June 27, 2017
-                      </h6>
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8">
-                      <h6 style="text-align: left">
-                        <strong><a href="/blog/write-file-completely-go/">writing files completely to disk in go</a></strong>
-                      </h6>
-                    </div>
-                  </div>
                 
                   <div class="row">
                     <div class="col-sm-4 col-md-4 col-lg-4">
@@ -120,12 +109,25 @@
                   <div class="row">
                     <div class="col-sm-4 col-md-4 col-lg-4">
                       <h6 style="text-align: right">
-                        February 21, 2017
+                        January 27, 2017
                       </h6>
                     </div>
                     <div class="col-sm-8 col-md-8 col-lg-8">
                       <h6 style="text-align: left">
-                        <strong><a href="/blog/go-slice-array-allocation-gotcha/">go slice array allocation gotcha</a></strong>
+                        <strong><a href="/blog/go-http-multiple-registration-error/">http multiple registration error in go</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 2, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/how-to-get-assembly-for-go-program/">how to see assembly code for a go program</a></strong>
                       </h6>
                     </div>
                   </div>
