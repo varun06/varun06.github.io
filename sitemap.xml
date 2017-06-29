@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/blog/run-go-test-multiple-times/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/write-file-completely-go/</loc>
     <lastmod>2017-06-27T08:01:00-05:00</lastmod>
   </url>
@@ -429,13 +434,13 @@
   
   <url>
     <loc>https://varunksaini.com/tags/blog/</loc>
-    <lastmod>2017-02-21T16:19:52-06:00</lastmod>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://varunksaini.com/blog/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -507,7 +512,7 @@
   
   <url>
     <loc>https://varunksaini.com/tags/golang/</loc>
-    <lastmod>2016-11-23T09:47:56-06:00</lastmod>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -543,7 +548,7 @@
   
   <url>
     <loc>https://varunksaini.com/categories/programming/</loc>
-    <lastmod>2016-11-01T21:10:59-05:00</lastmod>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -597,7 +602,7 @@
   
   <url>
     <loc>https://varunksaini.com/categories/technical/</loc>
-    <lastmod>2017-02-21T16:19:52-06:00</lastmod>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -609,7 +614,7 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
     <priority>0</priority>
   </url>
   

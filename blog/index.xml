@@ -6,10 +6,21 @@
     <description>Recent content in Blogs on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 27 Jun 2017 08:01:00 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jun 2017 21:10:59 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>running a single test multiple times in golang</title>
+      <link>https://varunksaini.com/blog/run-go-test-multiple-times/</link>
+      <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/run-go-test-multiple-times/</guid>
+      <description>go provides a great standard library for testing. To test a function/method, just create name_test.go in same package and write you tests.
+Go also provides go test tool to run the tests in a package. running go test in a package runs all the tests in that package and go test -run &amp;lt;testname&amp;gt; runs only given test.
+But what if you want to run test multiple times, go test to rescue,</description>
+    </item>
     
     <item>
       <title>writing files completely to disk in go</title>

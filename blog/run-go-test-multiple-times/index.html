@@ -7,7 +7,7 @@
     <meta name="author" content="map[]" />
     <meta name="description" content="personal blog">
     <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
-    <title>what do you learn from technical videos</title>
+    <title>running a single test multiple times in golang</title>
     <meta name="generator" content="Hugo 0.24.1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
@@ -51,56 +51,36 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/">what do you learn from technical videos</a></strong>
+            <strong><a href="https://varunksaini.com/blog/run-go-test-multiple-times/">running a single test multiple times in golang</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          December 7, 2016
+          June 29, 2017
             &nbsp;&nbsp;
             
-            <span class="label label-success">general</span>
+            <span class="label label-success">golang</span>
             
             <span class="label label-success">blog</span>
-            
-            <span class="label label-success">question</span>
             
           </h4>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <p>I watch many technical videos but I feel that I don&rsquo;t learn much from the technical videos. I have tried some techniques but nothing has worked as much as I want. That&rsquo;s why I thoguht of asking, What and how people learn from technical videos.</p>
+              <p><a href="https://golang.org">go</a> provides a great standard library for <a href="https://golang.org/pkg/testing/">testing</a>. To test a function/method, just create <code>name_test.go</code> in same package and write you tests.</p>
+
+<p>Go also provides <code>go test</code> tool to run the tests in a package. running <code>go test</code> in a package runs all the tests in that package and <code>go test -run &lt;testname&gt;</code> runs only given test.</p>
+
+<p>But what if you want to run test multiple times, <code>go test</code> to rescue,</p>
+
+<p><code>go test -run &lt;testname&gt; -count 100</code></p>
+
+<p>will run given test 100 times.</p>
 
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
-                
-                  <div class="row">
-                    <div class="col-sm-4 col-md-4 col-lg-4">
-                      <h6 style="text-align: right">
-                        June 29, 2017
-                      </h6>
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8">
-                      <h6 style="text-align: left">
-                        <strong><a href="/blog/run-go-test-multiple-times/">running a single test multiple times in golang</a></strong>
-                      </h6>
-                    </div>
-                  </div>
-                
-                  <div class="row">
-                    <div class="col-sm-4 col-md-4 col-lg-4">
-                      <h6 style="text-align: right">
-                        March 26, 2017
-                      </h6>
-                    </div>
-                    <div class="col-sm-8 col-md-8 col-lg-8">
-                      <h6 style="text-align: left">
-                        <strong><a href="/blog/is-netflix-new-facebook/">Is netflix new facebook?</a></strong>
-                      </h6>
-                    </div>
-                  </div>
                 
                   <div class="row">
                     <div class="col-sm-4 col-md-4 col-lg-4">
@@ -111,6 +91,32 @@
                     <div class="col-sm-8 col-md-8 col-lg-8">
                       <h6 style="text-align: left">
                         <strong><a href="/blog/go-slice-array-allocation-gotcha/">go slice array allocation gotcha</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 27, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/go-http-multiple-registration-error/">http multiple registration error in go</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        January 20, 2017
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/send-key-value-messages-to-kafka-from-console-producer/">send key value messages to kafka from console producer</a></strong>
                       </h6>
                     </div>
                   </div>
