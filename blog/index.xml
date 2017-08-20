@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Generics - I Wish You Were Here...</title>
+      <link>https://varunksaini.com/blog/use-case-for-generics/</link>
+      <pubDate>Sat, 19 Aug 2017 07:02:42 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/use-case-for-generics/</guid>
+      <description>This is an experience report about how generics in go could have helped us in one of our use case. There is a lot that can be/has been said about generics is go. I am going to keep this post short and simple and going to document a use case where I think generics in go might have been useful for us.
+I like how easy it is to build command line applications in go, We have a common framework for building command line apps.</description>
+    </item>
+    
+    <item>
       <title>run tests one package at a time in go</title>
       <link>https://varunksaini.com/blog/run-test-for-single-package/</link>
       <pubDate>Sat, 19 Aug 2017 07:02:42 -0500</pubDate>
