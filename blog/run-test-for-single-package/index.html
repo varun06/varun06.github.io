@@ -7,7 +7,7 @@
     <meta name="author" content="map[]" />
     <meta name="description" content="personal blog">
     <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
-    <title>killing process with child and grandchild processes  in Go</title>
+    <title>run tests one package at a time in go</title>
     <meta name="generator" content="Hugo 0.26" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
@@ -51,12 +51,12 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://varunksaini.com/blog/kiling-processes-in-go/">killing process with child and grandchild processes  in Go</a></strong>
+            <strong><a href="https://varunksaini.com/blog/run-test-for-single-package/">run tests one package at a time in go</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          October 4, 2015
+          August 19, 2017
             &nbsp;&nbsp;
             
           </h4>
@@ -64,44 +64,17 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <p>Go provides <a href="https://golang.org/pkg/os/exec/">exec</a> package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.</p>
+              <p><code>go test</code> runs concurrently on package level. If I have 2 packages, package A and package B with tests in them, when you run <code>go test</code>, tests in package A and package B will run concurrently at the same time. It is done to run tests faster and make the feedback process fast. But sometime there is need to run tests in sequential order (to keep shared state etc.).</p>
 
-<p>We can start a process&hellip;
-<pre>
-    cmd := exec.Command(execPath, args&hellip;)
-</pre>
-and then process can be killed after certain given time&hellip;.
-<pre>
-    case &lt;-time.After(2 * time.Second):
-        if err := cmd.Process.Kill(); err != nil {
-            return 0, fmt.Errorf(&ldquo;Failed to kill process: %v&rdquo;, err)
-        }
-</pre></p>
+<p><code>go build</code> provides a flag to do that, that flag is <code>-p</code>.</p>
 
-<p>But there is a problem with this code, what if the process start other <a href="https://en.wikipedia.org/wiki/Child_process">child processes</a> and then those processes start new processes(grandchild processes). Once you kill the parent process those child processes become orphan and get a <code>PPID=1</code>. In my particular scenario I had 4-5 orphaned processes from killed parent process and then these orphaned processes were creating an issue with subsequent run of the program.</p>
+<pre><code>-p n
+		the number of programs, such as build commands or
+		test binaries, that can be run in parallel.
+		The default is the number of CPUs available.
+</code></pre>
 
-<p>I started looking around and found this well written article on this topic <a href="https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773">killing a child process and all of its children in Go</a>.This article helped me understand how to setup a process group and kill the process.</p>
-
-<p>But The solution suggested in that article was not working in my case. Then I asked this question on <a href="https://forum.golangbridge.org/t/killing-child-process-on-timeout-in-go-code/995">Go forum</a> and gophers helped me to find the solution.</p>
-
-<p>Now I create a process group when I create the command, then I kill the whole group on timeout and it kills the process as well as the children of the process.</p>
-
-<pre>
-    cmd := exec.Command(execPath, args...)
-    //create a new process group
-    cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
-</pre>
-
-<p><pre>
-    case &lt;-time.After(timeout):
-        pgid, err := syscall.Getpgid(cmd.Process.Pid)
-        if err == nil {
-            if err := syscall.Kill(-pgid, syscall.SIGKILL); err != nil {
-                &hellip;
-            }
-        }
-</pre>
-We get the process group id <code>syscall.Getpgid</code> and then kill the process by passing -pgid to <code>syscall.Kill</code>. We use -pgid because we want to target the group id and not the particular process id.</p>
+<p>When using <code>-p</code> flag with <code>go test</code>, such as <code>go test -p 1 ./...</code> will run tests for one package at a time, the total running time for tests is going to be close to the sum of all individual package tests plus build times.</p>
 
               <hr>
               <div class="related-posts">

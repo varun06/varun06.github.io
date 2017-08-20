@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 29 Jun 2017 21:10:59 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 19 Aug 2017 07:02:42 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>run tests one package at a time in go</title>
+      <link>https://varunksaini.com/blog/run-test-for-single-package/</link>
+      <pubDate>Sat, 19 Aug 2017 07:02:42 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/run-test-for-single-package/</guid>
+      <description>go test runs concurrently on package level. If I have 2 packages, package A and package B with tests in them, when you run go test, tests in package A and package B will run concurrently at the same time. It is done to run tests faster and make the feedback process fast. But sometime there is need to run tests in sequential order (to keep shared state etc.).
+go build provides a flag to do that, that flag is -p.</description>
+    </item>
     
     <item>
       <title>running a single test multiple times in golang</title>
