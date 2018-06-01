@@ -7,7 +7,7 @@
     <meta name="author" content="map[]" />
     <meta name="description" content="personal blog">
     <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
-    <title>Find Mimimum Value in an array in go</title>
+    <title>Running Kafka in Docker on Mac</title>
     <meta name="generator" content="Hugo 0.41" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
@@ -51,12 +51,12 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://varunksaini.com/blog/find-minimum-value-array-go/">Find Mimimum Value in an array in go</a></strong>
+            <strong><a href="https://varunksaini.com/blog/running_kafka_in_docker_on_mac/">Running Kafka in Docker on Mac</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          November 26, 2014
+          June 1, 2018
             &nbsp;&nbsp;
             
           </h4>
@@ -64,30 +64,89 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <pre><code class="language-go">package main
+              <p>Running Confluent kafka stack in docker on macOS is little bit hacky. Confluent doesn&rsquo;t support docker on macOS yet.
+But here is how I made it work on my local macOS. I am using a docker compose file and it brings up a single node/single broker kafka cluster.</p>
 
-import (
-	&quot;fmt&quot;
-)
+<ol>
+<li>Save the below file to <code>docker-compose.yml</code> file on your local.</li>
+</ol>
 
-func main() {
-	x := []int{
-		48, 96, 86, 68,
-		57, 82, 63, 70,
-		37, 34, 83, 27,
-		19, 97,  9, 17,
-	}
+<pre><code>---
+version: '2'
 
-	min:= x[0]
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
 
-	for _, value := range x {
-		if value &lt; min {
-			min = value
-		}
-	}
-	fmt.Println(min)
-}
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    hostname: kafka-host
+    ports:
+      - 9092:9092
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://docker.for.mac.host.internal:29092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: &quot;true&quot;
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:latest
+    hostname: sr-host
+    ports:
+      - 8081:8081
+    depends_on:
+      - zookeeper
+      - kafka
+    environment:
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
+      SCHEMA_REGISTRY_HOST_NAME: sr-host
+      SCHEMA_REGISTRY_LISTENERS: http://sr-host:8081
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
+
+  kafka-rest:
+    image: confluentinc/cp-kafka-rest:latest
+    hostname: kr-host
+    ports:
+      - 8082:8082
+    depends_on:
+      - zookeeper
+      - kafka
+      - schema-registry
+    environment:
+      KAFKA_REST_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_REST_LISTENERS: http://kr-host:8082
+      KAFKA_REST_SCHEMA_REGISTRY_URL: http://sr-host:8081
+      KAFKA_REST_HOST_NAME: kr-host
+      KAFKA_REST_BOOTSTRAP_SERVERS: host.docker.internal:9092
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
 </code></pre>
+
+<ol>
+<li>Run <code>docker-compose up</code></li>
+<li>Ensure the processes are running by running <code>docker-compose ps</code></li>
+<li>Add <code>machine_ip host.docker.internal</code> to your /etc/hosts file. Such as <code>10.0.1.1 host.docker.internal</code>
+Note - machine ip changes with network, so update the <code>hosts</code> file accordingly</li>
+</ol>
+
+<p>And there it is, connect on <code>localhost:9092</code> and start producing to your kafka cluster in docker.</p>
 
               <hr>
               <div class="related-posts">

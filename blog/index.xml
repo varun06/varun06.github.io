@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 19 Aug 2017 07:02:42 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 10:16:26 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Running Kafka in Docker on Mac</title>
+      <link>https://varunksaini.com/blog/running_kafka_in_docker_on_mac/</link>
+      <pubDate>Fri, 01 Jun 2018 10:16:26 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/blog/running_kafka_in_docker_on_mac/</guid>
+      <description>Running Confluent kafka stack in docker on macOS is little bit hacky. Confluent doesn&amp;rsquo;t support docker on macOS yet. But here is how I made it work on my local macOS. I am using a docker compose file and it brings up a single node/single broker kafka cluster.
+ Save the below file to docker-compose.yml file on your local.  --- version: &#39;2&#39; services: zookeeper: image: confluentinc/cp-zookeeper:latest ports: - 2181:2181 environment: ZOOKEEPER_CLIENT_PORT: 2181 ZOOKEEPER_TICK_TIME: 2000 extra_hosts: - &amp;quot;moby:127.</description>
+    </item>
     
     <item>
       <title>Generics - I Wish You Were Here...</title>
