@@ -6,10 +6,20 @@
     <description>Recent content in Blogs on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 01 Jun 2018 10:16:26 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 20 Jan 2019 16:15:33 -0600</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reverese String in Go</title>
+      <link>https://varunksaini.com/blog/reverese-string-in-go/</link>
+      <pubDate>Sun, 20 Jan 2019 16:15:33 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/reverese-string-in-go/</guid>
+      <description>A simple function to reverse string in go. In go, a string is a read only slice of bytes. We use that fact and convert given string to a slice of byte. Once we have a slice of bytes, reversing it is just a matter of swapping individual bytes. In the end we convert the byte slice to string and return it.
+func reverse(s string) string { b := []byte(s) i, j := 0, len(s)-1 for i &amp;lt; j { b[i], b[j] = b[j], b[i] i++ j-- } return string(b) }  </description>
+    </item>
     
     <item>
       <title>Running Kafka in Docker on Mac</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/blog/reverese-string-in-go/</loc>
+    <lastmod>2019-01-20T16:15:33-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/running_kafka_in_docker_on_mac/</loc>
     <lastmod>2018-06-01T10:16:26-05:00</lastmod>
   </url>
@@ -455,7 +460,7 @@
   
   <url>
     <loc>https://varunksaini.com/blog/</loc>
-    <lastmod>2018-06-01T10:16:26-05:00</lastmod>
+    <lastmod>2019-01-20T16:15:33-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -629,7 +634,7 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2018-06-01T10:16:26-05:00</lastmod>
+    <lastmod>2019-01-20T16:15:33-06:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="map[]" />
+    <meta name="description" content="personal blog">
+    <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
+    <title>Go Lang notes</title>
+    <meta name="generator" content="Hugo 0.26" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://varunksaini.com/"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/reading/">READING LIST</a></li>
+        
+        <li><a href="/meetup/">GO MEETUP VIDEOS</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://varunksaini.com/blog/notes-from-go-in-action-book/">Go Lang notes</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          May 25, 2015
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>I got <a href="http://www.manning.com/ketelsen/">Go In Action</a> book from <a href="https://twitter.com/goinggodotnet">William Kennedy</a>. I was reading the book last week and I have a habit of taking some noted while reading. The book takes a very pragmatic approach to teach <a href="https://golang.org/">Go</a> and has very good code  examples. I am sharing some of the notes I took while reading the book. If anybody find the notes interesting, he/she can check the book also.</p>
+
+<ol>
+<li>The empty interface is an interface implemented by every type.Interfaces allow you to express the capabilities of a type. If a type implements an interface, it means that a type has a specific set of capabilities.</li>
+<li>In Go, if your type implements the methods of an interface, it can be used anywhere that interface is expected, no declaration required.
+One of the most common interfaces you will use in Go is the io.Reader. The io.Reader interface provides a simple way to declare that your type has data to be read in a way that other functions in the standard library understand.
+For the build tools to produce an executable, the function <strong>main</strong> must be declared and it becomes the entry point for the program.</li>
+<li>If our main function does not exist in package main, the build tools will not produce an executable.</li>
+<li>When we import code from the standard library, we only need to reference the name of the package unlike when we import code from outside of the standard library.</li>
+<li>The compiler will always look for the packages we import at the locations referenced by the <strong>GOROOT</strong> and <strong>GOPATH</strong> environment variables
+In Go, identifiers are either exported or unexported from a package. An exported identifier can be directly accessed by code in other packages when the respective package is imported. These identifiers start with a capital letter. Unexported identifiers start with a lowercase letter and can&rsquo;t be directly accessed by code in other packages.</li>
+<li>In Go, all variables are initialized to their zero value. For numeric types that value is 0, for strings it is an empty string, for boolean it is false and for pointers the zero value is nil. When it comes to reference types, there are underlying data structures that are initialized to their zero values. However, variables declared as a reference type set to their zero value will return the value of nil.</li>
+<li>A slice is a reference type that implements a dynamic array. We use slices in Go to work with lists of data.</li>
+<li>Channels are also a reference type in Go like maps and slices, but channels implement a queue of typed values that are used to communicate data between goroutines. Channels provide inherent synchronization mechanisms to make communication safe.</li>
+<li>Pointer variables are great for sharing variables between functions. They allow functions to access and change the state of a variable that was declared within the scope of a different function and possibly a different goroutine.</li>
+<li>In Go, all variables are passed by value. Since the value of a pointer variable is the address to the memory being pointed to, passing pointer variables between functions is still considered a pass by value.</li>
+<li>All .go files must declare the package that they belong to as the first line of the file excluding whitespace and comments. Packages are contained in a single directory. You may not have multiple packages in the same directory, nor may you split a package across multiple directories. This means that all .go files in a single directory must declare the same package name.</li>
+<li>The compiler will stop searching once it finds a package that satisfies the import statement. The important thing to remember is that the Go installation directory is the first place the compiler looks, then each directory listed in your GOPATH in the order that they are listed.</li>
+<li>you could have a utilities package for handling network code in one directory and a utilities package for handling text files in another directory. You can import both packages in the same program without confusion by placing an alias name in front of the package location. This process is called package aliasing because you are changing the name of the imported package when you import it.</li>
+<li>Blank Identifier: The <strong>_ (underscore character)</strong> is known as the blank identifier and has many uses within Go. It&rsquo;s used when you want to throw away the assignment of a value, including the assigment of an import to it&rsquo;s package name, or ignoring return values from a function when you&rsquo;re only interested in the others.</li>
+<li>Each package has the ability to provide an <strong>init method</strong> that is invoked at the beginning of execution time. This method allows you to setup your package, initialize variables, or any other bootstrapping you may need for your package.</li>
+<li>The <strong>go run</strong> command both builds and executes the program.</li>
+<li>An array in Go is a fixed length data type that contains a contiguous block of elements of the same type. This could be a built-in type such as integers and strings, or it can be a struct type.</li>
+<li>When variables in Go are declared, they are always initialized with their zero value for their respective type and arrays are no different. When an array is initialized, each individual element that belongs to the array is initialized to its zero value.</li>
+<li>If the length is given as &hellip;, Go will identify the length of the array based on the number of elements that are initialized:</li>
+<li><strong>An array is a value in Go</strong>. This means we can use it in an assignment operation. The variable name denotes the entire array and therefore, an array can be assigned to other arrays of the same type.</li>
+<li>Passing an array between functions can be an expensive operation in terms of memory and performance. When we pass variables between functions, they are always passed by value. When our variable is an array, this means the entire array, regardless of its size, is copied and passed to the function.</li>
+<li>Remember, if we specify a value inside the [ ] operator, we are creating an array. If we don&rsquo;t specify a value, we are creating a slice:</li>
+<li>For slice[i:j] with an underlying array of capacity k, <strong>Length: j - i</strong> and <strong>Capacity: k - i</strong></li>
+<li>One of the advantages of using a slice over an array is that we can grow the capacity of our slice as needed. Go takes care of all the operational details when we use the built-in function append.</li>
+<li>The append operation is clever when growing the capacity of the underlying array. Capacity is always doubled when the existing capacity of the slice is under one thousand (1k) elements. Once the number of elements goes over 1k, the capacity is grown by a factor of 1.25 or 25%. This growth algorithm may change in the language over time.</li>
+<li>The built-in function append is also a variadic function. This means we can pass multiple values to be appended in a single slice call. If we use the (&hellip;) operator, we can append all the elements of one slice into another</li>
+<li>Since a slice is a collection, we can iterate over the elements. Go has a special keyword called <strong>range</strong> that we use in conjunction with the keyword <strong>for</strong> to iterate over slices.</li>
+<li>The keyword range when iterating over a slice will return two values. The first value is the <strong>index</strong> position and the second <strong>value</strong> is a copy of the value in that index position.</li>
+<li>It is important to know that range is making a copy of the value, not returning a reference. If we use the address of the value variable as a pointer to each element, we will be making a mistake.</li>
+<li>Passing a slice between two functions requires nothing more than passing the slice by value. Since the size of a slice is small, it is cheap to copy and pass between functions.</li>
+<li>On a 64 bit architecture, a slice requires 24 bytes of memory. The pointer field requires 8 bytes and the length and capacity fields require 8 bytes respectively. Since the data associated with a slice is contained in the underlying array, there are no problems passing a copy of a slice to any function. Only the slice is being copied, not the underlying array.</li>
+<li>A map is a data structure that provides us with an unordered collection of key/value pairs.</li>
+<li>The strength of a map is its ability to retrieve data quickly based on the key. A key works like an index, pointing to the value we associate with that key.</li>
+<li>A bool requires 1 byte of memory (8 bits) and represents a boolean value of true or false. (Computers can’t address anything less than a byte, that’s why it is 1 byte and not 1 bit).</li>
+<li>Some types get their representation based on the architecture of the machine the code is built for. A value of type int for example, can either have a size of 8 bytes (64 bits) or 4 bytes (32 bits) depending on the architecture.</li>
+<li>When we declare variables, the value that the variable represents is always initialized. The value can be initialized with a specific value or it can be initialized to its zero value, which is the default value for that variables type. For numeric types, the zero value would be 0, for strings it would be empty and for booleans it would be false. In the case of a struct, the zero value would apply to all the different fields in the struct.</li>
+<li>When a function has a receiver, we call that function a method. (could be a pointer receiver or value receiver).</li>
+<li>There are two types of receivers in Go, <strong>value receivers</strong> and <strong>pointer receivers</strong>.</li>
+<li>When we declare a method using a value receiver, the method will always be operating against a copy of the value used to make the method call.</li>
+<li>Value receivers operate on a copy of the value used to make the method call and pointer receivers operate on the actual value.</li>
+<li>We can also call methods that are declared with a pointer receiver using a value.</li>
+<li>Think about types as having one of two natures: <strong>primitive</strong> or <strong>non-primitive</strong>. Primitive types create values that should not be shared. When different parts of our program need a primitive value, they should receive a copy and not a pointer to the value. Values that are created using a built-in or reference type exhibit this primitive nature.</li>
+<li>Non-primitive types create values that should be shared. When different parts of our program need a non-primitive value, they should receive a pointer to the value and not a copy. Values that are created using struct types exhibit this non-primitive nature.</li>
+<li>The built-in types are the set of types that are provided to us by the language. We know them as the set of numeric, string and boolean types. These types have a primitive nature to them. Because of this, values based on these types should be copied when passed to functions and methods.</li>
+<li>Struct types can be implemented to have either a primitive or non-primitive nature.</li>
+<li>Reference types in Go are the set of slice, map, channel, interface and function types.</li>
+<li>When we declare a variable from one of these types, the value that is created is called a header value. All the different header values from the different reference types contain a pointer to an underlying data structure. As well, each reference type also contains a set of unique fields that are used to manage the underlying data structure. We never share reference type values because the header value is designed to be copied. The header value contains a pointer, therefore you can pass a copy of any header value and share the underlying data structure intrinsically.</li>
+<li>Interfaces are types that just declare behavior. This behavior is never implemented by the interface type directly, but instead by user-defined types via methods. When a user-defined type implements the set of methods declared by an interface type, values of the user-defined type can be assigned to values of the interface type. This assignment stores the value of the user-defined type into the interface value.</li>
+<li>It says that values of type T only have as part of its method set, methods declared with a value receiver. However, pointers of type T have as part of its method set, methods declared with both value and pointer receivers.</li>
+<li>It says that if you implement an interface using a pointer receiver, then only pointers of that type implement the interface. If you implement an interface using a value receiver, then both values and pointers of that type implement the interface.</li>
+<li>Go allows you to take existing types and both extend or change their behavior. This capability is important for code reuse and for changing the behavior of an existing type to suit a new need. This is accomplished through <strong>type embedding</strong>. It works by taking an existing type and declaring that type within the declaration of a new struct type. The type that is embedded is then called an inner type of the new &ldquo;outer&rdquo; type.</li>
+<li>When inner type as well as outer type has two separate implementation for an interface, inner type’s implementation is not promoted for outer type. otherwise it is promoted.</li>
+<li>When you are writing code that will live in its own package, it is good practice to name the package the same as the folder the code is in. All the Go tooling expects this convention so it is a good practice to follow.</li>
+<li>When an identifier starts with a lowercase letter, the identifier is unexported or unknown to code outside the package. When an identifier starts with an uppercase letter, it is exported or known to code outside the package.</li>
+<li>The Go runtime has a sophisticated piece of software called the <strong>scheduler</strong> that manages all the goroutines that are created and need processor time. The scheduler is special because it sits on top of the operating system and controls everything related to the running of goroutines. No scheduling is done by the operating system.</li>
+<li>Go runtime limits each program to a <strong>maximum of 10,000</strong> threads by default. This value can be changed by calling the SetMaxThreads function from the runtime package. If any program attempts to use more threads, the program crashes.</li>
+<li>A <strong>WaitGroup</strong> is a semaphore that can be used to maintain a record of running goroutines. When the value of a WaitGroup is greater than zero, the Wait method will block.</li>
+<li>The keyword <strong>defer</strong> is used to schedule other functions to be called when the function returns.</li>
+<li>The runtime package provides support for changing Go runtime configuration parameters.</li>
+<li>When two or more goroutines have unsynchronized access to a shared resource and attempt to read and write to that resource at the same time, we have what is called a race condition.</li>
+<li><strong>Atomic functions</strong> provide a low-level locking mechanisms for synchronizing access to integers and pointers.</li>
+<li>Another way to synchronize access to a shared resource is by using a mutex. A mutex is named after the concept of mutual exclusion. A mutex is used to create a critical section around code that ensures only one goroutine at a time can execute that code section.</li>
+<li>When a resource needs to be shared between goroutines, channels act as a conduit between the goroutines and provide a mechanism that guarantees a synchronous exchange. When declaring a channel, the type of data that will be shared needs to be specified. Values and pointers of built-in, named, struct and reference types can be shared through a channel.</li>
+<li>An <strong>unbuffered channel</strong> is a channel with no capacity to hold any value before it is received. These types of channels require both a sending and receiving goroutine to be ready at the same instant before any send or receive operation can complete.</li>
+<li>A <strong>buffered channel</strong> is a channel with capacity to hold one or more values before they are received. These types of channels don&rsquo;t force goroutines to be ready at the same instant to perform sends and receives. There are also different conditions for when a send or receive does block. A receive will only block if there is no value in the channel to receive. A send will only block if there is no available buffer to place the value being sent. This leads to the one big difference between unbuffered and buffered channels. An unbuffered channel provides a guarantee that an exchange between two goroutines is performed at the instant the send and receive take place. A buffered channel has no such guarantee.</li>
+<li>The Fatal family of functions are used to write a log message and then terminate the program using the <strong>os.Exit(1)</strong> function call. The Panic family of functions are used to write a log message and then issue a panic, which unless recovered, will cause the program to terminate and stack trace. The Print family of functions are the standard way to write log messages.</li>
+<li>One nice thing about the log package, is that loggers are multi goroutine safe. This means that multiple goroutines at the same time can call these functions from the same logger value without the writes colliding with each other.</li>
+</ol>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://varunksaini.com/js/docs.min.js"></script>
+<script src="https://varunksaini.com/js/main.js"></script>
+
+<script src="https://varunksaini.com/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

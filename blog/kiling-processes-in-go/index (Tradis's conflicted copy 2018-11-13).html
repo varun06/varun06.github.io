@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="map[]" />
+    <meta name="description" content="personal blog">
+    <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
+    <title>killing process with child and grandchild processes  in Go</title>
+    <meta name="generator" content="Hugo 0.26" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://varunksaini.com/"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/reading/">READING LIST</a></li>
+        
+        <li><a href="/meetup/">GO MEETUP VIDEOS</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://varunksaini.com/blog/kiling-processes-in-go/">killing process with child and grandchild processes  in Go</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          October 4, 2015
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>Go provides <a href="https://golang.org/pkg/os/exec/">exec</a> package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.</p>
+
+<p>We can start a process&hellip;
+<pre>
+    cmd := exec.Command(execPath, args&hellip;)
+</pre>
+and then process can be killed after certain given time&hellip;.
+<pre>
+    case &lt;-time.After(2 * time.Second):
+        if err := cmd.Process.Kill(); err != nil {
+            return 0, fmt.Errorf(&ldquo;Failed to kill process: %v&rdquo;, err)
+        }
+</pre></p>
+
+<p>But there is a problem with this code, what if the process start other <a href="https://en.wikipedia.org/wiki/Child_process">child processes</a> and then those processes start new processes(grandchild processes). Once you kill the parent process those child processes become orphan and get a <code>PPID=1</code>. In my particular scenario I had 4-5 orphaned processes from killed parent process and then these orphaned processes were creating an issue with subsequent run of the program.</p>
+
+<p>I started looking around and found this well written article on this topic <a href="https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773">killing a child process and all of its children in Go</a>.This article helped me understand how to setup a process group and kill the process.</p>
+
+<p>But The solution suggested in that article was not working in my case. Then I asked this question on <a href="https://forum.golangbridge.org/t/killing-child-process-on-timeout-in-go-code/995">Go forum</a> and gophers helped me to find the solution.</p>
+
+<p>Now I create a process group when I create the command, then I kill the whole group on timeout and it kills the process as well as the children of the process.</p>
+
+<pre>
+    cmd := exec.Command(execPath, args...)
+    //create a new process group
+    cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
+</pre>
+
+<p><pre>
+    case &lt;-time.After(timeout):
+        pgid, err := syscall.Getpgid(cmd.Process.Pid)
+        if err == nil {
+            if err := syscall.Kill(-pgid, syscall.SIGKILL); err != nil {
+                &hellip;
+            }
+        }
+</pre>
+We get the process group id <code>syscall.Getpgid</code> and then kill the process by passing -pgid to <code>syscall.Kill</code>. We use -pgid because we want to target the group id and not the particular process id.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://varunksaini.com/js/docs.min.js"></script>
+<script src="https://varunksaini.com/js/main.js"></script>
+
+<script src="https://varunksaini.com/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

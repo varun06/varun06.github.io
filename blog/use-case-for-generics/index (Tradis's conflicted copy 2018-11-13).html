@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="map[]" />
+    <meta name="description" content="personal blog">
+    <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
+    <title>Generics - I Wish You Were Here...</title>
+    <meta name="generator" content="Hugo 0.26" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://varunksaini.com/"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/reading/">READING LIST</a></li>
+        
+        <li><a href="/meetup/">GO MEETUP VIDEOS</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://varunksaini.com/blog/use-case-for-generics/">Generics - I Wish You Were Here...</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          August 19, 2017
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>This is an <a href="https://github.com/golang/go/wiki/experiencereports">experience report</a> about how <a href="https://en.wikipedia.org/wiki/Generic_programming">generics</a> in <a href="https://golang.org/">go</a> could have helped us in one of our use case. There is a lot that can be/has been said about <code>generics</code> is <code>go</code>. I am going to keep this post short and simple and going to document a use case where I think <code>generics</code> in go might have been useful for us.</p>
+
+<p>I like how easy it is to build command line applications in <code>go</code>, We have a common framework for building command line apps. Different command line applications need to have different configuration, that are passed to common framework. This is where the need for <code>generics</code> pop up, as you can see <code>Configuration</code> type(in code below) is an <code>interface{}</code> and we need to do <a href="https://golang.org/ref/spec#Type_assertions">Type Assertion</a> such as <code>cfg := configuration.(*appConfig)</code>, to get the application configuration.</p>
+
+<pre><code>type (
+	//Configuration is a marker interface to use because we don't have generics
+	//It is used when passing a configuration object around
+	Configuration interface{}
+
+	//Application is a struct that holds the definition of the application to run
+	Application struct {
+		Name          string
+		Description   string
+		Version       string
+		Options       []cli.Flag
+		Subcommands   []cli.Command
+		Configuration Configuration
+	}
+)
+</code></pre>
+
+<p>If <code>go</code> had generics, we could have a generic type instead of an <code>interface{}</code> for the Configuration type.</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://varunksaini.com/js/docs.min.js"></script>
+<script src="https://varunksaini.com/js/main.js"></script>
+
+<script src="https://varunksaini.com/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>
