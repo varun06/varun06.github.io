@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/blog/two-dimensional-slice-in-go/</loc>
+    <lastmod>2019-01-22T06:55:44-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/blog/reverese-integer-in-go/</loc>
+    <lastmod>2019-01-20T16:15:45-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/reverese-string-in-go/</loc>
     <lastmod>2019-01-20T16:15:33-06:00</lastmod>
   </url>
@@ -460,7 +470,7 @@
   
   <url>
     <loc>https://varunksaini.com/blog/</loc>
-    <lastmod>2019-01-20T16:15:33-06:00</lastmod>
+    <lastmod>2019-01-22T06:55:44-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -634,7 +644,7 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2019-01-20T16:15:33-06:00</lastmod>
+    <lastmod>2019-01-22T06:55:44-06:00</lastmod>
     <priority>0</priority>
   </url>
   
