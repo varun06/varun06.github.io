@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 22 Jan 2019 06:55:44 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 26 Jan 2019 11:56:37 -0600</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Find Celebrity Problem in Go</title>
+      <link>https://varunksaini.com/blog/find-celebrity-problem-in-go/</link>
+      <pubDate>Sat, 26 Jan 2019 11:56:37 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/blog/find-celebrity-problem-in-go/</guid>
+      <description>Problem Statement  Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them. Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: &amp;ldquo;Hi, A.</description>
+    </item>
     
     <item>
       <title>Two Dimensional Slice in Go</title>

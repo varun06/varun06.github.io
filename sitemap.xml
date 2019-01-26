@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/blog/find-celebrity-problem-in-go/</loc>
+    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/two-dimensional-slice-in-go/</loc>
     <lastmod>2019-01-22T06:55:44-06:00</lastmod>
   </url>
@@ -470,7 +475,7 @@
   
   <url>
     <loc>https://varunksaini.com/blog/</loc>
-    <lastmod>2019-01-22T06:55:44-06:00</lastmod>
+    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -644,7 +649,7 @@
   
   <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2019-01-22T06:55:44-06:00</lastmod>
+    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
     <priority>0</priority>
   </url>
   
