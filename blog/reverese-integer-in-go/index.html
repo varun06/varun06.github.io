@@ -66,7 +66,7 @@
             <div class="blogpost">
               <p>a simple function to reverse integer in go.</p>
 
-<pre><code>//negative numbers are not handled
+<pre><code class="language-go">//negative numbers are not handled
 func reverse(num int) int {
 	z := 0
 	for num &gt; 0 {
@@ -75,6 +75,33 @@ func reverse(num int) int {
 	}
 	return z
 }
+</code></pre>
+
+<pre><code class="language-go">//negative numbers and 32 bit integer overflow is handled
+func reverse(x int) int {
+    isNegative := false
+    maxInt32 := 1&lt;&lt;31 - 1
+    if x &lt; 0 {
+        isNegative = true
+        x = -x
+    }
+    
+    res := 0
+    for x &gt; 0 {
+        res = res*10 + x%10
+        x /= 10
+    }
+    
+    if res &gt; maxInt32 {
+        return 0
+    }
+    
+    if isNegative {
+        return -res
+    }
+    return res 
+}
+
 </code></pre>
 
               <hr>
