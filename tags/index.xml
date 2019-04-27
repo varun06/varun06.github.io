@@ -6,49 +6,13 @@
     <description>Recent content in Tags on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jun 2017 21:10:59 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>https://varunksaini.com/tags/about/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://varunksaini.com/tags/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Assembly</title>
-      <link>https://varunksaini.com/tags/assembly/</link>
-      <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/assembly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Backoff</title>
-      <link>https://varunksaini.com/tags/backoff/</link>
-      <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/backoff/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bash</title>
-      <link>https://varunksaini.com/tags/bash/</link>
-      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/bash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
+      <title>blog</title>
       <link>https://varunksaini.com/tags/blog/</link>
       <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
       
@@ -57,70 +21,7 @@
     </item>
     
     <item>
-      <title>Career</title>
-      <link>https://varunksaini.com/tags/career/</link>
-      <pubDate>Sat, 20 Feb 2016 06:57:49 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/career/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Consul</title>
-      <link>https://varunksaini.com/tags/consul/</link>
-      <pubDate>Sat, 11 Jun 2016 06:23:57 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/consul/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Errors</title>
-      <link>https://varunksaini.com/tags/errors/</link>
-      <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/errors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>File</title>
-      <link>https://varunksaini.com/tags/file/</link>
-      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/file/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>https://varunksaini.com/tags/general/</link>
-      <pubDate>Sun, 26 Mar 2017 06:18:30 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://varunksaini.com/tags/git/</link>
-      <pubDate>Sat, 22 Oct 2016 07:35:43 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://varunksaini.com/tags/go/</link>
-      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
+      <title>golang</title>
       <link>https://varunksaini.com/tags/golang/</link>
       <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
       
@@ -129,106 +30,25 @@
     </item>
     
     <item>
-      <title>Kafka</title>
-      <link>https://varunksaini.com/tags/kafka/</link>
-      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
+      <title>file</title>
+      <link>https://varunksaini.com/tags/file/</link>
+      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
       
-      <guid>https://varunksaini.com/tags/kafka/</guid>
+      <guid>https://varunksaini.com/tags/file/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Meetup</title>
-      <link>https://varunksaini.com/tags/meetup/</link>
-      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
+      <title>go</title>
+      <link>https://varunksaini.com/tags/go/</link>
+      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
       
-      <guid>https://varunksaini.com/tags/meetup/</guid>
+      <guid>https://varunksaini.com/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Parental Controls</title>
-      <link>https://varunksaini.com/tags/parental-controls/</link>
-      <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/parental-controls/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Question</title>
-      <link>https://varunksaini.com/tags/question/</link>
-      <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/question/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reading</title>
-      <link>https://varunksaini.com/tags/reading/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://varunksaini.com/tags/reading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Recruitment</title>
-      <link>https://varunksaini.com/tags/recruitment/</link>
-      <pubDate>Sat, 20 Feb 2016 06:57:49 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/recruitment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Retry</title>
-      <link>https://varunksaini.com/tags/retry/</link>
-      <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/retry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Review</title>
-      <link>https://varunksaini.com/tags/review/</link>
-      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/review/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Til</title>
-      <link>https://varunksaini.com/tags/til/</link>
-      <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Video</title>
-      <link>https://varunksaini.com/tags/video/</link>
-      <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/video/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Watch</title>
-      <link>https://varunksaini.com/tags/watch/</link>
-      <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/watch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Write</title>
+      <title>write</title>
       <link>https://varunksaini.com/tags/write/</link>
       <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
       
@@ -237,11 +57,191 @@
     </item>
     
     <item>
-      <title>Youtube</title>
+      <title>backoff</title>
+      <link>https://varunksaini.com/tags/backoff/</link>
+      <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/backoff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>retry</title>
+      <link>https://varunksaini.com/tags/retry/</link>
+      <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/retry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://varunksaini.com/tags/general/</link>
+      <pubDate>Sun, 26 Mar 2017 06:18:30 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meetup</title>
+      <link>https://varunksaini.com/tags/meetup/</link>
+      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/tags/meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TIL</title>
+      <link>https://varunksaini.com/tags/til/</link>
+      <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://varunksaini.com/tags/bash/</link>
+      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kafka</title>
+      <link>https://varunksaini.com/tags/kafka/</link>
+      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>assembly</title>
+      <link>https://varunksaini.com/tags/assembly/</link>
+      <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/assembly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>https://varunksaini.com/tags/review/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>question</title>
+      <link>https://varunksaini.com/tags/question/</link>
+      <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/question/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video</title>
+      <link>https://varunksaini.com/tags/video/</link>
+      <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/video/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>watch</title>
+      <link>https://varunksaini.com/tags/watch/</link>
+      <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/watch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parental controls</title>
+      <link>https://varunksaini.com/tags/parental-controls/</link>
+      <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/parental-controls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>youtube</title>
       <link>https://varunksaini.com/tags/youtube/</link>
       <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
       
       <guid>https://varunksaini.com/tags/youtube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>errors</title>
+      <link>https://varunksaini.com/tags/errors/</link>
+      <pubDate>Thu, 27 Oct 2016 10:40:33 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/errors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://varunksaini.com/tags/git/</link>
+      <pubDate>Sat, 22 Oct 2016 07:35:43 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>https://varunksaini.com/tags/about/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/tags/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>https://varunksaini.com/tags/reading/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>consul</title>
+      <link>https://varunksaini.com/tags/consul/</link>
+      <pubDate>Sat, 11 Jun 2016 06:23:57 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/consul/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>career</title>
+      <link>https://varunksaini.com/tags/career/</link>
+      <pubDate>Sat, 20 Feb 2016 06:57:49 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recruitment</title>
+      <link>https://varunksaini.com/tags/recruitment/</link>
+      <pubDate>Sat, 20 Feb 2016 06:57:49 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/recruitment/</guid>
       <description></description>
     </item>
     

@@ -6,67 +6,13 @@
     <description>Recent content in Categories on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 02 Oct 2016 22:55:05 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jun 2017 21:10:59 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>About</title>
-      <link>https://varunksaini.com/categories/about/</link>
-      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
-      <guid>https://varunksaini.com/categories/about/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Book</title>
-      <link>https://varunksaini.com/categories/book/</link>
-      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/categories/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>https://varunksaini.com/categories/general/</link>
-      <pubDate>Sun, 26 Mar 2017 06:18:30 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/categories/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://varunksaini.com/categories/go/</link>
-      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kafka</title>
-      <link>https://varunksaini.com/categories/kafka/</link>
-      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/categories/kafka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Meetup</title>
-      <link>https://varunksaini.com/categories/meetup/</link>
-      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
-      
-      <guid>https://varunksaini.com/categories/meetup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
+      <title>programming</title>
       <link>https://varunksaini.com/categories/programming/</link>
       <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
       
@@ -75,16 +21,61 @@
     </item>
     
     <item>
-      <title>Reading</title>
-      <link>https://varunksaini.com/categories/reading/</link>
-      <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
+      <title>technical</title>
+      <link>https://varunksaini.com/categories/technical/</link>
+      <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
       
-      <guid>https://varunksaini.com/categories/reading/</guid>
+      <guid>https://varunksaini.com/categories/technical/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Review</title>
+      <title>go</title>
+      <link>https://varunksaini.com/categories/go/</link>
+      <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://varunksaini.com/categories/general/</link>
+      <pubDate>Sun, 26 Mar 2017 06:18:30 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/categories/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meetup</title>
+      <link>https://varunksaini.com/categories/meetup/</link>
+      <pubDate>Sat, 25 Mar 2017 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/categories/meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kafka</title>
+      <link>https://varunksaini.com/categories/kafka/</link>
+      <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>book</title>
+      <link>https://varunksaini.com/categories/book/</link>
+      <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/categories/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
       <link>https://varunksaini.com/categories/review/</link>
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
       
@@ -93,11 +84,20 @@
     </item>
     
     <item>
-      <title>Technical</title>
-      <link>https://varunksaini.com/categories/technical/</link>
-      <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
+      <title>reading</title>
+      <link>https://varunksaini.com/categories/reading/</link>
+      <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
       
-      <guid>https://varunksaini.com/categories/technical/</guid>
+      <guid>https://varunksaini.com/categories/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>https://varunksaini.com/categories/about/</link>
+      <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
+      
+      <guid>https://varunksaini.com/categories/about/</guid>
       <description></description>
     </item>
     

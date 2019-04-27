@@ -3,8 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/blog/</loc>
+    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/find-celebrity-problem-in-go/</loc>
     <lastmod>2019-01-26T11:56:37-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/</loc>
+    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -38,8 +50,68 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/categories/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/blog/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/golang/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/programming/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/run-go-test-multiple-times/</loc>
     <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/technical/</loc>
+    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/file/</loc>
+    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/go/</loc>
+    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/go/</loc>
+    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/write/</loc>
+    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -48,13 +120,49 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/backoff/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/backoff-retry-in-golang/</loc>
     <lastmod>2017-04-16T08:01:00-05:00</lastmod>
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/retry/</loc>
+    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/is-netflix-new-facebook/</loc>
     <lastmod>2017-03-26T06:18:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/general/</loc>
+    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/general/</loc>
+    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/meetup/</loc>
+    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/meetup/</loc>
+    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -73,13 +181,43 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/til/</loc>
+    <lastmod>2017-01-27T15:02:51-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/go-http-multiple-registration-error/</loc>
     <lastmod>2017-01-27T15:02:51-06:00</lastmod>
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/bash/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/kafka/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/kafka/</loc>
+    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</loc>
     <lastmod>2017-01-20T05:40:02-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/assembly/</loc>
+    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -98,6 +236,24 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/categories/book/</loc>
+    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/categories/review/</loc>
+    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/review/</loc>
+    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</loc>
     <lastmod>2016-12-25T18:38:20-06:00</lastmod>
   </url>
@@ -110,6 +266,12 @@
   <url>
     <loc>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</loc>
     <lastmod>2016-12-10T06:05:16-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/question/</loc>
+    <lastmod>2016-12-07T12:15:46-06:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -128,6 +290,12 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/categories/reading/</loc>
+    <lastmod>2016-12-03T11:39:24-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</loc>
     <lastmod>2016-11-26T20:48:29-06:00</lastmod>
   </url>
@@ -143,8 +311,26 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/video/</loc>
+    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/watch/</loc>
+    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/question-about-type-assertion/</loc>
     <lastmod>2016-11-23T09:47:56-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/parental-controls/</loc>
+    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -153,13 +339,31 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/youtube/</loc>
+    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/using-if-in-defer/</loc>
     <lastmod>2016-11-01T21:10:59-05:00</lastmod>
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/errors/</loc>
+    <lastmod>2016-10-27T10:40:33-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/how-not-to-handle-errors-in-golang/</loc>
     <lastmod>2016-10-27T10:40:33-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/git/</loc>
+    <lastmod>2016-10-22T07:35:43-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -173,8 +377,26 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/categories/about/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/about/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/about/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/reading/</loc>
+    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -248,6 +470,12 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/consul/</loc>
+    <lastmod>2016-06-11T06:23:57-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/consul-service-discovery-golang/</loc>
     <lastmod>2016-06-11T06:23:57-05:00</lastmod>
   </url>
@@ -283,8 +511,20 @@
   </url>
   
   <url>
+    <loc>https://varunksaini.com/tags/career/</loc>
+    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/blog/do-we-need-so-many-data-scientists/</loc>
     <lastmod>2016-02-20T06:57:49-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/recruitment/</loc>
+    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -435,246 +675,6 @@
   <url>
     <loc>https://varunksaini.com/blog/learning-go/</loc>
     <lastmod>2014-08-23T19:59:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/about/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/assembly/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/backoff/</loc>
-    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/bash/</loc>
-    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/blog/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/blog/</loc>
-    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/book/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/career/</loc>
-    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/consul/</loc>
-    <lastmod>2016-06-11T06:23:57-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/errors/</loc>
-    <lastmod>2016-10-27T10:40:33-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/file/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/general/</loc>
-    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/general/</loc>
-    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/git/</loc>
-    <lastmod>2016-10-22T07:35:43-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/go/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/go/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/golang/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/kafka/</loc>
-    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/kafka/</loc>
-    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/meetup/</loc>
-    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/meetup/</loc>
-    <lastmod>2017-03-25T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/parental-controls/</loc>
-    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/programming/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/question/</loc>
-    <lastmod>2016-12-07T12:15:46-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/reading/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/reading/</loc>
-    <lastmod>2016-12-03T11:39:24-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/recruitment/</loc>
-    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/retry/</loc>
-    <lastmod>2017-04-16T08:01:00-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/review/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/review/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/categories/technical/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/til/</loc>
-    <lastmod>2017-01-27T15:02:51-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/</loc>
-    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/video/</loc>
-    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/watch/</loc>
-    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/write/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/youtube/</loc>
-    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>
