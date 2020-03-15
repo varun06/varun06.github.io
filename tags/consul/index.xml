@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>consul on Varun Saini</title>
     <link>https://varunksaini.com/tags/consul/</link>
     <description>Recent content in consul on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 11 Jun 2016 06:23:57 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/consul/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>consul service discovery using golang</title>
-      <link>https://varunksaini.com/blog/consul-service-discovery-golang/</link>
+      <link>https://varunksaini.com/consul-service-discovery-golang/</link>
       <pubDate>Sat, 11 Jun 2016 06:23:57 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/consul-service-discovery-golang/</guid>
+      <guid>https://varunksaini.com/consul-service-discovery-golang/</guid>
       <description>What is Service discovery: Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:
 How do clients determine the IP and port for a service that exist on multiple hosts?
 Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.</description>

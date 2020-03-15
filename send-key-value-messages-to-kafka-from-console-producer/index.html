@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="send key value messages to kafka from console producer - Varun Saini">
+    <meta name="twitter:description" content="Kafka provides kafka-console-producer.sh to send messages from stdin
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2 or file.
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&amp;lt;=10; i&#43;&#43; )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.separator=:&amp;quot;; done; ">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="send key value messages to kafka from console producer - Varun Saini">
+    <meta property="og:description" content="Kafka provides kafka-console-producer.sh to send messages from stdin
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2 or file.
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&amp;lt;=10; i&#43;&#43; )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.separator=:&amp;quot;; done; ">
+    <meta property="og:url" content="https://varunksaini.com/send-key-value-messages-to-kafka-from-console-producer/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>send key value messages to kafka from console producer - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Kafka provides kafka-console-producer.sh to send messages from stdin
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2 or file.
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&amp;lt;=10; i&#43;&#43; )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.separator=:&amp;quot;; done; ">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">send key value messages to kafka from console producer</h1>
+    <time datetime="2017-01-20 05:40:02 CST">20 Jan 2017</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/kafka">kafka</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/bash">bash</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/blog">blog</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p><a href="https://kafka.apache.org">Kafka</a> provides <a href="https://kafka.apache.org/quickstart#quickstart_send">kafka-console-producer.sh</a> to send messages from stdin</p>
+<pre><code>&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+message1
+message2
+</code></pre><p>or file.</p>
+<pre><code>&gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &lt; messages.txt
+</code></pre><p>messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.</p>
+<pre><code>	for (( i=1; i&lt;=10; i++ )); do echo &quot;key$$i:value$$i&quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &quot;parse.key=true&quot; --property &quot;key.separator=:&quot;; done;
+</code></pre>
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

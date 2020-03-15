@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>question on Varun Saini</title>
     <link>https://varunksaini.com/tags/question/</link>
     <description>Recent content in question on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Wed, 07 Dec 2016 12:15:46 -0600</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/question/index.xml" rel="self" type="application/rss+xml" />
@@ -13,19 +13,19 @@
     
     <item>
       <title>what do you learn from technical videos</title>
-      <link>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</link>
+      <link>https://varunksaini.com/what-do-you-learn-from-technical-vidoes/</link>
       <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</guid>
+      <guid>https://varunksaini.com/what-do-you-learn-from-technical-vidoes/</guid>
       <description>I watch many technical videos but I feel that I don&amp;rsquo;t learn much from the technical videos. I have tried some techniques but nothing has worked as much as I want. That&amp;rsquo;s why I thoguht of asking, What and how people learn from technical videos.</description>
     </item>
     
     <item>
       <title>question about type assertion in go</title>
-      <link>https://varunksaini.com/blog/question-about-type-assertion/</link>
+      <link>https://varunksaini.com/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/question-about-type-assertion/</guid>
+      <guid>https://varunksaini.com/question-about-type-assertion/</guid>
       <description>One of our go app crashed recently because of a bug in https://github.com/urfave/cli/, here is the PR with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.
 My question is why bar works but not foo.
 package main import ( &amp;quot;fmt&amp;quot; ) func main() { var f interface{} var b interface{} f = foo() b = bar() if _, ok := f.</description>

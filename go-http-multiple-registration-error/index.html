@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="http multiple registration error in go - Varun Saini">
+    <meta name="twitter:description" content="Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
+go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } ">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="http multiple registration error in go - Varun Saini">
+    <meta property="og:description" content="Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
+go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } ">
+    <meta property="og:url" content="https://varunksaini.com/go-http-multiple-registration-error/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>http multiple registration error in go - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
+go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } ">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">http multiple registration error in go</h1>
+    <time datetime="2017-01-27 15:02:51 CST">27 Jan 2017</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/blog">blog</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/til">TIL</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Today while adding a simple http endpoint to one of our app, I saw this <code>panic: http: multiple registrations with /myhandler</code>. My code was simply</p>
+<pre><code>go func(){
+	http.Handler(&quot;/request&quot;, requesthandler)
+	http.ListenAndServe(&quot;:9000&quot;, nil)
+}
+</code></pre><p>I read some official documentation and asked around. I came to know it happens if you use <code>defaultHTTPMux</code>, which doesn&rsquo;t support multiple registrations. This can be fixed with</p>
+<pre><code>go func(){
+	mux := http.NewServeMux()
+	mux.Handler(&quot;/request&quot;, requesthandler)
+	http.ListenAndServe(&quot;:9000&quot;, nil)
+}
+</code></pre>
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

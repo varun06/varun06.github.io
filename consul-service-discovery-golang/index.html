@@ -1,117 +1,130 @@
-    <!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Varun Saini">
-		<meta name="description" content="Just write">
-		<meta name="generator" content="Hugo 0.17" />
-		<title>consul service discovery using golang &middot; Never stop learning...</title>
-		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
-		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
-		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
-		
 
-		
-		<link rel="stylesheet" href="http://varunksaini.com/css/monosocialiconsfont.css">
-		
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
 
-		
-		<link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
-		
-	</head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="consul service discovery using golang - Varun Saini">
+    <meta name="twitter:description" content="What is Service discovery: Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:
+How do clients determine the IP and port for a service that exist on multiple hosts?
+Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="consul service discovery using golang - Varun Saini">
+    <meta property="og:description" content="What is Service discovery: Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:
+How do clients determine the IP and port for a service that exist on multiple hosts?
+Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.">
+    <meta property="og:url" content="https://varunksaini.com/consul-service-discovery-golang/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>consul service discovery using golang - Varun Saini</title>
 
-    <body>
-       <nav class="main-nav">
-	
-	
-		<a href='http://varunksaini.com/'> <span class="arrow">←</span>Home</a>
-	
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="What is Service discovery: Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:
+How do clients determine the IP and port for a service that exist on multiple hosts?
+Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.">
 
-	
-		<a href='http://varunksaini.com/about'>About</a>
-	
+    
+    
 
-	
-	<a class="cta" href="http://varunksaini.com/index.xml">Subscribe</a>
-	
-</nav>
+    
+    
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>consul service discovery using golang</h1>
-                    <h2 class="headline">
-                    June 11, 2016 
-                    <br>
-                    
-                    
-                        
-                            <a href="http://varunksaini.com/tags/general">general</a>
-                        
-                            <a href="http://varunksaini.com/tags/blog">blog</a>
-                        
-                            <a href="http://varunksaini.com/tags/consul">consul</a>
-                        
-                    
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
 
-<h2 id="what-is-service-discovery">What is Service discovery:</h2>
+    
+    
+    <h1 class="text-4xl font-bold">consul service discovery using golang</h1>
+    <time datetime="2016-06-11 06:23:57 CDT">11 Jun 2016</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/general">general</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/blog">blog</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/consul">consul</a>
+        </li>
+        
+    </ol>
+    
+</div>
 
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <h2 id="what-is-service-discovery">What is Service discovery:</h2>
 <p>Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:</p>
-
 <p><em>How do clients determine the IP and port for a service that exist on multiple hosts?</em></p>
-
 <p>Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.</p>
-
 <p>Dynamic service registration and discovery becomes very important in these scenarios in order to avoid service interruption.</p>
-
 <p>There are two sides to the problem of locating services.
-    • Service Registration
-    • and Service Discovery.</p>
-
+• Service Registration
+• and Service Discovery.</p>
 <h4 id="service-registration">Service Registration:</h4>
-
 <p>The process of a service registering its location in a central registry. It usually register its host and port and sometimes authentication credentials, protocols, versions numbers, and/or environment details.</p>
-
 <h4 id="service-discovery">Service Discovery:</h4>
-
 <p>The process of a client application querying the central registry to learn of the location of services.</p>
-
 <p>Example of popular service discovery systems are Consul, Zookeeper, etcd etc. Out of these, Consul is the only one that really tries to provide a comprehensive solution for service discovery.</p>
-
 <h4 id="consul">Consul:</h4>
-
 <p>consul is a service discovery tool from <a href="https://www.hashicorp.com/">hashicorp</a>. Consul provides a consistent view of services and configuration. Consul monitors and changes service information based on the health of nodes. Consul provides a REST interface and web UI to see services and service configurations. Consul organizes services in service catalog and provides a DNS/REST/HTTP interface to it.</p>
-
 <ul>
-<li><p><strong>Service Discovery</strong>: Clients of Consul can provide a service, such as API or postgresql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon.</p></li>
-
-<li><p><strong>Health Checking</strong>: Consul clients can provide any number of health checks, either associated with a given service (&ldquo;is the webserver returning 200 OK&rdquo;), or with the local node (&ldquo;is memory utilization below 90%&rdquo;). This information can be used by an operator to monitor cluster health, and it is used by the service discovery components to route traffic away from unhealthy hosts.</p></li>
-
-<li><p><strong>Key/Value Store</strong>: Applications can make use of Consul&rsquo;s hierarchical key/value store for any number of purposes, including dynamic configuration, feature flagging, coordination, leader election, and more. The simple HTTP API makes it easy to use.</p></li>
-
-<li><p><strong>Multi Datacenter</strong>: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.</p></li>
+<li>
+<p><strong>Service Discovery</strong>: Clients of Consul can provide a service, such as API or postgresql, and other clients can use Consul to discover providers of a given service. Using either DNS or HTTP, applications can easily find the services they depend upon.</p>
+</li>
+<li>
+<p><strong>Health Checking</strong>: Consul clients can provide any number of health checks, either associated with a given service (&ldquo;is the webserver returning 200 OK&rdquo;), or with the local node (&ldquo;is memory utilization below 90%&quot;). This information can be used by an operator to monitor cluster health, and it is used by the service discovery components to route traffic away from unhealthy hosts.</p>
+</li>
+<li>
+<p><strong>Key/Value Store</strong>: Applications can make use of Consul&rsquo;s hierarchical key/value store for any number of purposes, including dynamic configuration, feature flagging, coordination, leader election, and more. The simple HTTP API makes it easy to use.</p>
+</li>
+<li>
+<p><strong>Multi Datacenter</strong>: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.</p>
+</li>
 </ul>
-
 <p>To use Consul you start up an agent process. The Consul agent process is a long running daemon on every member of Consul cluster. The agent process can be run in server mode or client mode. Consul agent clients would run on every physical server or OS virtual machine (if that makes more sense). Client runs on server hosting services. The clients use gossip and RPC calls to stay in sync with Consul.</p>
-
 <p>Consul is built on top of serf, <a href="https://www.serfdom.io/"> a full gossip protocol</a>.</p>
-
 <h2 id="setting-up-a-local-consul-cluster">setting up a local consul cluster</h2>
-
 <p>consul can be downloaded from <a href="https://www.consul.io/downloads.html">consul</a> website . On OSX, if you are using homebrew as a package manager, consul can be installed from homebrew.</p>
-
 <pre><code>brew cask install consul
-</code></pre>
-
-<p>Verify the installation by running:</p>
-
+</code></pre><p>Verify the installation by running:</p>
 <pre><code>$ consul
 usage: consul [--version] [--help] &lt;command&gt; [&lt;args&gt;]
 
@@ -134,29 +147,16 @@ Available commands are:
 	rtt            Estimates network round trip time between nodes
 	version        Prints the Consul version
 	watch          Watch for changes in Consul
-</code></pre>
-
-<p>If you get an error, set your PATH correctly.</p>
-
+</code></pre><p>If you get an error, set your PATH correctly.</p>
 <p>After Consul is installed, the agent must be run. The agent can run either in server or client mode. Each datacenter must have at least one server, a cluster of 3 or 5 servers is recommended.</p>
-
 <p>All other agents run in client mode. A client is a very lightweight process that registers services, runs health checks, and forwards queries to servers. The agent must be run on every node that is part of the cluster so that we can get information from every node.</p>
-
 <p><em>-dev</em> will run consul in  dev mode.</p>
-
 <pre><code>consul agent -dev
-</code></pre>
-
-<p>We can use CTRL+C to stop the consul server.</p>
-
+</code></pre><p>We can use CTRL+C to stop the consul server.</p>
 <p>We have a server running, now let&rsquo;s add a service to our consul server.</p>
-
 <h4 id="consul-service">Consul Service:</h4>
-
 <p>A service can be defined by providing a consul <a href="https://www.consul.io/docs/agent/services.html">service definition</a> or by making <a href="https://www.consul.io/docs/agent/http/agent.html#agent_service_register">HTTP calls</a> to consul server.</p>
-
 <h4 id="example-service-definition">Example service definition:</h4>
-
 <pre><code>{
   &quot;service&quot;: {
     &quot;name&quot;: &quot;myservice&quot;,
@@ -172,30 +172,16 @@ Available commands are:
     ]
   }
   }
-</code></pre>
-
-<h4 id="querying-consul-service">Querying Consul service</h4>
-
+</code></pre><h4 id="querying-consul-service">Querying Consul service</h4>
 <p>We can query consul service using DNS or HTTP API.</p>
-
 <h4 id="dns-api">DNS API:</h4>
-
 <pre><code>dig @127.0.0.1 -p 8600 myservice.service.consul
-</code></pre>
-
-<h4 id="http-api">HTTP API:</h4>
-
+</code></pre><h4 id="http-api">HTTP API:</h4>
 <pre><code>curl http://localhost:8500/v1/catalog/service/myservice
-</code></pre>
-
-<p>Once we have our server and client up and running. We can use consul to find our services</p>
-
+</code></pre><p>Once we have our server and client up and running. We can use consul to find our services</p>
 <h4 id="service-discovery-from-golang">Service Discovery from Golang:</h4>
-
 <p>We can use both DNS and HTTP <a href="https://godoc.org/github.com/hashicorp/consul/api">API</a> to discover service information from consul. I have only used HTTP API and that&rsquo;s what we are going to use today. We create an interface that give us methods to register, deregister, and get services from consul.</p>
-
 <p>Example:</p>
-
 <pre><code>Package consul
 
 import (
@@ -257,177 +243,21 @@ func (c *client) Service(service, tag string) ([]*ServiceEntry, *QueryMeta, erro
 	}
 	return addrs, meta, nil
 }
-</code></pre>
-
-<p>Now when we have consul running and we know how to interact with consul with golang. It is time to build .</p>
-
+</code></pre><p>Now when we have consul running and we know how to interact with consul with golang. It is time to build .</p>
 <p>Also, if you have any question, feel free to ping me <a href="https://twitter.com/varunksaini">@varunksaini</a>.</p>
 
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/https://twitter.com/varunksaini">
-                        <img class="avatar" src="http://varunksaini.com/images/avatar.png">
-                        <div>
-                            <span class="dark">Varun Saini</span>
-                            <span>Who am I, Why I am here...</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fconsul-service-discovery-golang%2f - consul%20service%20discovery%20using%20golang by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
-
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
-
-                </section>
-            </footer>
-
-            <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/consul-service-discovery-golang\/';
-    var disqus_title = 'consul service discovery using golang';
-    var disqus_url = 'http:\/\/varunksaini.com\/consul-service-discovery-golang\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-            <ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
-    
-    
-        
-        <li>
-            <a href="http://varunksaini.com/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/aeon-newsletter-Nov262016/">aeon newsletter Nov262016<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/Alan-Kay-Joe-Armstrong/">Alan Kay interview by Joe Armstrong<aside class="dates">Nov 25</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/question-about-type-assertion/">question about type assertion in go<aside class="dates">Nov 23</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls<aside class="dates">Nov 12</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/using-if-in-defer/">Using if condition in a defer statement<aside class="dates">Nov 1</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/how-not-to-handle-errors-in-golang/">how not to handle errors in golang<aside class="dates">Oct 27</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/remove-big-file-from-git-repo/">remove big file from git repo<aside class="dates">Oct 22</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/get-back-to-blogging/">get back to blogging<aside class="dates">Oct 16</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/laptop-repair/">laptop repair<aside class="dates">Aug 13</aside></a>
-        </li>
-        
-   
-</ul>
-            <footer id="footer">
-    
-        <div id="social">
-
-	
-	
-    
-    <a class="symbol" href="https://www.facebook.com/varunksaini">
-        circlefacebook
-    </a>
-    
-    <a class="symbol" href="https://www.github.com/varun06">
-        circlegithub
-    </a>
-    
-    <a class="symbol" href="https://www.twitter.com/varunksaini">
-        circletwitterbird
-    </a>
-    
-
-
-</div>
 
     
-    <p class="small">
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
     
-        © Copyright 2016 Varun Saini
-    
-    </p>
-</footer>
-
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://varunksaini.com/js/main.js"></script>
-<script src="http://varunksaini.com/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-42065254-1', 'auto');
-ga('send', 'pageview');
-</script>
-
-
-    </body>
+</body>
 </html>

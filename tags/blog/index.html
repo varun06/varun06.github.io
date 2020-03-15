@@ -1,587 +1,391 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
+<!doctype html>
+<html lang="en-us">
+
+<head>
     <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="map[]" />
-    <meta name="description" content="personal blog">
-    <link rel="shortcut icon" type="image/x-icon" href="https://varunksaini.com/img/favicon.ico">
-    <title>blog</title>
-    <meta name="generator" content="Hugo 0.55.2" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://varunksaini.com/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="blog - Varun Saini">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="blog - Varun Saini">
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://varunksaini.com/tags/blog/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>blog - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="">
 
     
-  </head>
+    
+    <link rel="alternate" href="https://varunksaini.com/tags/blog/index.xml" type="application/rss+xml" title="Varun Saini">
+    
 
-  <body>
-    <div id="wrap">
-      
-      <nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="https://varunksaini.com/"><i class="fa fa-home"></i></a>
-    </div>
-    <div id="navbar">
-      <ul class="nav navbar-nav navbar-right">
-      
-        
-        <li><a href="/blog/">BLOG</a></li>
-        
-        <li><a href="/reading/">READING LIST</a></li>
-        
-        <li><a href="/meetup/">GO MEETUP VIDEOS</a></li>
-        
-      
-      </ul>
-    </div>
-  </div>
-</nav>
+    
+    
 
-      <div class="container">
-        <h3>Archive</h3>
-          <div class="panel panel-default">
-            <div class="panel-body">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
             
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 29, 2017
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/run-go-test-multiple-times/">running a single test multiple times in golang</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    February 21, 2017
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/go-slice-array-allocation-gotcha/">go slice array allocation gotcha</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    January 27, 2017
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/go-http-multiple-registration-error/">http multiple registration error in go</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    January 20, 2017
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/send-key-value-messages-to-kafka-from-console-producer/">send key value messages to kafka from console producer</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    January 2, 2017
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/how-to-get-assembly-for-go-program/">how to see assembly code for a go program</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 28, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/var-changed-to-init-in-assembly/">var block changed to init function in assembly</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 25, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/rise-of-the-robots-by-martin-ford/">rise of the robots by martin ford</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 22, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/how-do-you-write-error-statement/">how do you write error statement</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 10, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/">notes on Stories of your life and others by Ted Chiang</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 7, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/what-do-you-learn-from-technical-vidoes/">what do you learn from technical videos</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 4, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/golang-puzzlers-and-thoughts/">go puzzlers and thoughts</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    December 3, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/why-no-place-like-home/">Why there is no place like home - thoughts after reading</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 26, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 26, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/aeon-newsletter-nov262016/">aeon newsletter Nov262016</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 25, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/alan-kay-joe-armstrong/">Alan Kay interview by Joe Armstrong</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 23, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/question-about-type-assertion/">question about type assertion in go</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 12, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 1, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/using-if-in-defer/">Using if condition in a defer statement</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    October 16, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/get-back-to-blogging/">get back to blogging</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    August 13, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/laptop-repair/">laptop repair</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 17, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/good-read-on-golang-and-generics/">good read on golang and generics</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 16, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-19july/">weekly reading 19July</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 9, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-9july/">weekly reading 9July</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 4, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/bash-fifos-and-golang-channel/">bash fifos and golang channel</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 3, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/a-quick-introduction-to-standard-streams/">a quick introduction to standard streams, file descriptors, and redirection</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 3, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/standard-bash-error-codes/">standard bash error codes</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    July 2, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-2july/">weekly reading 2July</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 26, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-26june/">weekly reading 26June</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 24, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/gophercon-2016-here-i-come/">gophercon 2016 here i come</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 19, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-19june/">weekly reading 19June</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 17, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/consul-acl-golang/">using consul acl with golang</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 12, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-12june/">weekly reading 12 June</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 11, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/consul-service-discovery-golang/">consul service discovery using golang</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    June 4, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-4june/">weekly reading 4June</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    May 29, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-29may/">weekly reading 29May</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    May 22, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/pretty-print-json-golang/">pretty print JSON in golang</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    May 22, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-22may/">weekly reading 22 May</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    May 15, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/weekly-reading-15may/">weekly reading 15May</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    March 13, 2016
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/unmarshal-to-map/">unmarshal to map</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
+            <div class="mb-6 md:flex md:items-center">
+                
+                    <div>
+                        <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+                        <h1 class="text-4xl font-bold">blog</h1>
+                    </div>
+                
             </div>
-          </div>
-      </div>
-    </div>
+
+            
+            
+        </header>
+
+        
+        
+<section class="mb-24">
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2020</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2020-03-15 14:22:49 CDT">Mar 15</time>
+            <a class="text-lg md:ml-12" href="/work-from-home-corona-virus/">Work from home and Corona Virus</a>
+        </li>
+    </ol>
+</div>
+
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2019</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2019-01-26 11:56:37 CST">Jan 26</time>
+            <a class="text-lg md:ml-12" href="/find-celebrity-problem-in-go/">Find Celebrity Problem in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2019-01-22 06:55:44 CST">Jan 22</time>
+            <a class="text-lg md:ml-12" href="/two-dimensional-slice-in-go/">Two Dimensional Slice in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2019-01-20 16:15:45 CST">Jan 20</time>
+            <a class="text-lg md:ml-12" href="/reverese-integer-in-go/">Reverese Integer in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2019-01-20 16:15:33 CST">Jan 20</time>
+            <a class="text-lg md:ml-12" href="/reverese-string-in-go/">Reverese String in Go</a>
+        </li>
+    </ol>
+</div>
+
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2018</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2018-06-01 10:16:26 CDT">Jun 01</time>
+            <a class="text-lg md:ml-12" href="/running_kafka_in_docker_on_mac/">Running Kafka in Docker on Mac</a>
+        </li>
+    </ol>
+</div>
+
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2017</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-08-19 07:02:42 CDT">Aug 19</time>
+            <a class="text-lg md:ml-12" href="/run-test-for-single-package/">run tests one package at a time in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-08-19 07:02:42 CDT">Aug 19</time>
+            <a class="text-lg md:ml-12" href="/use-case-for-generics/">Generics - I Wish You Were Here...</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-06-29 21:10:59 CDT">Jun 29</time>
+            <a class="text-lg md:ml-12" href="/run-go-test-multiple-times/">running a single test multiple times in golang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-06-27 08:01:00 CDT">Jun 27</time>
+            <a class="text-lg md:ml-12" href="/write-file-completely-go/">writing files completely to disk in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-04-16 08:01:00 CDT">Apr 16</time>
+            <a class="text-lg md:ml-12" href="/backoff-retry-in-golang/">backoff and  retry in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-03-26 06:18:30 CDT">Mar 26</time>
+            <a class="text-lg md:ml-12" href="/is-netflix-new-facebook/">Is netflix new facebook?</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-03-07 21:35:43 CST">Mar 07</time>
+            <a class="text-lg md:ml-12" href="/distributed-systems-training-by-aphyr/">Distributed systems class by Aphyr</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-02-21 16:19:52 CST">Feb 21</time>
+            <a class="text-lg md:ml-12" href="/go-slice-array-allocation-gotcha/">go slice array allocation gotcha</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-01-27 15:02:51 CST">Jan 27</time>
+            <a class="text-lg md:ml-12" href="/go-http-multiple-registration-error/">http multiple registration error in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-01-20 05:40:02 CST">Jan 20</time>
+            <a class="text-lg md:ml-12" href="/send-key-value-messages-to-kafka-from-console-producer/">send key value messages to kafka from console producer</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2017-01-02 18:38:12 CST">Jan 02</time>
+            <a class="text-lg md:ml-12" href="/how-to-get-assembly-for-go-program/">how to see assembly code for a go program</a>
+        </li>
+    </ol>
+</div>
+
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2016</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-31 19:07:32 CST">Dec 31</time>
+            <a class="text-lg md:ml-12" href="/my-google-hangout-wants-to-chat-with-me/">google hangouts wants to chat with me</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-28 14:29:42 CST">Dec 28</time>
+            <a class="text-lg md:ml-12" href="/var-changed-to-init-in-assembly/">var block changed to init function in assembly</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-25 18:38:20 CST">Dec 25</time>
+            <a class="text-lg md:ml-12" href="/rise-of-the-robots-by-martin-ford/">rise of the robots by martin ford</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-22 12:48:00 CST">Dec 22</time>
+            <a class="text-lg md:ml-12" href="/how-do-you-write-error-statement/">how do you write error statement</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-10 06:05:16 CST">Dec 10</time>
+            <a class="text-lg md:ml-12" href="/my-review-of-stories-of-your-life-and-others-by-ted-chiang/">notes on Stories of your life and others by Ted Chiang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-07 12:15:46 CST">Dec 07</time>
+            <a class="text-lg md:ml-12" href="/what-do-you-learn-from-technical-vidoes/">what do you learn from technical videos</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-04 07:15:59 CST">Dec 04</time>
+            <a class="text-lg md:ml-12" href="/golang-puzzlers-and-thoughts/">go puzzlers and thoughts</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-12-03 11:39:24 CST">Dec 03</time>
+            <a class="text-lg md:ml-12" href="/why-no-place-like-home/">Why there is no place like home - thoughts after reading</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-11-26 20:48:29 CST">Nov 26</time>
+            <a class="text-lg md:ml-12" href="/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-11-26 06:05:16 CST">Nov 26</time>
+            <a class="text-lg md:ml-12" href="/aeon-newsletter-nov262016/">aeon newsletter Nov262016</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-11-25 20:47:08 CST">Nov 25</time>
+            <a class="text-lg md:ml-12" href="/alan-kay-joe-armstrong/">Alan Kay interview by Joe Armstrong</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-11-23 09:47:56 CST">Nov 23</time>
+            <a class="text-lg md:ml-12" href="/question-about-type-assertion/">question about type assertion in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-11-12 06:27:38 CST">Nov 12</time>
+            <a class="text-lg md:ml-12" href="/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-11-01 21:10:59 CDT">Nov 01</time>
+            <a class="text-lg md:ml-12" href="/using-if-in-defer/">Using if condition in a defer statement</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-10-27 10:40:33 CDT">Oct 27</time>
+            <a class="text-lg md:ml-12" href="/how-not-to-handle-errors-in-golang/">how not to handle errors in golang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-10-22 07:35:43 CDT">Oct 22</time>
+            <a class="text-lg md:ml-12" href="/remove-big-file-from-git-repo/">remove big file from git repo</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-10-16 09:02:02 CDT">Oct 16</time>
+            <a class="text-lg md:ml-12" href="/get-back-to-blogging/">get back to blogging</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-08-13 10:26:10 CDT">Aug 13</time>
+            <a class="text-lg md:ml-12" href="/laptop-repair/">laptop repair</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-17 06:57:00 CDT">Jul 17</time>
+            <a class="text-lg md:ml-12" href="/good-read-on-golang-and-generics/">good read on golang and generics</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-16 06:25:13 CDT">Jul 16</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-19july/">weekly reading 19July</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-09 05:46:45 CDT">Jul 09</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-9july/">weekly reading 9July</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-04 22:05:36 CDT">Jul 04</time>
+            <a class="text-lg md:ml-12" href="/bash-fifos-and-golang-channel/">bash fifos and golang channel</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-03 13:47:05 CDT">Jul 03</time>
+            <a class="text-lg md:ml-12" href="/a-quick-introduction-to-standard-streams/">a quick introduction to standard streams, file descriptors, and redirection</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-03 06:33:31 CDT">Jul 03</time>
+            <a class="text-lg md:ml-12" href="/standard-bash-error-codes/">standard bash error codes</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-07-02 20:13:23 CDT">Jul 02</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-2july/">weekly reading 2July</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-26 06:36:44 CDT">Jun 26</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-26june/">weekly reading 26June</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-24 21:56:31 CDT">Jun 24</time>
+            <a class="text-lg md:ml-12" href="/gophercon-2016-here-i-come/">gophercon 2016 here i come</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-19 05:52:29 CDT">Jun 19</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-19june/">weekly reading 19June</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-17 16:56:36 CDT">Jun 17</time>
+            <a class="text-lg md:ml-12" href="/consul-acl-golang/">using consul acl with golang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-12 06:33:33 CDT">Jun 12</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-12june/">weekly reading 12 June</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-11 06:23:57 CDT">Jun 11</time>
+            <a class="text-lg md:ml-12" href="/consul-service-discovery-golang/">consul service discovery using golang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-06-04 16:45:52 CDT">Jun 04</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-4june/">weekly reading 4June</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-05-29 08:38:58 CDT">May 29</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-29may/">weekly reading 29May</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-05-22 06:52:53 CDT">May 22</time>
+            <a class="text-lg md:ml-12" href="/pretty-print-json-golang/">pretty print JSON in golang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-05-22 06:20:37 CDT">May 22</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-22may/">weekly reading 22 May</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-05-15 08:43:02 CDT">May 15</time>
+            <a class="text-lg md:ml-12" href="/weekly-reading-15may/">weekly reading 15May</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-03-13 07:57:24 CDT">Mar 13</time>
+            <a class="text-lg md:ml-12" href="/unmarshal-to-map/">unmarshal to map</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-02-20 06:57:49 CST">Feb 20</time>
+            <a class="text-lg md:ml-12" href="/do-we-need-so-many-data-scientists/">do we need so many data scientists</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2016-01-25 19:58:28 CST">Jan 25</time>
+            <a class="text-lg md:ml-12" href="/https-server-in-go/">https server in go</a>
+        </li>
+    </ol>
+</div>
+
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2015</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-12-12 19:59:32 CST">Dec 12</time>
+            <a class="text-lg md:ml-12" href="/the-go-programming-language-book-review/">Review: The Go Programming language</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-10-19 19:58:28 -0600">Oct 19</time>
+            <a class="text-lg md:ml-12" href="/json-tag-in-struct-gotcha/">Issue with white space in json struct tags</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-10-04 06:30:28 -0600">Oct 04</time>
+            <a class="text-lg md:ml-12" href="/kiling-processes-in-go/">killing process with child and grandchild processes  in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-09-19 19:58:28 -0600">Sep 19</time>
+            <a class="text-lg md:ml-12" href="/fav-podcasts/">Podcasts I listen</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-07-12 19:58:28 -0600">Jul 12</time>
+            <a class="text-lg md:ml-12" href="/running_commands_with_go/">running commands with go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-06-13 11:11:00 -0900">Jun 13</time>
+            <a class="text-lg md:ml-12" href="/go_dev_workflow/">My Go Lang Development Workflow</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-05-31 06:30:00 -0600">May 31</time>
+            <a class="text-lg md:ml-12" href="/using-sectionreader/">using io.SectionReader in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-05-25 19:58:00 -0600">May 25</time>
+            <a class="text-lg md:ml-12" href="/notes-from-go-in-action-book/">Go Lang notes</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-05-13 20:41:00 -0600">May 13</time>
+            <a class="text-lg md:ml-12" href="/goto-chicago-2015/">goto Chicago Conference 2015</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-05-09 06:41:00 -0600">May 09</time>
+            <a class="text-lg md:ml-12" href="/testing-in-go/">testing in go lang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-04-26 07:40:00 -0600">Apr 26</time>
+            <a class="text-lg md:ml-12" href="/pointer_in_go/">Pointer type in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-04-18 10:42:00 -0600">Apr 18</time>
+            <a class="text-lg md:ml-12" href="/using_io_limitreader/">using io.LimitReader to read a binary file</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-04-18 10:36:30 -0400">Apr 18</time>
+            <a class="text-lg md:ml-12" href="/thinking_fast_and_slow/">Thinking, Fast and Slow</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-01-03 06:13:00 UTC">Jan 03</time>
+            <a class="text-lg md:ml-12" href="/get-os-name-in-go/">Get operating system name in Go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2015-01-01 07:00:00 UTC">Jan 01</time>
+            <a class="text-lg md:ml-12" href="/books-in-2014/">Books I read in 2014</a>
+        </li>
+    </ol>
+</div>
+
+    <div>
+    <h2 class="text-3xl font-bold mb-2">2014</h2>
+
+    <ol>
+        <li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-12-30 08:11:15 CST">Dec 30</time>
+            <a class="text-lg md:ml-12" href="/new-human-age/">human&#43;&#43;</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-12-13 06:40:15 CST">Dec 13</time>
+            <a class="text-lg md:ml-12" href="/working-with-files-in-go/">Working with files in go lang</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-12-13 06:32:30 -0400">Dec 13</time>
+            <a class="text-lg md:ml-12" href="/particles_of_the_universe/">Particles of the universe</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-12-13 06:29:30 -0400">Dec 13</time>
+            <a class="text-lg md:ml-12" href="/the_ultimate_bar_book/">The Ultimate Bar Book</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-12-06 19:07:32 CST">Dec 06</time>
+            <a class="text-lg md:ml-12" href="/go-boiler-plate-snippet-sublime-text/">Go lang boiler plate sublime text snippet</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-12-01 07:01:18 -0400">Dec 01</time>
+            <a class="text-lg md:ml-12" href="/lethal-code/">lethal code</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-26 06:24:00 CST">Nov 26</time>
+            <a class="text-lg md:ml-12" href="/find-minimum-value-array-go/">Find Mimimum Value in an array in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-26 07:01:18 -0400">Nov 26</time>
+            <a class="text-lg md:ml-12" href="/golang-book/">GO lang book</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-25 17:52:32 CST">Nov 25</time>
+            <a class="text-lg md:ml-12" href="/working-with-smart-people/">Working with smart people</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-23 12:12:18 -0400">Nov 23</time>
+            <a class="text-lg md:ml-12" href="/pragmaticprogrammer/">Pragmatic Programmer</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-23 12:12:18 -0400">Nov 23</time>
+            <a class="text-lg md:ml-12" href="/gustavoduarte/">Gustavo Duarte - All about computers</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-23 12:12:18 -0400">Nov 23</time>
+            <a class="text-lg md:ml-12" href="/goprogrammingbook/">GO Programming Book by Jeremy Saenz</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-11-15 19:58:28 CST">Nov 15</time>
+            <a class="text-lg md:ml-12" href="/array-and-slices-in-go/">array and slices in go</a>
+        </li><li class="mb-6 md:flex md:flex-row">
+            <time class=" block md:flex-l-24" datetime="2014-08-23 19:59:32 -0600">Aug 23</time>
+            <a class="text-lg md:ml-12" href="/learning-go/">learning go</a>
+        </li>
+    </ol>
+</div>
+
     
-    <footer>
-  <div id="footer">
-    <div class="container">
-      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
-      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+</section>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
     </div>
-  </div>
-</footer>
-<div class="footer"></div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://varunksaini.com/js/docs.min.js"></script>
-<script src="https://varunksaini.com/js/main.js"></script>
-
-<script src="https://varunksaini.com/js/ie10-viewport-bug-workaround.js"></script>
-
-
-  </body>
+    
+</body>
 </html>

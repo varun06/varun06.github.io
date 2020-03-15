@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="run tests one package at a time in go - Varun Saini">
+    <meta name="twitter:description" content="go test runs concurrently on package level. If I have 2 packages, package A and package B with tests in them, when you run go test, tests in package A and package B will run concurrently at the same time. It is done to run tests faster and make the feedback process fast. But sometime there is need to run tests in sequential order (to keep shared state etc.).
+go build provides a flag to do that, that flag is -p.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="run tests one package at a time in go - Varun Saini">
+    <meta property="og:description" content="go test runs concurrently on package level. If I have 2 packages, package A and package B with tests in them, when you run go test, tests in package A and package B will run concurrently at the same time. It is done to run tests faster and make the feedback process fast. But sometime there is need to run tests in sequential order (to keep shared state etc.).
+go build provides a flag to do that, that flag is -p.">
+    <meta property="og:url" content="https://varunksaini.com/run-test-for-single-package/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>run tests one package at a time in go - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="go test runs concurrently on package level. If I have 2 packages, package A and package B with tests in them, when you run go test, tests in package A and package B will run concurrently at the same time. It is done to run tests faster and make the feedback process fast. But sometime there is need to run tests in sequential order (to keep shared state etc.).
+go build provides a flag to do that, that flag is -p.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">run tests one package at a time in go</h1>
+    <time datetime="2017-08-19 07:02:42 CDT">19 Aug 2017</time>
+    
+    
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p><code>go test</code> runs concurrently on package level. If I have 2 packages, package A and package B with tests in them, when you run <code>go test</code>, tests in package A and package B will run concurrently at the same time. It is done to run tests faster and make the feedback process fast. But sometime there is need to run tests in sequential order (to keep shared state etc.).</p>
+<p><code>go build</code> provides a flag to do that, that flag is <code>-p</code>.</p>
+<pre><code>-p n
+		the number of programs, such as build commands or
+		test binaries, that can be run in parallel.
+		The default is the number of CPUs available.
+</code></pre><p>When using <code>-p</code> flag with <code>go test</code>, such as <code>go test -p 1 ./...</code> will run tests for one package at a time, the total running time for tests is going to be close to the sum of all individual package tests plus build times.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

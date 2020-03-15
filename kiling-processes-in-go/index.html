@@ -1,258 +1,111 @@
-    <!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Varun Saini">
-		<meta name="description" content="Just write">
-		<meta name="generator" content="Hugo 0.17" />
-		<title>killing process with child and grandchild processes  in Go &middot; Never stop learning...</title>
-		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
-		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
-		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
-		
 
-		
-		<link rel="stylesheet" href="http://varunksaini.com/css/monosocialiconsfont.css">
-		
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
 
-		
-		<link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
-		
-	</head>
-
-    <body>
-       <nav class="main-nav">
-	
-	
-		<a href='http://varunksaini.com/'> <span class="arrow">←</span>Home</a>
-	
-
-	
-		<a href='http://varunksaini.com/about'>About</a>
-	
-
-	
-	<a class="cta" href="http://varunksaini.com/index.xml">Subscribe</a>
-	
-</nav>
-
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>killing process with child and grandchild processes  in Go</h1>
-                    <h2 class="headline">
-                    October 4, 2015 
-                    <br>
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    <p>Go provides <a href="https://golang.org/pkg/os/exec/">exec</a> package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.</p>
-
-<p>We can start a process&hellip;
-<pre>
-    cmd := exec.Command(execPath, args&hellip;)
-</pre>
-and then process can be killed after certain given time&hellip;.
-<pre>
-    case &lt;-time.After(2 * time.Second):
-        if err := cmd.Process.Kill(); err != nil {
-            return 0, fmt.Errorf(&ldquo;Failed to kill process: %v&rdquo;, err)
-        }
-</pre></p>
-
-<p>But there is a problem with this code, what if the process start other <a href="https://en.wikipedia.org/wiki/Child_process">child processes</a> and then those processes start new processes(grandchild processes). Once you kill the parent process those child processes become orphan and get a <code>PPID=1</code>. In my particular scenario I had 4-5 orphaned processes from killed parent process and then these orphaned processes were creating an issue with subsequent run of the program.</p>
-
-<p>I started looking around and found this well written article on this topic <a href="https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773">killing a child process and all of its children in Go</a>.This article helped me understand how to setup a process group and kill the process.</p>
-
-<p>But The solution suggested in that article was not working in my case. Then I asked this question on <a href="https://forum.golangbridge.org/t/killing-child-process-on-timeout-in-go-code/995">Go forum</a> and gophers helped me to find the solution.</p>
-
-<p>Now I create a process group when I create the command, then I kill the whole group on timeout and it kills the process as well as the children of the process.</p>
-
-<pre>
-    cmd := exec.Command(execPath, args...)
-    //create a new process group
-    cmd.SysProcAttr = &syscall.SysProcAttr{Setpgid: true}
-</pre>
-
-<p><pre>
-    case &lt;-time.After(timeout):
-        pgid, err := syscall.Getpgid(cmd.Process.Pid)
-        if err == nil {
-            if err := syscall.Kill(-pgid, syscall.SIGKILL); err != nil {
-                &hellip;
-            }
-        }
-</pre>
-We get the process group id <code>syscall.Getpgid</code> and then kill the process by passing -pgid to <code>syscall.Kill</code>. We use -pgid because we want to target the group id and not the particular process id.</p>
-
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/https://twitter.com/varunksaini">
-                        <img class="avatar" src="http://varunksaini.com/images/avatar.png">
-                        <div>
-                            <span class="dark">Varun Saini</span>
-                            <span>Who am I, Why I am here...</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fkiling-processes-in-go%2f - killing%20process%20with%20child%20and%20grandchild%20processes%20%20in%20Go by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
-
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
-
-                </section>
-            </footer>
-
-            <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/kiling-processes-in-go\/';
-    var disqus_title = 'killing process with child and grandchild processes  in Go';
-    var disqus_url = 'http:\/\/varunksaini.com\/kiling-processes-in-go\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-            <ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     
-        
-        <li>
-            <a href="http://varunksaini.com/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="killing process with child and grandchild processes  in Go - Varun Saini">
+    <meta name="twitter:description" content="Go provides exec package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.
+We can start a process&amp;hellip;
+and then process can be killed after certain given time&amp;hellip;.
+But there is a problem with this code, what if the process start other child processes and then those processes start new processes(grandchild processes).">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
     
-        
-        <li>
-            <a href="http://varunksaini.com/aeon-newsletter-Nov262016/">aeon newsletter Nov262016<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
     
-        
-        <li>
-            <a href="http://varunksaini.com/Alan-Kay-Joe-Armstrong/">Alan Kay interview by Joe Armstrong<aside class="dates">Nov 25</aside></a>
-        </li>
-        
-   
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="killing process with child and grandchild processes  in Go - Varun Saini">
+    <meta property="og:description" content="Go provides exec package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.
+We can start a process&amp;hellip;
+and then process can be killed after certain given time&amp;hellip;.
+But there is a problem with this code, what if the process start other child processes and then those processes start new processes(grandchild processes).">
+    <meta property="og:url" content="https://varunksaini.com/kiling-processes-in-go/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
     
-        
-        <li>
-            <a href="http://varunksaini.com/question-about-type-assertion/">question about type assertion in go<aside class="dates">Nov 23</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls<aside class="dates">Nov 12</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/using-if-in-defer/">Using if condition in a defer statement<aside class="dates">Nov 1</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/how-not-to-handle-errors-in-golang/">how not to handle errors in golang<aside class="dates">Oct 27</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/remove-big-file-from-git-repo/">remove big file from git repo<aside class="dates">Oct 22</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/get-back-to-blogging/">get back to blogging<aside class="dates">Oct 16</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/laptop-repair/">laptop repair<aside class="dates">Aug 13</aside></a>
-        </li>
-        
-   
-</ul>
-            <footer id="footer">
-    
-        <div id="social">
+    <title>killing process with child and grandchild processes  in Go - Varun Saini</title>
 
-	
-	
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Go provides exec package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.
+We can start a process&amp;hellip;
+and then process can be killed after certain given time&amp;hellip;.
+But there is a problem with this code, what if the process start other child processes and then those processes start new processes(grandchild processes).">
+
     
-    <a class="symbol" href="https://www.facebook.com/varunksaini">
-        circlefacebook
-    </a>
-    
-    <a class="symbol" href="https://www.github.com/varun06">
-        circlegithub
-    </a>
-    
-    <a class="symbol" href="https://www.twitter.com/varunksaini">
-        circletwitterbird
-    </a>
     
 
+    
+    
 
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">killing process with child and grandchild processes  in Go</h1>
+    <time datetime="2015-10-04 06:30:28 -0600">04 Oct 2015</time>
+    
+    
+    
 </div>
 
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Go provides <a href="https://golang.org/pkg/os/exec/">exec</a> package in standard library to run external commands. Sometimes we need to run an external command from Go code and then kill the process created by command after certain time if it does not finish in a given time period.</p>
+<p>We can start a process&hellip;</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>and then process can be killed after certain given time&hellip;.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>But there is a problem with this code, what if the process start other <a href="https://en.wikipedia.org/wiki/Child_process">child processes</a> and then those processes start new processes(grandchild processes). Once you kill the parent process those child processes become orphan and get a <code>PPID=1</code>. In my particular scenario I had 4-5 orphaned processes from killed parent process and then these orphaned processes were creating an issue with subsequent run of the program.</p>
+<p>I started looking around and found this well written article on this topic <a href="https://medium.com/@felixge/killing-a-child-process-and-all-of-its-children-in-go-54079af94773">killing a child process and all of its children in Go</a>.This article helped me understand how to setup a process group and kill the process.</p>
+<p>But The solution suggested in that article was not working in my case. Then I asked this question on <a href="https://forum.golangbridge.org/t/killing-child-process-on-timeout-in-go-code/995">Go forum</a> and gophers helped me to find the solution.</p>
+<p>Now I create a process group when I create the command, then I kill the whole group on timeout and it kills the process as well as the children of the process.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>We get the process group id <code>syscall.Getpgid</code> and then kill the process by passing -pgid to <code>syscall.Kill</code>. We use -pgid because we want to target the group id and not the particular process id.</p>
+
+
     
-    <p class="small">
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
     
-        © Copyright 2016 Varun Saini
-    
-    </p>
-</footer>
-
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://varunksaini.com/js/main.js"></script>
-<script src="http://varunksaini.com/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-42065254-1', 'auto');
-ga('send', 'pageview');
-</script>
-
-
-    </body>
+</body>
 </html>

@@ -1,263 +1,111 @@
-    <!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Varun Saini">
-		<meta name="description" content="Just write">
-		<meta name="generator" content="Hugo 0.17" />
-		<title>remove big file from git repo &middot; Never stop learning...</title>
-		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
-		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
-		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
-		
 
-		
-		<link rel="stylesheet" href="http://varunksaini.com/css/monosocialiconsfont.css">
-		
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
 
-		
-		<link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
-		
-	</head>
-
-    <body>
-       <nav class="main-nav">
-	
-	
-		<a href='http://varunksaini.com/'> <span class="arrow">←</span>Home</a>
-	
-
-	
-		<a href='http://varunksaini.com/about'>About</a>
-	
-
-	
-	<a class="cta" href="http://varunksaini.com/index.xml">Subscribe</a>
-	
-</nav>
-
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>remove big file from git repo</h1>
-                    <h2 class="headline">
-                    October 22, 2016 
-                    <br>
-                    
-                    
-                        
-                            <a href="http://varunksaini.com/tags/git">git</a>
-                        
-                    
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    <p>Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size. I am sure there are many ways to do it but I am going to write down what I did so somebody else can also benefit.</p>
-
-<p>I used a tool called <strong>BFG Repo cleaner</strong>. BFG cleans bad data from git repo. BFG can be downloaded <a href="http://repo1.maven.org/maven2/com/madgag/bfg/1.12.13/bfg-1.12.13.jar">here</a> and provides a comprehensive list of option to clean git repo. It is an alternative to <code>git-filter-branch</code>, which I have no idea about.</p>
-
-<p>To use BFG on a git repo follow these steps:</p>
-
-<p>First clone a fresh copy of your repo, using the <code>--mirror</code> flag:</p>
-
-<pre><code>$ git clone --mirror git://github.com/big-repo.git
-</code></pre>
-
-<p>Run the BFG to clean any big file that has a size greater then 100mb:</p>
-
-<pre><code>$ java -jar bfg.jar --strip-blobs-bigger-than 100M big-repo.git
-</code></pre>
-
-<p>Or, if you know the name of file, you can give the name too:</p>
-
-<pre><code>$ java -jar bfg.jar --delete-files file_name  big-repo.git 
-</code></pre>
-
-<p>After running the command above, BFG will update your commits and all branches and tags so they are clean, but it doesn&rsquo;t physically delete the unwanted stuff. Examine the repo to make sure your history has been updated, and then use the standard <code>git gc</code> command to strip out the unwanted dirty data, which Git will now recognise as surplus to requirements:</p>
-
-<pre><code>$ cd big-repo 
-$ git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive
-</code></pre>
-
-<p>Finally, once you&rsquo;re happy with the updated state of your repo, push it back up (note that because your clone command used the <code>--mirror</code> flag, this push will update all refs on your remote server):</p>
-
-<pre><code>$ git push
-</code></pre>
-
-<p>Once you push new and clean history to your repo, ditch old copies of the repo and then fresh clone/fork. Delete the old clones as they have dirty history, if you have some PR&rsquo;s, fetch them from master or cherry pick the commits you want.</p>
-
-<p>After all these your repo size should be significantly lower. In my case, I brought the size down from 82mb to 4.1mb.</p>
-
-<p>Let me know if you have any question or suggestions.</p>
-
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/https://twitter.com/varunksaini">
-                        <img class="avatar" src="http://varunksaini.com/images/avatar.png">
-                        <div>
-                            <span class="dark">Varun Saini</span>
-                            <span>Who am I, Why I am here...</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fremove-big-file-from-git-repo%2f - remove%20big%20file%20from%20git%20repo by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
-
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
-
-                </section>
-            </footer>
-
-            <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/remove-big-file-from-git-repo\/';
-    var disqus_title = 'remove big file from git repo';
-    var disqus_url = 'http:\/\/varunksaini.com\/remove-big-file-from-git-repo\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-            <ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="remove big file from git repo - Varun Saini">
+    <meta name="twitter:description" content="Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="remove big file from git repo - Varun Saini">
+    <meta property="og:description" content="Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size.">
+    <meta property="og:url" content="https://varunksaini.com/remove-big-file-from-git-repo/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>remove big file from git repo - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">remove big file from git repo</h1>
+    <time datetime="2016-10-22 07:35:43 CDT">22 Oct 2016</time>
+    
+    
+    
+    <ol class="mt-4">
         
-        <li>
-            <a href="http://varunksaini.com/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant<aside class="dates">Nov 26</aside></a>
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/git">git</a>
         </li>
         
-   
+    </ol>
     
-        
-        <li>
-            <a href="http://varunksaini.com/aeon-newsletter-Nov262016/">aeon newsletter Nov262016<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/Alan-Kay-Joe-Armstrong/">Alan Kay interview by Joe Armstrong<aside class="dates">Nov 25</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/question-about-type-assertion/">question about type assertion in go<aside class="dates">Nov 23</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls<aside class="dates">Nov 12</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/using-if-in-defer/">Using if condition in a defer statement<aside class="dates">Nov 1</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/how-not-to-handle-errors-in-golang/">how not to handle errors in golang<aside class="dates">Oct 27</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/remove-big-file-from-git-repo/">remove big file from git repo<aside class="dates">Oct 22</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/get-back-to-blogging/">get back to blogging<aside class="dates">Oct 16</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/laptop-repair/">laptop repair<aside class="dates">Aug 13</aside></a>
-        </li>
-        
-   
-</ul>
-            <footer id="footer">
-    
-        <div id="social">
-
-	
-	
-    
-    <a class="symbol" href="https://www.facebook.com/varunksaini">
-        circlefacebook
-    </a>
-    
-    <a class="symbol" href="https://www.github.com/varun06">
-        circlegithub
-    </a>
-    
-    <a class="symbol" href="https://www.twitter.com/varunksaini">
-        circletwitterbird
-    </a>
-    
-
-
 </div>
 
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size. I am sure there are many ways to do it but I am going to write down what I did so somebody else can also benefit.</p>
+<p>I used a tool called <strong>BFG Repo cleaner</strong>. BFG cleans bad data from git repo. BFG can be downloaded <a href="http://repo1.maven.org/maven2/com/madgag/bfg/1.12.13/bfg-1.12.13.jar">here</a> and provides a comprehensive list of option to clean git repo. It is an alternative to <code>git-filter-branch</code>, which I have no idea about.</p>
+<p>To use BFG on a git repo follow these steps:</p>
+<p>First clone a fresh copy of your repo, using the <code>--mirror</code> flag:</p>
+<pre><code>$ git clone --mirror git://github.com/big-repo.git
+</code></pre><p>Run the BFG to clean any big file that has a size greater then 100mb:</p>
+<pre><code>$ java -jar bfg.jar --strip-blobs-bigger-than 100M big-repo.git
+</code></pre><p>Or, if you know the name of file, you can give the name too:</p>
+<pre><code>$ java -jar bfg.jar --delete-files file_name  big-repo.git 
+</code></pre><p>After running the command above, BFG will update your commits and all branches and tags so they are clean, but it doesn&rsquo;t physically delete the unwanted stuff. Examine the repo to make sure your history has been updated, and then use the standard <code>git gc</code> command to strip out the unwanted dirty data, which Git will now recognise as surplus to requirements:</p>
+<pre><code>$ cd big-repo 
+$ git reflog expire --expire=now --all &amp;&amp; git gc --prune=now --aggressive
+</code></pre><p>Finally, once you&rsquo;re happy with the updated state of your repo, push it back up (note that because your clone command used the <code>--mirror</code> flag, this push will update all refs on your remote server):</p>
+<pre><code>$ git push
+</code></pre><p>Once you push new and clean history to your repo, ditch old copies of the repo and then fresh clone/fork. Delete the old clones as they have dirty history, if you have some PR&rsquo;s, fetch them from master or cherry pick the commits you want.</p>
+<p>After all these your repo size should be significantly lower. In my case, I brought the size down from 82mb to 4.1mb.</p>
+<p>Let me know if you have any question or suggestions.</p>
+
+
     
-    <p class="small">
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
     
-        © Copyright 2016 Varun Saini
-    
-    </p>
-</footer>
-
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://varunksaini.com/js/main.js"></script>
-<script src="http://varunksaini.com/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-42065254-1', 'auto');
-ga('send', 'pageview');
-</script>
-
-
-    </body>
+</body>
 </html>

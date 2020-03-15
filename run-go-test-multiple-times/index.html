@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="running a single test multiple times in golang - Varun Saini">
+    <meta name="twitter:description" content="go provides a great standard library for testing. To test a function/method, just create name_test.go in same package and write you tests.
+Go also provides go test tool to run the tests in a package. running go test in a package runs all the tests in that package and go test -run &amp;lt;testname&amp;gt; runs only given test.
+But what if you want to run test multiple times, go test to rescue,">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="running a single test multiple times in golang - Varun Saini">
+    <meta property="og:description" content="go provides a great standard library for testing. To test a function/method, just create name_test.go in same package and write you tests.
+Go also provides go test tool to run the tests in a package. running go test in a package runs all the tests in that package and go test -run &amp;lt;testname&amp;gt; runs only given test.
+But what if you want to run test multiple times, go test to rescue,">
+    <meta property="og:url" content="https://varunksaini.com/run-go-test-multiple-times/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>running a single test multiple times in golang - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="go provides a great standard library for testing. To test a function/method, just create name_test.go in same package and write you tests.
+Go also provides go test tool to run the tests in a package. running go test in a package runs all the tests in that package and go test -run &amp;lt;testname&amp;gt; runs only given test.
+But what if you want to run test multiple times, go test to rescue,">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">running a single test multiple times in golang</h1>
+    <time datetime="2017-06-29 21:10:59 CDT">29 Jun 2017</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/golang">golang</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/blog">blog</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p><a href="https://golang.org">go</a> provides a great standard library for <a href="https://golang.org/pkg/testing/">testing</a>. To test a function/method, just create <code>name_test.go</code> in same package and write you tests.</p>
+<p>Go also provides <code>go test</code> tool to run the tests in a package. running <code>go test</code> in a package runs all the tests in that package and <code>go test -run &lt;testname&gt;</code> runs only given test.</p>
+<p>But what if you want to run test multiple times, <code>go test</code> to rescue,</p>
+<p><code>go test -run &lt;testname&gt; -count 100</code></p>
+<p>will run given test 100 times.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

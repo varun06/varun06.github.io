@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Running Kafka in Docker on Mac - Varun Saini">
+    <meta name="twitter:description" content="Running Confluent kafka stack in docker on macOS is little bit hacky. Confluent doesn&amp;rsquo;t support docker on macOS yet. But here is how I made it work on my local macOS. I am using a docker compose file and it brings up a single node/single broker kafka cluster.
+ Save the below file to docker-compose.yml file on your local.  --- version: &#39;2&#39; services: zookeeper: image: confluentinc/cp-zookeeper:latest ports: - 2181:2181 environment: ZOOKEEPER_CLIENT_PORT: 2181 ZOOKEEPER_TICK_TIME: 2000 extra_hosts: - &amp;quot;moby:127.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Running Kafka in Docker on Mac - Varun Saini">
+    <meta property="og:description" content="Running Confluent kafka stack in docker on macOS is little bit hacky. Confluent doesn&amp;rsquo;t support docker on macOS yet. But here is how I made it work on my local macOS. I am using a docker compose file and it brings up a single node/single broker kafka cluster.
+ Save the below file to docker-compose.yml file on your local.  --- version: &#39;2&#39; services: zookeeper: image: confluentinc/cp-zookeeper:latest ports: - 2181:2181 environment: ZOOKEEPER_CLIENT_PORT: 2181 ZOOKEEPER_TICK_TIME: 2000 extra_hosts: - &amp;quot;moby:127.">
+    <meta property="og:url" content="https://varunksaini.com/running_kafka_in_docker_on_mac/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Running Kafka in Docker on Mac - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Running Confluent kafka stack in docker on macOS is little bit hacky. Confluent doesn&amp;rsquo;t support docker on macOS yet. But here is how I made it work on my local macOS. I am using a docker compose file and it brings up a single node/single broker kafka cluster.
+ Save the below file to docker-compose.yml file on your local.  --- version: &#39;2&#39; services: zookeeper: image: confluentinc/cp-zookeeper:latest ports: - 2181:2181 environment: ZOOKEEPER_CLIENT_PORT: 2181 ZOOKEEPER_TICK_TIME: 2000 extra_hosts: - &amp;quot;moby:127.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Running Kafka in Docker on Mac</h1>
+    <time datetime="2018-06-01 10:16:26 CDT">01 Jun 2018</time>
+    
+    
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Running Confluent kafka stack in docker on macOS is little bit hacky. Confluent doesn&rsquo;t support docker on macOS yet.
+But here is how I made it work on my local macOS. I am using a docker compose file and it brings up a single node/single broker kafka cluster.</p>
+<ol>
+<li>Save the below file to <code>docker-compose.yml</code> file on your local.</li>
+</ol>
+<pre><code>---
+version: '2'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    ports:
+      - 2181:2181
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    hostname: kafka-host
+    ports:
+      - 9092:9092
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://host.docker.internal:9092
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: &quot;true&quot;
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:latest
+    hostname: sr-host
+    ports:
+      - 8081:8081
+    depends_on:
+      - zookeeper
+      - kafka
+    environment:
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
+      SCHEMA_REGISTRY_HOST_NAME: sr-host
+      SCHEMA_REGISTRY_LISTENERS: http://sr-host:8081
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
+
+  kafka-rest:
+    image: confluentinc/cp-kafka-rest:latest
+    hostname: kr-host
+    ports:
+      - 8082:8082
+    depends_on:
+      - zookeeper
+      - kafka
+      - schema-registry
+    environment:
+      KAFKA_REST_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_REST_LISTENERS: http://kr-host:8082
+      KAFKA_REST_SCHEMA_REGISTRY_URL: http://sr-host:8081
+      KAFKA_REST_HOST_NAME: kr-host
+      KAFKA_REST_BOOTSTRAP_SERVERS: host.docker.internal:9092
+    extra_hosts:
+      - &quot;moby:127.0.0.1&quot;
+      - &quot;localhost: 127.0.0.1&quot;
+</code></pre><ol start="2">
+<li>Run <code>docker-compose up</code></li>
+<li>Ensure the processes are running by running <code>docker-compose ps</code></li>
+<li>Add <code>machine_ip host.docker.internal</code> to your /etc/hosts file. Such as <code>10.0.1.1 host.docker.internal</code>
+Note - machine ip changes with network, so update the <code>hosts</code> file accordingly</li>
+</ol>
+<p>And there it is, connect on <code>localhost:9092</code> and start producing to your kafka cluster in docker.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

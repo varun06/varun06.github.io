@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TIL on Varun Saini</title>
     <link>https://varunksaini.com/tags/til/</link>
     <description>Recent content in TIL on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Fri, 27 Jan 2017 15:02:51 -0600</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/til/index.xml" rel="self" type="application/rss+xml" />
@@ -13,23 +13,23 @@
     
     <item>
       <title>http multiple registration error in go</title>
-      <link>https://varunksaini.com/blog/go-http-multiple-registration-error/</link>
+      <link>https://varunksaini.com/go-http-multiple-registration-error/</link>
       <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/go-http-multiple-registration-error/</guid>
+      <guid>https://varunksaini.com/go-http-multiple-registration-error/</guid>
       <description>Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
-go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) }  I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
-go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) }  </description>
+go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } </description>
     </item>
     
     <item>
       <title>var block changed to init function in assembly</title>
-      <link>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</link>
+      <link>https://varunksaini.com/var-changed-to-init-in-assembly/</link>
       <pubDate>Wed, 28 Dec 2016 14:29:42 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</guid>
+      <guid>https://varunksaini.com/var-changed-to-init-in-assembly/</guid>
       <description>TIL - go turns a var block in init function behind the scenes.
-package main import &amp;quot;fmt&amp;quot; var ( testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;) testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;) ) func main() {}  So if you look at the assembly code below, you will see that we have .main and .init. .init function has 0x0049 00073 (/Users/vakumar/temp/test.go:6) LEAQ go.string.&amp;quot;I am error one&amp;quot;(SB), AX which is in var block in my go code above.</description>
+package main import &amp;quot;fmt&amp;quot; var ( testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;) testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;) ) func main() {} So if you look at the assembly code below, you will see that we have .main and .init. .init function has 0x0049 00073 (/Users/vakumar/temp/test.go:6) LEAQ go.string.&amp;quot;I am error one&amp;quot;(SB), AX which is in var block in my go code above.</description>
     </item>
     
   </channel>

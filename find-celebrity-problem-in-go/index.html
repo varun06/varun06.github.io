@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Find Celebrity Problem in Go - Varun Saini">
+    <meta name="twitter:description" content="Problem Statement  Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them. Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: &amp;ldquo;Hi, A.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Find Celebrity Problem in Go - Varun Saini">
+    <meta property="og:description" content="Problem Statement  Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them. Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: &amp;ldquo;Hi, A.">
+    <meta property="og:url" content="https://varunksaini.com/find-celebrity-problem-in-go/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Find Celebrity Problem in Go - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Problem Statement  Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them. Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: &amp;ldquo;Hi, A.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Find Celebrity Problem in Go</h1>
+    <time datetime="2019-01-26 11:56:37 CST">26 Jan 2019</time>
+    
+    
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <h1 id="problem-statement">Problem Statement</h1>
+<blockquote>
+<p>Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them.
+Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: &ldquo;Hi, A. Do you know B?&rdquo; to get information of whether A knows B. You need to find out the celebrity (or verify there is not one) by asking as few questions as possible (in the asymptotic sense).
+You are given a helper function bool knows(a, b) which tells you whether A knows B. Implement a function int findCelebrity(n), your function should minimize the number of calls to knows.
+Note: There will be exactly one celebrity if he/she is in the party. Return the celebrity&rsquo;s label if there is a celebrity in the party. If there is no celebrity, return -1.Suppose you are at a party with n people (labeled from 0 to n - 1) and among them, there may exist one celebrity. The definition of a celebrity is that all the other n - 1 people know him/her but he/she does not know any of them.
+Now you want to find out who the celebrity is or verify that there is not one. The only thing you are allowed to do is to ask questions like: &ldquo;Hi, A. Do you know B?&rdquo; to get information of whether A knows B. You need to find out the celebrity (or verify there is not one) by asking as few questions as possible (in the asymptotic sense).
+You are given a helper function bool knows(a, b) which tells you whether A knows B. Implement a function int findCelebrity(n), your function should minimize the number of calls to knows.
+Note: There will be exactly one celebrity if he/she is in the party. Return the celebrity&rsquo;s label if there is a celebrity in the party. If there is no celebrity, return -1.</p>
+</blockquote>
+<hr>
+<p>Some things that we can deduce from problem statement -</p>
+<ol>
+<li>There is only one celebrity and every other person in the party knows this celebrity.</li>
+<li>Celebrity doesn&rsquo;t know anyone in party.</li>
+</ol>
+<p>Now we have to find a person who is known by most of the people and then confirm this person fits all the point above.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go">
+<span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+
+<span class="c1">//We can also make it a boolean matrix
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">matrix</span> <span class="p">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">8</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span>
+	<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+	<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+	<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+	<span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">n</span> <span class="o">:=</span> <span class="mi">4</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nf">findCelebrity</span><span class="p">(</span><span class="nx">n</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">knows</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="nx">matrix</span><span class="p">[</span><span class="nx">a</span><span class="p">][</span><span class="nx">b</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">false</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">findCelebrity</span><span class="p">(</span><span class="nx">n</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">celeb</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nf">knows</span><span class="p">(</span><span class="nx">celeb</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">celeb</span> <span class="p">=</span> <span class="nx">i</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="nx">i</span> <span class="o">!=</span> <span class="nx">celeb</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nf">knows</span><span class="p">(</span><span class="nx">celeb</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span> <span class="o">||</span> <span class="p">!</span><span class="nf">knows</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">celeb</span><span class="p">))</span> <span class="p">{</span>
+			<span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">celeb</span>
+<span class="p">}</span>
+
+</code></pre></div><p>This is a linear time solution O(n).</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

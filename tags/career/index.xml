@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>career on Varun Saini</title>
     <link>https://varunksaini.com/tags/career/</link>
     <description>Recent content in career on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 20 Feb 2016 06:57:49 -0600</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/career/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>do we need so many data scientists</title>
-      <link>https://varunksaini.com/blog/do-we-need-so-many-data-scientists/</link>
+      <link>https://varunksaini.com/do-we-need-so-many-data-scientists/</link>
       <pubDate>Sat, 20 Feb 2016 06:57:49 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/do-we-need-so-many-data-scientists/</guid>
+      <guid>https://varunksaini.com/do-we-need-so-many-data-scientists/</guid>
       <description>Hiring is a difficult problem to solve(http://www.theatlantic.com/business/archive/2013/06/why-is-it-so-hard-to-hire-great-people/277122/). Career fairs are a good way to meet college graduates who are looking for internship or full time opportunities. I have been to many career fairs and we found some really good engineers(some of them are my colleagues) there. But some time back I noticed that there are lots of students looking for data science or data analysts roles(both internship or full time). Even this year, I have been to two career fairs and I am amazed how many students wants to be data scientists or data analysts.</description>
     </item>
     

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Reverese Integer in Go - Varun Saini">
+    <meta name="twitter:description" content="a simple function to reverse integer in go.
+//negative numbers are not handled func reverse(num int) int { z := 0 for num &amp;gt; 0 { z = z*10 &#43; num%10 num /= 10 } return z } //negative numbers and 32 bit integer overflow is handled func reverse(x int) int { isNegative := false maxInt32 := 1&amp;lt;&amp;lt;31 - 1 if x &amp;lt; 0 { isNegative = true x = -x } res := 0 for x &amp;gt; 0 { res = res*10 &#43; x%10 x /= 10 } if res &amp;gt; maxInt32 { return 0 } if isNegative { return -res } return res } ">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reverese Integer in Go - Varun Saini">
+    <meta property="og:description" content="a simple function to reverse integer in go.
+//negative numbers are not handled func reverse(num int) int { z := 0 for num &amp;gt; 0 { z = z*10 &#43; num%10 num /= 10 } return z } //negative numbers and 32 bit integer overflow is handled func reverse(x int) int { isNegative := false maxInt32 := 1&amp;lt;&amp;lt;31 - 1 if x &amp;lt; 0 { isNegative = true x = -x } res := 0 for x &amp;gt; 0 { res = res*10 &#43; x%10 x /= 10 } if res &amp;gt; maxInt32 { return 0 } if isNegative { return -res } return res } ">
+    <meta property="og:url" content="https://varunksaini.com/reverese-integer-in-go/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Reverese Integer in Go - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="a simple function to reverse integer in go.
+//negative numbers are not handled func reverse(num int) int { z := 0 for num &amp;gt; 0 { z = z*10 &#43; num%10 num /= 10 } return z } //negative numbers and 32 bit integer overflow is handled func reverse(x int) int { isNegative := false maxInt32 := 1&amp;lt;&amp;lt;31 - 1 if x &amp;lt; 0 { isNegative = true x = -x } res := 0 for x &amp;gt; 0 { res = res*10 &#43; x%10 x /= 10 } if res &amp;gt; maxInt32 { return 0 } if isNegative { return -res } return res } ">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Reverese Integer in Go</h1>
+    <time datetime="2019-01-20 16:15:45 CST">20 Jan 2019</time>
+    
+    
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>a simple function to reverse integer in go.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//negative numbers are not handled
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">reverse</span><span class="p">(</span><span class="nx">num</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+	<span class="nx">z</span> <span class="o">:=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="nx">num</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+		<span class="nx">z</span> <span class="p">=</span> <span class="nx">z</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="nx">num</span><span class="o">%</span><span class="mi">10</span>
+		<span class="nx">num</span> <span class="o">/=</span> <span class="mi">10</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nx">z</span>
+<span class="p">}</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">//negative numbers and 32 bit integer overflow is handled
+</span><span class="c1"></span><span class="kd">func</span> <span class="nf">reverse</span><span class="p">(</span><span class="nx">x</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="nx">isNegative</span> <span class="o">:=</span> <span class="kc">false</span>
+    <span class="nx">maxInt32</span> <span class="o">:=</span> <span class="mi">1</span><span class="o">&lt;&lt;</span><span class="mi">31</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="nx">x</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="nx">isNegative</span> <span class="p">=</span> <span class="kc">true</span>
+        <span class="nx">x</span> <span class="p">=</span> <span class="o">-</span><span class="nx">x</span>
+    <span class="p">}</span>
+    
+    <span class="nx">res</span> <span class="o">:=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="nx">x</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="nx">res</span> <span class="p">=</span> <span class="nx">res</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="nx">x</span><span class="o">%</span><span class="mi">10</span>
+        <span class="nx">x</span> <span class="o">/=</span> <span class="mi">10</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="nx">res</span> <span class="p">&gt;</span> <span class="nx">maxInt32</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="p">}</span>
+    
+    <span class="k">if</span> <span class="nx">isNegative</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">-</span><span class="nx">res</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">res</span> 
+<span class="p">}</span>
+
+</code></pre></div>
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

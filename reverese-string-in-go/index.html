@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Reverese String in Go - Varun Saini">
+    <meta name="twitter:description" content="A simple function to reverse string in go. In go, a string is a read only slice of bytes. We use that fact and convert given string to a slice of byte. Once we have a slice of bytes, reversing it is just a matter of swapping individual bytes. In the end we convert the byte slice to string and return it.
+func reverse(s string) string { b := []byte(s) i, j := 0, len(s)-1 for i &amp;lt; j { b[i], b[j] = b[j], b[i] i&#43;&#43; j-- } return string(b) } ">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reverese String in Go - Varun Saini">
+    <meta property="og:description" content="A simple function to reverse string in go. In go, a string is a read only slice of bytes. We use that fact and convert given string to a slice of byte. Once we have a slice of bytes, reversing it is just a matter of swapping individual bytes. In the end we convert the byte slice to string and return it.
+func reverse(s string) string { b := []byte(s) i, j := 0, len(s)-1 for i &amp;lt; j { b[i], b[j] = b[j], b[i] i&#43;&#43; j-- } return string(b) } ">
+    <meta property="og:url" content="https://varunksaini.com/reverese-string-in-go/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Reverese String in Go - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="A simple function to reverse string in go. In go, a string is a read only slice of bytes. We use that fact and convert given string to a slice of byte. Once we have a slice of bytes, reversing it is just a matter of swapping individual bytes. In the end we convert the byte slice to string and return it.
+func reverse(s string) string { b := []byte(s) i, j := 0, len(s)-1 for i &amp;lt; j { b[i], b[j] = b[j], b[i] i&#43;&#43; j-- } return string(b) } ">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Reverese String in Go</h1>
+    <time datetime="2019-01-20 16:15:33 CST">20 Jan 2019</time>
+    
+    
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>A simple function to reverse string in go. In go, a string is a read only slice of bytes. We use that fact and convert given string to a slice of byte. Once we have a slice of bytes, reversing it is just a matter of swapping individual bytes. In the end we convert the byte slice to string and return it.</p>
+<pre><code>func reverse(s string) string {
+	b := []byte(s)
+	i, j := 0, len(s)-1
+
+	for i &lt; j {
+		b[i], b[j] = b[j], b[i]
+		i++
+		j--
+	}
+	return string(b)
+}
+</code></pre>
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

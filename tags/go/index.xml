@@ -1,65 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>go on Varun Saini</title>
     <link>https://varunksaini.com/tags/go/</link>
     <description>Recent content in go on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Tue, 27 Jun 2017 08:01:00 -0500</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jun 2017 21:10:59 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>writing files completely to disk in go</title>
-      <link>https://varunksaini.com/blog/write-file-completely-go/</link>
+      <link>https://varunksaini.com/write-file-completely-go/</link>
       <pubDate>Tue, 27 Jun 2017 08:01:00 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/write-file-completely-go/</guid>
+      <guid>https://varunksaini.com/write-file-completely-go/</guid>
       <description>When we write a file, how we make sure that file is written completely to disk. One of the way is write a temporary file first and then rename it, rename operation is atomic, so we get a complete file.
 tempFile, err := ioutil.TempFile(path, name) if err != nil { return err } defer tempFile.Close() tempname := tempFile.Name() defer os.Remove(tempname) //Write to temp file err = os.Rename(tempname, filename) if err !</description>
     </item>
     
     <item>
       <title>backoff and  retry in go</title>
-      <link>https://varunksaini.com/blog/backoff-retry-in-golang/</link>
+      <link>https://varunksaini.com/backoff-retry-in-golang/</link>
       <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/backoff-retry-in-golang/</guid>
+      <guid>https://varunksaini.com/backoff-retry-in-golang/</guid>
       <description>Failure is a way of life. Requests(http or others..) can fail for many reasons. Decision to stop or retry can be very critical for applications. backoff algorithms provide a way to backoff and retry on a failure. There are two popular methods to backoff, constant backoff and exponential backoff.
-I use backoff library, which is a Go port of exponential backoff algorithm from Google&amp;rsquo;s HTTP Client Library for Java.</description>
+I use backoff library, which is a Go port of exponential backoff algorithm from Google&amp;rsquo;s HTTP Client Library for Java.
+backoff provides 4 main functionalities.</description>
     </item>
     
     <item>
       <title>http multiple registration error in go</title>
-      <link>https://varunksaini.com/blog/go-http-multiple-registration-error/</link>
+      <link>https://varunksaini.com/go-http-multiple-registration-error/</link>
       <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/go-http-multiple-registration-error/</guid>
+      <guid>https://varunksaini.com/go-http-multiple-registration-error/</guid>
       <description>Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
-go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) }  I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
-go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) }  </description>
+go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } </description>
     </item>
     
     <item>
       <title>how to see assembly code for a go program</title>
-      <link>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</link>
+      <link>https://varunksaini.com/how-to-get-assembly-for-go-program/</link>
       <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</guid>
+      <guid>https://varunksaini.com/how-to-get-assembly-for-go-program/</guid>
       <description>Go makes it very easy to look at assembly code for a go program. You can use go tool compile or go build with gcflags to print the assembly on stdout.
 $ cat hello.go package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Hello, Assembly!&amp;quot;) } $ go build -gcflags -S hello.go # command-line-arguments &amp;quot;&amp;quot;.main t=1 size=179 args=0x0 locals=0x58 0x0000 00000 (hello.go:5) TEXT &amp;quot;&amp;quot;.main(SB), $88-0 0x0000 00000 (hello.go:5) MOVQ (TLS), CX 0x0009 00009 (hello.</description>
     </item>
     
     <item>
       <title>var block changed to init function in assembly</title>
-      <link>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</link>
+      <link>https://varunksaini.com/var-changed-to-init-in-assembly/</link>
       <pubDate>Wed, 28 Dec 2016 14:29:42 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</guid>
+      <guid>https://varunksaini.com/var-changed-to-init-in-assembly/</guid>
       <description>TIL - go turns a var block in init function behind the scenes.
-package main import &amp;quot;fmt&amp;quot; var ( testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;) testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;) ) func main() {}  So if you look at the assembly code below, you will see that we have .main and .init. .init function has 0x0049 00073 (/Users/vakumar/temp/test.go:6) LEAQ go.string.&amp;quot;I am error one&amp;quot;(SB), AX which is in var block in my go code above.</description>
+package main import &amp;quot;fmt&amp;quot; var ( testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;) testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;) ) func main() {} So if you look at the assembly code below, you will see that we have .main and .init. .init function has 0x0049 00073 (/Users/vakumar/temp/test.go:6) LEAQ go.string.&amp;quot;I am error one&amp;quot;(SB), AX which is in var block in my go code above.</description>
     </item>
     
   </channel>

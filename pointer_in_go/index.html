@@ -1,56 +1,77 @@
-    <!DOCTYPE html>
+<!doctype html>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Varun Saini">
-		<meta name="description" content="Just write">
-		<meta name="generator" content="Hugo 0.17" />
-		<title>Pointer type in Go &middot; Never stop learning...</title>
-		<link rel="shortcut icon" href="http://varunksaini.com/images/favicon.ico">
-		<link rel="stylesheet" href="http://varunksaini.com/css/style.css">
-		<link rel="stylesheet" href="http://varunksaini.com/css/highlight.css">
-		
 
-		
-		<link rel="stylesheet" href="http://varunksaini.com/css/monosocialiconsfont.css">
-		
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
 
-		
-		<link href="http://varunksaini.com/index.xml" rel="alternate" type="application/rss+xml" title="Never stop learning..." />
-		
-	</head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pointer type in Go - Varun Saini">
+    <meta name="twitter:description" content="Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;unsafe&amp;quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pointer type in Go - Varun Saini">
+    <meta property="og:description" content="Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;unsafe&amp;quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.">
+    <meta property="og:url" content="https://varunksaini.com/pointer_in_go/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Pointer type in Go - Varun Saini</title>
 
-    <body>
-       <nav class="main-nav">
-	
-	
-		<a href='http://varunksaini.com/'> <span class="arrow">←</span>Home</a>
-	
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called unsafe and unsafe package provides a Pointer type.
+package main import ( &amp;quot;fmt&amp;quot; &amp;quot;unsafe&amp;quot; ) func main() { type test struct{} var myTest = new(test) myPtr := unsafe.">
 
-	
-		<a href='http://varunksaini.com/about'>About</a>
-	
+    
+    
 
-	
-	<a class="cta" href="http://varunksaini.com/index.xml">Subscribe</a>
-	
-</nav>
+    
+    
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>Pointer type in Go</h1>
-                    <h2 class="headline">
-                    April 26, 2015 
-                    <br>
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    <p>Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called <a href="https://golang.org/pkg/unsafe/#Pointer">unsafe</a> and unsafe package provides a Pointer type.</p>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
 
+    
+    
+    <h1 class="text-4xl font-bold">Pointer type in Go</h1>
+    <time datetime="2015-04-26 07:40:00 -0600">26 Apr 2015</time>
+    
+    
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Go has pointer but no pointer arithmatic. Go is strict about memory safety but sometime you need to get access to pointers. I am working on a task where I am porting some C code to Go. C code is using a lot of pointers and I wanted a way to replicate same in Go. Go has a package called <a href="https://golang.org/pkg/unsafe/#Pointer">unsafe</a> and unsafe package provides a Pointer type.</p>
 <pre><code>package main
 
 import (
@@ -65,10 +86,7 @@ func main() {
 	fmt.Printf(&quot;%T&quot;, myPtr)
 }
 
-</code></pre>
-
-<p><code>myPtr</code> is &ldquo;unsafe.Pointer&rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to <code>uintptr</code> first.</p>
-
+</code></pre><p><code>myPtr</code> is &ldquo;unsafe.Pointer&rdquo; type and if you want to use any operator or cast it to any other pointer, cast it to <code>uintptr</code> first.</p>
 <pre><code>package main
 
 import (
@@ -84,10 +102,7 @@ func main() {
 	newMyPtr := uint32(myPtr)
 	fmt.Printf(&quot;%T&quot;, newMyPtr)
 }
-</code></pre>
-
-<p>This will generate an error &ldquo;cannot convert myPtr (type unsafe.Pointer) to type uint32&rdquo;.</p>
-
+</code></pre><p>This will generate an error &ldquo;cannot convert myPtr (type unsafe.Pointer) to type uint32&rdquo;.</p>
 <pre><code>package main
 
 import (
@@ -103,177 +118,21 @@ func main() {
 	newMyPtr := uint32(uintptr(myPtr))
 	fmt.Printf(&quot;%T&quot;, newMyPtr)
 }
-</code></pre>
-
-<p>This works fine.</p>
-
+</code></pre><p>This works fine.</p>
 <p>Just be carefull when using unsafe package. If not used properly you might end up looking at memory leaks.</p>
 
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/https://twitter.com/varunksaini">
-                        <img class="avatar" src="http://varunksaini.com/images/avatar.png">
-                        <div>
-                            <span class="dark">Varun Saini</span>
-                            <span>Who am I, Why I am here...</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=http%3a%2f%2fvarunksaini.com%2fpointer_in_go%2f - Pointer%20type%20in%20Go by @https%3a%2f%2ftwitter.com%2fvarunksaini"><span class="icon-twitter"> Tweet</span></a>
-
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect"> Share</span>
-</a>
-
-                </section>
-            </footer>
-
-            <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'varunksaini';
-    var disqus_identifier = 'http:\/\/varunksaini.com\/pointer_in_go\/';
-    var disqus_title = 'Pointer type in Go';
-    var disqus_url = 'http:\/\/varunksaini.com\/pointer_in_go\/';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-            <ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
-    
-    
-        
-        <li>
-            <a href="http://varunksaini.com/sunday-reading-the-priviliged-immigrant/">Sunday reading the privileged immigrant<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/aeon-newsletter-Nov262016/">aeon newsletter Nov262016<aside class="dates">Nov 26</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/Alan-Kay-Joe-Armstrong/">Alan Kay interview by Joe Armstrong<aside class="dates">Nov 25</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/question-about-type-assertion/">question about type assertion in go<aside class="dates">Nov 23</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/block-youtube-apple-mac-osx/">block youtube on apple mac osx using Parental Controls<aside class="dates">Nov 12</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/using-if-in-defer/">Using if condition in a defer statement<aside class="dates">Nov 1</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/how-not-to-handle-errors-in-golang/">how not to handle errors in golang<aside class="dates">Oct 27</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/remove-big-file-from-git-repo/">remove big file from git repo<aside class="dates">Oct 22</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/get-back-to-blogging/">get back to blogging<aside class="dates">Oct 16</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="http://varunksaini.com/laptop-repair/">laptop repair<aside class="dates">Aug 13</aside></a>
-        </li>
-        
-   
-</ul>
-            <footer id="footer">
-    
-        <div id="social">
-
-	
-	
-    
-    <a class="symbol" href="https://www.facebook.com/varunksaini">
-        circlefacebook
-    </a>
-    
-    <a class="symbol" href="https://www.github.com/varun06">
-        circlegithub
-    </a>
-    
-    <a class="symbol" href="https://www.twitter.com/varunksaini">
-        circletwitterbird
-    </a>
-    
-
-
-</div>
 
     
-    <p class="small">
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
     
-        © Copyright 2016 Varun Saini
-    
-    </p>
-</footer>
-
-        </section>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://varunksaini.com/js/main.js"></script>
-<script src="http://varunksaini.com/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-42065254-1', 'auto');
-ga('send', 'pageview');
-</script>
-
-
-    </body>
+</body>
 </html>

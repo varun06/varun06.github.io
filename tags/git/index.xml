@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>git on Varun Saini</title>
     <link>https://varunksaini.com/tags/git/</link>
     <description>Recent content in git on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Sat, 22 Oct 2016 07:35:43 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>remove big file from git repo</title>
-      <link>https://varunksaini.com/blog/remove-big-file-from-git-repo/</link>
+      <link>https://varunksaini.com/remove-big-file-from-git-repo/</link>
       <pubDate>Sat, 22 Oct 2016 07:35:43 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/remove-big-file-from-git-repo/</guid>
+      <guid>https://varunksaini.com/remove-big-file-from-git-repo/</guid>
       <description>Sometimes you push a big binary/text(etc.) file to your git repo and these files stay in your git history. Your repo size go to roof and it takes time to clone that repo, which is a big pain. One of my git repo at work had a big binary(logstash deb file) in history and it was inflating the repo size to over 80mb. So I thought of cleaning the repo and bring down the size.</description>
     </item>
     

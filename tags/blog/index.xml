@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on Varun Saini</title>
     <link>https://varunksaini.com/tags/blog/</link>
     <description>Recent content in blog on Varun Saini</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
+    <language>en-us</language>
     <lastBuildDate>Thu, 29 Jun 2017 21:10:59 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +13,10 @@
     
     <item>
       <title>running a single test multiple times in golang</title>
-      <link>https://varunksaini.com/blog/run-go-test-multiple-times/</link>
+      <link>https://varunksaini.com/run-go-test-multiple-times/</link>
       <pubDate>Thu, 29 Jun 2017 21:10:59 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/run-go-test-multiple-times/</guid>
+      <guid>https://varunksaini.com/run-go-test-multiple-times/</guid>
       <description>go provides a great standard library for testing. To test a function/method, just create name_test.go in same package and write you tests.
 Go also provides go test tool to run the tests in a package. running go test in a package runs all the tests in that package and go test -run &amp;lt;testname&amp;gt; runs only given test.
 But what if you want to run test multiple times, go test to rescue,</description>
@@ -24,155 +24,156 @@ But what if you want to run test multiple times, go test to rescue,</description
     
     <item>
       <title>go slice array allocation gotcha</title>
-      <link>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</link>
+      <link>https://varunksaini.com/go-slice-array-allocation-gotcha/</link>
       <pubDate>Tue, 21 Feb 2017 16:19:52 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/go-slice-array-allocation-gotcha/</guid>
+      <guid>https://varunksaini.com/go-slice-array-allocation-gotcha/</guid>
       <description>Why is memory is allocated differently when you preallocate a slice and an array in golang.
-slicey := make([]byte, 1024*1024)  top shows there is no extra memory allocated while a program with that slice is running.
-arr := [1024*1024]byte{}  top shows that memory is allocated while that program is running.
-I am baffled why there is difference when slice also has a backing array that need to be initialized?</description>
+slicey := make([]byte, 1024*1024) top shows there is no extra memory allocated while a program with that slice is running.
+arr := [1024*1024]byte{} top shows that memory is allocated while that program is running.
+I am baffled why there is difference when slice also has a backing array that need to be initialized?
+Program you can run</description>
     </item>
     
     <item>
       <title>http multiple registration error in go</title>
-      <link>https://varunksaini.com/blog/go-http-multiple-registration-error/</link>
+      <link>https://varunksaini.com/go-http-multiple-registration-error/</link>
       <pubDate>Fri, 27 Jan 2017 15:02:51 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/go-http-multiple-registration-error/</guid>
+      <guid>https://varunksaini.com/go-http-multiple-registration-error/</guid>
       <description>Today while adding a simple http endpoint to one of our app, I saw this panic: http: multiple registrations with /myhandler. My code was simply
-go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) }  I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
-go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) }  </description>
+go func(){ http.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } I read some official documentation and asked around. I came to know it happens if you use defaultHTTPMux, which doesn&amp;rsquo;t support multiple registrations. This can be fixed with
+go func(){ mux := http.NewServeMux() mux.Handler(&amp;quot;/request&amp;quot;, requesthandler) http.ListenAndServe(&amp;quot;:9000&amp;quot;, nil) } </description>
     </item>
     
     <item>
       <title>send key value messages to kafka from console producer</title>
-      <link>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</link>
+      <link>https://varunksaini.com/send-key-value-messages-to-kafka-from-console-producer/</link>
       <pubDate>Fri, 20 Jan 2017 05:40:02 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/send-key-value-messages-to-kafka-from-console-producer/</guid>
+      <guid>https://varunksaini.com/send-key-value-messages-to-kafka-from-console-producer/</guid>
       <description>Kafka provides kafka-console-producer.sh to send messages from stdin
-&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2  or file.
-&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt  messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
-	for (( i=1; i&amp;lt;=10; i++ )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.</description>
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test message1 message2 or file.
+&amp;gt; bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test &amp;lt; messages.txt messages send from above methods are parsed as values. If you want to send 10 messages from console producer with explicitly defined key.
+	for (( i=1; i&amp;lt;=10; i++ )); do echo &amp;quot;key$$i:value$$i&amp;quot; | bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test --property &amp;quot;parse.key=true&amp;quot; --property &amp;quot;key.separator=:&amp;quot;; done; </description>
     </item>
     
     <item>
       <title>how to see assembly code for a go program</title>
-      <link>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</link>
+      <link>https://varunksaini.com/how-to-get-assembly-for-go-program/</link>
       <pubDate>Mon, 02 Jan 2017 18:38:12 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/how-to-get-assembly-for-go-program/</guid>
+      <guid>https://varunksaini.com/how-to-get-assembly-for-go-program/</guid>
       <description>Go makes it very easy to look at assembly code for a go program. You can use go tool compile or go build with gcflags to print the assembly on stdout.
 $ cat hello.go package main import &amp;quot;fmt&amp;quot; func main() { fmt.Println(&amp;quot;Hello, Assembly!&amp;quot;) } $ go build -gcflags -S hello.go # command-line-arguments &amp;quot;&amp;quot;.main t=1 size=179 args=0x0 locals=0x58 0x0000 00000 (hello.go:5) TEXT &amp;quot;&amp;quot;.main(SB), $88-0 0x0000 00000 (hello.go:5) MOVQ (TLS), CX 0x0009 00009 (hello.</description>
     </item>
     
     <item>
       <title>var block changed to init function in assembly</title>
-      <link>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</link>
+      <link>https://varunksaini.com/var-changed-to-init-in-assembly/</link>
       <pubDate>Wed, 28 Dec 2016 14:29:42 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/var-changed-to-init-in-assembly/</guid>
+      <guid>https://varunksaini.com/var-changed-to-init-in-assembly/</guid>
       <description>TIL - go turns a var block in init function behind the scenes.
-package main import &amp;quot;fmt&amp;quot; var ( testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;) testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;) ) func main() {}  So if you look at the assembly code below, you will see that we have .main and .init. .init function has 0x0049 00073 (/Users/vakumar/temp/test.go:6) LEAQ go.string.&amp;quot;I am error one&amp;quot;(SB), AX which is in var block in my go code above.</description>
+package main import &amp;quot;fmt&amp;quot; var ( testError1 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error one&amp;quot;) testError2 = fmt.Errorf(&amp;quot;%s &amp;quot;, &amp;quot;I am error two&amp;quot;) ) func main() {} So if you look at the assembly code below, you will see that we have .main and .init. .init function has 0x0049 00073 (/Users/vakumar/temp/test.go:6) LEAQ go.string.&amp;quot;I am error one&amp;quot;(SB), AX which is in var block in my go code above.</description>
     </item>
     
     <item>
       <title>rise of the robots by martin ford</title>
-      <link>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</link>
+      <link>https://varunksaini.com/rise-of-the-robots-by-martin-ford/</link>
       <pubDate>Sun, 25 Dec 2016 18:38:20 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/rise-of-the-robots-by-martin-ford/</guid>
+      <guid>https://varunksaini.com/rise-of-the-robots-by-martin-ford/</guid>
       <description>I have been reading Rise of the robots from some time and finally finished it today. It was a real good read and talk about impact of automation and jobs and society in general. This topics talked about in the book can not be more timely. Automation is coming and turning out to be a job killer. So the book talk about some of the actions that can be taken to help society in general.</description>
     </item>
     
     <item>
       <title>how do you write error statement</title>
-      <link>https://varunksaini.com/blog/how-do-you-write-error-statement/</link>
+      <link>https://varunksaini.com/how-do-you-write-error-statement/</link>
       <pubDate>Thu, 22 Dec 2016 12:48:00 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/how-do-you-write-error-statement/</guid>
+      <guid>https://varunksaini.com/how-do-you-write-error-statement/</guid>
       <description>In go, when I write an error statement, I don&amp;rsquo;t keep any space between function call and error check statement, such as -
-something, err := doSoemthing() if err != nil { //handle error }  But I have also seen people doing following -
-something, err := doSoemthing() if err != nil { //handle error }  How do you write that error check?</description>
+something, err := doSoemthing() if err != nil { //handle error } But I have also seen people doing following -
+something, err := doSoemthing() if err != nil { //handle error } How do you write that error check?</description>
     </item>
     
     <item>
       <title>notes on Stories of your life and others by Ted Chiang</title>
-      <link>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</link>
+      <link>https://varunksaini.com/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</link>
       <pubDate>Sat, 10 Dec 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</guid>
+      <guid>https://varunksaini.com/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</guid>
       <description>I came to know about Ted Chiang and his work after movie Arrival. I bought The story of your life and others on kindle to give it a read. I like sci-fi and thoroughly enjoyed reading this book. This book is not your everyday bad alien fighting book. This book has 8 short stories and every story is different. I am listing the stories from book below.
  Story of your life - My favorite story and Arrival movie is based on this story.</description>
     </item>
     
     <item>
       <title>what do you learn from technical videos</title>
-      <link>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</link>
+      <link>https://varunksaini.com/what-do-you-learn-from-technical-vidoes/</link>
       <pubDate>Wed, 07 Dec 2016 12:15:46 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/what-do-you-learn-from-technical-vidoes/</guid>
+      <guid>https://varunksaini.com/what-do-you-learn-from-technical-vidoes/</guid>
       <description>I watch many technical videos but I feel that I don&amp;rsquo;t learn much from the technical videos. I have tried some techniques but nothing has worked as much as I want. That&amp;rsquo;s why I thoguht of asking, What and how people learn from technical videos.</description>
     </item>
     
     <item>
       <title>go puzzlers and thoughts</title>
-      <link>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</link>
+      <link>https://varunksaini.com/golang-puzzlers-and-thoughts/</link>
       <pubDate>Sun, 04 Dec 2016 07:15:59 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/golang-puzzlers-and-thoughts/</guid>
+      <guid>https://varunksaini.com/golang-puzzlers-and-thoughts/</guid>
       <description>Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
-package main import &amp;quot;fmt&amp;quot; func main() { m := make(map[string]int) m[&amp;quot;foo&amp;quot;]++ fmt.Println(m[&amp;quot;foo&amp;quot;]) }  Zero Values:
+package main import &amp;quot;fmt&amp;quot; func main() { m := make(map[string]int) m[&amp;quot;foo&amp;quot;]++ fmt.Println(m[&amp;quot;foo&amp;quot;]) } Zero Values:
 Dave asks &amp;ldquo;Is it going to compile and if yes, what will be the output&amp;rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &amp;quot;&amp;quot; and 0 values respectively.</description>
     </item>
     
     <item>
       <title>Why there is no place like home - thoughts after reading</title>
-      <link>https://varunksaini.com/blog/why-no-place-like-home/</link>
+      <link>https://varunksaini.com/why-no-place-like-home/</link>
       <pubDate>Sat, 03 Dec 2016 11:39:24 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/why-no-place-like-home/</guid>
+      <guid>https://varunksaini.com/why-no-place-like-home/</guid>
       <description>I really like Aeon magazine. Every weekend I get aeon newsletter and there is always some really good article/essay in newsletter. One of these essay that I read today is why there is no place like home anymore.This is a really thought provoking essay.
 Essay starts by talking about Tiny Homes that I saw some time back. Tiny home is an interesting concept but I didn&amp;rsquo;t know that you can also save tax on them.</description>
     </item>
     
     <item>
       <title>Sunday reading the privileged immigrant</title>
-      <link>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</link>
+      <link>https://varunksaini.com/sunday-reading-the-priviliged-immigrant/</link>
       <pubDate>Sat, 26 Nov 2016 20:48:29 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/sunday-reading-the-priviliged-immigrant/</guid>
+      <guid>https://varunksaini.com/sunday-reading-the-priviliged-immigrant/</guid>
       <description>I was checking some tweets on twitter and came through one that mentioned an article The priviliged immigrant. The article is written by an author who is of Indian descent. Author talks about hard work her parents did when they came to United States in 1965. Then she talked about her gardener who is a Mexican and seems like an undocumented worker.
 There is a period of uncertainty because of recent elections.</description>
     </item>
     
     <item>
       <title>aeon newsletter Nov262016</title>
-      <link>https://varunksaini.com/blog/aeon-newsletter-nov262016/</link>
+      <link>https://varunksaini.com/aeon-newsletter-nov262016/</link>
       <pubDate>Sat, 26 Nov 2016 06:05:16 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/aeon-newsletter-nov262016/</guid>
+      <guid>https://varunksaini.com/aeon-newsletter-nov262016/</guid>
       <description>I get Aeon magazine newsletter every weekend. They generally have some good article that I end up reading. In my quest to log what I read and watch here at my blog, today I am going to write about Aeon newsletter. I will only be writing what I read.
- Does Work mean everything to us, That is the question author is asking in Fuck Work, an article I read in Aeon.</description>
+  Does Work mean everything to us, That is the question author is asking in Fuck Work, an article I read in Aeon.</description>
     </item>
     
     <item>
       <title>Alan Kay interview by Joe Armstrong</title>
-      <link>https://varunksaini.com/blog/alan-kay-joe-armstrong/</link>
+      <link>https://varunksaini.com/alan-kay-joe-armstrong/</link>
       <pubDate>Fri, 25 Nov 2016 20:47:08 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/alan-kay-joe-armstrong/</guid>
+      <guid>https://varunksaini.com/alan-kay-joe-armstrong/</guid>
       <description>I watched this great video where Joe Armstrong interviews Alan Kay. This is a great video and both Alan Kay and Joe Armstrong talk about some real issues in current computer science. They both are not fond of cloud and internet of things.
 Both Alan Kay and Joe Armstrong want computer science people to understand history and build things that matter. They don&amp;rsquo;t want people to do things just for the sake of doing them(I am looking at you Javascript frameworks).</description>
     </item>
     
     <item>
       <title>question about type assertion in go</title>
-      <link>https://varunksaini.com/blog/question-about-type-assertion/</link>
+      <link>https://varunksaini.com/question-about-type-assertion/</link>
       <pubDate>Wed, 23 Nov 2016 09:47:56 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/question-about-type-assertion/</guid>
+      <guid>https://varunksaini.com/question-about-type-assertion/</guid>
       <description>One of our go app crashed recently because of a bug in https://github.com/urfave/cli/, here is the PR with fix from my collegue who found the issue. Then we started talking about it internally and found something that&amp;rsquo;s interesting. I understand some of it but not fully so I thought of asking people who might know.
 My question is why bar works but not foo.
 package main import ( &amp;quot;fmt&amp;quot; ) func main() { var f interface{} var b interface{} f = foo() b = bar() if _, ok := f.</description>
@@ -180,76 +181,76 @@ package main import ( &amp;quot;fmt&amp;quot; ) func main() { var f interface{} 
     
     <item>
       <title>block youtube on apple mac osx using Parental Controls</title>
-      <link>https://varunksaini.com/blog/block-youtube-apple-mac-osx/</link>
+      <link>https://varunksaini.com/block-youtube-apple-mac-osx/</link>
       <pubDate>Sat, 12 Nov 2016 06:27:38 -0600</pubDate>
       
-      <guid>https://varunksaini.com/blog/block-youtube-apple-mac-osx/</guid>
+      <guid>https://varunksaini.com/block-youtube-apple-mac-osx/</guid>
       <description>I was looking for a way to block Youtube. I searched around and found some ways, such as using openDNS on router level etc. They all were cumbersome and I wanted a simple solution. So I searched more and found that parental control on mac can do that.
 In mac you can open Parental Controls, and create a new account with Parental Controls enabled or turn Parental Controls on current account.</description>
     </item>
     
     <item>
       <title>Using if condition in a defer statement</title>
-      <link>https://varunksaini.com/blog/using-if-in-defer/</link>
+      <link>https://varunksaini.com/using-if-in-defer/</link>
       <pubDate>Tue, 01 Nov 2016 21:10:59 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/using-if-in-defer/</guid>
+      <guid>https://varunksaini.com/using-if-in-defer/</guid>
       <description>defer statement is used to do basic cleanup in go, deferred calls are executed when surrounding function returns.
-f, err := os.Open(fileName) if err != nil { return } defer src.Close()  We open a file and then use defer to close the file handle. Using defer makes sure that file handle is closed and we don&amp;rsquo;t have any bug in our code.But what if we want to make a decision(conditional) in defer, is that possible?</description>
+f, err := os.Open(fileName) if err != nil { return } defer src.Close() We open a file and then use defer to close the file handle. Using defer makes sure that file handle is closed and we don&amp;rsquo;t have any bug in our code.But what if we want to make a decision(conditional) in defer, is that possible?</description>
     </item>
     
     <item>
       <title>get back to blogging</title>
-      <link>https://varunksaini.com/blog/get-back-to-blogging/</link>
+      <link>https://varunksaini.com/get-back-to-blogging/</link>
       <pubDate>Sun, 16 Oct 2016 09:02:02 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/get-back-to-blogging/</guid>
+      <guid>https://varunksaini.com/get-back-to-blogging/</guid>
       <description>I have not been writing anything from some time. But I want to get back to it and have decided writing something every week. I will start by writing a review of a book that I read recently. I think it will be a good way to get back to writing and I will also get some motivation to read book. I have a list of technical books that I want to go through and learn.</description>
     </item>
     
     <item>
       <title>laptop repair</title>
-      <link>https://varunksaini.com/blog/laptop-repair/</link>
+      <link>https://varunksaini.com/laptop-repair/</link>
       <pubDate>Sat, 13 Aug 2016 10:26:10 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/laptop-repair/</guid>
+      <guid>https://varunksaini.com/laptop-repair/</guid>
       <description>I haven&amp;rsquo;t published anything on my blog because my personal laptop was having some issues. It is a mid 2012 retina Macbook Pro and I have it from last 4 years. It was kernel panicking and restarting every 5 minutes or so. I took it to Apple store and they ran some hardware tests. First they reinstalled the operating system and it did not help. I took it back for repair and they replaced the logic board.</description>
     </item>
     
     <item>
       <title>good read on golang and generics</title>
-      <link>https://varunksaini.com/blog/good-read-on-golang-and-generics/</link>
+      <link>https://varunksaini.com/good-read-on-golang-and-generics/</link>
       <pubDate>Sun, 17 Jul 2016 06:57:00 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/good-read-on-golang-and-generics/</guid>
+      <guid>https://varunksaini.com/good-read-on-golang-and-generics/</guid>
       <description>Generics in Golang is a topic that everybody loves to talk :). There have been lots of articles on golang and generics such as this, this and this. You can see it is a favorite topics of golang developers to talk about (My team personally discuss lack of generics in golang at least once a week).
 I found this article about generics on reddit and found it very informative. I hope this is helpful to you as I found it helpful for me.</description>
     </item>
     
     <item>
       <title>weekly reading 19July</title>
-      <link>https://varunksaini.com/blog/weekly-reading-19july/</link>
+      <link>https://varunksaini.com/weekly-reading-19july/</link>
       <pubDate>Sat, 16 Jul 2016 06:25:13 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-19july/</guid>
+      <guid>https://varunksaini.com/weekly-reading-19july/</guid>
       <description>This is what I read this week. Mostly technical and some documentation. I am not reading too many internet shared articles anymore. From next week I am thinking for refining it a bit more and add some context and date etc.
- http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/
- https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it
- http://docs.confluent.io/1.0/index.html
- http://peter.bourgon.org/blog/2016/07/11/context.html
- http://jamesclear.com/power-of-environment
- http://www.newyorker.com/culture/cultural-comment/headphones-everywhere
- http://spinroot.com/gerard/pdf/P10.pdf
- https://github.com/golang/go/wiki/CodeReviewComments
+  http://jvns.ca/blog/2016/07/03/debugging-tools-i-love/
+  https://aeon.co/ideas/the-mind-isn-t-locked-in-the-brain-but-extends-far-beyond-it
+  http://docs.confluent.io/1.0/index.html
+  http://peter.bourgon.org/blog/2016/07/11/context.html
+  http://jamesclear.com/power-of-environment
+  http://www.newyorker.com/culture/cultural-comment/headphones-everywhere
+  http://spinroot.com/gerard/pdf/P10.pdf
+  https://github.com/golang/go/wiki/CodeReviewComments
   </description>
     </item>
     
     <item>
       <title>weekly reading 9July</title>
-      <link>https://varunksaini.com/blog/weekly-reading-9july/</link>
+      <link>https://varunksaini.com/weekly-reading-9july/</link>
       <pubDate>Sat, 09 Jul 2016 05:46:45 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-9july/</guid>
+      <guid>https://varunksaini.com/weekly-reading-9july/</guid>
       <description>This week I didn&amp;rsquo;t read too many online articles. But still found some good technical articles that I read.
 http://videlalvaro.github.io/2015/02/programming-myths.html
 The real problem is forming our opinion very quicky without thinking a bit and looking at the context. Are &amp;quot;Goto&amp;quot; really harmful in computer programming or it is just a myth. This Statement by Donanld Knuth summerise this whole article - &amp;quot;We shouldn’t merely remove go to statements because it’s the fashionable thing to do; the presence or absence of go to statements is not really the issue.</description>
@@ -257,21 +258,21 @@ The real problem is forming our opinion very quicky without thinking a bit and l
     
     <item>
       <title>bash fifos and golang channel</title>
-      <link>https://varunksaini.com/blog/bash-fifos-and-golang-channel/</link>
+      <link>https://varunksaini.com/bash-fifos-and-golang-channel/</link>
       <pubDate>Mon, 04 Jul 2016 22:05:36 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/bash-fifos-and-golang-channel/</guid>
+      <guid>https://varunksaini.com/bash-fifos-and-golang-channel/</guid>
       <description>I have been reading about bash this weekend and came to know about FIFOs. After first glance I found similarities between named pipes and golang channel.
 FIFOs are created using the mkfifo command.
-$ mkfifo test  FIFOs provide a named pipe to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it.</description>
+$ mkfifo test FIFOs provide a named pipe to shuttle data from one place to another. If we create a FIFO and send some data to it, it will remain blocked forever, until a command tries to read from it.</description>
     </item>
     
     <item>
       <title>a quick introduction to standard streams, file descriptors, and redirection</title>
-      <link>https://varunksaini.com/blog/a-quick-introduction-to-standard-streams/</link>
+      <link>https://varunksaini.com/a-quick-introduction-to-standard-streams/</link>
       <pubDate>Sun, 03 Jul 2016 13:47:05 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/a-quick-introduction-to-standard-streams/</guid>
+      <guid>https://varunksaini.com/a-quick-introduction-to-standard-streams/</guid>
       <description>standard streams are pre connected input and output communication channels between a program and its environment.
 The three standard streams are stdin, stdout, and stderr.
 File descriptors are handles that are used to access an input or output file, stream, pipe, socket, device, network interface etc. File descriptors work by providing a layer of abstraction between an actual hardware device and a special file created by the kernel for the device, populated by udev, and stored in the /dev directory.</description>
@@ -279,31 +280,31 @@ File descriptors are handles that are used to access an input or output file, st
     
     <item>
       <title>standard bash error codes</title>
-      <link>https://varunksaini.com/blog/standard-bash-error-codes/</link>
+      <link>https://varunksaini.com/standard-bash-error-codes/</link>
       <pubDate>Sun, 03 Jul 2016 06:33:31 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/standard-bash-error-codes/</guid>
+      <guid>https://varunksaini.com/standard-bash-error-codes/</guid>
       <description>Exit codes in bash indicate the previous command&amp;rsquo;s termination status. 0 indicates that command completion was successful while 1 indicates that command execution failed.
 We can check the exit code generated by last command by using $?
-$ echo $?  It&amp;rsquo;s not only 1 that indicates unsuccessful completion, anything greater than 1 is a sign of command failure. Standard error code are listed here:
+$ echo $? It&amp;rsquo;s not only 1 that indicates unsuccessful completion, anything greater than 1 is a sign of command failure. Standard error code are listed here:
    Exit Code Description     0 Successful execution   1 Unsuccessful execution catchall   2 Incorrect use of shell builtin   126 Command can not execute   127 Command not Found   128 Incorrect exit code argument   128 + num Fatal error signal &amp;ldquo;num&amp;rdquo;   130 Script killed with CTRL + C   255+ Exit code is out of range    Note: Exit code is an integer value between 0 and/or 255.</description>
     </item>
     
     <item>
       <title>weekly reading 2July</title>
-      <link>https://varunksaini.com/blog/weekly-reading-2july/</link>
+      <link>https://varunksaini.com/weekly-reading-2july/</link>
       <pubDate>Sat, 02 Jul 2016 20:13:23 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-2july/</guid>
-      <description> General  http://www.newyorker.com/science/maria-konnikova/casual-sex-everyone-is-doing-it http://fivethirtyeight.com/features/the-weird-world-of-expensive-wine/ http://www.vox.com/technology/2016/6/23/12007694/elon-musk-simulation-cartoon  Technical  http://dave.cheney.net/2016/06/26/automatically-fetch-your-projects-dependencies-with-gb http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-i http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-ii http://dave.cheney.net/2016/06/30/transistor-logic-fundamentals https://www.oreilly.com/learning/why-is-service-discovery-important-and-what-is-consul http://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/ http://matt.might.net/articles/what-cs-majors-should-know/  </description>
+      <guid>https://varunksaini.com/weekly-reading-2july/</guid>
+      <description>General  http://www.newyorker.com/science/maria-konnikova/casual-sex-everyone-is-doing-it http://fivethirtyeight.com/features/the-weird-world-of-expensive-wine/ http://www.vox.com/technology/2016/6/23/12007694/elon-musk-simulation-cartoon  Technical  http://dave.cheney.net/2016/06/26/automatically-fetch-your-projects-dependencies-with-gb http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-i http://engineering.riotgames.com/news/fixing-internet-real-time-applications-part-ii http://dave.cheney.net/2016/06/30/transistor-logic-fundamentals https://www.oreilly.com/learning/why-is-service-discovery-important-and-what-is-consul http://jvns.ca/blog/2016/06/30/why-do-we-use-the-linux-kernels-tcp-stack/ http://matt.might.net/articles/what-cs-majors-should-know/  </description>
     </item>
     
     <item>
       <title>weekly reading 26June</title>
-      <link>https://varunksaini.com/blog/weekly-reading-26june/</link>
+      <link>https://varunksaini.com/weekly-reading-26june/</link>
       <pubDate>Sun, 26 Jun 2016 06:36:44 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-26june/</guid>
+      <guid>https://varunksaini.com/weekly-reading-26june/</guid>
       <description>This weeks reading mostly included some highly popular articles from around the web. I read more documentation compared to technical articles from web.
 General:  http://www.nytimes.com/2016/06/19/opinion/sunday/think-less-think-better.html  TL;DR: When you think too much you miss the moment and miss what is happening around you. It rings true to me. Specially in my case, it should be &amp;ldquo;Read less, Read Better&amp;rdquo;.
  https://digitalculturist.com/drowning-in-a-sea-of-information-563a3160efbb#.z3p094i92  This felt very personal. I have been asking same question(my situation is not as bad as author, but still).</description>
@@ -311,49 +312,49 @@ General:  http://www.nytimes.com/2016/06/19/opinion/sunday/think-less-think-bett
     
     <item>
       <title>gophercon 2016 here i come</title>
-      <link>https://varunksaini.com/blog/gophercon-2016-here-i-come/</link>
+      <link>https://varunksaini.com/gophercon-2016-here-i-come/</link>
       <pubDate>Fri, 24 Jun 2016 21:56:31 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/gophercon-2016-here-i-come/</guid>
+      <guid>https://varunksaini.com/gophercon-2016-here-i-come/</guid>
       <description>I got my gophercon ticket today. I always wanted to go to gophercon and finally it is happening this year. I am really excited to meet fellow gophers there.</description>
     </item>
     
     <item>
       <title>weekly reading 19June</title>
-      <link>https://varunksaini.com/blog/weekly-reading-19june/</link>
+      <link>https://varunksaini.com/weekly-reading-19june/</link>
       <pubDate>Sun, 19 Jun 2016 05:52:29 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-19june/</guid>
+      <guid>https://varunksaini.com/weekly-reading-19june/</guid>
       <description>It seems I got overboard with reading and read a hell lot of articles from web. It confirms that I need some refinement in my workflow and that is going to happen this week. May be I will restrict my self to read only 5 general articles every week. &amp;ldquo;Read less, Read better&amp;rdquo; is going to be my motto going forward.
-General: 1. http://atlantic.com/health/archive/2016/16/i-stopped-showering-and-life-continued/ 2. http://aeon.co/essays/there-s-a-better-way-to-get-smarter-than-brain-training-games 3. http://engineering.stanford.edu/news/david-dill-why-online-voting-danger-democracy 4. http://www.</description>
+General: 1. http://atlantic.com/health/archive/2016/16/i-stopped-showering-and-life-continued/ 2. http://aeon.co/essays/there-s-a-better-way-to-get-smarter-than-brain-training-games 3. http://engineering.stanford.edu/news/david-dill-why-online-voting-danger-democracy 4. http://www.nytimes.com/2016/06/12/fashion/internet-technology-phones-introspection.html 5.</description>
     </item>
     
     <item>
       <title>using consul acl with golang</title>
-      <link>https://varunksaini.com/blog/consul-acl-golang/</link>
+      <link>https://varunksaini.com/consul-acl-golang/</link>
       <pubDate>Fri, 17 Jun 2016 16:56:36 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/consul-acl-golang/</guid>
+      <guid>https://varunksaini.com/consul-acl-golang/</guid>
       <description>It is always a good idea to think about security. It is no exception when we are using Consul for service discovery. Consul provides an optional Access Control List ACL system which can be used to control access to data and APIs. An access control list (ACL) is a list of permissions attached to an object.
 Consul ACL is Capability-based. If you are familiar with AWS IAM, it will look similar to AWS IAM.</description>
     </item>
     
     <item>
       <title>weekly reading 12 June</title>
-      <link>https://varunksaini.com/blog/weekly-reading-12june/</link>
+      <link>https://varunksaini.com/weekly-reading-12june/</link>
       <pubDate>Sun, 12 Jun 2016 06:33:33 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-12june/</guid>
+      <guid>https://varunksaini.com/weekly-reading-12june/</guid>
       <description>My tracking of reading is paying off. I am more aware of what I am reading and as you can see it is more technical article then general now. I am reading more books too. I am implementing more tweaks to my workflow and I hope that will save me some more time for important things.
-Technical: 1. http://neverworkintheory.org/2016/04/26/java-exception-handling.html 2. https://distributedalgorithm.wordpress.com/2015/06/20/architecture-of-zab-zookeeper-atomic-broadcast-protocol/ 3. http://howivim.com/2016/daniel-schauenberg/ 4. https://talks.golang.org/2016/applicative.slide 5. http://www.doc.ic.ac.uk/~cn06/pub/2016/dingo/main.pdf 6. https://www.petekeen.net/dns-the-good-parts 7.</description>
+Technical: 1. http://neverworkintheory.org/2016/04/26/java-exception-handling.html 2. https://distributedalgorithm.wordpress.com/2015/06/20/architecture-of-zab-zookeeper-atomic-broadcast-protocol/ 3. http://howivim.com/2016/daniel-schauenberg/ 4. https://talks.golang.org/2016/applicative.slide 5. http://www.doc.ic.ac.uk/~cn06/pub/2016/dingo/main.pdf 6. https://www.petekeen.net/dns-the-good-parts 7. https://techblog.</description>
     </item>
     
     <item>
       <title>consul service discovery using golang</title>
-      <link>https://varunksaini.com/blog/consul-service-discovery-golang/</link>
+      <link>https://varunksaini.com/consul-service-discovery-golang/</link>
       <pubDate>Sat, 11 Jun 2016 06:23:57 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/consul-service-discovery-golang/</guid>
+      <guid>https://varunksaini.com/consul-service-discovery-golang/</guid>
       <description>What is Service discovery: Service discovery is a key component of most distributed systems and service oriented architectures. The problem seems simple at first:
 How do clients determine the IP and port for a service that exist on multiple hosts?
 Usually, we start off with some static configuration which gets us pretty far. Things get more complicated as we start deploying more services. There are many ways service locations can change in a live system, auto or manual scaling, new deployments of services, as well as hosts failing or being replaced.</description>
@@ -361,60 +362,60 @@ Usually, we start off with some static configuration which gets us pretty far. T
     
     <item>
       <title>weekly reading 4June</title>
-      <link>https://varunksaini.com/blog/weekly-reading-4june/</link>
+      <link>https://varunksaini.com/weekly-reading-4june/</link>
       <pubDate>Sat, 04 Jun 2016 16:45:52 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-4june/</guid>
+      <guid>https://varunksaini.com/weekly-reading-4june/</guid>
       <description>Tracking my online article reading has been helpful so far. I am more aware about what to read and what not to read. I am no saving articles mindlessly to my Pocket app. This week I read an article about reading and comprehending read less learn more, TL;DR when we read mindlessly we don&amp;rsquo;t comprehend much, and we don&amp;rsquo;t learn much. So idea is to learn more and read less. Also I read books from my kindle queue this week.</description>
     </item>
     
     <item>
       <title>weekly reading 29May</title>
-      <link>https://varunksaini.com/blog/weekly-reading-29may/</link>
+      <link>https://varunksaini.com/weekly-reading-29may/</link>
       <pubDate>Sun, 29 May 2016 08:38:58 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-29may/</guid>
+      <guid>https://varunksaini.com/weekly-reading-29may/</guid>
       <description>This week I read more technical articles then general articles. Also I spent more time reading my kindle books. I am reading two books Rise of the Robots: Technology and the Threat of a Jobless Future and Revolution.
 Technical
- http://jvns.ca/blog/2016/04/23/java-garbage-collection-can-be-really-slow/ http://jvns.ca/blog/2016/04/25/how-regular-expressions-go-fast/ http://jvns.ca/blog/2016/04/30/cdns-arent-just-for-caching/ https://www.infoq.com/presentations/event-streams-kafka https://engineering.linkedin.com/blog/2016/05/introducing-and-open-sourcing-ambry---linkedins-new-distributed- http://antirez.com/news/107 https://blog.twitter.com/2016/open-sourcing-twitter-heron http://blog.nullspace.io/building-search-engines.html http://devblog.mediamath.com/cassandra-war-stories-part-1 https://circleci.com/blog/its-the-future/ https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr   General
+ http://jvns.ca/blog/2016/04/23/java-garbage-collection-can-be-really-slow/ http://jvns.ca/blog/2016/04/25/how-regular-expressions-go-fast/ http://jvns.ca/blog/2016/04/30/cdns-arent-just-for-caching/ https://www.infoq.com/presentations/event-streams-kafka https://engineering.linkedin.com/blog/2016/05/introducing-and-open-sourcing-ambry---linkedins-new-distributed- http://antirez.com/news/107 https://blog.twitter.com/2016/open-sourcing-twitter-heron http://blog.nullspace.io/building-search-engines.html http://devblog.mediamath.com/cassandra-war-stories-part-1 https://circleci.com/blog/its-the-future/ https://blog.mozhu.info/vimmers-you-dont-need-nerdtree-18f627b561c3#.2ag3f2axr  General
  https://www.troyhunt.com/going-dark-online-privacy-and-anonymity-for-normal-people/ http://jvns.ca/blog/2016/05/22/how-do-you-write-blog-posts/  </description>
     </item>
     
     <item>
       <title>pretty print JSON in golang</title>
-      <link>https://varunksaini.com/blog/pretty-print-json-golang/</link>
+      <link>https://varunksaini.com/pretty-print-json-golang/</link>
       <pubDate>Sun, 22 May 2016 06:52:53 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/pretty-print-json-golang/</guid>
+      <guid>https://varunksaini.com/pretty-print-json-golang/</guid>
       <description>JSON is a very common standard to transmit data objects. go provides great support for JSON. JSON package in standard library provides the methods to work with JSON in a go program. Generally we use JSON to tranmit the data but sometime we need to print the JSON data too. If a human eye is going to look at that data, it is a good idea to pretty print that JSON.</description>
     </item>
     
     <item>
       <title>weekly reading 22 May</title>
-      <link>https://varunksaini.com/blog/weekly-reading-22may/</link>
+      <link>https://varunksaini.com/weekly-reading-22may/</link>
       <pubDate>Sun, 22 May 2016 06:20:37 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-22may/</guid>
+      <guid>https://varunksaini.com/weekly-reading-22may/</guid>
       <description>This week again I read more that 20 articles. I have a good mix of long form reading and quick reading articles. I read way more general(Science, Society etc.) compare to technical articles. Again Pocket app was handy to keep the articles saved for me.This logging has helped me in finding that I am reading a lot of stuff. I also have some books to read, so I might not read these many articles going forward and finish my books first.</description>
     </item>
     
     <item>
       <title>weekly reading 15May</title>
-      <link>https://varunksaini.com/blog/weekly-reading-15may/</link>
+      <link>https://varunksaini.com/weekly-reading-15may/</link>
       <pubDate>Sun, 15 May 2016 08:43:02 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/weekly-reading-15may/</guid>
+      <guid>https://varunksaini.com/weekly-reading-15may/</guid>
       <description>I love reading and read a lot. Mostly my reading is on topics related to programming, science, and social science. When I find an article worth reading I use (pocket)[https://getpocket.com] to store the article. Once I have 5-10 articles to read, I read them and then share them to twitter or facebook. Most of the reading happen on weekends and I also read some books too. Today morning I thought to start this section on my blog so that if someone find these articles enticing, they can also get the link to read them.</description>
     </item>
     
     <item>
       <title>unmarshal to map</title>
-      <link>https://varunksaini.com/blog/unmarshal-to-map/</link>
+      <link>https://varunksaini.com/unmarshal-to-map/</link>
       <pubDate>Sun, 13 Mar 2016 07:57:24 -0500</pubDate>
       
-      <guid>https://varunksaini.com/blog/unmarshal-to-map/</guid>
+      <guid>https://varunksaini.com/unmarshal-to-map/</guid>
       <description>When you unmarhsal json to a map, always pass the reference to map object. This is very subtle and I fixed two bugs last week related to same thing.
-var m map[string]string err := json.Unmarshal(data, m) if err != nil { return err }  The code snippet above will not fail/err. But when you look at m, you will get nothing. To fix this, we need to pass the reference to m in json.</description>
+var m map[string]string err := json.Unmarshal(data, m) if err != nil { return err } The code snippet above will not fail/err. But when you look at m, you will get nothing. To fix this, we need to pass the reference to m in json.</description>
     </item>
     
   </channel>

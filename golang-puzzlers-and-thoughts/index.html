@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="go puzzlers and thoughts - Varun Saini">
+    <meta name="twitter:description" content="Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
+package main import &amp;quot;fmt&amp;quot; func main() { m := make(map[string]int) m[&amp;quot;foo&amp;quot;]&#43;&#43; fmt.Println(m[&amp;quot;foo&amp;quot;]) } Zero Values:
+Dave asks &amp;ldquo;Is it going to compile and if yes, what will be the output&amp;rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &amp;quot;&amp;quot; and 0 values respectively.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="go puzzlers and thoughts - Varun Saini">
+    <meta property="og:description" content="Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
+package main import &amp;quot;fmt&amp;quot; func main() { m := make(map[string]int) m[&amp;quot;foo&amp;quot;]&#43;&#43; fmt.Println(m[&amp;quot;foo&amp;quot;]) } Zero Values:
+Dave asks &amp;ldquo;Is it going to compile and if yes, what will be the output&amp;rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &amp;quot;&amp;quot; and 0 values respectively.">
+    <meta property="og:url" content="https://varunksaini.com/golang-puzzlers-and-thoughts/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>go puzzlers and thoughts - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Dave Cheney gave a talk on go puzzlers. It is a great talk and I encourage you to give it a good read.
+package main import &amp;quot;fmt&amp;quot; func main() { m := make(map[string]int) m[&amp;quot;foo&amp;quot;]&#43;&#43; fmt.Println(m[&amp;quot;foo&amp;quot;]) } Zero Values:
+Dave asks &amp;ldquo;Is it going to compile and if yes, what will be the output&amp;rdquo;? If you look closely, it is related to zero value for a type. When we initialize m := make(map[string]int), both string and int gets &amp;quot;&amp;quot; and 0 values respectively.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">go puzzlers and thoughts</h1>
+    <time datetime="2016-12-04 07:15:59 CST">04 Dec 2016</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/general">general</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/blog">blog</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p><a href="https://dave.cheney.net/">Dave Cheney</a> gave a talk on <a href="http://golang.org">go</a> <a href="https://talks.godoc.org/github.com/davecheney/presentations/gopher-puzzlers.slide#1">puzzlers</a>. It is a great talk and I encourage you to give it a good read.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    m := make(map[string]int)
+    m[&quot;foo&quot;]++
+    fmt.Println(m[&quot;foo&quot;])
+}
+</code></pre><p><strong>Zero Values:</strong></p>
+<p>Dave asks &ldquo;Is it going to compile and if yes, what will be the output&rdquo;? If you look closely, it is related to <a href="https://golang.org/ref/spec#The_zero_value">zero value</a> for a type. When we initialize <code>m := make(map[string]int)</code>, both string and int gets <code>&quot;&quot;</code> and <code>0</code> values respectively. So increment works as usual.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+func main() {
+    m := map[string]int{}
+    m[&quot;foo&quot;]++
+    fmt.Println(m[&quot;foo&quot;])
+}
+</code></pre><p>This will also work as literal map declaration is same as using <code>make</code>.</p>
+<p><strong>Multiple init():</strong></p>
+<pre><code>package main
+
+func init() {}
+func init() {}
+
+func main() {}
+</code></pre><p>Will this compile?</p>
+<p>Yes, because init(), init() can appear multiple times in a package. Any other multiple function declarations will fail.</p>
+<pre><code>package main
+
+func foo() {}
+func foo() {}
+
+func main() {}
+</code></pre><p>Fails with <code>foo redeclared in this block</code>. <a href="https://play.golang.org/p/czghNc45Nd">Playground</a></p>
+<p>If there are multiple init() in a package, they are called in the order they are declared. Also you can&rsquo;t make an explicit call to <code>init()</code> in your code, it will fail.</p>
+<p>More info on <a href="https://golang.org/doc/effective_go.html#init">init()</a></p>
+<p><strong>panic messages are written to <code>os.Stderr</code></strong></p>
+<p>language keywords such as <code>default</code> etc. should not be used as an identifier. <code>string</code> and <code>len</code> are predeclared identifiers. Predeclared identifiers are at universe block, so you can can shadow them inside smaller scopes, including the package block. But don&rsquo;t shadow predeclared identifiers as it will make code less readable and error prone.</p>
+<p>There are many more puzzles in Dave&rsquo;s slide. Go have a read.</p>
+<p>Note - The code examples here are used from Dave&rsquo;s talk. My intention is to solve and think about some puzzles here.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

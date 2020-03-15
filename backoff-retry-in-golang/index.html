@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.67.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="backoff and  retry in go - Varun Saini">
+    <meta name="twitter:description" content="Failure is a way of life. Requests(http or others..) can fail for many reasons. Decision to stop or retry can be very critical for applications. backoff algorithms provide a way to backoff and retry on a failure. There are two popular methods to backoff, constant backoff and exponential backoff.
+I use backoff library, which is a Go port of exponential backoff algorithm from Google&amp;rsquo;s HTTP Client Library for Java.
+backoff provides 4 main functionalities.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="backoff and  retry in go - Varun Saini">
+    <meta property="og:description" content="Failure is a way of life. Requests(http or others..) can fail for many reasons. Decision to stop or retry can be very critical for applications. backoff algorithms provide a way to backoff and retry on a failure. There are two popular methods to backoff, constant backoff and exponential backoff.
+I use backoff library, which is a Go port of exponential backoff algorithm from Google&amp;rsquo;s HTTP Client Library for Java.
+backoff provides 4 main functionalities.">
+    <meta property="og:url" content="https://varunksaini.com/backoff-retry-in-golang/">
+    <meta property="og:site_name" content="Varun Saini">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>backoff and  retry in go - Varun Saini</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Failure is a way of life. Requests(http or others..) can fail for many reasons. Decision to stop or retry can be very critical for applications. backoff algorithms provide a way to backoff and retry on a failure. There are two popular methods to backoff, constant backoff and exponential backoff.
+I use backoff library, which is a Go port of exponential backoff algorithm from Google&amp;rsquo;s HTTP Client Library for Java.
+backoff provides 4 main functionalities.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">backoff and  retry in go</h1>
+    <time datetime="2017-04-16 08:01:00 CDT">16 Apr 2017</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/retry">retry</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/backoff">backoff</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Failure is a way of life. Requests(http or others..) can fail for many reasons. Decision to stop or retry can be very critical for applications. backoff algorithms provide a way to backoff and retry on a failure. There are two popular methods to backoff, constant backoff and exponential backoff.</p>
+<p>I use <a href="https://github.com/cenkalti/backoff">backoff</a> library, which is a <a href="https://golang.org">Go</a> port of exponential backoff algorithm from <a href="https://github.com/google/google-http-java-client">Google&rsquo;s HTTP Client Library for Java</a>.</p>
+<p><a href="https://github.com/cenkalti/backoff">backoff</a> provides 4 main functionalities. <a href="https://godoc.org/github.com/cenkalti/backoff#BackOffContext">Constant Backoff</a>, <a href="https://godoc.org/github.com/cenkalti/backoff#ExponentialBackOff">Exponential Backoff</a>, <a href="https://godoc.org/github.com/cenkalti/backoff#Retry">Retry</a>, and <a href="https://godoc.org/github.com/cenkalti/backoff#RetryNotify">Retry with Notify</a></p>
+<p>Based on application needs, we can use either constant backoff or exponential backoff. Here are some examples of both.</p>
+<h2 id="constant-backoff">Constant Backoff:</h2>
+<p>Constant BackOff is a backoff policy that always returns the same backoff delay.</p>
+<pre><code>
+package main
+
+import &quot;github.com/cenkalti/backoff&quot;
+
+func main(){
+	b := backoff.NewConstantBackOff(1*time.Second)
+	err = backoff.Retry(doSomething(), b)
+	if err != nil{
+		log.Fatalf(&quot;error after retrying: %v&quot;, err)
+	}
+}
+
+func doSomething() error {
+	//do something and return error
+	var err error
+	return err
+}
+
+</code></pre><h2 id="exponential-backoff">Exponential BackOff:</h2>
+<p>ExponentialBackOff is a backoff implementation that increases the backoff period for each retry attempt using a randomization function that grows exponentially.</p>
+<pre><code>
+package main
+
+import &quot;github.com/cenkalti/backoff&quot;
+
+func main(){
+	b := backoff.NewExponentialBackOff()
+	b.MaxElapsedTime = 3 *time.Minute
+
+	err = backoff.Retry(doSomething(), b)
+	if err != nil{
+		log.Fatalf(&quot;error after retrying: %v&quot;, err)
+	}
+}
+
+func doSomething() error {
+	//do something and return error
+	var err error
+	return err
+}
+
+</code></pre><p>That is fine but what if your function returns a tuple of value and error and you also want to log the initial errors. How do you retry that function using backoff library.</p>
+<h2 id="exponential-backoff-with-notify">Exponential BackOff with notify:</h2>
+<pre><code>package main
+
+import &quot;github.com/cenkalti/backoff&quot;
+
+func main(){
+	b := backoff.NewExponentialBackOff()
+	b.MaxElapsedTime = 3 *time.Minute
+
+	var (
+		var int64
+		err error
+	)
+
+	retryable := func() error {
+		val, err = doSomething()
+	}
+
+	notify := func(err error, t time.Duration){
+		log.Printf(&quot;error: %v happened at time: %v&quot;, err, t)
+	}
+
+	err = backoff.RetryNotify(retryable, b, notify)
+	if err != nil{
+		log.Fatalf(&quot;error after retrying: %v&quot;, err)
+	}
+}
+
+func doSomething() (int64, error) {
+	return 6, nil
+}
+
+</code></pre>
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>
