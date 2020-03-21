@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/my-home-office-setup/</loc>
+    <lastmod>2020-03-19T19:32:01-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/</loc>
-    <lastmod>2020-03-15T14:22:49-05:00</lastmod>
+    <lastmod>2020-03-19T19:32:01-05:00</lastmod>
   </url>
   
   <url>
@@ -13,67 +18,22 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/find-celebrity-problem-in-go/</loc>
-    <lastmod>2019-01-26T11:56:37-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/two-dimensional-slice-in-go/</loc>
-    <lastmod>2019-01-22T06:55:44-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/reverese-integer-in-go/</loc>
-    <lastmod>2019-01-20T16:15:45-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/reverese-string-in-go/</loc>
-    <lastmod>2019-01-20T16:15:33-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/running_kafka_in_docker_on_mac/</loc>
     <lastmod>2018-06-01T10:16:26-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/use-case-for-generics/</loc>
-    <lastmod>2017-08-19T07:02:42-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/run-test-for-single-package/</loc>
-    <lastmod>2017-08-19T07:02:42-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/blog/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <loc>https://varunksaini.com/tags/file/</loc>
+    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://varunksaini.com/tags/go/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/golang/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/run-go-test-multiple-times/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
+    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://varunksaini.com/tags/</loc>
-    <lastmod>2017-06-29T21:10:59-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/file/</loc>
     <lastmod>2017-06-27T08:01:00-05:00</lastmod>
   </url>
   
@@ -83,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/write-file-completely-go/</loc>
+    <loc>https://varunksaini.com/write-file-completely-to-disk-in-go/</loc>
     <lastmod>2017-06-27T08:01:00-05:00</lastmod>
   </url>
   
@@ -103,212 +63,17 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/general/</loc>
-    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/is-netflix-new-facebook/</loc>
-    <lastmod>2017-03-26T06:18:30-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/distributed-systems-training-by-aphyr/</loc>
-    <lastmod>2017-03-07T21:35:43-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/go-slice-array-allocation-gotcha/</loc>
-    <lastmod>2017-02-21T16:19:52-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/go-http-multiple-registration-error/</loc>
-    <lastmod>2017-01-27T15:02:51-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/til/</loc>
-    <lastmod>2017-01-27T15:02:51-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/bash/</loc>
-    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/kafka/</loc>
-    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/send-key-value-messages-to-kafka-from-console-producer/</loc>
-    <lastmod>2017-01-20T05:40:02-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/assembly/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/how-to-get-assembly-for-go-program/</loc>
-    <lastmod>2017-01-02T18:38:12-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/my-google-hangout-wants-to-chat-with-me/</loc>
-    <lastmod>2016-12-31T19:07:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/var-changed-to-init-in-assembly/</loc>
-    <lastmod>2016-12-28T14:29:42-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/review/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/rise-of-the-robots-by-martin-ford/</loc>
-    <lastmod>2016-12-25T18:38:20-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/how-do-you-write-error-statement/</loc>
-    <lastmod>2016-12-22T12:48:00-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/my-review-of-stories-of-your-life-and-others-by-ted-chiang/</loc>
-    <lastmod>2016-12-10T06:05:16-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/question/</loc>
-    <lastmod>2016-12-07T12:15:46-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/what-do-you-learn-from-technical-vidoes/</loc>
-    <lastmod>2016-12-07T12:15:46-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/golang-puzzlers-and-thoughts/</loc>
-    <lastmod>2016-12-04T07:15:59-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/why-no-place-like-home/</loc>
-    <lastmod>2016-12-03T11:39:24-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/sunday-reading-the-priviliged-immigrant/</loc>
-    <lastmod>2016-11-26T20:48:29-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/aeon-newsletter-nov262016/</loc>
-    <lastmod>2016-11-26T06:05:16-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/alan-kay-joe-armstrong/</loc>
-    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/video/</loc>
-    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/watch/</loc>
-    <lastmod>2016-11-25T20:47:08-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/question-about-type-assertion/</loc>
-    <lastmod>2016-11-23T09:47:56-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/block-youtube-apple-mac-osx/</loc>
-    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/parental-controls/</loc>
-    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/youtube/</loc>
-    <lastmod>2016-11-12T06:27:38-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/using-if-in-defer/</loc>
-    <lastmod>2016-11-01T21:10:59-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/errors/</loc>
-    <lastmod>2016-10-27T10:40:33-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/how-not-to-handle-errors-in-golang/</loc>
-    <lastmod>2016-10-27T10:40:33-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/git/</loc>
-    <lastmod>2016-10-22T07:35:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/remove-big-file-from-git-repo/</loc>
-    <lastmod>2016-10-22T07:35:43-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/get-back-to-blogging/</loc>
-    <lastmod>2016-10-16T09:02:02-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/laptop-repair/</loc>
-    <lastmod>2016-08-13T10:26:10-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/good-read-on-golang-and-generics/</loc>
-    <lastmod>2016-07-17T06:57:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-19july/</loc>
-    <lastmod>2016-07-16T06:25:13-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-9july/</loc>
-    <lastmod>2016-07-09T05:46:45-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/bash-fifos-and-golang-channel/</loc>
-    <lastmod>2016-07-04T22:05:36-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/a-quick-introduction-to-standard-streams/</loc>
+    <lastmod>2016-07-03T13:47:05-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/blog/</loc>
+    <lastmod>2016-07-03T13:47:05-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/general/</loc>
     <lastmod>2016-07-03T13:47:05-05:00</lastmod>
   </url>
   
@@ -318,123 +83,8 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/weekly-reading-2july/</loc>
-    <lastmod>2016-07-02T20:13:23-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-26june/</loc>
-    <lastmod>2016-06-26T06:36:44-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/gophercon-2016-here-i-come/</loc>
-    <lastmod>2016-06-24T21:56:31-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-19june/</loc>
-    <lastmod>2016-06-19T05:52:29-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/consul-acl-golang/</loc>
-    <lastmod>2016-06-17T16:56:36-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-12june/</loc>
-    <lastmod>2016-06-12T06:33:33-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/consul/</loc>
-    <lastmod>2016-06-11T06:23:57-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/consul-service-discovery-golang/</loc>
-    <lastmod>2016-06-11T06:23:57-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-4june/</loc>
-    <lastmod>2016-06-04T16:45:52-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-29may/</loc>
-    <lastmod>2016-05-29T08:38:58-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/pretty-print-json-golang/</loc>
-    <lastmod>2016-05-22T06:52:53-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-22may/</loc>
-    <lastmod>2016-05-22T06:20:37-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/weekly-reading-15may/</loc>
-    <lastmod>2016-05-15T08:43:02-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/unmarshal-to-map/</loc>
-    <lastmod>2016-03-13T07:57:24-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/career/</loc>
-    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/do-we-need-so-many-data-scientists/</loc>
-    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/recruitment/</loc>
-    <lastmod>2016-02-20T06:57:49-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/https-server-in-go/</loc>
-    <lastmod>2016-01-25T19:58:28-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/the-go-programming-language-book-review/</loc>
     <lastmod>2015-12-12T19:59:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/json-tag-in-struct-gotcha/</loc>
-    <lastmod>2015-10-19T19:58:28-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/kiling-processes-in-go/</loc>
-    <lastmod>2015-10-04T06:30:28-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/fav-podcasts/</loc>
-    <lastmod>2015-09-19T19:58:28-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/running_commands_with_go/</loc>
-    <lastmod>2015-07-12T19:58:28-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/go_dev_workflow/</loc>
-    <lastmod>2015-06-13T11:11:00-09:00</lastmod>
   </url>
   
   <url>
@@ -448,108 +98,13 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/goto-chicago-2015/</loc>
-    <lastmod>2015-05-13T20:41:00-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/testing-in-go/</loc>
-    <lastmod>2015-05-09T06:41:00-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/pointer_in_go/</loc>
-    <lastmod>2015-04-26T07:40:00-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/using_io_limitreader/</loc>
     <lastmod>2015-04-18T10:42:00-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/thinking_fast_and_slow/</loc>
-    <lastmod>2015-04-18T10:36:30-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/get-os-name-in-go/</loc>
-    <lastmod>2015-01-03T06:13:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/books-in-2014/</loc>
-    <lastmod>2015-01-01T07:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/new-human-age/</loc>
-    <lastmod>2014-12-30T08:11:15-06:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/working-with-files-in-go/</loc>
     <lastmod>2014-12-13T06:40:15-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/particles_of_the_universe/</loc>
-    <lastmod>2014-12-13T06:32:30-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/the_ultimate_bar_book/</loc>
-    <lastmod>2014-12-13T06:29:30-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/go-boiler-plate-snippet-sublime-text/</loc>
-    <lastmod>2014-12-06T19:07:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/lethal-code/</loc>
-    <lastmod>2014-12-01T07:01:18-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/find-minimum-value-array-go/</loc>
-    <lastmod>2014-11-26T06:24:00-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/golang-book/</loc>
-    <lastmod>2014-11-26T07:01:18-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/working-with-smart-people/</loc>
-    <lastmod>2014-11-25T17:52:32-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/goprogrammingbook/</loc>
-    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/gustavoduarte/</loc>
-    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/pragmaticprogrammer/</loc>
-    <lastmod>2014-11-23T12:12:18-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/array-and-slices-in-go/</loc>
-    <lastmod>2014-11-15T19:58:28-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/learning-go/</loc>
-    <lastmod>2014-08-23T19:59:32-06:00</lastmod>
   </url>
   
 </urlset>
