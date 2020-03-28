@@ -6,10 +6,19 @@
     <description>Recent content in blog on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jul 2016 13:47:05 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 19:32:01 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>My Home Office Setup</title>
+      <link>https://varunksaini.com/my-home-office-setup/</link>
+      <pubDate>Thu, 19 Mar 2020 19:32:01 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/my-home-office-setup/</guid>
+      <description>I have been working from home for last 4 years. Initially I thought that I can get by a laptop and couch. But that&amp;rsquo;s not how it played out. Very soon I realized that I need to have a proper home office setup if I want to work from home for a long duration. And here I am after 4 years. I have acquired quite a few things, and this is a running list of that.</description>
+    </item>
     
     <item>
       <title>a quick introduction to standard streams, file descriptors, and redirection</title>

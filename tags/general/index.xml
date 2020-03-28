@@ -6,10 +6,32 @@
     <description>Recent content in general on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Jul 2016 13:47:05 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 06:49:08 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/general/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2020: My Reading List</title>
+      <link>https://varunksaini.com/books-this-year/</link>
+      <pubDate>Sun, 22 Mar 2020 06:49:08 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/books-this-year/</guid>
+      <description>These are the books that I have read so far this year.
+  Outlier by Malcolm Gladwell
+  The Gardener and the Carpenter: What the New Science of Child Development Tells Us About the Relationship Between Parents and Children by Alison Gopnik
+  Nudge: Improving Decisions About Health, Wealth, and Happiness by Richard H. Thaler and Cass R. Sunstein
+  Peak: Secrets from the New Science of Expertise by Anders Ericsson</description>
+    </item>
+    
+    <item>
+      <title>My Home Office Setup</title>
+      <link>https://varunksaini.com/my-home-office-setup/</link>
+      <pubDate>Thu, 19 Mar 2020 19:32:01 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/my-home-office-setup/</guid>
+      <description>I have been working from home for last 4 years. Initially I thought that I can get by a laptop and couch. But that&amp;rsquo;s not how it played out. Very soon I realized that I need to have a proper home office setup if I want to work from home for a long duration. And here I am after 4 years. I have acquired quite a few things, and this is a running list of that.</description>
+    </item>
     
     <item>
       <title>a quick introduction to standard streams, file descriptors, and redirection</title>

@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Jun 2017 08:01:00 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 06:49:08 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>books</title>
+      <link>https://varunksaini.com/tags/books/</link>
+      <pubDate>Sun, 22 Mar 2020 06:49:08 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://varunksaini.com/tags/general/</link>
+      <pubDate>Sun, 22 Mar 2020 06:49:08 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>https://varunksaini.com/tags/reading/</link>
+      <pubDate>Sun, 22 Mar 2020 06:49:08 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://varunksaini.com/tags/blog/</link>
+      <pubDate>Thu, 19 Mar 2020 19:32:01 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>https://varunksaini.com/tags/work/</link>
+      <pubDate>Thu, 19 Mar 2020 19:32:01 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/work/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>file</title>
@@ -53,24 +98,6 @@
       <pubDate>Sun, 16 Apr 2017 08:01:00 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/retry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://varunksaini.com/tags/blog/</link>
-      <pubDate>Sun, 03 Jul 2016 13:47:05 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>general</title>
-      <link>https://varunksaini.com/tags/general/</link>
-      <pubDate>Sun, 03 Jul 2016 13:47:05 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/general/</guid>
       <description></description>
     </item>
     

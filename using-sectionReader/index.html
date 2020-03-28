@@ -73,12 +73,18 @@ I create the section reader using this function:">
 <article class="mb-12">
     <p>For my last task I was moving to an offset value in huge byte stream using <code>reader.Seek(int64(offset), whence)</code> and reading the bytes there. But it was not good for the performance because I was moving in a big file(~1gigs). Then I came to know about <code>io.SectionReader</code> and it made my life easier and helped me delete a lot of code(isn&rsquo;t that best).</p>
 <p>I create the section reader using this function:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>Then I read it like:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p>life has been easier with more <a href="http://golang.org/pkg/io/#SectionReader">sectionReader</a> and less Seeks.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">GetByteSection</span><span class="p">(</span><span class="nx">pageBlock</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">offset</span> <span class="kt">int64</span><span class="p">,</span> <span class="nx">sectionLength</span> <span class="kt">int64</span><span class="p">)</span> <span class="o">*</span><span class="nx">io</span><span class="p">.</span><span class="nx">SectionReader</span> <span class="p">{</span>
+ <span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">pageBlock</span><span class="p">)</span>
+ <span class="nx">section</span> <span class="o">:=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">NewSectionReader</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">offset</span><span class="p">,</span> <span class="nx">sectionLength</span><span class="p">)</span>
+ <span class="k">return</span> <span class="nx">section</span>
+<span class="p">}</span>
+</code></pre></div><p>Then I read it like:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">tupleSection</span> <span class="o">:=</span> <span class="nf">GetByteSection</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="nb">int64</span><span class="p">(</span><span class="nx">headerOffset</span><span class="p">),</span> <span class="nb">int64</span><span class="p">(</span><span class="nx">headerLength</span><span class="p">))</span>
+<span class="nx">err</span> <span class="p">=</span> <span class="nx">binary</span><span class="p">.</span><span class="nf">Read</span><span class="p">(</span><span class="nx">tupleSection</span><span class="p">,</span> <span class="nx">binary</span><span class="p">.</span><span class="nx">LittleEndian</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">data</span><span class="p">)</span>
+<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+ <span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;failed to read t_bits: %v\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div><p>life has been easier with more <a href="http://golang.org/pkg/io/#SectionReader">sectionReader</a> and less Seeks.</p>
 
 
     

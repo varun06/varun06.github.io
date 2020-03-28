@@ -3,12 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/books-this-year/</loc>
+    <lastmod>2020-03-22T06:49:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/books/</loc>
+    <lastmod>2020-03-22T06:49:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/general/</loc>
+    <lastmod>2020-03-22T06:49:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/reading/</loc>
+    <lastmod>2020-03-22T06:49:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/</loc>
+    <lastmod>2020-03-22T06:49:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/</loc>
+    <lastmod>2020-03-22T06:49:08-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/blog/</loc>
+    <lastmod>2020-03-19T19:32:01-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/my-home-office-setup/</loc>
     <lastmod>2020-03-19T19:32:01-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://varunksaini.com/</loc>
+    <loc>https://varunksaini.com/tags/work/</loc>
     <lastmod>2020-03-19T19:32:01-05:00</lastmod>
   </url>
   
@@ -29,11 +64,6 @@
   
   <url>
     <loc>https://varunksaini.com/tags/go/</loc>
-    <lastmod>2017-06-27T08:01:00-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/</loc>
     <lastmod>2017-06-27T08:01:00-05:00</lastmod>
   </url>
   
@@ -64,16 +94,6 @@
   
   <url>
     <loc>https://varunksaini.com/a-quick-introduction-to-standard-streams/</loc>
-    <lastmod>2016-07-03T13:47:05-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/blog/</loc>
-    <lastmod>2016-07-03T13:47:05-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/general/</loc>
     <lastmod>2016-07-03T13:47:05-05:00</lastmod>
   </url>
   
