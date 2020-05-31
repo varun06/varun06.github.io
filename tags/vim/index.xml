@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TIL on Varun Kumar</title>
-    <link>https://varunksaini.com/tags/til/</link>
-    <description>Recent content in TIL on Varun Kumar</description>
+    <title>vim on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/vim/</link>
+    <description>Recent content in vim on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 31 May 2020 14:15:03 -0500</lastBuildDate>
     
-	<atom:link href="https://varunksaini.com/tags/til/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://varunksaini.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

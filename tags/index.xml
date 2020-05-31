@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2020 09:43:35 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 14:15:03 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>TIL</title>
+      <link>https://varunksaini.com/tags/til/</link>
+      <pubDate>Sun, 31 May 2020 14:15:03 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/til/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://varunksaini.com/tags/vim/</link>
+      <pubDate>Sun, 31 May 2020 14:15:03 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/vim/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>book</title>

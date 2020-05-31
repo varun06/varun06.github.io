@@ -6,10 +6,19 @@
     <description>Recent content on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2020 09:43:35 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 14:15:03 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Increment Decrement Numbers in Vim</title>
+      <link>https://varunksaini.com/increment-decrement-numbers-in-vim/</link>
+      <pubDate>Sun, 31 May 2020 14:15:03 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/increment-decrement-numbers-in-vim/</guid>
+      <description>Vim is a text editor that keeps surprising you. The more you learn about vim, there is always more to learn. One of the feature that I keep using and find very interesting is incrementing/decrementing a number in current line. Vim has &amp;lt;ctrl-a&amp;gt; to increment a number and &amp;lt;ctrl-x&amp;gt; to decrement a number. Just go to a line with number in it and hit &amp;lt;ctrl-a&amp;gt;/&amp;lt;ctrl-x&amp;gt; to increment/decrement. But because it is vim, there is definitely more to this command.</description>
+    </item>
     
     <item>
       <title>Book Review - Software Engineering at Google: Lessons Learned from Programming Over Time</title>
