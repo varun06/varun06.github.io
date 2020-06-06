@@ -6,10 +6,20 @@
     <description>Recent content in vim on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 May 2020 14:15:03 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jun 2020 06:01:30 -0500</lastBuildDate>
     
 	<atom:link href="https://varunksaini.com/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reselect Last Visual Selection in Vim</title>
+      <link>https://varunksaini.com/reselect-last-visual-selection-in-vim/</link>
+      <pubDate>Sat, 06 Jun 2020 06:01:30 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/reselect-last-visual-selection-in-vim/</guid>
+      <description>Vim has three different visual modes to work with characters, lines, or rectangle blocks of text. We can switch between these modes by pressing v, V, or &amp;lt;ctrl-v&amp;gt; respectively.
+Many a times, we select something and press ESC by mistake, it is annoying to reselect the whole block of text again by pressing v/V. Vim provides a command gv to reselect the range of text that was selected. Command gv works for all the visual modes.</description>
+    </item>
     
     <item>
       <title>Increment Decrement Numbers in Vim</title>
