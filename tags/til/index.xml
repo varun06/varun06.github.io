@@ -6,11 +6,7 @@
     <description>Recent content in TIL on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 May 2020 14:15:03 -0500</lastBuildDate>
-    
-	<atom:link href="https://varunksaini.com/tags/til/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 31 May 2020 14:15:03 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/til/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Increment Decrement Numbers in Vim</title>
       <link>https://varunksaini.com/increment-decrement-numbers-in-vim/</link>

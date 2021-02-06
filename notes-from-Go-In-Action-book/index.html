@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Hugo 0.67.0" />
+    <meta name="generator" content="Hugo 0.80.0" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -97,7 +97,7 @@ In Go, identifiers are either exported or unexported from a package. An exported
 <li>If the length is given as &hellip;, Go will identify the length of the array based on the number of elements that are initialized:</li>
 <li><strong>An array is a value in Go</strong>. This means we can use it in an assignment operation. The variable name denotes the entire array and therefore, an array can be assigned to other arrays of the same type.</li>
 <li>Passing an array between functions can be an expensive operation in terms of memory and performance. When we pass variables between functions, they are always passed by value. When our variable is an array, this means the entire array, regardless of its size, is copied and passed to the function.</li>
-<li>Remember, if we specify a value inside the <input disabled="" type="checkbox">operator, we are creating an array. If we don&rsquo;t specify a value, we are creating a slice:</li>
+<li>Remember, if we specify a value inside the <input disabled="" type="checkbox"> operator, we are creating an array. If we don&rsquo;t specify a value, we are creating a slice:</li>
 <li>For slice[i:j] with an underlying array of capacity k, <strong>Length: j - i</strong> and <strong>Capacity: k - i</strong></li>
 <li>One of the advantages of using a slice over an array is that we can grow the capacity of our slice as needed. Go takes care of all the operational details when we use the built-in function append.</li>
 <li>The append operation is clever when growing the capacity of the underlying array. Capacity is always doubled when the existing capacity of the slice is under one thousand (1k) elements. Once the number of elements goes over 1k, the capacity is grown by a factor of 1.25 or 25%. This growth algorithm may change in the language over time.</li>
@@ -152,7 +152,7 @@ In Go, identifiers are either exported or unexported from a package. An exported
 
         <footer>
             <p>
-                &copy; 2020. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
             </p>
         </footer>
     </div>
