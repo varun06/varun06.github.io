@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vscode on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/vscode/</link>
+    <description>Recent content in vscode on Varun Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Feb 2021 15:02:43 -0600</lastBuildDate><atom:link href="https://varunksaini.com/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to make VScode Go work in a Multi-Module Repo</title>
+      <link>https://varunksaini.com/vscode-multimodule-repo/</link>
+      <pubDate>Sat, 06 Feb 2021 15:02:43 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/vscode-multimodule-repo/</guid>
+      <description>At work, We have a multi-module(nested go modules) repo and VSCode is always having problem with that. I was chatting with gopls team on slack and came to know about a new feature that helps with multi-module and VSCode + Go.
+There are 2 ways to fix this issue in VSCode Go extension -
+Multiple modules if you have multiple modules or nested modules in a single repo, you will need to create a &amp;ldquo;workspace folder&amp;rdquo; for each module.</description>
+    </item>
+    
+  </channel>
+</rss>

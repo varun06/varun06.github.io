@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How to make VScode Go work in a Multi-Module Repo - Varun Kumar">
+    <meta name="twitter:description" content="At work, We have a multi-module(nested go modules) repo and VSCode is always having problem with that. I was chatting with gopls team on slack and came to know about a new feature that helps with multi-module and VSCode &#43; Go.
+There are 2 ways to fix this issue in VSCode Go extension -
+Multiple modules if you have multiple modules or nested modules in a single repo, you will need to create a &amp;ldquo;workspace folder&amp;rdquo; for each module.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How to make VScode Go work in a Multi-Module Repo - Varun Kumar">
+    <meta property="og:description" content="At work, We have a multi-module(nested go modules) repo and VSCode is always having problem with that. I was chatting with gopls team on slack and came to know about a new feature that helps with multi-module and VSCode &#43; Go.
+There are 2 ways to fix this issue in VSCode Go extension -
+Multiple modules if you have multiple modules or nested modules in a single repo, you will need to create a &amp;ldquo;workspace folder&amp;rdquo; for each module.">
+    <meta property="og:url" content="https://varunksaini.com/vscode-multimodule-repo/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>How to make VScode Go work in a Multi-Module Repo - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="At work, We have a multi-module(nested go modules) repo and VSCode is always having problem with that. I was chatting with gopls team on slack and came to know about a new feature that helps with multi-module and VSCode &#43; Go.
+There are 2 ways to fix this issue in VSCode Go extension -
+Multiple modules if you have multiple modules or nested modules in a single repo, you will need to create a &amp;ldquo;workspace folder&amp;rdquo; for each module.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">How to make VScode Go work in a Multi-Module Repo</h1>
+    <time datetime="2021-02-06 15:02:43 CST">06 Feb 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/vscode">vscode</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/gopls">gopls</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>At work, We have a multi-module(nested go modules) repo and VSCode is always having problem with that. I was chatting with gopls team on slack and came to know about a new feature that helps with multi-module and VSCode + Go.</p>
+<p>There are 2 ways to fix this issue in VSCode Go extension -</p>
+<h2 id="multiple-modules">Multiple modules</h2>
+<p>if you have multiple modules or nested modules in a single repo, you will need to create a &ldquo;workspace folder&rdquo; for each module.</p>
+<h2 id="workspace-module-experimental">Workspace module (experimental)</h2>
+<p>If you want to work with all the nested modules in a single workspace, there is an opt-in module feature that allows to work with multiple modules without creating workspace folders for each module. Set this in your settings -</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="s">&#34;build.experimentalWorkspaceModule&#34;</span><span class="p">:</span> <span class="kc">true</span>
+</code></pre></div><p>More information about this feature is available at official <code>gopls</code> <a href="https://github.com/golang/tools/blob/master/gopls/doc/workspace.md">documentation</a>.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>
