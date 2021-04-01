@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Can we use slice as Map Keys in Go - Varun Kumar">
+    <meta name="twitter:description" content="Question: Can we use slice as map key in Go? Short answer is No
+Do you want to know more? Okay, Let&amp;rsquo;s have a look at spec.
+From Map spec:
+ The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice.
+ Map spec already tells us that slice can&amp;rsquo;t be a key, but we can also check it in the comparison spec:">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Can we use slice as Map Keys in Go - Varun Kumar">
+    <meta property="og:description" content="Question: Can we use slice as map key in Go? Short answer is No
+Do you want to know more? Okay, Let&amp;rsquo;s have a look at spec.
+From Map spec:
+ The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice.
+ Map spec already tells us that slice can&amp;rsquo;t be a key, but we can also check it in the comparison spec:">
+    <meta property="og:url" content="https://varunksaini.com/slice-as-map-keys-in-go/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Can we use slice as Map Keys in Go - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Question: Can we use slice as map key in Go? Short answer is No
+Do you want to know more? Okay, Let&amp;rsquo;s have a look at spec.
+From Map spec:
+ The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice.
+ Map spec already tells us that slice can&amp;rsquo;t be a key, but we can also check it in the comparison spec:">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Can we use slice as Map Keys in Go</h1>
+    <time datetime="2021-04-01 06:39:37 CDT">01 Apr 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/slice">slice</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/map">map</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Question: Can we use slice as map key in Go?
+Short answer is <strong>No</strong></p>
+<p>Do you want to know more?
+Okay, Let&rsquo;s have a look at spec.</p>
+<p>From <a href="https://golang.org/ref/spec#Map_types">Map spec</a>:</p>
+<blockquote>
+<p>The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice.</p>
+</blockquote>
+<p>Map spec already tells us that slice can&rsquo;t be a key, but we can also check it in the <a href="https://golang.org/ref/spec#Comparison_operators">comparison spec</a>:</p>
+<blockquote>
+<p>Slice, map, and function values are not comparable.</p>
+</blockquote>
+<p>This means slice can&rsquo;t be a key in a map, but an array can be a key. For example we can write:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go">    <span class="nx">testMap</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[[</span><span class="mi">2</span><span class="p">]</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span><span class="s">&#34;a&#34;</span><span class="p">,</span> <span class="s">&#34;b&#34;</span><span class="p">}</span> <span class="p">:</span> <span class="s">&#34;ab&#34;</span><span class="p">,</span>
+    <span class="p">}</span>
+</code></pre></div><p>There is our answer, slices can&rsquo;t be key in Map, but an array can be.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

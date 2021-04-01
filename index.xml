@@ -6,7 +6,20 @@
     <description>Recent content on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Feb 2021 15:02:43 -0600</lastBuildDate><atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 06:39:37 -0500</lastBuildDate><atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Can we use slice as Map Keys in Go</title>
+      <link>https://varunksaini.com/slice-as-map-keys-in-go/</link>
+      <pubDate>Thu, 01 Apr 2021 06:39:37 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/slice-as-map-keys-in-go/</guid>
+      <description>Question: Can we use slice as map key in Go? Short answer is No
+Do you want to know more? Okay, Let&amp;rsquo;s have a look at spec.
+From Map spec:
+ The comparison operators == and != must be fully defined for operands of the key type; thus the key type must not be a function, map, or slice.
+ Map spec already tells us that slice can&amp;rsquo;t be a key, but we can also check it in the comparison spec:</description>
+    </item>
+    
     <item>
       <title>How to make VScode Go work in a Multi-Module Repo</title>
       <link>https://varunksaini.com/vscode-multimodule-repo/</link>

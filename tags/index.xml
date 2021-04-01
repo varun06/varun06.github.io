@@ -6,13 +6,31 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 Feb 2021 15:02:43 -0600</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 06:39:37 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go</title>
       <link>https://varunksaini.com/tags/go/</link>
-      <pubDate>Sat, 06 Feb 2021 15:02:43 -0600</pubDate>
+      <pubDate>Thu, 01 Apr 2021 06:39:37 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>map</title>
+      <link>https://varunksaini.com/tags/map/</link>
+      <pubDate>Thu, 01 Apr 2021 06:39:37 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/map/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>slice</title>
+      <link>https://varunksaini.com/tags/slice/</link>
+      <pubDate>Thu, 01 Apr 2021 06:39:37 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/slice/</guid>
       <description></description>
     </item>
     
