@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>meetup on Varun Kumar</title>
-    <link>https://varunksaini.com/tags/meetup/</link>
-    <description>Recent content in meetup on Varun Kumar</description>
+    <title>modules on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/modules/</link>
+    <description>Recent content in modules on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Apr 2021 07:14:06 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/meetup/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 07:14:06 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/modules/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Modules Meetup Talk</title>
       <link>https://varunksaini.com/go-modules-meetup-talk/</link>

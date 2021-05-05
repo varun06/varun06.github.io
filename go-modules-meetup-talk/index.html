@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Go Modules Meetup Talk - Varun Kumar">
+    <meta name="twitter:description" content="I go a chance to speak at Go Banglore meetup recently. My talk was about how we moved from custom dependecy management to go modules at work.
+Go at Walmart  Go is used at edge and many other places in Walmart Edge Foundation - CDN and Proxies There are more than 400 repositories in our github organization  Quirks before go modules  Most of code in one single repo Module incompatible import paths(&amp;ldquo;torbit/foo) Big utilities packages that are shared around teams Forks of popular open source repositories Mix of monorepo and multi-repo  Custom dependency manager tool - tbget  Clone repository locally Run tbget .">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Go Modules Meetup Talk - Varun Kumar">
+    <meta property="og:description" content="I go a chance to speak at Go Banglore meetup recently. My talk was about how we moved from custom dependecy management to go modules at work.
+Go at Walmart  Go is used at edge and many other places in Walmart Edge Foundation - CDN and Proxies There are more than 400 repositories in our github organization  Quirks before go modules  Most of code in one single repo Module incompatible import paths(&amp;ldquo;torbit/foo) Big utilities packages that are shared around teams Forks of popular open source repositories Mix of monorepo and multi-repo  Custom dependency manager tool - tbget  Clone repository locally Run tbget .">
+    <meta property="og:url" content="https://varunksaini.com/go-modules-meetup-talk/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Go Modules Meetup Talk - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="I go a chance to speak at Go Banglore meetup recently. My talk was about how we moved from custom dependecy management to go modules at work.
+Go at Walmart  Go is used at edge and many other places in Walmart Edge Foundation - CDN and Proxies There are more than 400 repositories in our github organization  Quirks before go modules  Most of code in one single repo Module incompatible import paths(&amp;ldquo;torbit/foo) Big utilities packages that are shared around teams Forks of popular open source repositories Mix of monorepo and multi-repo  Custom dependency manager tool - tbget  Clone repository locally Run tbget .">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Go Modules Meetup Talk</h1>
+    <time datetime="2021-04-18 07:14:06 CDT">18 Apr 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/modules">modules</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/meetup">meetup</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/speaking">speaking</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>I go a chance to speak at <a href="https://www.meetup.com/Golang-Bangalore/events/277149305/">Go Banglore meetup</a> recently. My talk was about how we moved from custom dependecy management to <code>go modules</code> at work.</p>
+<h2 id="go-at-walmart">Go at Walmart</h2>
+<ul>
+<li>Go is used at edge and many other places in Walmart</li>
+<li>Edge Foundation - CDN and Proxies</li>
+<li>There are more than 400 repositories in our github organization</li>
+</ul>
+<h2 id="quirks-before-go-modules">Quirks before go modules</h2>
+<ul>
+<li>Most of code in one single repo</li>
+<li>Module incompatible import paths(&ldquo;torbit/foo)</li>
+<li>Big utilities packages that are shared around teams</li>
+<li>Forks of popular open source repositories</li>
+<li>Mix of monorepo and multi-repo</li>
+</ul>
+<h2 id="custom-dependency-manager-tool---tbget">Custom dependency manager tool - tbget</h2>
+<ul>
+<li>Clone repository locally</li>
+<li>Run tbget ./&hellip; to fetch dependencies and store them in gopath</li>
+<li>Make changes and test/build</li>
+</ul>
+<h2 id="problems-with-monorepo">Problems with Monorepo</h2>
+<ul>
+<li>House of 10-12 critical services in edge foundation</li>
+<li>No clear ownership across services</li>
+<li>Slow builds because of lack of tooling and huge number of tests(15-20 minutes to run a build)</li>
+<li>Big surface area for failures and issues</li>
+</ul>
+<h1 id="deconstructing-the-monorepo">Deconstructing the Monorepo</h1>
+<h2 id="form-a-team">Form a team</h2>
+<ul>
+<li>Form a team of like minded people,</li>
+<li>Glad I found Pedro, Troy and few other folks who helped with this task</li>
+<li>Break the problem in small and manageable chunks</li>
+<li>Move go repositories to go modules one by one</li>
+</ul>
+<h2 id="find-your-go-dependency-and-packages">Find your go dependency and packages</h2>
+<p><a href="https://github.com/loov/goda">goda</a></p>
+<h2 id="for-packages-that-need-to-move-out">For packages that need to move out</h2>
+<ul>
+<li>Create a repository and go module if required</li>
+<li>Change imports(from torbit/fsnotify -&gt; github.com/fsnotify/fsnotify)</li>
+<li>Make pull requests</li>
+<li>Find a suitable time to make a change(Code freeze for us)</li>
+<li>Success</li>
+</ul>
+<h2 id="how-about-git-history">How about git history</h2>
+<ul>
+<li>Commit messages and history should be preserved</li>
+<li>git-filter-repo can refactor directories and rewrite git histories
+<blockquote>
+<p>git filter-repo &ndash;path src/ &ndash;to-subdirectory-filter my-module &ndash;tag-rename &lsquo;':&lsquo;my-module-&rsquo;</p>
+</blockquote>
+</li>
+</ul>
+<p><a href="https://github.com/newren/git-filter-repo">https://github.com/newren/git-filter-repo</a></p>
+<h2 id="what-about-technical-debt">What about technical debt</h2>
+<ul>
+<li>We tried to pay tech debt where it was okay</li>
+<li>My suggestion is to keep it simple</li>
+<li>linting/vetting is easy to get done in same cycle</li>
+<li>but keep them in different pull requests</li>
+</ul>
+<h2 id="improvements">Improvements</h2>
+<ul>
+<li>only <code>go</code> and <code>git</code> required to start developing</li>
+<li>Trade homegrown dependency management with <em>go modules</em></li>
+<li>No need to learn a custom tool to manage dependencies</li>
+<li>Fewer failures in builds</li>
+<li>Faster builds because of small surface area</li>
+<li>Clear line of ownership across teams and projects</li>
+</ul>
+<h2 id="lessons-learned">Lessons learned</h2>
+<ul>
+<li>Properly manage external dependencies</li>
+<li>Stay away from kitchen sink or util packages</li>
+<li>A little copy is better than a dependency</li>
+</ul>
+<h2 id="current-challenges">Current challenges</h2>
+<ul>
+<li>Nested go modules and keeping mods in sync</li>
+<li>VPN and downloading public modules from internet(some domains are blocked)</li>
+<li>We have tried vendoring dependencies but decided against using it</li>
+</ul>
+<h2 id="future-improvements">Future Improvements</h2>
+<ul>
+<li>Setup a Go Proxy</li>
+<li>Move nested go modules out whenever we can</li>
+</ul>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

@@ -6,7 +6,17 @@
     <description>Recent content in go on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Apr 2021 06:39:37 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Apr 2021 07:14:06 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go Modules Meetup Talk</title>
+      <link>https://varunksaini.com/go-modules-meetup-talk/</link>
+      <pubDate>Sun, 18 Apr 2021 07:14:06 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/go-modules-meetup-talk/</guid>
+      <description>I go a chance to speak at Go Banglore meetup recently. My talk was about how we moved from custom dependecy management to go modules at work.
+Go at Walmart  Go is used at edge and many other places in Walmart Edge Foundation - CDN and Proxies There are more than 400 repositories in our github organization  Quirks before go modules  Most of code in one single repo Module incompatible import paths(&amp;ldquo;torbit/foo) Big utilities packages that are shared around teams Forks of popular open source repositories Mix of monorepo and multi-repo  Custom dependency manager tool - tbget  Clone repository locally Run tbget .</description>
+    </item>
+    
     <item>
       <title>Can we use slice as Map Keys in Go</title>
       <link>https://varunksaini.com/slice-as-map-keys-in-go/</link>
