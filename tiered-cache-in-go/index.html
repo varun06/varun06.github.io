@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A simple tiered Cache in Go - Varun Kumar">
+    <meta name="twitter:description" content="What is Cache? A cache is used to store data or files for faster access. A cache can be a hardware or software component. Data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.
+A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when data can not be found in cache.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A simple tiered Cache in Go - Varun Kumar">
+    <meta property="og:description" content="What is Cache? A cache is used to store data or files for faster access. A cache can be a hardware or software component. Data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.
+A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when data can not be found in cache.">
+    <meta property="og:url" content="https://varunksaini.com/tiered-cache-in-go/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>A simple tiered Cache in Go - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="What is Cache? A cache is used to store data or files for faster access. A cache can be a hardware or software component. Data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.
+A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when data can not be found in cache.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">A simple tiered Cache in Go</h1>
+    <time datetime="2021-05-09 06:18:37 CDT">09 May 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/caching">caching</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/design">design</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <h2 id="what-is-cache">What is Cache?</h2>
+<p>A cache is used to store data or files for faster access. A cache can be a hardware or software component. Data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.</p>
+<p>A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when data can not be found in cache. Cache hits are served by reading data from the cache, which is faster than recomputing a result or reading from a slower data store; thus, the more requests that can be served from the cache, the faster the system performs.</p>
+<h2 id="what-is-tiered-cache">What is Tiered Cache?</h2>
+<p>In case of a standard cache(CDN/Reverse Proxy), a cache miss in any data center causes a request to origin server. If you have multiple data centers, there will be multiple requests to origin server/s. Requests are made even if data is cached in another data center/s. Because we do not have access to cached data in another data centers, our cache hits numbers are not very high.</p>
+<p>One solution is to send the requests to all the data centers, but that&rsquo;s not practical and quite costly.</p>
+<p>Tiered Cache solves this problem by providing a common cache for data center/s. It improves hit ratios by providing a common cache to check before making a request to origin servers. For a request, inner/layer1 cache is checked first, if data is in inner/layer1 cache, we return right there, if data is not in inner/layer1 cache, it&rsquo;s checked in outer/layer2 cache. Putting works same way, data is put in both inner and outer cache.</p>
+<p>This design is very much inspired by <a href="https://en.wikipedia.org/wiki/CPU_cache">L1/L2</a> cache architecture in CPUs.</p>
+<h2 id="a-simple-tiered-cache-implementation-in-go">A simple tiered cache implementation in Go</h2>
+<h3 id="cacher-interface">Cacher Interface</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go">    <span class="kd">type</span> <span class="nx">Cacher</span> <span class="kd">interface</span> <span class="p">{</span>
+        <span class="nf">Get</span><span class="p">(</span><span class="nx">key</span> <span class="kt">string</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span>
+        <span class="nf">Put</span><span class="p">(</span><span class="nx">key</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">value</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">])</span>
+    <span class="p">}</span>
+
+</code></pre></div><h3 id="tiered-cache">Tiered Cache</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go">    <span class="kd">type</span> <span class="nx">TieredCache</span> <span class="kd">struct</span> <span class="p">{</span>
+        <span class="nx">inner</span> <span class="nx">Cacher</span>
+        <span class="nx">outer</span> <span class="nx">acher</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="nf">NewTieredCache</span><span class="p">(</span><span class="nx">inner</span><span class="p">,</span> <span class="nx">outer</span> <span class="nx">Cacher</span><span class="p">)</span> <span class="nx">Cacher</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">&amp;</span><span class="nx">tieredCache</span><span class="p">{</span>
+            <span class="nx">inner</span><span class="p">:</span> <span class="nx">inner</span><span class="p">,</span>
+            <span class="nx">outer</span><span class="p">:</span> <span class="nx">outer</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">TieredCache</span><span class="p">)</span> <span class="nf">Get</span><span class="p">(</span><span class="nx">key</span> <span class="kt">string</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">value</span> <span class="p">[]</span><span class="kt">byte</span>
+        <span class="nx">value</span> <span class="p">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">inner</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">value</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nx">value</span> <span class="p">=</span> <span class="nx">t</span><span class="p">.</span><span class="nx">outer</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+            <span class="c1">// if required, add value to inner cache for future requests
+</span><span class="c1"></span>        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">value</span>
+    <span class="p">}</span>
+
+    <span class="kd">func</span> <span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">TieredCache</span><span class="p">)</span> <span class="nf">Put</span><span class="p">(</span><span class="nx">key</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">value</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">inner</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+
+        <span class="c1">// add key to outer cache asynchronously
+</span><span class="c1"></span>        <span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">key</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">t</span><span class="p">.</span><span class="nx">outer</span><span class="p">.</span><span class="nf">Put</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span>
+        <span class="p">}(</span><span class="nx">key</span><span class="p">)</span>
+    <span class="p">}</span>
+
+</code></pre></div><h3 id="inner-cache">inner cache</h3>
+<p>Inner cache can be any in-memory cache. We personally use <a href="https://github.com/dgraph-io/ristretto">Ristretto</a>, but there are other caches too, such as
+<a href="https://github.com/allegro/bigcache">BigCache</a> etc. As long as, inner cache satisfy Cacher interface, we should be able to use it as our inner cache.</p>
+<h3 id="outer-cache">outer Cache</h3>
+<p>We Use a distributed <a href="https://github.com/memcached/memcached">Memcached</a> with <a href="https://github.com/bradfitz/gomemcache">go client</a> as our outer cache, but <a href="https://redis.io">Redis</a> and some other caches should work fine as long as implementation satisfy Cacher interface.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>It was really fun to implement tiered cache at scale. Tiered cache is in use at work and providing really good cache offload and lower latency for tenants.
+If you have any question about implementation or improvements, please get in touch.</p>
+<h3 id="references">References</h3>
+<ul>
+<li>More about <a href="https://en.wikipedia.org/wiki/Cache_(computing)">Cache</a> at Wikipedia.</li>
+<li>Cloudflare uses <a href="https://blog.cloudflare.com/tiered-cache-smart-topology/">Tiered cache</a> too</li>
+<li><a href="https://www.cloudflare.com/learning/cdn/what-is-caching/">What is caching</a> from cloudflare</li>
+</ul>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

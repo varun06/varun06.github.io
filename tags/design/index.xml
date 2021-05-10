@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>design on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/design/</link>
+    <description>Recent content in design on Varun Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 May 2021 06:18:37 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A simple tiered Cache in Go</title>
+      <link>https://varunksaini.com/tiered-cache-in-go/</link>
+      <pubDate>Sun, 09 May 2021 06:18:37 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tiered-cache-in-go/</guid>
+      <description>What is Cache? A cache is used to store data or files for faster access. A cache can be a hardware or software component. Data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.
+A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when data can not be found in cache.</description>
+    </item>
+    
+  </channel>
+</rss>

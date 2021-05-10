@@ -6,7 +6,17 @@
     <description>Recent content on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Apr 2021 07:14:06 -0500</lastBuildDate><atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 May 2021 06:18:37 -0500</lastBuildDate><atom:link href="https://varunksaini.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A simple tiered Cache in Go</title>
+      <link>https://varunksaini.com/tiered-cache-in-go/</link>
+      <pubDate>Sun, 09 May 2021 06:18:37 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tiered-cache-in-go/</guid>
+      <description>What is Cache? A cache is used to store data or files for faster access. A cache can be a hardware or software component. Data stored in a cache might be the result of an earlier computation or a copy of data stored elsewhere.
+A cache hit occurs when the requested data can be found in a cache, while a cache miss occurs when data can not be found in cache.</description>
+    </item>
+    
     <item>
       <title>Go Modules Meetup Talk</title>
       <link>https://varunksaini.com/go-modules-meetup-talk/</link>
