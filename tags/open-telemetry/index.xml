@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Open Telemetry on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/open-telemetry/</link>
+    <description>Recent content in Open Telemetry on Varun Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 May 2021 16:20:44 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/open-telemetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto Instrumenting a Go server using Open Telemetry</title>
+      <link>https://varunksaini.com/auto-instrument-open-telemetry-go/</link>
+      <pubDate>Sun, 16 May 2021 16:20:44 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/auto-instrument-open-telemetry-go/</guid>
+      <description>OpenTelemetry is an observability framework – an API, SDK, and tools that are designed to aid in the generation and collection of application telemetry data such as metrics, logs, and traces.
+There are 2 ways to instrument a Go application.
+ Manual Instrumentation Auto Instrumentation  Instrumenting an application generally involves a significant manual effort on developer part. Open Telemetry for Go(and many other popular languages) supports auto instrumentation using wrappers and helper functions around many popular frameworks and libraries in Go programming languages.</description>
+    </item>
+    
+  </channel>
+</rss>

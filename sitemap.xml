@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/auto-instrument-open-telemetry-go/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/go/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/instrumentation/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/observability/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/open-telemetry/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/</loc>
+    <lastmod>2021-05-16T16:20:44-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/tiered-cache-in-go/</loc>
     <lastmod>2021-05-09T06:18:37-05:00</lastmod>
   </url>
@@ -14,21 +49,6 @@
   
   <url>
     <loc>https://varunksaini.com/tags/design/</loc>
-    <lastmod>2021-05-09T06:18:37-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/go/</loc>
-    <lastmod>2021-05-09T06:18:37-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/</loc>
-    <lastmod>2021-05-09T06:18:37-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/</loc>
     <lastmod>2021-05-09T06:18:37-05:00</lastmod>
   </url>
   
