@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using Wasm in Envoy Proxy - Part 1 - Varun Kumar">
+    <meta name="twitter:description" content="This is my first blog about using Wasm(Web Assembly) with http proxies at edge. In this first post, we are using tinyGo to compile go code to Wasm. In future posts, I am going to use C&#43;&#43; and Rust, and then talk about pros and cons of these approaches.
+What is WASM According to webassembly website,
+ WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using Wasm in Envoy Proxy - Part 1 - Varun Kumar">
+    <meta property="og:description" content="This is my first blog about using Wasm(Web Assembly) with http proxies at edge. In this first post, we are using tinyGo to compile go code to Wasm. In future posts, I am going to use C&#43;&#43; and Rust, and then talk about pros and cons of these approaches.
+What is WASM According to webassembly website,
+ WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
+    <meta property="og:url" content="https://varunksaini.com/wasm-http-proxy-part-1/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Using Wasm in Envoy Proxy - Part 1 - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="This is my first blog about using Wasm(Web Assembly) with http proxies at edge. In this first post, we are using tinyGo to compile go code to Wasm. In future posts, I am going to use C&#43;&#43; and Rust, and then talk about pros and cons of these approaches.
+What is WASM According to webassembly website,
+ WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Using Wasm in Envoy Proxy - Part 1</h1>
+    <time datetime="2021-06-03 13:21:32 CDT">03 Jun 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/wasm">wasm</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/proxy">proxy</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/envoy">envoy</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/networking">networking</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>This is my first blog about using Wasm(Web Assembly) with http proxies at edge. In this first post, we are using tinyGo to compile go code to Wasm. In future posts, I am going to use C++ and Rust, and then talk about pros and cons of these approaches.</p>
+<h3 id="what-is-wasm">What is WASM</h3>
+<p>According to <a href="https://webassembly.org">webassembly</a> website,</p>
+<blockquote>
+<p>WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.</p>
+</blockquote>
+<p>Wasm is <strong>Efficient and Fast</strong>, <strong>Safe</strong>, <strong>Open And debuggable</strong>, and <strong>part of open web Platform</strong>.</p>
+<h3 id="what-is-tinygo">What is TinyGo</h3>
+<p>According to <a href="https://tinygo.org">tinygo</a> website,</p>
+<blockquote>
+<p>TinyGo brings the Go programming language to embedded systems and to the modern web by creating a new compiler based on LLVM.</p>
+</blockquote>
+<p>TinyGo can also produce WebAssembly (WASM) code which is very compact in size. You can compile programs for web browsers, as well as for server and edge computing environments that support the WebAssembly System Interface (WASI) family of interfaces.”</p>
+<h3 id="what-is-envoy">What is Envoy</h3>
+<p>According to <a href="https://www.envoyproxy.io">envoy</a> website,</p>
+<blockquote>
+<p>envoy is an open source edge and service proxy, designed for cloud-native applications</p>
+</blockquote>
+<p>There are multiple ways to run envoy as documented <a href="https://www.envoyproxy.io/docs/envoy/latest/start/install">here</a></p>
+<h3 id="install-tinygo">Install TinyGo</h3>
+<p>To be able to install TinyGo you need to have Go installed first. I have personally tested this on my Mac, so I will provide instructions for MacOS, but you can find instructions for the other operating systems directly on the project website: <a href="https://tinygo.org/getting-started">https://tinygo.org/getting-started</a></p>
+<p>You can install TinyGo on MacOS using brew:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">~ brew tap tinygo-org/tools
+~ brew install tinygo
+</code></pre></div><p>If installation is successful, you should be able to run this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">~ tinygo version
+tinygo version 0.18.0 darwin/amd64 <span class="o">(</span>using go version go1.16.4 and LLVM version 11.0.0<span class="o">)</span>
+</code></pre></div><h3 id="using-wasm-in-go">Using Wasm in Go</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+<span class="s">&#34;fmt&#34;</span>
+
+<span class="s">&#34;github.com/tetratelabs/proxy-wasm-go-sdk/proxywasm&#34;</span>
+<span class="s">&#34;github.com/tetratelabs/proxy-wasm-go-sdk/proxywasm/types&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">type</span> <span class="nx">helloHttpContext</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">proxywasm</span><span class="p">.</span><span class="nx">DefaultHttpContext</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">proxywasm</span><span class="p">.</span><span class="nf">SetNewHttpContext</span><span class="p">(</span><span class="nx">newHttpContext</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">newHttpContext</span><span class="p">(</span><span class="kt">uint32</span><span class="p">,</span> <span class="kt">uint32</span><span class="p">)</span> 	<span class="nx">proxywasm</span><span class="p">.</span><span class="nx">HttpContext</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="o">&amp;</span><span class="nx">helloHttpContext</span><span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">ctx</span> <span class="o">*</span><span class="nx">helloHttpContext</span><span class="p">)</span> <span class="nf">OnHttpRequestHeaders</span><span class="p">(</span><span class="nx">numHeaders</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">_</span> <span class="kt">bool</span><span class="p">)</span> <span class="nx">types</span><span class="p">.</span><span class="nx">Action</span> <span class="p">{</span>
+
+    <span class="k">if</span> <span class="nx">numHeaders</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="nx">headers</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">GetHttpRequestHeaders</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogErrorf</span><span class="p">(</span><span class="s">&#34;failed to get request headers with &#39;%v&#39;&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+            <span class="k">return</span> <span class="nx">types</span><span class="p">.</span><span class="nx">ActionContinue</span>
+        <span class="p">}</span>
+        <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfof</span><span class="p">(</span><span class="s">&#34;request headers: &#39;%+v&#39;&#34;</span><span class="p">,</span> <span class="nx">headers</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">types</span><span class="p">.</span><span class="nx">ActionContinue</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">ctx</span> <span class="o">*</span><span class="nx">helloHttpContext</span><span class="p">)</span> <span class="nf">OnHttpRequestBody</span><span class="p">(</span><span class="nx">bodySize</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">endOfStream</span> <span class="kt">bool</span><span class="p">)</span> <span class="nx">types</span><span class="p">.</span><span class="nx">Action</span> <span class="p">{</span>
+
+    <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="s">&#34;OnHttpRequestBody&#34;</span><span class="p">)</span>
+    <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;Body size: %v\n&#34;</span><span class="p">,</span> <span class="nx">bodySize</span><span class="p">))</span>
+    <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;End of Stream: %v\n&#34;</span><span class="p">,</span> <span class="nx">endOfStream</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nx">types</span><span class="p">.</span><span class="nx">ActionContinue</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">ctx</span> <span class="o">*</span><span class="nx">helloHttpContext</span><span class="p">)</span> <span class="nf">OnHttpResponseBody</span><span class="p">(</span><span class="nx">bodySize</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">endOfStream</span> <span class="kt">bool</span><span class="p">)</span> <span class="nx">types</span><span class="p">.</span><span class="nx">Action</span> <span class="p">{</span>
+    <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="s">&#34;OnHttpResponseBody&#34;</span><span class="p">)</span>
+    <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;Body size: %v\n&#34;</span><span class="p">,</span> <span class="nx">bodySize</span><span class="p">))</span>
+    <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;End of Stream: %v\n&#34;</span><span class="p">,</span> <span class="nx">endOfStream</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="nx">bodySize</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+
+        <span class="nx">bodyContent</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">GetHttpResponseBody</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">bodySize</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+            <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogError</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;Error in READING RESPONSE BODY: %v\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
+            <span class="k">return</span> <span class="nx">types</span><span class="p">.</span><span class="nx">ActionContinue</span>
+        <span class="p">}</span>
+        <span class="nx">proxywasm</span><span class="p">.</span><span class="nf">LogInfo</span><span class="p">(</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;BODY CONTENT: %v\n&#34;</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">bodyContent</span><span class="p">)))</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">types</span><span class="p">.</span><span class="nx">ActionContinue</span>
+<span class="p">}</span>
+</code></pre></div><p>I am using a Go SDK for <a href="https://github.com/proxy-wasm/spec">Proxy-Wasm</a>,  Proxy-Wasm provides an interface to write wasm extensions in Go. This SDK supports tinyGo, normal <a href="https://golang.org">go</a> is not supported.</p>
+<h3 id="compiling-to-wasm">Compiling to Wasm</h3>
+<p>We will use TinyGo compiler with wasm target(wasi).</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">tinygo build -o ./hello.wasm -scheduler<span class="o">=</span>none -target<span class="o">=</span>wasi ./main.go
+</code></pre></div><p>This will give us a <code>hello.wasm</code> file, that we can use as a plugin/filter in envoy.</p>
+<h3 id="running-wasm-plugin-in-envoy">Running Wasm plugin in envoy</h3>
+<p>We need to tell envoy from where to load this wasm filter/plugin. We do that by providing following information in envoy config file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">http_filters</span><span class="p">:</span><span class="w">
+</span><span class="w"></span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">envoy.filters.http.wasm</span><span class="w">
+</span><span class="w"></span><span class="nt">typed_config</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">&#34;@type&#34;: </span><span class="l">type.googleapis.com/udpa.type.v1.TypedStruct</span><span class="w">
+</span><span class="w"></span><span class="nt">type_url</span><span class="p">:</span><span class="w"> </span><span class="l">type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm</span><span class="w">
+</span><span class="w"></span><span class="nt">value</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">config</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;my_plugin&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">root_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;my_root_id&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">vm_config</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">vm_id</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;my_vm_id&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">runtime</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;envoy.wasm.runtime.v8&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">code</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">local</span><span class="p">:</span><span class="w">
+</span><span class="w"></span><span class="nt">filename</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;hello.wasm&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">allow_precompiled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></div><p>Once everything is in place and we run envoy,  and make request, I see following log entries.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="o">[</span>info<span class="o">][</span>wasm<span class="o">]</span> <span class="o">[</span>source/extensions/common/wasm/context.cc:1218<span class="o">]</span> wasm log my_plugin my_root_id my_vm_id: OnHttpResponseBody
+<span class="o">[</span>info<span class="o">][</span>wasm<span class="o">]</span> <span class="o">[</span>source/extensions/common/wasm/context.cc:1218<span class="o">]</span> wasm log my_plugin my_root_id my_vm_id: Body size: <span class="m">19</span>
+<span class="o">[</span>info<span class="o">][</span>wasm<span class="o">]</span> <span class="o">[</span>source/extensions/common/wasm/context.cc:1218<span class="o">]</span> wasm log my_plugin my_root_id my_vm_id: BODY CONTENT: <span class="m">404</span> page not found
+</code></pre></div><p>We can see that envoy is able to apply our wasm filter on  http requests and we have logs to prove that.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

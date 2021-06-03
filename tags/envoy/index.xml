@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>envoy on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/envoy/</link>
+    <description>Recent content in envoy on Varun Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jun 2021 13:21:32 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/envoy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Wasm in Envoy Proxy - Part 1</title>
+      <link>https://varunksaini.com/wasm-http-proxy-part-1/</link>
+      <pubDate>Thu, 03 Jun 2021 13:21:32 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/wasm-http-proxy-part-1/</guid>
+      <description>This is my first blog about using Wasm(Web Assembly) with http proxies at edge. In this first post, we are using tinyGo to compile go code to Wasm. In future posts, I am going to use C++ and Rust, and then talk about pros and cons of these approaches.
+What is WASM According to webassembly website,
+ WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.</description>
+    </item>
+    
+  </channel>
+</rss>
