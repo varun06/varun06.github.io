@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using Lua filter in Envoy Proxy - Varun Kumar">
+    <meta name="twitter:description" content="In Envoy, HTTP lua filter is used to run Lua scripts during both request and response flow. Envoy uses LuaJIT as Lua runtime.
+High level design of Lua Filter  All Lua environments are per worker thread. There is no truly global data. All scripts are run as coroutines. Do not perform blocking operations from scripts. It is critical for performance that Envoy APIs are used for all IO.  Features supported by Lua Filter  Inspection of headers, body, and trailers while streaming in either the request flow, response flow, or both.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using Lua filter in Envoy Proxy - Varun Kumar">
+    <meta property="og:description" content="In Envoy, HTTP lua filter is used to run Lua scripts during both request and response flow. Envoy uses LuaJIT as Lua runtime.
+High level design of Lua Filter  All Lua environments are per worker thread. There is no truly global data. All scripts are run as coroutines. Do not perform blocking operations from scripts. It is critical for performance that Envoy APIs are used for all IO.  Features supported by Lua Filter  Inspection of headers, body, and trailers while streaming in either the request flow, response flow, or both.">
+    <meta property="og:url" content="https://varunksaini.com/http-proxy-lua-filter/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Using Lua filter in Envoy Proxy - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="In Envoy, HTTP lua filter is used to run Lua scripts during both request and response flow. Envoy uses LuaJIT as Lua runtime.
+High level design of Lua Filter  All Lua environments are per worker thread. There is no truly global data. All scripts are run as coroutines. Do not perform blocking operations from scripts. It is critical for performance that Envoy APIs are used for all IO.  Features supported by Lua Filter  Inspection of headers, body, and trailers while streaming in either the request flow, response flow, or both.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Using Lua filter in Envoy Proxy</h1>
+    <time datetime="2021-06-13 06:45:41 CDT">13 Jun 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/proxy">proxy</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/envoy">envoy</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/networking">networking</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/lua">lua</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>In Envoy, HTTP lua filter is used to run <a href="https://lua.org">Lua</a> scripts during both request and response flow. Envoy uses <a href="https://luajit.org">LuaJIT</a> as Lua runtime.</p>
+<h3 id="high-level-design-of-lua-filter">High level design of Lua Filter</h3>
+<ul>
+<li>All Lua environments are per worker thread. There is no truly global data.</li>
+<li>All scripts are run as coroutines.</li>
+<li>Do not perform blocking operations from scripts.</li>
+<li>It is critical for performance that Envoy APIs are used for all IO.</li>
+</ul>
+<h3 id="features-supported-by-lua-filter">Features supported by Lua Filter</h3>
+<ul>
+<li>Inspection of headers, body, and trailers while streaming in either the request flow, response flow, or both.</li>
+<li>Modification of headers and trailers.</li>
+<li>Blocking and buffering the full request/response body for inspection.</li>
+<li>Performing an outbound async HTTP call to an upstream host.</li>
+<li>Performing a direct response and skipping further filter iteration.</li>
+</ul>
+<h3 id="writing-a-lua-filter-for-envoy">Writing a Lua filter for Envoy</h3>
+<p><a href="https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/lua_filter#config-http-filters-lua">Envoy lua</a> page provides a lot of examples on how to write lua filters for Envoy.</p>
+<p>We can define a Lua filter as <a href="https://www.envoyproxy.io/docs/envoy/latest/api-v3/extensions/filters/http/lua/v3/lua.proto#envoy-v3-api-field-extensions-filters-http-lua-v3-lua-inline-code">inline_code</a> and it will be treated as Global script. Envoy will execute this Global script for every http request.</p>
+<h3 id="per-route-configuration">Per-Route Configuration</h3>
+<p>LuaPerRoute configuration provides a way to disable or override the Lua HTTP filter. it can be used for a virtual host, route, or weighted cluster.</p>
+<h4 id="envoy-config-file">envoy config file</h4>
+<p>Save following to <code>envoy.yaml</code> in a directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">static_resources</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">listeners</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">main</span><span class="w">
+</span><span class="w">    </span><span class="nt">address</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">socket_address</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="m">0.0.0.0</span><span class="w">
+</span><span class="w">        </span><span class="nt">port_value</span><span class="p">:</span><span class="w"> </span><span class="m">8000</span><span class="w">
+</span><span class="w">    </span><span class="nt">filter_chains</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="nt">filters</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">envoy.filters.network.http_connection_manager</span><span class="w">
+</span><span class="w">        </span><span class="nt">typed_config</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span><span class="nt">&#34;@type&#34;: </span><span class="l">type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager</span><span class="w">
+</span><span class="w">          </span><span class="nt">stat_prefix</span><span class="p">:</span><span class="w"> </span><span class="l">ingress_http</span><span class="w">
+</span><span class="w">          </span><span class="nt">codec_type</span><span class="p">:</span><span class="w"> </span><span class="l">AUTO</span><span class="w">
+</span><span class="w">          </span><span class="nt">route_config</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">local_route</span><span class="w">
+</span><span class="w">            </span><span class="nt">virtual_hosts</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">local_service</span><span class="w">
+</span><span class="w">              </span><span class="nt">domains</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span>- <span class="s2">&#34;*&#34;</span><span class="w">
+</span><span class="w">              </span><span class="nt">routes</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span>- <span class="nt">match</span><span class="p">:</span><span class="w">
+</span><span class="w">                  </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;/&#34;</span><span class="w">
+</span><span class="w">                </span><span class="nt">route</span><span class="p">:</span><span class="w">
+</span><span class="w">                  </span><span class="nt">cluster</span><span class="p">:</span><span class="w"> </span><span class="l">web_service</span><span class="w">
+</span><span class="w">          </span><span class="nt">http_filters</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">envoy.filters.http.lua</span><span class="w">
+</span><span class="w">            </span><span class="nt">typed_config</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span><span class="nt">&#34;@type&#34;: </span><span class="l">type.googleapis.com/envoy.extensions.filters.http.lua.v3.Lua</span><span class="w">
+</span><span class="w">              </span><span class="nt">inline_code</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span><span class="sd">                function envoy_on_request(request_handle)
+</span><span class="sd">                  request_handle:logInfo(&#34;Hello World.)
+</span><span class="sd">                end</span><span class="w">                
+</span><span class="w">          </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">envoy.filters.http.router</span><span class="w">
+</span><span class="w">            </span><span class="nt">typed_config</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">clusters</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">web_service</span><span class="w">
+</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l">STRICT_DNS </span><span class="w"> </span><span class="c"># static</span><span class="w">
+</span><span class="w">    </span><span class="nt">lb_policy</span><span class="p">:</span><span class="w"> </span><span class="l">ROUND_ROBIN</span><span class="w">
+</span><span class="w">    </span><span class="nt">load_assignment</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">cluster_name</span><span class="p">:</span><span class="w"> </span><span class="l">web_service</span><span class="w">
+</span><span class="w">      </span><span class="nt">endpoints</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="nt">lb_endpoints</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span>- <span class="nt">endpoint</span><span class="p">:</span><span class="w">
+</span><span class="w">            </span><span class="nt">address</span><span class="p">:</span><span class="w">
+</span><span class="w">              </span><span class="nt">socket_address</span><span class="p">:</span><span class="w">
+</span><span class="w">                </span><span class="nt">address</span><span class="p">:</span><span class="w"> </span><span class="l">web_service</span><span class="w">
+</span><span class="w">                </span><span class="nt">port_value</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></code></pre></div><h4 id="docker-compose-file">Docker Compose file</h4>
+<p>Save this to <code>docker-compose.yaml</code> file in same directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3.7&#34;</span><span class="w">
+</span><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">proxy</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span><span class="w">      </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l">Dockerfile-proxy</span><span class="w">
+</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">./envoy.yaml:/etc/envoy.yaml</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="l">envoymesh</span><span class="w">
+</span><span class="w">    </span><span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;8000&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;8000:8000&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">web_service</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">.</span><span class="w">
+</span><span class="w">      </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l">Dockerfile-web-service</span><span class="w">
+</span><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">envoymesh</span><span class="p">:</span><span class="w">
+</span><span class="w">        </span><span class="nt">aliases</span><span class="p">:</span><span class="w">
+</span><span class="w">          </span>- <span class="l">web_service</span><span class="w">
+</span><span class="w">    </span><span class="nt">expose</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;80&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;8080:80&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">envoymesh</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
+</span><span class="w">
+</span></code></pre></div><h4 id="dockerfile-for-envoy">Dockerfile for Envoy</h4>
+<p>Save this to <code>dockerfile-proxy</code> in same directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">    </span><span class="l">FROM envoyproxy/envoy-dev:latest</span><span class="w">
+</span><span class="w">    </span><span class="l">COPY ./envoy.yaml /etc/envoy.yaml</span><span class="w">
+</span><span class="w">    </span><span class="l">RUN chmod go+r /etc/envoy.yaml </span><span class="w">
+</span><span class="w">    </span><span class="l">CMD [&#34;/usr/local/bin/envoy&#34;, &#34;-c&#34;, &#34;/etc/envoy.yaml&#34;, &#34;-l&#34;, &#34;debug&#34;, &#34;--service-cluster&#34;, &#34;proxy&#34;]</span><span class="w">
+</span></code></pre></div><h4 id="dockerfile-for-a-sample-webserver">Dockerfile for a sample webserver</h4>
+<p>Save this to <code>dockerfile-web-service</code> in same directory.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">FROM solsson/http-echo
+</code></pre></div><p>Once everythign is in place, run following commands to bring everything up.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">docker-compose pull
+docker-compose up --build
+</code></pre></div><p>These docker commands will pull envoy and web service images and run them on given ports in docker compose file.</p>
+<p>To check that envoy is proxying our requests to web service, run</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">curl -v localhost:8000
+</code></pre></div><p>You should also see following in envoy logs</p>
+<pre><code>proxy_1        | [2021-06-13 12:17:07.273][19][info][lua] [source/extensions/filters/http/lua/lua_filter.cc:795] script log: Hello World.
+proxy_1        | [2021-06-13 12:17:07.273][19][debug][lua] [source/extensions/filters/common/lua/lua.cc:39] coroutine finished
+</code></pre><p>And that&rsquo;s it. We have a working lua filter in envoy proxy.</p>
+<p><a href="https://github.com/varun06/envoy-lua-filter/tree/master">github</a> link to code.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

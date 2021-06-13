@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lua on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/lua/</link>
+    <description>Recent content in lua on Varun Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Jun 2021 06:45:41 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/lua/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Lua filter in Envoy Proxy</title>
+      <link>https://varunksaini.com/http-proxy-lua-filter/</link>
+      <pubDate>Sun, 13 Jun 2021 06:45:41 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/http-proxy-lua-filter/</guid>
+      <description>In Envoy, HTTP lua filter is used to run Lua scripts during both request and response flow. Envoy uses LuaJIT as Lua runtime.
+High level design of Lua Filter  All Lua environments are per worker thread. There is no truly global data. All scripts are run as coroutines. Do not perform blocking operations from scripts. It is critical for performance that Envoy APIs are used for all IO.  Features supported by Lua Filter  Inspection of headers, body, and trailers while streaming in either the request flow, response flow, or both.</description>
+    </item>
+    
+  </channel>
+</rss>
