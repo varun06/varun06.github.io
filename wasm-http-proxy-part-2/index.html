@@ -11,9 +11,8 @@
     
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Using Wasm(Rust) in Envoy Proxy - Part 2 - Varun Kumar">
-    <meta name="twitter:description" content="WASM and HTTP Proxies - Part 2(Rust)
-This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
-According to webassembly website,
+    <meta name="twitter:description" content="This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.
+What is WASM According to webassembly website,
 &amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
     <meta name="twitter:site" content="https://varunksaini.com/">
     <meta name="twitter:creator" content="">
@@ -23,9 +22,8 @@ According to webassembly website,
     <meta property="og:locale" content="en-us">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Using Wasm(Rust) in Envoy Proxy - Part 2 - Varun Kumar">
-    <meta property="og:description" content="WASM and HTTP Proxies - Part 2(Rust)
-This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
-According to webassembly website,
+    <meta property="og:description" content="This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.
+What is WASM According to webassembly website,
 &amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
     <meta property="og:url" content="https://varunksaini.com/wasm-http-proxy-part-2/">
     <meta property="og:site_name" content="Varun Kumar">
@@ -34,9 +32,8 @@ According to webassembly website,
     <title>Using Wasm(Rust) in Envoy Proxy - Part 2 - Varun Kumar</title>
 
     <meta name="author" content="Varun Kumar">
-    <meta name="description" content="WASM and HTTP Proxies - Part 2(Rust)
-This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
-According to webassembly website,
+    <meta name="description" content="This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.
+What is WASM According to webassembly website,
 &amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
 
     
@@ -101,28 +98,27 @@ According to webassembly website,
         
         
 <article class="mb-12">
-    <p>WASM and HTTP Proxies - Part 2(Rust)</p>
-<p>This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.
-What is WASM</p>
+    <p>This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.</p>
+<h3 id="what-is-wasm">What is WASM</h3>
 <p>According to <a href="https://webassembly.org">webassembly</a> website,</p>
 <p>&ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.&rdquo;</p>
 <p>Wasm is Efficient and Fast, Safe, Open And debuggable, and part of open web Platform.</p>
-<p>What is Rust</p>
+<h3 id="what-is-rust">What is Rust</h3>
 <p><a href="https://www.rust-lang.org">Rust</a> is a modern programming language that empower everyone to build reliable and efficient software.
 What is Envoy</p>
 <p>According to <a href="https://www.envoyproxy.io">envoy</a> website,</p>
 <p>“ENVOY IS AN OPEN SOURCE EDGE AND SERVICE PROXY, DESIGNED FOR CLOUD-NATIVE APPLICATIONS”</p>
-<p>There are multiple ways to run envoy as documented <a href="https://www.envoyproxy.io/docs/envoy/latest/start/install">here</a>
-Install Rust</p>
+<p>There are multiple ways to run envoy as documented <a href="https://www.envoyproxy.io/docs/envoy/latest/start/install">here</a></p>
+<h3 id="install-rust">Install Rust</h3>
 <p><a href="https://www.rust-lang.org/tools/install">Rust Install</a> page has all the ways that Rust can be installed.</p>
 <p>If installation is successful, you should be able to run this:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">~ rustc --version
 rustc 1.52.1 <span class="o">(</span>9bc8c42bb 2021-05-09<span class="o">)</span>
 </code></pre></div><p>And get the rust compiler version on your machine.</p>
-<p>Proxy Wasm Spec
-To write webAssembly for proxies, there is an ABI specification called <a href="https://github.com/proxy-wasm/spec">Proxy Wasm Spec</a></p>
+<h3 id="proxy-wasm-spec">Proxy Wasm Spec</h3>
+<p>To write webAssembly for proxies, there is an ABI specification called <a href="https://github.com/proxy-wasm/spec">Proxy Wasm Spec</a></p>
 <p>Proxy wasm spec also provide SDK’s in Go, Rust, C++ and many other.</p>
-<p>Rust code for wasm filter</p>
+<h3 id="rust-code-for-wasm-filter">Rust code for wasm filter</h3>
 <div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">use</span><span class="w"> </span><span class="n">log</span>::<span class="n">trace</span><span class="p">;</span><span class="w">
 </span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">proxy_wasm</span>::<span class="n">traits</span>::<span class="p">;</span><span class="w">
 </span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">proxy_wasm</span>::<span class="n">types</span>::<span class="p">;</span><span class="w">
@@ -160,11 +156,11 @@ To write webAssembly for proxies, there is an ABI specification called <a href="
 </span><span class="w"></span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
 </span><span class="w"></span><span class="p">}</span><span class="w">
 </span></code></pre></div><p>In this code, we are checking for a token header value and if the value is not even  we return a 403.</p>
-<p>Compiling to Wasm</p>
+<h3 id="compiling-to-wasm">Compiling to Wasm</h3>
 <p>We will use cargo build to  compiler with wasm target.</p>
-<p>cargo build –target=wasm32-unknown-unknown –release</p>
+<p><code>cargo build –target=wasm32-unknown-unknown –release</code></p>
 <p>This will give us a wasm file, that we can use as a plugin/filter in envoy.</p>
-<p>Running Wasm plugin in envoy</p>
+<h3 id="running-wasm-plugin-in-envoy">Running Wasm plugin in envoy</h3>
 <p>We need to tell envoy from where to load this wasm filter/plugin. We do that by providing following information in envoy config file.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">http_filters:
 - name: envoy.filters.http.wasm

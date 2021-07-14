@@ -13,9 +13,8 @@
       <pubDate>Tue, 13 Jul 2021 21:01:02 -0500</pubDate>
       
       <guid>https://varunksaini.com/wasm-http-proxy-part-2/</guid>
-      <description>WASM and HTTP Proxies - Part 2(Rust)
-This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
-According to webassembly website,
+      <description>This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.
+What is WASM According to webassembly website,
 &amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.</description>
     </item>
     
