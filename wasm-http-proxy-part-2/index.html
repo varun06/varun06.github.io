@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using Wasm(Rust) in Envoy Proxy - Part 2 - Varun Kumar">
+    <meta name="twitter:description" content="WASM and HTTP Proxies - Part 2(Rust)
+This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
+According to webassembly website,
+&amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using Wasm(Rust) in Envoy Proxy - Part 2 - Varun Kumar">
+    <meta property="og:description" content="WASM and HTTP Proxies - Part 2(Rust)
+This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
+According to webassembly website,
+&amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
+    <meta property="og:url" content="https://varunksaini.com/wasm-http-proxy-part-2/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Using Wasm(Rust) in Envoy Proxy - Part 2 - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="WASM and HTTP Proxies - Part 2(Rust)
+This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm. What is WASM
+According to webassembly website,
+&amp;ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Using Wasm(Rust) in Envoy Proxy - Part 2</h1>
+    <time datetime="2021-07-13 21:01:02 CDT">13 Jul 2021</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/rust">rust</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/wasm">wasm</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/proxy">proxy</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/envoy">envoy</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/networking">networking</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>WASM and HTTP Proxies - Part 2(Rust)</p>
+<p>This is my second blog post in this series. In last post, we used tinyGo to compile to wasm and use it in envoy proxy.. Today we are going to use Rust to compile to Wasm.
+What is WASM</p>
+<p>According to <a href="https://webassembly.org">webassembly</a> website,</p>
+<p>&ldquo;WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.&rdquo;</p>
+<p>Wasm is Efficient and Fast, Safe, Open And debuggable, and part of open web Platform.</p>
+<p>What is Rust</p>
+<p><a href="https://www.rust-lang.org">Rust</a> is a modern programming language that empower everyone to build reliable and efficient software.
+What is Envoy</p>
+<p>According to <a href="https://www.envoyproxy.io">envoy</a> website,</p>
+<p>“ENVOY IS AN OPEN SOURCE EDGE AND SERVICE PROXY, DESIGNED FOR CLOUD-NATIVE APPLICATIONS”</p>
+<p>There are multiple ways to run envoy as documented <a href="https://www.envoyproxy.io/docs/envoy/latest/start/install">here</a>
+Install Rust</p>
+<p><a href="https://www.rust-lang.org/tools/install">Rust Install</a> page has all the ways that Rust can be installed.</p>
+<p>If installation is successful, you should be able to run this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">~ rustc --version
+rustc 1.52.1 <span class="o">(</span>9bc8c42bb 2021-05-09<span class="o">)</span>
+</code></pre></div><p>And get the rust compiler version on your machine.</p>
+<p>Proxy Wasm Spec
+To write webAssembly for proxies, there is an ABI specification called <a href="https://github.com/proxy-wasm/spec">Proxy Wasm Spec</a></p>
+<p>Proxy wasm spec also provide SDK’s in Go, Rust, C++ and many other.</p>
+<p>Rust code for wasm filter</p>
+<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">use</span><span class="w"> </span><span class="n">log</span>::<span class="n">trace</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">proxy_wasm</span>::<span class="n">traits</span>::<span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">proxy_wasm</span>::<span class="n">types</span>::<span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">struct</span> <span class="nc">EvenAuthorizer</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="n">context_id</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">Context</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EvenAuthorizer</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">HttpContext</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EvenAuthorizer</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="k">fn</span> <span class="nf">on_http_request_headers</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">_</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Action</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">get_http_request_headers</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="n">trace</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;In WASM : #{} -&gt; {}: {}&#34;</span><span class="p">,</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">context_id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">get_http_request_header</span><span class="p">(</span><span class="s">&#34;token&#34;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">token</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">token</span><span class="p">.</span><span class="n">parse</span>::<span class="o">&lt;</span><span class="kt">u64</span><span class="o">&gt;</span><span class="p">().</span><span class="n">is_ok</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">is_even</span><span class="p">(</span><span class="n">token</span><span class="p">.</span><span class="n">parse</span><span class="p">().</span><span class="n">unwrap</span><span class="p">())</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">resume_http_request</span><span class="p">();</span><span class="w">
+</span><span class="w">            </span><span class="n">Action</span>::<span class="n">Continue</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">            </span><span class="bp">self</span><span class="p">.</span><span class="n">send_http_response</span><span class="p">(</span><span class="w">
+</span><span class="w">                </span><span class="mi">403</span><span class="p">,</span><span class="w">
+</span><span class="w">                </span><span class="n">vec</span><span class="o">!</span><span class="p">[(</span><span class="s">&#34;Powered-By&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;proxy-wasm&#34;</span><span class="p">)],</span><span class="w">
+</span><span class="w">                </span><span class="nb">Some</span><span class="p">(</span><span class="s">b&#34;Access forbidden.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">),</span><span class="w">
+</span><span class="w">            </span><span class="p">);</span><span class="w">
+</span><span class="w">            </span><span class="n">Action</span>::<span class="n">Pause</span><span class="w">
+</span><span class="w">        </span><span class="p">}</span><span class="w">
+</span><span class="w">    </span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">fn</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">n</span>: <span class="kt">u64</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><p>In this code, we are checking for a token header value and if the value is not even  we return a 403.</p>
+<p>Compiling to Wasm</p>
+<p>We will use cargo build to  compiler with wasm target.</p>
+<p>cargo build –target=wasm32-unknown-unknown –release</p>
+<p>This will give us a wasm file, that we can use as a plugin/filter in envoy.</p>
+<p>Running Wasm plugin in envoy</p>
+<p>We need to tell envoy from where to load this wasm filter/plugin. We do that by providing following information in envoy config file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">http_filters:
+- name: envoy.filters.http.wasm
+typed_config:
+<span class="s2">&#34;@type&#34;</span>: type.googleapis.com/udpa.type.v1.TypedStruct
+type_url: type.googleapis.com/envoy.extensions.filters.http.wasm.v3.Wasm
+value:
+config:
+name: <span class="s2">&#34;my_plugin&#34;</span>
+root_id: <span class="s2">&#34;my_root_id&#34;</span>
+vm_config:
+vm_id: <span class="s2">&#34;my_vm_id&#34;</span>
+runtime: <span class="s2">&#34;envoy.wasm.runtime.v8&#34;</span>
+code:
+local:
+filename: <span class="s2">&#34;hello.wasm&#34;</span>
+allow_precompiled: <span class="nb">true</span>
+</code></pre></div><p>Once everything is in place and we run envoy,  and make request to a service that is proxied from envoy, I see following output.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ curl  -H <span class="s2">&#34;token&#34;</span>:<span class="s2">&#34;2&#34;</span> 0.0.0.0:18000
+<span class="s2">&#34;Welcome to WASM land&#34;</span>
+$ curl  -H <span class="s2">&#34;token&#34;</span>:<span class="s2">&#34;1&#34;</span> 0.0.0.0:18000
+Access forbidden.
+</code></pre></div><p>We can see that envoy is able to apply our wasm filter on our http requests and if token value is not even, we get an error message.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2021. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>

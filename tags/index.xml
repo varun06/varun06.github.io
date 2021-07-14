@@ -6,13 +6,49 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Jun 2021 06:45:41 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jul 2021 21:01:02 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>envoy</title>
       <link>https://varunksaini.com/tags/envoy/</link>
-      <pubDate>Sun, 13 Jun 2021 06:45:41 -0500</pubDate>
+      <pubDate>Tue, 13 Jul 2021 21:01:02 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/envoy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networking</title>
+      <link>https://varunksaini.com/tags/networking/</link>
+      <pubDate>Tue, 13 Jul 2021 21:01:02 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://varunksaini.com/tags/proxy/</link>
+      <pubDate>Tue, 13 Jul 2021 21:01:02 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://varunksaini.com/tags/rust/</link>
+      <pubDate>Tue, 13 Jul 2021 21:01:02 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wasm</title>
+      <link>https://varunksaini.com/tags/wasm/</link>
+      <pubDate>Tue, 13 Jul 2021 21:01:02 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/wasm/</guid>
       <description></description>
     </item>
     
@@ -26,38 +62,11 @@
     </item>
     
     <item>
-      <title>networking</title>
-      <link>https://varunksaini.com/tags/networking/</link>
-      <pubDate>Sun, 13 Jun 2021 06:45:41 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>proxy</title>
-      <link>https://varunksaini.com/tags/proxy/</link>
-      <pubDate>Sun, 13 Jun 2021 06:45:41 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Go</title>
       <link>https://varunksaini.com/tags/go/</link>
       <pubDate>Thu, 03 Jun 2021 13:21:32 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wasm</title>
-      <link>https://varunksaini.com/tags/wasm/</link>
-      <pubDate>Thu, 03 Jun 2021 13:21:32 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/wasm/</guid>
       <description></description>
     </item>
     
