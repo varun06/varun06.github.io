@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://varunksaini.com/tags/book/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/go/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/programming/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/review/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/network-programming-with-go/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/tags/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://varunksaini.com/</loc>
+    <lastmod>2022-08-25T09:57:54-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://varunksaini.com/tags/envoy/</loc>
     <lastmod>2021-06-13T06:45:41-05:00</lastmod>
   </url>
@@ -23,23 +58,8 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/</loc>
-    <lastmod>2021-06-13T06:45:41-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/http-proxy-lua-filter/</loc>
     <lastmod>2021-06-13T06:45:41-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/</loc>
-    <lastmod>2021-06-13T06:45:41-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/go/</loc>
-    <lastmod>2021-06-03T13:21:32-05:00</lastmod>
   </url>
   
   <url>
@@ -163,22 +183,12 @@
   </url>
   
   <url>
-    <loc>https://varunksaini.com/tags/book/</loc>
-    <lastmod>2020-03-28T09:43:35-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://varunksaini.com/book-review-seag/</loc>
     <lastmod>2020-03-28T09:43:35-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://varunksaini.com/tags/general/</loc>
-    <lastmod>2020-03-28T09:43:35-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://varunksaini.com/tags/review/</loc>
     <lastmod>2020-03-28T09:43:35-05:00</lastmod>
   </url>
   

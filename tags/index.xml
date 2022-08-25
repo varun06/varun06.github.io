@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Jun 2021 06:45:41 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Aug 2022 09:57:54 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>book</title>
+      <link>https://varunksaini.com/tags/book/</link>
+      <pubDate>Thu, 25 Aug 2022 09:57:54 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://varunksaini.com/tags/go/</link>
+      <pubDate>Thu, 25 Aug 2022 09:57:54 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://varunksaini.com/tags/programming/</link>
+      <pubDate>Thu, 25 Aug 2022 09:57:54 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>https://varunksaini.com/tags/review/</link>
+      <pubDate>Thu, 25 Aug 2022 09:57:54 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/review/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>envoy</title>
       <link>https://varunksaini.com/tags/envoy/</link>
@@ -40,15 +76,6 @@
       <pubDate>Sun, 13 Jun 2021 06:45:41 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://varunksaini.com/tags/go/</link>
-      <pubDate>Thu, 03 Jun 2021 13:21:32 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/go/</guid>
       <description></description>
     </item>
     
@@ -197,29 +224,11 @@
     </item>
     
     <item>
-      <title>book</title>
-      <link>https://varunksaini.com/tags/book/</link>
-      <pubDate>Sat, 28 Mar 2020 09:43:35 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>general</title>
       <link>https://varunksaini.com/tags/general/</link>
       <pubDate>Sat, 28 Mar 2020 09:43:35 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>review</title>
-      <link>https://varunksaini.com/tags/review/</link>
-      <pubDate>Sat, 28 Mar 2020 09:43:35 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/review/</guid>
       <description></description>
     </item>
     
