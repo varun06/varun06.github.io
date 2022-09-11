@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guessing Game from Rust book in  Go - Varun Kumar">
+    <meta name="twitter:description" content="This year I have been finding some time and learning Rust. I am going to write about my learning journey in another post. Today I want to talk about converting Guessing game from Rust book to Go. It was a fun and quick exercise. It&amp;rsquo;s interesting to see that both programms are almost same in size. Here is Rust code from Book.
+usestd::io;userand::Rng;usestd::cmp::Ordering;fn main(){println!(&amp;#34;Guess the number!!&amp;#34;);letsecret_number=rand::thread_rng().gen_range(1..=100);loop{println!(&amp;#34;Please input your guess.&amp;#34;);letmutguess=String::new();io::stdin().read_line(&amp;amp;mutguess).expect(&amp;#34;Failed to read line&amp;#34;);letguess: u32 =matchguess.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Guessing Game from Rust book in  Go - Varun Kumar">
+    <meta property="og:description" content="This year I have been finding some time and learning Rust. I am going to write about my learning journey in another post. Today I want to talk about converting Guessing game from Rust book to Go. It was a fun and quick exercise. It&amp;rsquo;s interesting to see that both programms are almost same in size. Here is Rust code from Book.
+usestd::io;userand::Rng;usestd::cmp::Ordering;fn main(){println!(&amp;#34;Guess the number!!&amp;#34;);letsecret_number=rand::thread_rng().gen_range(1..=100);loop{println!(&amp;#34;Please input your guess.&amp;#34;);letmutguess=String::new();io::stdin().read_line(&amp;amp;mutguess).expect(&amp;#34;Failed to read line&amp;#34;);letguess: u32 =matchguess.">
+    <meta property="og:url" content="https://varunksaini.com/guessing-game-rust-and-go/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Guessing Game from Rust book in  Go - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="This year I have been finding some time and learning Rust. I am going to write about my learning journey in another post. Today I want to talk about converting Guessing game from Rust book to Go. It was a fun and quick exercise. It&amp;rsquo;s interesting to see that both programms are almost same in size. Here is Rust code from Book.
+usestd::io;userand::Rng;usestd::cmp::Ordering;fn main(){println!(&amp;#34;Guess the number!!&amp;#34;);letsecret_number=rand::thread_rng().gen_range(1..=100);loop{println!(&amp;#34;Please input your guess.&amp;#34;);letmutguess=String::new();io::stdin().read_line(&amp;amp;mutguess).expect(&amp;#34;Failed to read line&amp;#34;);letguess: u32 =matchguess.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Guessing Game from Rust book in  Go</h1>
+    <time datetime="2022-09-11 07:31:09 CDT">11 Sep 2022</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/rust">rust</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/programming">programming</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/learning">learning</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>This year I have been finding some time and learning Rust. I am going to write about my learning journey in another post. Today I want to talk about converting Guessing game from Rust book to Go. It was a fun and quick exercise. It&rsquo;s interesting to see that both programms are almost same in size. Here is <a href="https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html">Rust code</a> from <strong>Book</strong>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Rust" data-lang="Rust"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">rand</span>::<span class="n">Rng</span><span class="p">;</span><span class="w">
+</span><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span><span class="p">;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">	</span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Guess the number!!&#34;</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="n">secret_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rand</span>::<span class="n">thread_rng</span><span class="p">().</span><span class="n">gen_range</span><span class="p">(</span><span class="mi">1</span><span class="p">..</span><span class="o">=</span><span class="mi">100</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">	</span><span class="k">loop</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">		</span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Please input your guess.&#34;</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">		</span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span><span class="w">
+</span><span class="w">		</span><span class="n">io</span>::<span class="n">stdin</span><span class="p">()</span><span class="w">
+</span><span class="w">			</span><span class="p">.</span><span class="n">read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">guess</span><span class="p">)</span><span class="w">
+</span><span class="w">			</span><span class="p">.</span><span class="n">expect</span><span class="p">(</span><span class="s">&#34;Failed to read line&#34;</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">		</span><span class="kd">let</span><span class="w"> </span><span class="n">guess</span>: <span class="kt">u32</span> <span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">trim</span><span class="p">().</span><span class="n">parse</span><span class="p">(){</span><span class="w">
+</span><span class="w">				</span><span class="nb">Ok</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">num</span><span class="p">,</span><span class="w">
+</span><span class="w">				</span><span class="nb">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">continue</span><span class="p">,</span><span class="w">
+</span><span class="w">			</span><span class="p">};</span><span class="w">
+</span><span class="w">
+</span><span class="w">		</span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;You guessed: {guess}&#34;</span><span class="p">);</span><span class="w">
+</span><span class="w">
+</span><span class="w">		</span><span class="k">match</span><span class="w"> </span><span class="n">guess</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">			</span><span class="n">Ordering</span>::<span class="n">Less</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Too small!&#34;</span><span class="p">),</span><span class="w">
+</span><span class="w">			</span><span class="n">Ordering</span>::<span class="n">Greater</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;Too big!&#34;</span><span class="p">),</span><span class="w">
+</span><span class="w">			</span><span class="n">Ordering</span>::<span class="n">Equal</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">				</span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&#34;You win!&#34;</span><span class="p">);</span><span class="w">
+</span><span class="w">				</span><span class="k">break</span><span class="p">;</span><span class="w">
+</span><span class="w">			</span><span class="p">}</span><span class="w">
+</span><span class="w">		</span><span class="p">}</span><span class="w">
+</span><span class="w">	</span><span class="p">}</span><span class="w">
+</span><span class="w"></span><span class="p">}</span><span class="w">
+</span></code></pre></div><p>And here is my interpretation in Go.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Go" data-lang="Go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;bufio&#34;</span>
+	<span class="s">&#34;fmt&#34;</span>
+	<span class="s">&#34;log&#34;</span>
+	<span class="s">&#34;math/rand&#34;</span>
+	<span class="s">&#34;os&#34;</span>
+	<span class="s">&#34;strconv&#34;</span>
+	<span class="s">&#34;strings&#34;</span>
+	<span class="s">&#34;time&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Guess the number!!&#34;</span><span class="p">)</span>
+
+	<span class="nx">rand</span><span class="p">.</span><span class="nf">Seed</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">UnixNano</span><span class="p">())</span>
+	<span class="nx">secretNumber</span> <span class="o">:=</span> <span class="nx">rand</span><span class="p">.</span><span class="nf">Int63n</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+	<span class="k">for</span> <span class="p">{</span>
+		<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span><span class="p">)</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Print</span><span class="p">(</span><span class="s">&#34;Enter text: &#34;</span><span class="p">)</span>
+		<span class="nx">text</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadString</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+			<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+		<span class="p">}</span>
+		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;You guessed: &#34;</span><span class="p">,</span> <span class="nx">text</span><span class="p">)</span>
+
+		<span class="nx">guess</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">ParseInt</span><span class="p">(</span><span class="nx">strings</span><span class="p">.</span><span class="nf">Trim</span><span class="p">(</span><span class="nx">text</span><span class="p">,</span> <span class="s">&#34;\n&#34;</span><span class="p">),</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+			<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+		<span class="p">}</span>
+
+		<span class="k">if</span> <span class="nx">guess</span> <span class="p">&lt;</span> <span class="nx">secretNumber</span> <span class="p">{</span>
+			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Too small!!&#34;</span><span class="p">)</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">guess</span> <span class="p">&gt;</span> <span class="nx">secretNumber</span> <span class="p">{</span>
+			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Too big!!&#34;</span><span class="p">)</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">guess</span> <span class="o">==</span> <span class="nx">secretNumber</span> <span class="p">{</span>
+			<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;You win!&#34;</span><span class="p">)</span>
+			<span class="k">break</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>They both have almost same lines of codes and readable at the same time.</p>
+
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2022. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>
