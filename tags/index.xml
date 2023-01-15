@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Dec 2022 07:23:10 -0600</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Jan 2023 07:24:46 -0600</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>book</title>
+      <link>https://varunksaini.com/tags/book/</link>
+      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>general</title>
+      <link>https://varunksaini.com/tags/general/</link>
+      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>https://varunksaini.com/tags/reading/</link>
+      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>https://varunksaini.com/tags/review/</link>
+      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/review/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>books</title>
       <link>https://varunksaini.com/tags/books/</link>
@@ -22,15 +58,6 @@
       <pubDate>Sat, 10 Dec 2022 07:23:10 -0600</pubDate>
       
       <guid>https://varunksaini.com/tags/cooking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reading</title>
-      <link>https://varunksaini.com/tags/reading/</link>
-      <pubDate>Sat, 10 Dec 2022 07:23:10 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/reading/</guid>
       <description></description>
     </item>
     
@@ -85,24 +112,6 @@
       <pubDate>Sun, 11 Sep 2022 07:31:09 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>book</title>
-      <link>https://varunksaini.com/tags/book/</link>
-      <pubDate>Thu, 25 Aug 2022 09:57:54 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>review</title>
-      <link>https://varunksaini.com/tags/review/</link>
-      <pubDate>Thu, 25 Aug 2022 09:57:54 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/review/</guid>
       <description></description>
     </item>
     
@@ -283,15 +292,6 @@
       <pubDate>Sun, 31 May 2020 14:15:03 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/til/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>general</title>
-      <link>https://varunksaini.com/tags/general/</link>
-      <pubDate>Sat, 28 Mar 2020 09:43:35 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/general/</guid>
       <description></description>
     </item>
     
