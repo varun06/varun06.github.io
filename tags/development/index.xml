@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Varun Kumar</title>
+    <link>https://varunksaini.com/tags/development/</link>
+    <description>Recent content in Development on Varun Kumar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Mar 2023 06:40:31 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Workspaces in Go and recent gotcha</title>
+      <link>https://varunksaini.com/using-workspaces-go/</link>
+      <pubDate>Sun, 12 Mar 2023 06:40:31 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/using-workspaces-go/</guid>
+      <description>Go 1.18 adds workspace mode to Go, which lets you work on multiple modules simultaneously.
+Workspaces
+Go workspaces helps to work with several modules in a Go project. When you create a go.work file, Go runs through the list of modules listed in the workspace, and creates a single list of dependencies. If go.mod files have replace directives, Go will also take them into account.
+The go.work file has use and replace directives that override the individual go.</description>
+    </item>
+    
+  </channel>
+</rss>

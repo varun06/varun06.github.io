@@ -6,13 +6,67 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Jan 2023 07:24:46 -0600</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 06:40:31 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Development</title>
+      <link>https://varunksaini.com/tags/development/</link>
+      <pubDate>Sun, 12 Mar 2023 06:40:31 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://varunksaini.com/tags/go/</link>
+      <pubDate>Sun, 12 Mar 2023 06:40:31 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://varunksaini.com/tags/programming/</link>
+      <pubDate>Sun, 12 Mar 2023 06:40:31 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/programming/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>book</title>
       <link>https://varunksaini.com/tags/book/</link>
-      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
+      <pubDate>Sun, 19 Feb 2023 10:36:17 -0600</pubDate>
       
       <guid>https://varunksaini.com/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>economics</title>
+      <link>https://varunksaini.com/tags/economics/</link>
+      <pubDate>Sun, 19 Feb 2023 10:36:17 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/economics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reading</title>
+      <link>https://varunksaini.com/tags/reading/</link>
+      <pubDate>Sun, 19 Feb 2023 10:36:17 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/reading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>review</title>
+      <link>https://varunksaini.com/tags/review/</link>
+      <pubDate>Sun, 19 Feb 2023 10:36:17 -0600</pubDate>
+      
+      <guid>https://varunksaini.com/tags/review/</guid>
       <description></description>
     </item>
     
@@ -22,24 +76,6 @@
       <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
       
       <guid>https://varunksaini.com/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reading</title>
-      <link>https://varunksaini.com/tags/reading/</link>
-      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/reading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>review</title>
-      <link>https://varunksaini.com/tags/review/</link>
-      <pubDate>Sun, 15 Jan 2023 07:24:46 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/review/</guid>
       <description></description>
     </item>
     
@@ -80,29 +116,11 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://varunksaini.com/tags/go/</link>
-      <pubDate>Sun, 11 Sep 2022 07:31:09 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>learning</title>
       <link>https://varunksaini.com/tags/learning/</link>
       <pubDate>Sun, 11 Sep 2022 07:31:09 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://varunksaini.com/tags/programming/</link>
-      <pubDate>Sun, 11 Sep 2022 07:31:09 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/programming/</guid>
       <description></description>
     </item>
     

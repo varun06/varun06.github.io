@@ -6,7 +6,19 @@
     <description>Recent content in Go on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Sep 2022 07:31:09 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Mar 2023 06:40:31 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using Workspaces in Go and recent gotcha</title>
+      <link>https://varunksaini.com/using-workspaces-go/</link>
+      <pubDate>Sun, 12 Mar 2023 06:40:31 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/using-workspaces-go/</guid>
+      <description>Go 1.18 adds workspace mode to Go, which lets you work on multiple modules simultaneously.
+Workspaces
+Go workspaces helps to work with several modules in a Go project. When you create a go.work file, Go runs through the list of modules listed in the workspace, and creates a single list of dependencies. If go.mod files have replace directives, Go will also take them into account.
+The go.work file has use and replace directives that override the individual go.</description>
+    </item>
+    
     <item>
       <title>Guessing Game from Rust book in  Go</title>
       <link>https://varunksaini.com/guessing-game-rust-and-go/</link>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.80.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using Workspaces in Go and recent gotcha - Varun Kumar">
+    <meta name="twitter:description" content="Go 1.18 adds workspace mode to Go, which lets you work on multiple modules simultaneously.
+Workspaces
+Go workspaces helps to work with several modules in a Go project. When you create a go.work file, Go runs through the list of modules listed in the workspace, and creates a single list of dependencies. If go.mod files have replace directives, Go will also take them into account.
+The go.work file has use and replace directives that override the individual go.">
+    <meta name="twitter:site" content="https://varunksaini.com/">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image" content="https://varunksaini.com/images/avatar.png">
+    
+    
+    <meta property="og:locale" content="en-us">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Using Workspaces in Go and recent gotcha - Varun Kumar">
+    <meta property="og:description" content="Go 1.18 adds workspace mode to Go, which lets you work on multiple modules simultaneously.
+Workspaces
+Go workspaces helps to work with several modules in a Go project. When you create a go.work file, Go runs through the list of modules listed in the workspace, and creates a single list of dependencies. If go.mod files have replace directives, Go will also take them into account.
+The go.work file has use and replace directives that override the individual go.">
+    <meta property="og:url" content="https://varunksaini.com/using-workspaces-go/">
+    <meta property="og:site_name" content="Varun Kumar">
+    <meta property="og:image" content="https://varunksaini.com/images/avatar.png">
+    
+    <title>Using Workspaces in Go and recent gotcha - Varun Kumar</title>
+
+    <meta name="author" content="Varun Kumar">
+    <meta name="description" content="Go 1.18 adds workspace mode to Go, which lets you work on multiple modules simultaneously.
+Workspaces
+Go workspaces helps to work with several modules in a Go project. When you create a go.work file, Go runs through the list of modules listed in the workspace, and creates a single list of dependencies. If go.mod files have replace directives, Go will also take them into account.
+The go.work file has use and replace directives that override the individual go.">
+
+    
+    
+
+    
+    
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+    <link rel="stylesheet" href="https://varunksaini.com/css/theme.css">
+    <link rel="stylesheet" href="https://varunksaini.com/css/chroma.dracula.css">
+</head>
+<body class="font-serif bg-gray-200 border-t-4 border-blue-500 antialiased">
+    <div class="w-full p-6 md:w-2/3 md:px-0 md:mx-auto xl:w-2/5">
+        <header class="mb-6">
+            
+            <div class="mb-6 md:flex md:items-center">
+                
+<div>
+    <a class="text-lg mb-8 inline-block" href="/">&larr; Back Home</a>
+
+    
+    
+    <h1 class="text-4xl font-bold">Using Workspaces in Go and recent gotcha</h1>
+    <time datetime="2023-03-12 06:40:31 CDT">12 Mar 2023</time>
+    
+    
+    
+    <ol class="mt-4">
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/go">Go</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/programming">Programming</a>
+        </li>
+        
+        <li class="inline-block">
+            <a class="border-none text-gray-800 text-xs bg-gray-400 hover:bg-gray-600 hover:text-white rounded-sm px-3 py-1" href="https://varunksaini.com/tags/development">Development</a>
+        </li>
+        
+    </ol>
+    
+</div>
+
+            </div>
+
+            
+            
+        </header>
+
+        
+        
+<article class="mb-12">
+    <p>Go 1.18 adds workspace mode to Go, which lets you work on multiple modules simultaneously.</p>
+<p><strong>Workspaces</strong></p>
+<p>Go workspaces helps to work with several modules in a Go project. When you create a go.work file, Go runs through the list of modules listed in the workspace, and creates a single list of dependencies. If go.mod files have replace directives, Go will also take them into account.</p>
+<p>The go.work file has <code>use</code> and <code>replace</code> directives that override the individual go.mod files, so there is no need to edit each go.mod file individually.</p>
+<p>You create a workspace by running go work init with a list of module directories as space-separated arguments.</p>
+<div class="highlight"><pre class="chroma"><code class="language-Go" data-lang="Go"><span class="k">go</span> <span class="nx">work</span> <span class="nx">init</span> <span class="nx">abc</span><span class="p">,</span><span class="nx">xyz</span>
+</code></pre></div><p>running go work init without arguments creates an empty workspace.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">work</span> <span class="nx">init</span>
+</code></pre></div><p>To add modules to the workspace, run go work use [moddir] or manually edit the go.work file.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="nx">work</span> <span class="nx">use</span> <span class="nx">foo</span>
+</code></pre></div><p>Run go work use -r to recursively add directories in the argument directory with a go.mod file to your workspace.</p>
+<p>A sample <code>go.work</code> file looks like this.</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="mf">1.20</span>
+
+<span class="nf">use</span> <span class="p">(</span>
+	<span class="p">.</span>
+    <span class="p">.</span><span class="o">/</span><span class="nx">foo</span>
+    <span class="p">.</span><span class="o">/</span><span class="nx">bar</span>
+<span class="p">)</span>
+</code></pre></div><p><strong>Gotcha</strong></p>
+<p>Recently, While working with <code>workspaces</code> I got following error:</p>
+<p><code>pattern ./...: directory prefix . does not contain modules listed in go.work or their selected dependencies</code></p>
+<p>After some debugging and aksing around, I figured that I was missing <code>.[main module]</code> in <code>go.work</code> file. my go work file was looking like this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="mf">1.20</span>
+
+<span class="nf">use</span> <span class="p">(</span>
+	<span class="p">.</span><span class="o">/</span><span class="nx">foo</span>
+	<span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">bar</span>
+<span class="p">)</span>
+</code></pre></div><p>A working <code>go.work</code> file is this:</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="k">go</span> <span class="mf">1.20</span>
+
+<span class="nf">use</span> <span class="p">(</span>
+	<span class="p">.</span>
+	<span class="p">.</span><span class="o">/</span><span class="nx">foo</span>
+	<span class="p">..</span><span class="o">/</span><span class="p">..</span><span class="o">/</span><span class="nx">bar</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    
+</article>
+
+
+        <footer>
+            <p>
+                &copy; 2023. Proudly made with 💕 with <a href="https://gohugo.io/" target="_blank">Hugo</a> and <a href="https://tailwindcss.com/" target="_blank">TailwindCSS</a>.
+            </p>
+        </footer>
+    </div>
+
+    
+</body>
+</html>
