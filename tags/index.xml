@@ -6,11 +6,11 @@
     <description>Recent content in Tags on Varun Kumar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jul 2024 21:29:36 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2024 08:18:28 -0500</lastBuildDate><atom:link href="https://varunksaini.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI</title>
       <link>https://varunksaini.com/tags/ai/</link>
-      <pubDate>Wed, 17 Jul 2024 21:29:36 -0500</pubDate>
+      <pubDate>Sun, 21 Jul 2024 08:18:28 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/ai/</guid>
       <description></description>
@@ -19,9 +19,27 @@
     <item>
       <title>book</title>
       <link>https://varunksaini.com/tags/book/</link>
-      <pubDate>Wed, 17 Jul 2024 21:29:36 -0500</pubDate>
+      <pubDate>Sun, 21 Jul 2024 08:18:28 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ChatGPT</title>
+      <link>https://varunksaini.com/tags/chatgpt/</link>
+      <pubDate>Sun, 21 Jul 2024 08:18:28 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/chatgpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reviews</title>
+      <link>https://varunksaini.com/tags/reviews/</link>
+      <pubDate>Sun, 21 Jul 2024 08:18:28 -0500</pubDate>
+      
+      <guid>https://varunksaini.com/tags/reviews/</guid>
       <description></description>
     </item>
     
@@ -49,15 +67,6 @@
       <pubDate>Sat, 04 Nov 2023 21:00:52 -0500</pubDate>
       
       <guid>https://varunksaini.com/tags/reading/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chatgpt</title>
-      <link>https://varunksaini.com/tags/chatgpt/</link>
-      <pubDate>Fri, 24 Mar 2023 13:12:56 -0500</pubDate>
-      
-      <guid>https://varunksaini.com/tags/chatgpt/</guid>
       <description></description>
     </item>
     
@@ -130,15 +139,6 @@
       <pubDate>Sat, 10 Dec 2022 07:23:10 -0600</pubDate>
       
       <guid>https://varunksaini.com/tags/cooking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reviews</title>
-      <link>https://varunksaini.com/tags/reviews/</link>
-      <pubDate>Sat, 10 Dec 2022 07:23:10 -0600</pubDate>
-      
-      <guid>https://varunksaini.com/tags/reviews/</guid>
       <description></description>
     </item>
     
